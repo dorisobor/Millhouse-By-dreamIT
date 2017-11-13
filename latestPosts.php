@@ -58,10 +58,10 @@
 			<time></time>
 			<p></p>
 		</article>
-		<<button></button>
-		<<button></button>
+		<button></button>
+		<button></button>
 		</div> 
-	
+	    </div> 
 	</main>
 	<footer>
 		<button>facebook</button>
