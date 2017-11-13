@@ -15,7 +15,7 @@
 	<main>
 
         <div class="container">
-            <div class="container__form">
+            <div class="container__content">
                 <h1>Lorem ipsum dolor sit amet.</h1>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
                     Nihil quos provident deserunt culpa tempore voluptas nostrum 
@@ -24,8 +24,18 @@
             </div>
 
             <form action="" method="POST" enctype="multypart/form-data">
+                <div class="form-group">
+                <input type="text" name="title">
+                <textarea name="content" id="editor"></textarea>
+                </div>
 
-            </form>
+                <input type="submit" value="Skicka">
+            
+
+            <p>In which category does your post belong in??</p>
+
+            </form> 
+
         </div>
 		
 		
