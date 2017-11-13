@@ -7,11 +7,15 @@
 </head>
 <body>
 
-	<nav>
+<header>
+    <img src="" alt="Millhouse logo"/>
+</header>
 
-	</nav>
+<nav>
 
-	<main>
+</nav>
+
+<main>
 	
     <!-- form container -->
     <div> 
@@ -30,14 +34,14 @@
 
     </div>
 
-	</main>
+</main>
 
-	<footer>
-		<button>facebook</button>
-		<button>instagram</button>
-		<button>contact</button>
-		<span>credit</span>
-	</footer>
+<footer>
+	<button>facebook</button>
+	<button>instagram</button>
+	<button>contact</button>
+	<span>credit</span>
+</footer>
     
 </body>
 </html>
