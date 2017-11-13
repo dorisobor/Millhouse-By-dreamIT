@@ -7,22 +7,28 @@
 </head>
 <body>
 
-	<nav>
+<header>
+    <img src="" alt="Millhouse logo"/>
+</header>
 
-	</nav>
+<nav>
 
-	<main>
+</nav>
+
+<main>
 	
     <!-- form container -->
     <div> 
 
         <h1>Login</h1>
 
-        <form action="" method="">
+        <form action="" method="POST">
             <label for="username" hidden>Write your username or email</label>
             <input type="text" name="username" value="" placeholder="email or username"/>
-            <label for="username" hidden>Write your password</label>
-            <input type="text" name="username" value="" placeholder="password"/>
+
+            <label for="password" hidden>Write your password</label>
+            <input type="text" name="password" value="" placeholder="password"/>
+
             <input type="submit" value="Log In"/>
         </form>
 
@@ -30,14 +36,14 @@
 
     </div>
 
-	</main>
+</main>
 
-	<footer>
-		<button>facebook</button>
-		<button>instagram</button>
-		<button>contact</button>
-		<span>credit</span>
-	</footer>
+<footer>
+	<button>facebook</button>
+	<button>instagram</button>
+	<button>contact</button>
+	<span>credit</span>
+</footer>
     
 </body>
 </html>
