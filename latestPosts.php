@@ -38,11 +38,9 @@
 		<!--wrapping container-->
 		<div class ="wrapper">
 		<h2></h2>
-<<<<<<< HEAD
-	
-=======
+
 		</div> 
->>>>>>> 20f35bf4bfa76dec2af703beab68663f7ed2541d
+
 		
 		<!--latest blogposts-->
 		<div  class= "">
