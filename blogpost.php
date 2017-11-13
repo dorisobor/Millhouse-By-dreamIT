@@ -6,7 +6,8 @@
 	<title>Blogpost</title>
 </head>
 <body>
-	
+	<header>
+   </header>
 	<nav>
  <!--Menu-->
 	</nav>
