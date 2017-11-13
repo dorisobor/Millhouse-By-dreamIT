@@ -37,11 +37,11 @@
 		</nav>
 		<!--wrapping container-->
 		<div class ="wrapper">
-		<<h2></h2>
-		</div> 
+		<h2></h2>
+		
 		
 		<!--blogposts-->
-		<div = class>
+		<div class= "">
          <article>
            <!--CATEGORIE TAG-->
 			<button <a href="#">NAMN PÅ KATEGORI</a>></button>
@@ -61,6 +61,7 @@
 		<<button></button>
 		<<button></button>
 		</div> 
+        </div>
 	
 	</main>
 	<footer>
