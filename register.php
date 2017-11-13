@@ -27,13 +27,13 @@
             <label for="username" hidden>Fill in your username</label>
             <input type="text" name="username" value="" placeholder="username"/>
 
-            <label for="username" hidden>Fill in your email</label>
+            <label for="email" hidden>Fill in your email</label>
             <input type="text" name="email" value="" placeholder="Email"/>
 
-            <label for="username" hidden>Fill in your password</label>
+            <label for="password" hidden>Fill in your password</label>
             <input type="text" name="password" value="" placeholder="password"/>
 
-            <label for="username" hidden>Fill out password again to confirm</label>
+            <label for="passwordConfirm" hidden>Fill out password again to confirm</label>
             <input type="text" name="passwordConfirm" value="" placeholder="password"/>
 
             <input type="checkbox" name="" value="">

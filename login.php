@@ -25,8 +25,10 @@
         <form action="" method="">
             <label for="username" hidden>Write your username or email</label>
             <input type="text" name="username" value="" placeholder="email or username"/>
-            <label for="username" hidden>Write your password</label>
-            <input type="text" name="username" value="" placeholder="password"/>
+
+            <label for="password" hidden>Write your password</label>
+            <input type="text" name="password" value="" placeholder="password"/>
+            
             <input type="submit" value="Log In"/>
         </form>
 
