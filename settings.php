@@ -23,7 +23,7 @@
     <h1>User settings</h1>
 
     <!-- Nuvarande uppgifter bör skrivas ut i value? -->
-    <form action="" method="">
+    <form action="" method="POST">
         <label for="username" hidden>Fill in your new username</label>
         <input type="text" name="username" placeholder="" value=""/>
 

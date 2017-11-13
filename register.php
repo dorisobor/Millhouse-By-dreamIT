@@ -23,7 +23,7 @@
         <h1>Register</h1>
         <p>New to Millhouse? Create your account here.</p>
 
-        <form action="" method="">
+        <form action="" method="POST">
             <label for="username" hidden>Fill in your username</label>
             <input type="text" name="username" value="" placeholder="username"/>
 

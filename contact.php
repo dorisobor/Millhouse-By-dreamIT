@@ -23,7 +23,7 @@
         <h1>Contact</h1>
         <p>Contact us if you have any questions or issues with the blog!</p>
 
-        <form action="" method="">
+        <form action="" method="POST">
             <label for="name" hidden>Fill in your name</label>
             <input type="text" name="name" value="" placeholder="your name"/>
 
