@@ -28,11 +28,13 @@
                 <input type="text" name="title">
                 <textarea name="content" id="editor"></textarea>
                 </div>
+                <p>In which category does your post belong in??</p>
 
+                
                 <input type="submit" value="Skicka">
             
 
-            <p>In which category does your post belong in??</p>
+            
 
             </form> 
 
