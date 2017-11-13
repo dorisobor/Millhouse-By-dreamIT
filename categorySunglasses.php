@@ -7,49 +7,53 @@
 </head>
 <body>
 
-	<nav>
+<header>
+    <img src="" alt="Millhouse logo"/>
+</header>
 
-	</nav>
+<nav>
 
-	<main>
+</nav>
+
+<main>
 	
-		<!-- picture representing the category -->
+	<!-- picture representing the category -->
+	<figure>
+		<img src="" alt="">
+	</figure>
+
+	<h1>Sunglasses</h1>
+	<p>Here you can read all about Millhouse exclusive sunglasses!</p>
+
+
+	<!-- article = blogpost -->
+
+	<article class="">
+		<!-- tag -->
+		<button <a href="#">Category</a></button>
+		<h2>Blogpost title</h2>
 		<figure>
 			<img src="" alt="">
 		</figure>
-
-		<h1>Sunglasses</h1>
-        <p>Here you can read all about Millhouse exclusive sunglasses!</p>
-
-
-		<!-- article = blogpost -->
-
-		<article class="">
-            <!-- tag -->
-			<button <a href="#">Category</a></button>
-			<h2>Blogpost title</h2>
-			<figure>
-				<img src="" alt="">
-			</figure>
-			<p class=""></p>
-            <!-- userimage -->
-			<img src="" alt="">
-			<!-- username -->
-            <span></span>
-            <!-- publish date -->
-			<time></time>
-            <!-- share -->
-            <button></button>
-		</article>
+		<p class=""></p>
+		<!-- userimage -->
+		<img src="" alt="">
+		<!-- username -->
+		<span></span>
+		<!-- publish date -->
+		<time></time>
+		<!-- share -->
+		<button></button>
+	</article>
 	
-	</main>
+</main>
 
-	<footer>
-		<button>facebook</button>
-		<button>instagram</button>
-		<button>contact</button>
-		<span>credit</span>
-	</footer>
+<footer>
+	<button>facebook</button>
+	<button>instagram</button>
+	<button>contact</button>
+	<span>credit</span>
+</footer>
 
 </body>
 </html>
