@@ -23,13 +23,13 @@
         <h1>Login</h1>
 
         <form action="" method="POST">
-            <label for="username" hidden>Write your username or email</label>
-            <input type="text" name="username" value="" placeholder="email or username"/>
+            <label for="username">Fill in your username or email</label>
+            <input type="text" name="username" value="" placeholder="email or username"/><br>
 
-            <label for="password" hidden>Write your password</label>
-            <input type="text" name="password" value="" placeholder="password"/>
+            <label for="password">Fill in your password</label>
+            <input type="text" name="password" value="" placeholder="password"/><br>
 
-            <input type="submit" value="Log In"/>
+            <input type="submit" value="Log In"/><br>
         </form>
 
         <a href="">create a new account</a>

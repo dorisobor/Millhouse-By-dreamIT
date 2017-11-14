@@ -24,17 +24,17 @@
         <p>Contact us if you have any questions or issues with the blog!</p>
 
         <form action="" method="POST">
-            <label for="name" hidden>Fill in your name</label>
-            <input type="text" name="name" value="" placeholder="your name"/>
+            <label for="name">Fill in your name</label>
+            <input type="text" name="name" value="" placeholder="your name"/><br>
 
-            <label for="email" hidden>Fill in your email</label>
-            <input type="text" name="email" value="" placeholder="email"/>
+            <label for="email">Fill in your email</label>
+            <input type="text" name="email" value="" placeholder="email"/><br>
 
-            <label for="subject" hidden>Fill in the email subject</label>
-            <input type="text" name="subject" value="" placeholder="Subject"/>
+            <label for="subject">Fill in the email subject</label>
+            <input type="text" name="subject" value="" placeholder="Subject"/><br>
 
             <!-- rows = längd, cols = bredd -->
-            <textarea rows="" cols=""></textarea>
+            <textarea rows="4" cols="30"></textarea><br>
 
             <input type="submit" value="Send"/>
         </form>
