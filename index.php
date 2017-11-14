@@ -4,14 +4,16 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.css">
 	<title>Index Page</title>
 </head>
 <body>
 	<header>
 
 	</header>
-	
 
+	<!-- temporary nav -->
+	
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">Navbar</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,12 +22,27 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href="#">Features</a>
-      <a class="nav-item nav-link" href="#">Pricing</a>
-      <a class="nav-item nav-link disabled" href="#">Disabled</a>
+      <a class="nav-item nav-link" href="#">Sunglasses</a>
+      <a class="nav-item nav-link" href="#">Watches</a>
+      <a class="nav-item nav-link" href="#">Interior</a>
+	  <a class="nav-item nav-link" href="#">Contact</a>
+
+	  <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    User
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Create new post</a>
+    <a class="dropdown-item" href="#">Profile</a>
+    <a class="dropdown-item" href="#">Help</a>
+	<a class="dropdown-item" href="#">Settings</a>
+  </div>
+</div>
     </div>
   </div>
 </nav>
+
+
 
 	
 	<main>
