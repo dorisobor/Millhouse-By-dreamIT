@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Profile Page</title>
+	<title>Profile Page- latest posts</title>
 </head>
 <body>
 	<header>
@@ -38,10 +38,12 @@
 		<!--wrapping container-->
 		<div class ="wrapper">
 		<h2></h2>
+
+		</div> 
+
 		
-		
-		<!--blogposts-->
-		<div class= "">
+		<!--latest blogposts-->
+		<div  class= "">
          <article>
            <!--CATEGORIE TAG-->
 			<button <a href="#">NAMN PÅ KATEGORI</a>></button>
@@ -61,8 +63,7 @@
 		<button></button>
 		<button></button>
 		</div> 
-        </div>
-	
+	    </div> 
 	</main>
 	<footer>
 		<button>facebook</button>
