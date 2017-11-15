@@ -9,8 +9,8 @@ $dangerColor:#cc4750;
 
 
 
-body{
-    padding:0px;
+body {
+    padding: 0px;
     margin: 0px;
     background: $defaultColor;
     color: $textColor;
@@ -24,7 +24,7 @@ main {
     margin-left: 600px;
 }
 
-.logo{
+.logo {
     width: 100px;
 }
 
@@ -33,9 +33,11 @@ main {
     background-color: #cccccc;
     background-size: cover;
     width: 100%;
-    height: 300px;
-    border: 1px solid red;
+    height: 240px;
 }
 
-
-
+@media screen and (min-width: 992px) {
+    .jumbotron {
+        height: 400px;
+    }
+}
