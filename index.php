@@ -13,7 +13,7 @@
     <header>
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
-                <img src="images/mh_header_photo_720.jpg">                
+                <img src="images/mh_header.jpg">                
             </div>
         </div>
     </header>
