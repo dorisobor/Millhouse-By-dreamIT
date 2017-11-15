@@ -57,7 +57,7 @@
 		
 		
 		<article class="">
-			<button <a href="#">NAMN PÅ KATEGORI</a></button><!--CATEGORIE TAG-->
+			<button <a href="#">Name of the categorie</a></button><!--CATEGORIE TAG-->
 			<h2>BLOG TITLE</h2>
 			<figure>
 				<img src="" alt=""><!--BLOG PICTURE-->
