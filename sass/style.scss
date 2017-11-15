@@ -8,7 +8,6 @@ $tabs:#6d6d6d;
 $dangerColor:#cc4750;
 
 
-
 body{
     padding:0px;
     margin: 0px;
@@ -16,16 +15,20 @@ body{
     color: $textColor;
 }
 
-main {
-    margin: 0px auto;
-}
-
 .dropdown {
     margin-left: 600px;
 }
 
-.logo{
+.logo {
     width: 100px;
 }
 
+
+@media screen and (min-width: 768px){
+    
+    .dropdown {
+        margin: 0px;
+    }
+    
+ }    
 

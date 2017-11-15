@@ -16,6 +16,7 @@
 	
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand hidden-md-up" href="#"><img class="logo" src="images/logo.png"></a>
+	<button class="sign-in">Sign in</button>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -25,13 +26,17 @@
       <a class="nav-item nav-link" href="#">Sunglasses</a>
       <a class="nav-item nav-link" href="#">Watches</a>
       <a class="nav-item nav-link" href="#">Interior</a>
-	  <a class="nav-item nav-link" href="#">Contact</a>
+	    <a class="nav-item nav-link" href="#">Contact</a><br>
+			<a class="nav-item nav-link" href="#">Profile</a>
+			<a class="nav-item nav-link" href="#">Create new post</a>
+			<a class="nav-item nav-link" href="#">Help</a>
+			<a class="nav-item nav-link" href="#">Settings</a>
 
 	  <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     User
   </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
     <a class="dropdown-item" href="#">Create new post</a>
     <a class="dropdown-item" href="#">Profile</a>
     <a class="dropdown-item" href="#">Help</a>
