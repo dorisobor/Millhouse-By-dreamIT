@@ -66,9 +66,9 @@
 	</main>
 	<footer>
 		<div class="footer__container">
-			<button>facebook</button>
-			<button>instagram</button>
-			<button>contact</button>
+			<button><a href="">Facebook</a></button>
+			<button><a href="">Instagram</a></button>
+			<button><a href="">Contact</a></button>
 			<div class="footer__credit">
 			<span>&copy;dreamIT 2017</span>
 			</div>
