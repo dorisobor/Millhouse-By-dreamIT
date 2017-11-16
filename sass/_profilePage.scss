@@ -7,39 +7,78 @@ $interactiveHover:#2E52A1;
 $tabs:#6d6d6d;
 $dangerColor:#cc4750;
 
-.userBar{
+body {
+    padding: 0px;
+    margin: 0px;
+    background: $defaultColor;
+    color: $textColor;
+    font-family: Arial, Helvetica, sans-serif; 
+}
+
+main{
+    margin: 0px auto; 
+    max-width: 600px; 
+    border-left: 1px solid $sectionBackground;
+    border-right: 1px solid $sectionBackground;
+}
+
+/*--PROFILE INFO--*/
+
+.profileBox{
     background: blue; 
-    width: 100%; 
-    height: 200px; 
-}
+    max-width: 600px; 
+    height: 250px; 
+    margin: 0px auto; 
+    padding: 20px; 
 
-.username{
-    color: white; 
-    float: right; 
-    margin: 0px; 
-    text-align: left; 
-}
+    .profileBox__content{
+        width: 70%; 
+        float: left; 
+        text-align: left; 
+    }
 
-.aboutMe{
-    color: white; 
-    float: right; 
-    margin: 0px; 
-    text-align: left; 
+        .fa-user-circle{
+            font-size: 3em; 
+            float: left; 
+        }
+
+        .profileBox__content-info{
+            float: left;
+            margin: 0px; 
+            padding: 0px;  
+        }
+
+    .profileBox__content-icons{
+        width: 30%; 
+        float: right; 
+        text-align: center; 
+    }
+
+        .create{
+            background-color: $buttonColor; 
+            border: none; 
+            color: $defaultColor; 
+        }
+
+        .fa-cog{
+            color: $textColor; 
+            font-size: 2em;
+        }
 }
 
 .clear{
     clear: both; 
 }
 
-.userbar .span{
-    color: white; 
-}
-
+/*--PROFILE NAVBAR--*/
 .nav-justified{
     font-size: 0.8em;
+    max-width: 600px; 
+    margin: 0px auto; 
 }
 
-h1{
+/*--BLOGPOST--*/
+h2{
     padding: 0px; 
     margin: 0px; 
     color: $interactiveHover; 
@@ -49,20 +88,20 @@ p{
     margin-top: 0px;
 }
 
-.mainBody{
+.profilePosts{
+    padding: 20px; 
+}
+
+.categoryPosts{
+    background-color: $sectionBackground; 
     margin: 0px auto; 
-    padding: 20px;  
-    max-width: 600px;    
+    padding: 10px; 
+    max-width: 600px; 
 }
 
-article{
-    padding: 15px; 
-}
+.postButtons{
 
-article button{
-    background: $buttonColor; 
-    color: $defaultColor; 
-    border: none; 
-    width: 70px; 
-    padding: 5px; 
+    .delete{
+        background: $dangerColor; 
+    }
 }

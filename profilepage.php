@@ -4,7 +4,9 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<link href="https://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
+	
 
 	<title>Profile Page</title>
 </head>
@@ -22,59 +24,76 @@
     <a href="#">Link 3</a>
   </div>
 </div>
-  
-
 	</nav>
-	
-	<div class="userBar"> 
-	<!--USER IMAGE-->
-		<img src="" alt="">
-		<!--edit icon from bootsrap?-->
-		<!--USER NAME-->
-		<p class="username">Username</p>
-		<div class="clear"></div>
-		<p class="aboutMe">Something About Me</p>
-		<div class="clear"></div>
-		<!--settings icon from bootstrap?-->
-		</div>
-
-		<!--BOOTSTRAP SECOND NAV-->
-		<nav class="nav nav-pills nav-justified">
-			<a class="nav-item nav-link active" href="#">Profile</a>
-			<a class="nav-item nav-link" href="#">Latest Posts</a>
-			<a class="nav-item nav-link" href="#">Latest Comments</a>
-		</nav>
-
-		<!--wrapping container-->
-		<div class="wrapper">
-			<h2></h2>
+	<main>
 		
-			<!--BLOGPOSTS-->
-			<article class="categoryPosts">
-			<!-- tag -->
-				<button <a href="#">Interior</a></button>
-				<h2>Blogpost title</h2>
-				<figure>
-					<img src="" alt="">
-				</figure>
-				<p class=""></p>
-				<!-- userimage -->
+		<div class="profileBox"> 
+		<!--USER IMAGE-->
+			<div class="profileBox__content">
 				<img src="" alt="">
-				<!-- username -->
-				<span></span>
-				<!-- publish date -->
-				<time></time>
-				<!-- share -->
-			</article>
+				<div class="userImage">
+					<i class="fa fa-user-circle" aria-hidden="true"></i>
+				</div>
+		
+				<!--edit icon from bootsrap?-->
+				<!--USER NAME-->
+				<div class="profileBox__content-info">
+					<p class="username">Username</p>
+					<p class="aboutMe">Something About Me</p>
+					<div class="clear"></div>
+					<p class="totalposts">50 Blogposts</p>
+					<p class="totalcomments">125 Comments</p>
 
-			<div class="postButtons">
-				<button>Edit</button>
-				<button>Delete</button>
-			</div> 
+				</div>
+			</div>
 
+			<div class="profileBox__content-icons">
+				<div class="settingsIcon">
+					<i class="fa fa-cog" aria-hidden="true"></i>
+				</div>
+				<div class="clear"></div>
+				<button class="create">
+					<a href="#">Create New Post</a>
+				</button>
+			</div>
+			
+			<div class="clear"></div>
+
+
+			<!--settings icon from bootstrap?-->
 		</div>
-		
-		
+
+			<!--BOOTSTRAP SECOND NAV-->
+			<nav class="nav nav-pills nav-justified">
+				<a class="nav-item nav-link active" href="#">Profile</a>
+				<a class="nav-item nav-link" href="#">Latest Posts</a>
+				<a class="nav-item nav-link" href="#">Latest Comments</a>
+			</nav>
+
+				<!--BLOGPOSTS-->
+			<div class="profilePosts">
+				<article class="categoryPosts">
+				<!-- tag -->
+					<button class="tagg"><a href="#">Interior</a></button>
+					<h2>Blogpost title</h2>
+					<figure>
+						<img src="" alt="">
+					</figure>
+					<p class=""></p>
+					<!-- userimage -->
+					<img src="" alt="">
+					<!-- username -->
+					<span></span>
+					<!-- publish date -->
+					<time></time>
+					<!-- share -->
+
+					<div class="postButtons">
+						<button>Edit</button>
+						<button class="delete">Delete</button>
+					</div> 
+				</article>
+			</div>
 	
 	</main>
 	<footer>
