@@ -36,7 +36,9 @@
 			
 		<article class="categoryPosts">
 			<!-- tag -->
-			<button <a href="#">Interior</a></button>
+			<div class="categoryButton">
+				<button <a href="#">Interior</a></button>
+			</div>
 			<h2>Blogpost title</h2>
 			<figure>
 				<img src="" alt="">

@@ -1,0 +1,68 @@
+$sectionBackground:#f2f2f2;
+$defaultColor:#fff;
+$textColor:#262626;
+$headLineColor:#1c3045;
+$buttonColor:#1C4D45;
+$interactiveHover:#2E52A1;
+$tabs:#6d6d6d;
+$dangerColor:#cc4750;
+
+.userBar{
+    background: blue; 
+    width: 100%; 
+    height: 200px; 
+}
+
+.username{
+    color: white; 
+    float: right; 
+    margin: 0px; 
+    text-align: left; 
+}
+
+.aboutMe{
+    color: white; 
+    float: right; 
+    margin: 0px; 
+    text-align: left; 
+}
+
+.clear{
+    clear: both; 
+}
+
+.userbar .span{
+    color: white; 
+}
+
+.nav-justified{
+    font-size: 0.8em;
+}
+
+h1{
+    padding: 0px; 
+    margin: 0px; 
+    color: $interactiveHover; 
+}
+
+p{
+    margin-top: 0px;
+}
+
+.mainBody{
+    margin: 0px auto; 
+    padding: 20px;  
+    max-width: 600px;    
+}
+
+article{
+    padding: 15px; 
+}
+
+article button{
+    background: $buttonColor; 
+    color: $defaultColor; 
+    border: none; 
+    width: 70px; 
+    padding: 5px; 
+}
