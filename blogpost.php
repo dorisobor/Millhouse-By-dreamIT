@@ -69,7 +69,7 @@
 			 non tempus tellus. Nunc sed dolor vitae purus 
 			 tristique consequat sit amet in libero. Ut rhoncus tempus justo, 
 			 sit amet suscipit diam congue et. Suspendisse tempor commodo lacinia...
-             </p>   <a href="#" class="blogpost__read-more">Read More</a><br/>
+         </p> <div class="blogpost__read-more"> <a href="#" >Read More>></a></div><br>
 				 <div class = "blogpost__share-button"> <a href="#"> Share <i class="fa fa-share-alt" aria-hidden="true"></i></a>
 				 </div>
 						</div>
