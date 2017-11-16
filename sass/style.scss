@@ -1,3 +1,4 @@
+
 $sectionBackground:#f2f2f2;
 $defaultColor:#fff;
 $textColor:#262626;
@@ -7,37 +8,63 @@ $interactiveHover:#2E52A1;
 $tabs:#6d6d6d;
 $dangerColor:#cc4750;
 
-.navbar {
-    border-top: 1px solid $sectionBackground;
-}
+@import 'nav.scss';
+@import 'help-page.scss';
 
-.bg-light {
-    background-color: $defaultColor !important;
-}
 
-body{
-    padding:0px;
+body {
+    padding: 0px;
     margin: 0px;
     background: $defaultColor;
+    font-size: 16px;
     color: $textColor;
+    font-family: Arial, Helvetica, sans-serif; 
 }
 
-.navbar-light .navbar-nav .nav-link {
-    color: $textColor;
-    font-weight: bold;
+/*---CATEGORY PAGES---*/
 
-        &:hover {
-            color: $interactiveHover;
-            text-decoration: underline;
-        }
+h1{
+    padding: 0px; 
+    margin: 0px; 
+    color: $interactiveHover; 
 }
 
-.dropdown {
+p{
+    margin-top: 0px;
+}
+
+.mainBody{
+    margin: 0px auto; 
+    padding: 20px;  
+    max-width: 600px;    
+}
+
+article{
+    padding: 15px; 
+}
+
+article button{
+    background: $buttonColor; 
+    color: $defaultColor; 
+    border: none; 
+    width: 70px; 
+    padding: 5px; 
+}
+
+.categoryPosts{
+    background-color: $sectionBackground; 
+}
+
+.coverPhoto{
+    padding: 0px; 
     margin: 0px;
 }
-    
-.logo {
-    width: 100px;
+
+.coverPhoto img{
+    display: block; 
+    width: 100%; 
+    max-height: 500px; 
+    object-fit: cover; 
 }
 
 
@@ -70,54 +97,14 @@ footer{
     }   
 }
 
-.sign-up-btn {
-    margin-left: 100px;
-    background-color: $buttonColor;
-    color: $defaultColor;
-    border: none;
-}
-
-.sign-up-btn__link {
-    color: $defaultColor;
-    
-        &:hover {
-            text-decoration: none;
-            color: $defaultColor;
-        }
-}
-
 @media screen and (min-width: 992px){
     
-    .dropdown {
-        margin-left: 600px;
+   .jumbotron {
+        background-image: url("../images/mh_header.jpg");
+        background-color: #cccccc;
+        background-size: cover;
+        width: 100%;
+        height: 550px;
     }
-    
-    .logo {
-        display: none;
-    }
-
-    .user-actions__sign-up-btn {
-        background-color: $buttonColor;
-        color: $defaultColor;
-        border: none;
-    }
-
-    .user-actions__link {
-        color: $defaultColor;
-            &:hover {
-                text-decoration: none;
-                color: $defaultColor;
-            }
-    }
-
-    .user-actions__link--black {
-        color: $textColor;
-        &:hover {
-            text-decoration: none;
-            color: $interactiveHover;
-        }
-    }
-
+  
  }    
-
-
