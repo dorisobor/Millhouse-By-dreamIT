@@ -10,13 +10,15 @@
 </head>
 
 <body>
+
+<?php require 'navbar.php' ?>
+
     <header>
         <div class="jumbotron jumbotron-fluid">
         </div>
         
     </header>
 
-	<?php require 'navbar.php' ?>
 
 	<main>
 	

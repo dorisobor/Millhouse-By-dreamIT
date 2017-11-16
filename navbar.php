@@ -5,12 +5,12 @@ $loggedOn = true;
 
 ?>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
 	<a class="navbar-brand hidden-md-up" href="index.php"><img class="logo" src="images/logo.png"></a>
         
     <?php if ($loggedOn): ?>
     <button class="sign-up-btn d-md-none d-lg-none d-xl-none">
-        <a class="sign-up-btn__link" href="#">Sign out</a>
+        <a class="sign-up-btn__link" href="signOut.php">Sign out</a>
     </button>
     <?php else: ?>
     <button class="sign-up-btn d-md-none d-lg-none d-xl-none">
@@ -32,8 +32,8 @@ $loggedOn = true;
             <a class="nav-item nav-link" href="contact.php">Contact</a><br>
 
             <?php if ($loggedOn): ?>
-                <a class="nav-item nav-link d-md-none d-lg-none d-xl-none" href="#">Create new post</a>
-                <a class="nav-item nav-link d-md-none d-lg-none d-xl-none" href="l#">Profile</a>
+                <a class="nav-item nav-link d-md-none d-lg-none d-xl-none" href="createPost.php">Create new post</a>
+                <a class="nav-item nav-link d-md-none d-lg-none d-xl-none" href="profilepage.php">Profile</a>
                 <a class="nav-item nav-link d-md-none d-lg-none d-xl-none" href="help.php">Help</a>
                 <a class="nav-item nav-link d-md-none d-lg-none d-xl-none" href="settings.php">Settings</a>
             <?php else:  ?>
@@ -44,7 +44,7 @@ $loggedOn = true;
 
         <?php if ($loggedOn): ?>
         <div class="user-actions d-none d-lg-block d-xl-block ml-auto">
-            <a class="user-actions__link" href="register.php"> 
+            <a class="user-actions__link" href="signOut.php.php"> 
                 <button class="user-actions__sign-up-btn">Sign out</button>
             </a>
         </div>
@@ -60,11 +60,11 @@ $loggedOn = true;
         <?php if ($loggedOn): ?>
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle d-none d-lg-block d-xl-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    User
+                    Username
                 </button>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="">Create new post</a>
-                    <a class="dropdown-item" href="#">Profile</a>
+                    <a class="dropdown-item" href="createPost.php">Create new post</a>
+                    <a class="dropdown-item" href="profilepage.php">Profile</a>
                     <a class="dropdown-item" href="help.php">Help</a>
                     <a class="dropdown-item" href="settings.php">Settings</a>
                 </div>
