@@ -60,7 +60,7 @@ $loggedOn = true;
         <?php if ($loggedOn): ?>
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle d-none d-lg-block d-xl-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Username
+                <i class="fa fa-user-circle-o" aria-hidden="true"></i> User menu
                 </button>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" href="createPost.php">Create new post</a>
