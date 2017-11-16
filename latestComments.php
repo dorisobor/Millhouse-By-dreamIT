@@ -4,26 +4,18 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="https://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
 	<title>Profile Page- latest comments</title>
 </head>
 <body>
+
+<?php require 'navbar.php' ?>
+
 	<header>
    </header>
-	<nav>
-	<a href="url">logut</a>
-	<!--User icon as a dropdown menue-->
-		<div class="dropdown">
-  <img src="" alt="">
-  <div class="dropdown-content">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
-  </div>
-</div>
-  
 
-	</nav>
+
 	
 	<div class ="" > 
 	<!--USER IMAGE-->
