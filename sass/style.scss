@@ -1,4 +1,13 @@
 
+@font-face {
+    font-family: 'helveticaneueregular';
+    src: url('helveticaneue-webfont.woff2') format('woff2'),
+    url('helveticaneue-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 $sectionBackground:#f2f2f2;
 $defaultColor:#fff;
 $textColor:#262626;
@@ -8,12 +17,14 @@ $interactiveHover:#2E52A1;
 $tabs:#6d6d6d;
 $dangerColor:#cc4750;
 
-<<<<<<< HEAD
 @import 'profilePage.scss'; 
-=======
+
+$wrapperColor: rgba(109,
+109,
+109,
+0.44);
 
 @import 'latestComments.scss';
->>>>>>> master
 
 .navbar {
     border-top: 1px solid $sectionBackground;
@@ -25,13 +36,20 @@ $dangerColor:#cc4750;
 
 
 body {
+    font-family: 'helveticaneueregular', Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
     padding: 0px;
     margin: 0px;
     background: $defaultColor;
     font-size: 16px;
     color: $textColor;
-    font-family: Arial, Helvetica, sans-serif; 
 }
+
+
+main {
+    margin:auto;
+    max-width: 600px;
 
 /*---CATEGORY PAGES---*/
 
@@ -51,6 +69,13 @@ p{
     max-width: 600px;    
 }
 
+
+
+.headline {
+    font-size: 4em;
+    color: $interactiveHover;
+}
+
 article{
     padding: 15px; 
 }
@@ -61,11 +86,81 @@ article button{
     border: none; 
     width: 70px; 
     padding: 5px; 
+
 }
 
 .categoryPosts{
     background-color: $sectionBackground; 
 }
+
+
+h1 {
+
+    color: $headLineColor;
+}
+
+
+//the blogpost
+
+.blogpost {
+ background-color: $sectionBackground;
+ margin: auto;
+ margin: auto;
+
+ //category button
+
+ .blogpost__category-button{
+    background-color: $buttonColor;
+    color: $defaultColor;
+    margin: 10px;
+    }
+
+ //user's info
+
+.blogpost__user-info {
+    margin: 10px;
+    p {
+    margin-left:50px;
+    color: $textColor;
+    }
+    .fa-user-circle-o {
+    font-size: 3em;
+    }
+   }
+
+   // user's blogpost headline
+   h2 {
+       color: $textColor;
+       margin: 10px;
+
+   }
+ //blogpost image
+
+ img {
+ max-width: 100%;
+    }
+.blogpost__blog-description{
+    color: $textColor;
+    margin: 10px;
+    }
+//read more link
+
+.blogpost__read-more {
+text-align: right;
+padding: 10px;
+
+    }
+    //share icon link
+   
+    .blogpost__share-button{
+     text-align: right;
+     padding: 10px;
+     
+     .fa-share-alt{
+      font-size: 2em;
+     }
+
+    }
 
 .coverPhoto{
     padding: 0px; 
@@ -112,15 +207,232 @@ footer{
 @media screen and (min-width: 992px){
     
    .jumbotron {
-<<<<<<< HEAD
-        background-image: url("mh_header.jpg");
-=======
-        background-image: url("../images/mh_header.jpg");
->>>>>>> master
+        background-image: url("mh_header.jpg"), url("../images/mh_header.jpg");
+
+  }
+
+.help {
+    width: 95%;
+    text-align: right;
+    font-size: 1.2em;
+    color: $interactiveHover;
+}
+
+.checkboxes_wrapper {
+    text-align: left;
+    margin: 2% 5%;
+}
+
+.form {
+    font-size: 1.5em;
+    color: $textColor;
+}
+
+.form--theme {
+    font-size: 0.7em;
+
+}
+
+input {
+    margin: 1em 0;
+    width: 90%;
+
+    &[type="text"] {
+        background-color: $sectionBackground;
+
+        height: 1.5em;
+        font-size: 1.2em;
+        appearance: none;
+        border-radius: none;
+        padding: 0.3em;
+        border: solid 1px $buttonColor;
+        box-shadow: inset 2px 2px 3px 0 slategray;
+        transition: box-shadow 0.3s;
+        color: $buttonColor;
+
+        &:focus {
+            outline: none;
+            box-shadow: inset 1px 1px 2px 0 #ccc;
+            border: solid 1px $buttonColor;
+        }
+    }
+
+
+
+    &[type="submit"] {
+        margin: 5% 0;
+        width: 50%;
+        height: 2em;
+        padding: 0.3em 0;
+        font-size: 1.1em;
+        color: $sectionBackground;
+        background-color: $buttonColor;
+        border: none;
+        -webkit-border-radius: 50px;
+        -moz-border-radius: 50px;
+        border-radius: 50px;
+        font-size: 1.2em;
+
+        &:focus {
+            outline: none;
+        }
+
+        &:hover {
+            background-color: $interactiveHover;
+            color: $defaultColor;
+            border: none;
+            cursor: pointer;
+        }
+    }
+
+    &[type="file"] {
+
+        height: 1.4em;
+        padding: 0.3em;
+        background-color: $sectionBackground;
+        color: $buttonColor;
+        border: solid 1px $buttonColor;
+        box-shadow: inset 2px 2px 3px 0 slategray;
+        cursor: pointer;
+        font-size: 1.2em;
+
+        &:focus {
+            outline: none;
+            box-shadow: inset 1px 1px 2px 0 $sectionBackground;
+            border: solid 1px $buttonColor;
+
+        }
+
+
+
+    }
+
+    &[type="checkbox"] {
+        height: 2.4em;
+        width: 2.4em;
+        padding: 0.3em;
+        margin: 0.3em;
+        cursor: pointer;
+
+
+        &:checked + label {
+            color: #30854e;
+
+        }
+
+    }
+
+
+}
+
+
+
+.textarea {
+    width: 90%;
+    height: 150px;
+    padding: 0.3em 0;
+    margin: 1em 0;
+    border: solid 1px $buttonColor;
+    box-shadow: inset 2px 2px 3px 0 #6d6d6d;
+    transition: box-shadow 0.3s;
+    background-color: $sectionBackground;
+    color: $buttonColor;
+    font-size: 1.4em;
+
+
+    &:focus {
+        outline: none;
+        box-shadow: inset 1px 1px 2px 0 $sectionBackground;
+        border: solid 1px $buttonColor;
+    }
+}
+
+.fieldset {
+    border: 0;
+}
+
+.legend {
+    font-size: 1.2em;
+    font-weight: 400;
+    color: $interactiveHover;
+    margin: 0.5em;
+}
+
+
+.label {
+    font-size: 0.8em;
+    font-weight: 400;
+    color: $buttonColor;
+    margin: 1em;
+}
+
+.label--checkboxes {
+    font-size: 0.9em;
+}
+
+
+
+.form_wrapper {
+    margin: 5%;
+    padding: 5%;
+    background-color: $wrapperColor;
+    text-align: center;
+}
+
+.instruction {
+    font-size: 1.4em;
+}
+
+.button{
+   width: 20%;
+    height: 2.5em;
+    font-size: 2em;
+    font-weight: 400;
+    cursor: pointer;
+}
+.button--delete{
+    color: $dangerColor;
+}
+
+.message--attention{
+    color: $dangerColor;
+}
+
+@media screen and (min-width: 992px) {
+    .jumbotron {
+        background-image: url("images/mh_header.jpg"), url("../images/mh_header.jpg");
         background-color: #cccccc;
         background-size: cover;
         width: 100%;
         height: 550px;
     }
-  
- }    
+
+    .form--theme {
+        font-size: 1.2em;
+
+    }
+
+    .label--checkboxes {
+        font-size: 1.4em;
+    }
+
+    .form_wrapper {
+        margin: 10%;
+    }
+
+    .legend {
+        font-size: 2em;
+        font-weight: 600;
+        color: $interactiveHover;
+        margin: 1em;
+    }
+
+    .label {
+        font-size: 2em;
+        font-weight: 600;
+        color: $buttonColor;
+        margin: 1em;
+    }
+
+
+}
