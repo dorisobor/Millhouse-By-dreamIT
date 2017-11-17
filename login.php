@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php require 'head.html'; ?>
 	<title>Login</title>
 </head>
 <body>
+
+<?php require 'navbar.php' ?>
 
 <header>
     <img src="" alt="Millhouse logo"/>
 </header>
 
-<nav>
 
-</nav>
 
 <main>
 	
@@ -41,12 +40,8 @@
 
 </main>
 
-<footer>
-	<button>facebook</button>
-	<button>instagram</button>
-	<button>contact</button>
-	<span>credit</span>
-</footer>
+<?php require 'footer.php'; ?>
+<?php require 'bootstrapScripts.html'; ?>
     
 </body>
 </html>

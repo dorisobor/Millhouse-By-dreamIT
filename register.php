@@ -2,9 +2,8 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Registration</title>
-       <link rel="stylesheet" href="css/style.css">
+    <?php require 'head.html'; ?>
+  <title>Registration</title>
 </head>
 
 <body>
@@ -35,11 +34,7 @@
                         I agree to TERMS and PRIVACY POLICY</label> <br><br>
 
                         <input type="submit" value="Sign up" />
-
-
-
                     </fieldset>
-
                 </form>
             </div>
         </div>
@@ -47,6 +42,7 @@
     </main>
 
 <?php require 'footer.php';  ?>
-</body>
+<?php require 'bootstrapScripts.html'; ?>
 
+</body>
 </html>
