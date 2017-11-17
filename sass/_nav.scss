@@ -1,0 +1,101 @@
+
+.navbar {
+    border: 1px solid rgba(0,0,0,.15);
+}
+
+.navbar-brand {
+    margin-right: 0px;
+}
+
+.bg-light {
+    background-color: $defaultColor !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: $textColor;
+    font-weight: bold;
+
+        &:hover {
+            color: $interactiveHover;
+            text-decoration: underline;
+        }
+}
+
+.logo {
+    width: 100px;
+}
+
+.dropdown {
+    margin: 0px;
+}
+
+.sign-up-btn {
+    margin-left: auto;
+    margin-right: 1rem;
+    padding: 8px 10px;
+    border-radius: .25rem;    
+    background-color: $buttonColor;
+    color: $defaultColor;
+    border: none;
+}
+
+.sign-up-btn__link {
+    color: $defaultColor;
+    
+        &:hover {
+            text-decoration: none;
+            color: $defaultColor;
+        }
+}
+
+@media screen and (min-width: 992px){
+    
+    .dropdown-menu-right {
+        right: 0;
+        left: auto;
+        }
+
+    .dropdown-item {
+        color: $textColor;
+
+        &:hover {
+            background-color: $interactiveHover;
+            color: $defaultColor;
+        }
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .user-actions {
+        margin-right: 20px;
+    }
+
+    .user-actions__sign-up-btn {
+        padding: 8px 10px;
+        background-color: $buttonColor;
+        border-radius: .25rem;
+        color: $defaultColor;
+        border: none;
+    }
+
+    .user-actions__link {
+        color: $defaultColor;
+            &:hover {
+                text-decoration: none;
+                color: $defaultColor;
+            }
+    }
+
+    .user-actions__link--black {
+        margin-right: 10px;
+        font-weight: bold;
+        color: $textColor;
+        &:hover {
+            text-decoration: none;
+            color: $interactiveHover;
+        }
+    }
+
+ }    
