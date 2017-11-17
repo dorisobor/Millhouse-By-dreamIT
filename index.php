@@ -82,9 +82,9 @@
 				 </div>
 						</div>
 		</article>
-		<div class="pagination">
+		<div class="paginations">
   
-  <ul class="pagination">
+  <ul class="pagination ">
     <li class="page-item"><a class="page-link" href="#">
 		<i class="fa fa-arrow-left" aria-hidden="true"></i>
       </a></li>
