@@ -1,0 +1,45 @@
+
+.help-article-container {
+    padding: 0px;
+}
+
+.article__wrapper {
+    margin: 0px auto;
+    max-width: 650px;
+    border-right: 1px solid $sectionBackground;
+    border-left: 1px solid $sectionBackground;
+}
+
+.contact {
+    margin: 30px 20px;
+    text-align: center;
+}
+
+.contact__text {
+    display: block;
+}
+
+.contact__btn {
+    margin: 5px;
+    width: 130px;
+    border-radius: .25rem;
+}
+
+.article__content {
+    margin: 10px auto; 
+    padding: 20px;  
+    background-color: $sectionBackground;
+}
+
+.article__top-header{
+    margin: 20px 0px 0px 10px;
+    color: $headLineColor;
+}
+
+.article__question{
+    color: $headLineColor;
+}
+
+.article__text {
+    line-height: 1.9;
+}
