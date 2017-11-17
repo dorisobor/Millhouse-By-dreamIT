@@ -1,60 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Login</title>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+    <main>
+        <div class="main">
+            <div class="form_wrapper">
+                <h1 class="headline">Register</h1>
+                <p class="instruction">New to Millhouse? Create your account here.</p>
 
-<header>
-    <img src="" alt="Millhouse logo"/>
-</header>
+                <form class="form" action="" method="POST">
+                    <fieldset class="fieldset">
+                        <legend class="legend">User information</legend>
+                        <label class="label" for="username">Fill in your username</label>
+                        <input type="text" name="username" value="" placeholder="username" /><br>
 
-<nav>
+                        <label class="label" for="email">Fill in your email</label>
+                        <input type="text" name="email" value="" placeholder="Email" /><br>
 
-</nav>
+                        <label class="label" for="password">Fill in your password</label>
+                        <input type="text" name="password" value="" placeholder="password" /><br>
 
-<main>
-	
-    <!-- form container -->
-    <div> 
+                        <label class="label" for="passwordConfirm">Fill out password again to confirm</label>
+                        <input type="text" name="passwordConfirm" value="" placeholder="password" /><br>
 
-        <h1>Register</h1>
-        <p>New to Millhouse? Create your account here.</p>
+                        <input type="checkbox" name="agree" id="agree" value="yes">  <label class="label" for="agree">
+                        I agree to TERMS and PRIVACY POLICY</label> <br><br>
 
-        <form action="" method="POST">
-            <fieldset>
-                <legend>Fill in your information</legend>
-                <label for="username">Fill in your username</label>
-                <input type="text" name="username" value="" placeholder="username"/><br>
+                        <input type="submit" value="Sign up" />
 
-                <label for="email">Fill in your email</label>
-                <input type="text" name="email" value="" placeholder="Email"/><br>
 
-                <label for="password">Fill in your password</label>
-                <input type="text" name="password" value="" placeholder="password"/><br>
 
-                <label for="passwordConfirm">Fill out password again to confirm</label>
-                <input type="text" name="passwordConfirm" value="" placeholder="password"/><br>
+                    </fieldset>
 
-                <input type="checkbox" name="" value="">
-                I agree to TERMS and PRIVACY POLICY
+                </form>
+            </div>
+        </div>
 
-                <input type="submit" value="Sign up"/>
-            <fieldset>
-        </form>
+    </main>
 
-    </div>
 
-</main>
-
-<footer>
-    <button>facebook</button>
-    <button>instagram</button>
-    <button>contact</button>
-    <span>credit</span>
-</footer>
-    
 </body>
+
 </html>

@@ -22,26 +22,26 @@
                 </div>
                 <form class="form" action="confirmation.php" method="post" enctype="multipart/form-data">
                     <fieldset class="fieldset">
-                        <legend class="legend"> Edit the post </legend>
+                        <legend class="legend"> Create a new post </legend>
 
 
 
-                        <label class="label" for="headline">Change headline</label>
+                        <label class="label" for="headline">Headline</label>
                         <br />
                         <input type="text" name="headline" placeholder="Headline" id="headline" aria-required="true" required />
                         <br /> <br />
 
                         <!--Uppload an image-->
-                        <label class="label" for="image"> Change image </label> <br />
+                        <label class="label" for="image"> Choose image </label> <br />
                         <input type="file" name="image" id="image" />
                         <br />
-                        <label class="label" for="blog_post"> Change post</label> <br />
+                        <label class="label" for="blog_post"> Write post</label> <br />
                         <textarea class="textarea" id="blog_post" name="blog_post" rows="4" cols="50" placeholder="Your text" required></textarea>
                         <br />
 
                         <!--Checkboxes-->
                         <div class="form checkboxes_wrapper">
-                            <p class="form form--theme">Change categories for your post:</p>
+                            <p class="form form--theme">Select one or several categories for your post:</p>
                             <br />
 
 
@@ -53,7 +53,7 @@
                             <label class="label label--checkboxes" for="checkbox_3">Interior</label><br>
                         </div>
                         <!--Publish-->
-                        <input type="submit" value="Update post" />
+                        <input type="submit" value="Publish post" />
                     </fieldset>
                 </form>
             </div>
