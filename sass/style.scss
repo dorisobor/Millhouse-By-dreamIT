@@ -16,6 +16,9 @@ $buttonColor:#1C4D45;
 $interactiveHover:#2E52A1;
 $tabs:#6d6d6d;
 $dangerColor:#cc4750;
+
+@import 'profilePage.scss'; 
+
 $wrapperColor: rgba(109,
 109,
 109,
@@ -201,6 +204,12 @@ footer{
     }   
 }
 
+@media screen and (min-width: 992px){
+    
+   .jumbotron {
+        background-image: url("mh_header.jpg"), url("../images/mh_header.jpg");
+
+  }
 
 .help {
     width: 95%;
