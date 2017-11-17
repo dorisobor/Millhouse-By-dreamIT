@@ -1,11 +1,15 @@
 
+@import 'profilePage.scss'; 
+@import 'latestComments.scss';
+@import 'nav.scss';
+@import 'help-page.scss';
+
 @font-face {
     font-family: 'helveticaneueregular';
     src: url('helveticaneue-webfont.woff2') format('woff2'),
     url('helveticaneue-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
 
 $sectionBackground:#f2f2f2;
@@ -16,24 +20,15 @@ $buttonColor:#1C4D45;
 $interactiveHover:#2E52A1;
 $tabs:#6d6d6d;
 $dangerColor:#cc4750;
-
-@import 'profilePage.scss'; 
-
 $wrapperColor: rgba(109,
 109,
 109,
 0.44);
 
-@import 'latestComments.scss';
 
 .navbar {
     border-top: 1px solid $sectionBackground;
 }
-
-@import 'nav.scss';
-@import 'help-page.scss';
-
-
 
 body {
     font-family: 'helveticaneueregular', Helvetica, Arial, sans-serif;
@@ -46,10 +41,11 @@ body {
     color: $textColor;
 }
 
-
 main {
     margin:auto;
     max-width: 600px;
+
+}
 
 /*---CATEGORY PAGES---*/
 
@@ -69,8 +65,6 @@ p{
     max-width: 600px;    
 }
 
-
-
 .headline {
     font-size: 4em;
     color: $interactiveHover;
@@ -86,7 +80,6 @@ article button{
     border: none; 
     width: 70px; 
     padding: 5px; 
-
 }
 
 .categoryPosts{
@@ -95,27 +88,25 @@ article button{
 
 
 h1 {
-
     color: $headLineColor;
 }
 
-
-//the blogpost
+/* the blogpost */
 
 .blogpost {
  background-color: $sectionBackground;
  margin: auto;
- margin: auto;
+}
 
- //category button
+ /* category button */
 
  .blogpost__category-button{
     background-color: $buttonColor;
     color: $defaultColor;
     margin: 10px;
-    }
+}
 
- //user's info
+ /* user info */
 
 .blogpost__user-info {
     margin: 10px;
@@ -126,31 +117,35 @@ h1 {
     .fa-user-circle-o {
     font-size: 3em;
     }
-   }
+}
 
-   // user's blogpost headline
+   /* blogpost heading */
+
    h2 {
        color: $textColor;
        margin: 10px;
-
    }
- //blogpost image
+ 
+   /* blogimage */
 
  img {
  max-width: 100%;
-    }
-.blogpost__blog-description{
+ }
+
+.blogpost__blog-description {
     color: $textColor;
     margin: 10px;
-    }
-//read more link
+}
+
+/* read more link*/
 
 .blogpost__read-more {
 text-align: right;
 padding: 10px;
 
-    }
-    //share icon link
+}
+    
+    /* share icon */
    
     .blogpost__share-button{
      text-align: right;
@@ -173,7 +168,6 @@ padding: 10px;
     max-height: 500px; 
     object-fit: cover; 
 }
-
 
 footer{
 
@@ -203,13 +197,6 @@ footer{
         }
     }   
 }
-
-@media screen and (min-width: 992px){
-    
-   .jumbotron {
-        background-image: url("mh_header.jpg"), url("../images/mh_header.jpg");
-
-  }
 
 .help {
     width: 95%;
@@ -304,7 +291,6 @@ input {
         }
 
 
-
     }
 
     &[type="checkbox"] {
@@ -324,8 +310,6 @@ input {
 
 
 }
-
-
 
 .textarea {
     width: 90%;
@@ -369,8 +353,6 @@ input {
 .label--checkboxes {
     font-size: 0.9em;
 }
-
-
 
 .form_wrapper {
     margin: 5%;
@@ -433,6 +415,5 @@ input {
         color: $buttonColor;
         margin: 1em;
     }
-
 
 }

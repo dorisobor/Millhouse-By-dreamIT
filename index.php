@@ -18,7 +18,6 @@
     </header>
 
 
-
 	<main>
 	
 		<figure>
