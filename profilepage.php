@@ -29,7 +29,7 @@
 		
 		<div class="profileBox"> 
 		<!--USER IMAGE-->
-			<div class="profileBox__content">
+			<div class="profileBox__content-image">
 				<img src="" alt="">
 				<div class="userImage">
 					<i class="fa fa-user-circle" aria-hidden="true"></i>
@@ -37,27 +37,34 @@
 		
 				<!--edit icon from bootsrap?-->
 				<!--USER NAME-->
-				<div class="profileBox__content-info">
+				<div class="profileBox__content-username">
 					<p class="username">Username</p>
 					<p class="aboutMe">Something About Me</p>
-					<div class="clear"></div>
-					<p class="totalposts">50 Blogposts</p>
-					<p class="totalcomments">125 Comments</p>
-
 				</div>
+
 			</div>
 
 			<div class="profileBox__content-icons">
 				<div class="settingsIcon">
-					<i class="fa fa-cog" aria-hidden="true"></i>
+					<button class="settings">
+						<a href="createPost.php"><i class="fa fa-cog" aria-hidden="true"></i></a>
+					</button>
 				</div>
+
 				<div class="clear"></div>
-				<button class="create">
-					<a href="#">Create New Post</a>
-				</button>
+
+				<div class="profileBox__content-commentsPosts">
+					<div class="totalPosts"><p>50 Blogposts</p></div>
+					<div class="totalComments"><p>125 Comments</p></div>
+				</div>
+
+				<div class="createNewPost">
+					<button class="create">
+						<a href="createPost.php">Create New Post</a>
+					</button>
+				</div>
 			</div>
 			
-			<div class="clear"></div>
 
 
 			<!--settings icon from bootstrap?-->
@@ -65,16 +72,18 @@
 
 			<!--BOOTSTRAP SECOND NAV-->
 			<nav class="nav nav-pills nav-justified">
-				<a class="nav-item nav-link active" href="#">Profile</a>
-				<a class="nav-item nav-link" href="#">Latest Posts</a>
-				<a class="nav-item nav-link" href="#">Latest Comments</a>
+				<a class="nav-item nav-link active" href="profilePage.php">Profile</a>
+				<a class="nav-item nav-link" href="latestPosts.php">Latest Posts</a>
+				<a class="nav-item nav-link" href="latestComments.php">Latest Comments</a>
 			</nav>
 
 				<!--BLOGPOSTS-->
 			<div class="profilePosts">
 				<article class="categoryPosts">
 				<!-- tag -->
-					<button class="tagg"><a href="#">Interior</a></button>
+					<button class="tagg">
+						<a href="categoryInterior.php">Interior</a>
+					</button>
 					<h2>Blogpost title</h2>
 					<figure>
 						<img src="" alt="">

@@ -27,44 +27,79 @@ main{
 .profileBox{
     background: blue; 
     max-width: 600px; 
-    height: 250px; 
+    height: 200px; 
     margin: 0px auto; 
     padding: 20px; 
 
-    .profileBox__content{
-        width: 70%; 
-        float: left; 
-        text-align: left; 
-    }
 
-        .fa-user-circle{
+/*--username & picture--*/
+        .userImage{
             font-size: 3em; 
             float: left; 
+            width: 10%; 
         }
 
-        .profileBox__content-info{
+        .profileBox__content-username{
             float: left;
-            margin: 0px; 
-            padding: 0px;  
+            width: 50%; 
+            padding: 10px; 
+            margin-left: 10px; 
         }
 
-    .profileBox__content-icons{
-        width: 30%; 
-        float: right; 
-        text-align: center; 
+        p{
+            margin: 0px;
+            padding: 0px; 
+        }
+/*--settings--*/
+
+        .settings{
+            float: right; 
+            background: none; 
+            border: none; 
+            width: 30%; 
+            
+    
+            .fa-cog{
+                color: $textColor; 
+                font-size: 2.2em;
+            }    
+        }
+
+
+/*--blogposts & comments--*/
+
+    .profileBox__content-commentsPosts{
+        display: inline-flex; 
+        font-size: 0.9em; 
+        width: 60%; 
+        float: left; 
     }
 
-        .create{
-            background-color: $buttonColor; 
-            border: none; 
-            color: $defaultColor; 
-        }
+    .totalPosts{
+        margin: 5px; 
+    }
 
-        .fa-cog{
-            color: $textColor; 
-            font-size: 2em;
+    .totalComments{
+        margin: 5px; 
+    }
+    
+
+    }
+
+/*--create new post--*/    
+
+        .createNewPost{
+            width: 40%; 
+            float: right; 
+
+            .create{
+                background-color: $buttonColor; 
+                border: none; 
+                color: $defaultColor; 
+                float: right; 
+            }
         }
-}
+    
 
 .clear{
     clear: both; 
