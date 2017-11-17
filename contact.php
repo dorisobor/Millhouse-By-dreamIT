@@ -1,57 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Contact</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Create new post</title>
+    <link href="https://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
 </head>
+
 <body>
+    <?php require 'navbar.php';  ?>
+    <main>
+        <div class="main">
+            <div class="form_wrapper">
+                <h1 class="headline">Contact</h1>
+                <p class="instruction">Contact us if you have any questions or issues with the blog!</p>
 
-<header>
-    <img src="" alt="Millhouse logo"/>
-</header>
+                <form class="form" action="confirmation.php" method="POST">
+                    <fieldset class="fieldset">
+                        <legend class="legend">Fill in your contactinformation and email us!</legend>
+                        <label class="label" for="name">Fill in your name</label><br>
+                        <input type="text" name="name" value="" placeholder="your name" required /><br>
 
-<nav>
+                        <label class="label" for="email">Fill in your email</label><br>
+                        <input type="text" name="email" value="" placeholder="email" required /><br>
 
-</nav>
+                        <label class="label" for="subject">Fill in the email subject</label><br>
+                        <input type="text" name="subject" value="" placeholder="Subject" required /><br>
 
-<main>
-	
-    <!-- form container -->
-    <div> 
+                        <!-- message -->
 
-        <h1>Contact</h1>
-        <p>Contact us if you have any questions or issues with the blog!</p>
+                        <label class="label" for="message"> Change post</label> <br />
+                        <textarea class="textarea" id="message" rows="6" cols="50" required></textarea><br>
 
-        <form action="" method="POST">
-            <fieldset>
-                <legend>Fill in your contactinformation and email us!</legend>
-                <label for="name">Fill in your name</label>
-                <input type="text" name="name" value="" placeholder="your name"/><br>
+                        <input type="submit" value="Send" />
+                    </fieldset>
+                </form>
 
-                <label for="email">Fill in your email</label>
-                <input type="text" name="email" value="" placeholder="email"/><br>
+            </div>
+        </div>
+    </main>
 
-                <label for="subject">Fill in the email subject</label>
-                <input type="text" name="subject" value="" placeholder="Subject"/><br>
-
-                <!-- rows = längd, cols = bredd -->
-                <textarea rows="4" cols="30"></textarea><br>
-
-                <input type="submit" value="Send"/>
-            <fiedlset>
-        </form>
-
-    </div>
-
-</main>
-
-<footer>
-	<button>facebook</button>
-	<button>instagram</button>
-	<button>contact</button>
-	<span>credit</span>
-</footer>
-    
+    <?php require 'footer.php';  ?>
 </body>
+
 </html>

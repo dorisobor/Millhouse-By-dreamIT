@@ -12,9 +12,9 @@
     <?php require 'navbar.php';  ?>
     <main>
         <div class="main">
-            <h1>Confirmation</h1>
-            <h2>Success!</h2>
-            
+            <h1 class="headline">Confirmation</h1>
+            <p class="instructions">Success!</p>
+             
             
         </div>
     </main>
