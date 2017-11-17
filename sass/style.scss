@@ -34,6 +34,11 @@ h1 {
     color: $headLineColor;
 }
 
+h1 {
+
+    color:$textColor;
+}
+
 //the blogpost
 
 .blogpost {
@@ -62,6 +67,7 @@ h1 {
     }
    }
 
+   // user's blogpost headline
    h2 {
        color: $textColor;
        margin: 10px;
