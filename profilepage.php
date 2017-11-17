@@ -28,8 +28,9 @@
 	<main>
 		
 		<div class="profileBox"> 
+
 		<!--USER IMAGE-->
-			<div class="profileBox__content-image">
+			<div class="profileBox__content-1">
 				<img src="" alt="">
 				<div class="userImage">
 					<i class="fa fa-user-circle" aria-hidden="true"></i>
@@ -41,21 +42,26 @@
 					<p class="username">Username</p>
 					<p class="aboutMe">Something About Me</p>
 				</div>
-
-			</div>
-
-			<div class="profileBox__content-icons">
+	
 				<div class="settingsIcon">
 					<button class="settings">
-						<a href="createPost.php"><i class="fa fa-cog" aria-hidden="true"></i></a>
+						<a href="settings.php"><i class="fa fa-cog" aria-hidden="true"></i></a>
 					</button>
 				</div>
+			</div>
 
 				<div class="clear"></div>
-
+			
+			<div class="profileBox__content-2">
 				<div class="profileBox__content-commentsPosts">
-					<div class="totalPosts"><p>50 Blogposts</p></div>
-					<div class="totalComments"><p>125 Comments</p></div>
+
+					<div class="totalPosts">
+						<a href="#">50 blogposts</a>
+					</div>
+
+					<div class="totalComments">
+						<a href="#">125 comments</a>
+					</div>
 				</div>
 
 				<div class="createNewPost">

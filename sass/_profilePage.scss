@@ -22,14 +22,26 @@ main{
     border-right: 1px solid $sectionBackground;
 }
 
+a{
+    color: $textColor; 
+}
+
 /*--PROFILE INFO--*/
 
 .profileBox{
-    background: blue; 
+    background:$defaultColor; 
     max-width: 600px; 
-    height: 200px; 
     margin: 0px auto; 
     padding: 20px; 
+    border-top: 1px solid $sectionBackground; 
+
+    .profileBox__content-1{
+        height: 100px; 
+    }
+
+    .profileBox__content-2{
+        height: 30px; 
+    }
 
 
 /*--username & picture--*/
@@ -98,6 +110,11 @@ main{
                 color: $defaultColor; 
                 float: right; 
             }
+
+            a{
+                color: $defaultColor; 
+                font-size: 0.9em; 
+            }
         }
     
 
@@ -110,6 +127,13 @@ main{
     font-size: 0.8em;
     max-width: 600px; 
     margin: 0px auto; 
+    border-top: 1px solid $sectionBackground; 
+    border-bottom: 1px solid $sectionBackground; 
+
+    .nav-link.active,.show > .nav-link{ /*--active navlink--*/
+        background: $interactiveHover; 
+        border-radius: 0px; 
+    }
 }
 
 /*--BLOGPOST--*/
@@ -119,24 +143,26 @@ h2{
     color: $interactiveHover; 
 }
 
-p{
-    margin-top: 0px;
-}
-
 .profilePosts{
     padding: 20px; 
-}
 
-.categoryPosts{
-    background-color: $sectionBackground; 
-    margin: 0px auto; 
-    padding: 10px; 
-    max-width: 600px; 
-}
-
-.postButtons{
-
-    .delete{
-        background: $dangerColor; 
+    button{
+        font-size: 0.9em; 
+        width: 60px; 
     }
+
+    a{
+        color: $defaultColor; 
+        width: 80px; 
+    }
+
+    .postButtons{
+        
+        .delete{
+            background: $dangerColor; 
+        }
 }
+
+}
+
+
