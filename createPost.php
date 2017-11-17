@@ -2,10 +2,8 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/style.css">
+    <?php require 'head.html'; ?>
     <title>Create new post</title>
-    <link href="https://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
 </head>
 
 <body>
@@ -61,7 +59,8 @@
         </div>
     </main>
 
-    <?php require 'footer.php';  ?>
+<?php require 'footer.php'; ?>
+<?php require 'bootstrapScripts.html'; ?>
+    
 </body>
-
 </html>
