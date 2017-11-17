@@ -43,6 +43,11 @@ body {
     color: $textColor;
 }
 
+
+main {
+    margin:auto;
+    max-width: 600px;
+
 /*---CATEGORY PAGES---*/
 
 h1{
@@ -61,10 +66,7 @@ p{
     max-width: 600px;    
 }
 
-.main {
-    text-align: center;
-    margin: 0px auto;
-}
+
 
 .headline {
     font-size: 4em;
@@ -87,6 +89,75 @@ article button{
 .categoryPosts{
     background-color: $sectionBackground; 
 }
+
+
+h1 {
+
+    color: $headLineColor;
+}
+
+
+//the blogpost
+
+.blogpost {
+ background-color: $sectionBackground;
+ margin: auto;
+ margin: auto;
+
+ //category button
+
+ .blogpost__category-button{
+    background-color: $buttonColor;
+    color: $defaultColor;
+    margin: 10px;
+    }
+
+ //user's info
+
+.blogpost__user-info {
+    margin: 10px;
+    p {
+    margin-left:50px;
+    color: $textColor;
+    }
+    .fa-user-circle-o {
+    font-size: 3em;
+    }
+   }
+
+   // user's blogpost headline
+   h2 {
+       color: $textColor;
+       margin: 10px;
+
+   }
+ //blogpost image
+
+ img {
+ max-width: 100%;
+    }
+.blogpost__blog-description{
+    color: $textColor;
+    margin: 10px;
+    }
+//read more link
+
+.blogpost__read-more {
+text-align: right;
+padding: 10px;
+
+    }
+    //share icon link
+   
+    .blogpost__share-button{
+     text-align: right;
+     padding: 10px;
+     
+     .fa-share-alt{
+      font-size: 2em;
+     }
+
+    }
 
 .coverPhoto{
     padding: 0px; 
@@ -353,5 +424,6 @@ input {
         color: $buttonColor;
         margin: 1em;
     }
+
 
 }
