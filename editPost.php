@@ -9,16 +9,17 @@
 </head>
 
 <body>
+    <?php require 'navbar.php';  ?>
     <main>
         <div class="main">
             <div class="form_wrapper">
                 <div class="help">
-                    <p> 
-                     <span class="fa-stack fa-2x">
+                    <p>
+                        <span class="fa-stack fa-2x">
                           <i class="fa fa-circle fa-stack-2x"></i>
                           <a class="btn btn-default btn-sm" href="help.php"><i class="fa fa fa-question fa-stack-1x fa-inverse"></i></a>
-                    </span> 
-                   </p>
+                    </span>
+                    </p>
                 </div>
                 <form class="form" action="confirmation.php" method="post" enctype="multipart/form-data">
                     <fieldset class="fieldset">
@@ -36,7 +37,7 @@
                         <input type="file" name="image" id="image" />
                         <br />
                         <label class="label" for="blog_post"> Change post</label> <br />
-                        <textarea class="textarea" id="blog_post" name="blog_post" rows="4" cols="50" placeholder="Your text" required></textarea>
+                        <textarea class="textarea" id="blog_post" name="blog_post" rows="6" cols="50" placeholder="Your text" required></textarea>
                         <br />
 
                         <!--Checkboxes-->
@@ -59,6 +60,8 @@
             </div>
         </div>
     </main>
+
+    <?php require 'footer.php';  ?>
 </body>
 
 </html>

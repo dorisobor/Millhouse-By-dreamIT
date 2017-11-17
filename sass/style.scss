@@ -34,10 +34,11 @@ body {
 }
 
 .main {
+    text-align: center;
     margin: 0px auto;
 }
 
-.headline{
+.headline {
     font-size: 4em;
     color: $interactiveHover;
 }
@@ -100,10 +101,10 @@ input {
 
     &[type="submit"] {
         margin: 5% 0;
-        width: 60%;
-        height: 3em;
+        width: 50%;
+        height: 2em;
         padding: 0.3em 0;
-        font-size: 1.3em;
+        font-size: 1.1em;
         color: $sectionBackground;
         background-color: $buttonColor;
         border: none;
@@ -191,16 +192,16 @@ input {
 }
 
 .legend {
-    font-size: 2em;
-    font-weight: 600;
+    font-size: 1.2em;
+    font-weight: 400;
     color: $interactiveHover;
-    margin: 1em;
+    margin: 0.5em;
 }
 
 
 .label {
-    font-size: 2em;
-    font-weight: 600;
+    font-size: 0.8em;
+    font-weight: 400;
     color: $buttonColor;
     margin: 1em;
 }
@@ -218,10 +219,24 @@ input {
     text-align: center;
 }
 
-.instruction{
+.instruction {
     font-size: 1.4em;
 }
 
+.button{
+   width: 20%;
+    height: 2.5em;
+    font-size: 2em;
+    font-weight: 400;
+    cursor: pointer;
+}
+.button--delete{
+    color: $dangerColor;
+}
+
+.message--attention{
+    color: $dangerColor;
+}
 
 @media screen and (min-width: 992px) {
     .jumbotron {
@@ -243,6 +258,20 @@ input {
 
     .form_wrapper {
         margin: 10%;
+    }
+
+    .legend {
+        font-size: 2em;
+        font-weight: 600;
+        color: $interactiveHover;
+        margin: 1em;
+    }
+
+    .label {
+        font-size: 2em;
+        font-weight: 600;
+        color: $buttonColor;
+        margin: 1em;
     }
 
 }

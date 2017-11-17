@@ -1,58 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>User setttings</title>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+    <?php require 'navbar.php';  ?>
+    <main>
+        <div class="main">
+            <div class="form_wrapper">
+                <h1 class="headline">Settings</h1>
+                <p class="instruction">New to Millhouse? Create your account here.</p>
 
-<header>
-    <img src="" alt="Millhouse logo"/>
-</header>
+                <form class="form" action="" method="POST">
+                    <fieldset class="fieldset">
+                        <legend class="legend">Edit your user settings</legend>
+                        <label class="label" for="username">Fill in your username</label>
+                        <input type="text" id="username"  name="username" value="" placeholder="username" /><br>
 
-<nav>
+                        <label class="label" for="email">Fill in your email</label>
+                        <input type="text" id="email" name="email" value="" placeholder="Email" /><br>
 
-</nav>
+                        <label class="label" for="password">Fill in your password</label>
+                        <input type="text" id="password" name="password" value="" placeholder="password" /><br>
 
-<main>
+                        <label class="label" for="passwordConfirm">Fill out password again to confirm</label>
+                        <input type="text" id="passwordConfirm" name="passwordConfirm" value="" placeholder="password" /><br>
 
-<!-- form container -->
-<div>
+                        <label for="profile_description" class="label">Change your profile description</label><br>
+                          <p>(Maximum 20 characters)</p>
 
-    <h1>User settings<h1>
-    <!-- Nuvarande uppgifter bör skrivas ut i value? -->
-    <form action="" method="POST">
-    <fieldset>
-            <legend>Edit your user settings</legend>
-            <label for="username">Fill in your new username</label>
-            <input type="text" name="username" placeholder="" value=""/><br>
+                        <textarea class="textarea" rows="6" cols="50" name="profile_description" id="profile_description" placeholder="Change your profile description"></textarea><br>
+                      
+                        <input type="submit" value="Sign up" />
 
-            <label for="email">Fill in your new email</label>
-            <input type="text" name="email" placeholder="" value=""/><br>
 
-            <label for="password">Fill in new password</label>
-            <input type="text" name="password" placeholder="" value=""/><br>
 
-            <label for="confirmPassword">Fill in new password again to confirm</label>
-            <input type="text" name="confirmPassword" placeholder="" value=""/><br>
+                    </fieldset>
 
-            <label for="bio">Change your profile bio</label>
-            <textarea rows="5" cols="30" name="bio" placeholder="Change your profile bio"></textarea><br>
-            <span>Maximum 20 characters</span>
-        </fieldset>
-    </form>
+                </form>
+            </div>
+        </div>
 
-</div>
+    </main>
 
-</main>
-
-<footer>
-    <button>facebook</button>
-    <button>instagram</button>
-    <button>contact</button>
-    <span>credit</span>
-</footer>
-
+    <?php require 'footer.php';  ?>
 </body>
+
 </html>
