@@ -18,18 +18,19 @@
                     <fieldset class="fieldset">
                         <legend class="legend">User information</legend>
                         <label class="label" for="username">Fill in your username</label>
-                        <input type="text" id="username" name="username" value="" placeholder="username" /><br>
+                        <input type="text" id="username" name="username" value="" placeholder="username" required /><br>
 
                         <label class="label" for="email">Fill in your email</label>
-                        <input type="text" id="email" name="email" value="" placeholder="Email" /><br>
+                        <input type="text" id="email" name="email" value="" placeholder="Email" required /><br>
 
                         <label class="label" for="password">Fill in your password</label>
-                        <input type="text" id="password" name="password" value="" placeholder="password" /><br>
+                        <input type="text" id="password" name="password" value="" placeholder="password" required/><br>
 
                         <label class="label" for="passwordConfirm">Fill out password again to confirm</label>
-                        <input type="text" id="passwordConfirm" name="passwordConfirm" value="" placeholder="password" /><br>
+                        <input type="text" id="passwordConfirm" name="passwordConfirm" value="" placeholder="password" required/><br>
 
-                        <input type="checkbox" name="agree" id="agree" value="yes">  <label class="label" for="agree">
+                        <input type="checkbox" name="agree" id="agree" value="yes" required>  
+                        <label class="label" for="agree">
                         I agree to TERMS and PRIVACY POLICY</label> <br><br>
 
                         <input type="submit" value="Sign up" />
