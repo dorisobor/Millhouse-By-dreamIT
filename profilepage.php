@@ -6,25 +6,15 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 	<link href="https://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
-	
-
 	<title>Profile Page</title>
 </head>
 <body>
-	<header>
-   </header>
-	<nav>
-	<a href="url">logut</a>
-	<!--User icon as a dropdown menue-->
-		<div class="dropdown">
-  <img src="" alt="">
-  <div class="dropdown-content">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
-  </div>
-</div>
-	</nav>
+
+<header>
+</header>
+
+<?php require 'navbar.php' ?>
+
 	<main>
 		
 		<div class="profileBox"> 

@@ -1,3 +1,4 @@
+
 $sectionBackground:#f2f2f2;
 $defaultColor:#fff;
 $textColor:#262626;
@@ -7,40 +8,29 @@ $interactiveHover:#2E52A1;
 $tabs:#6d6d6d;
 $dangerColor:#cc4750;
 
+<<<<<<< HEAD
 @import 'profilePage.scss'; 
+=======
+
+@import 'latestComments.scss';
+>>>>>>> master
 
 .navbar {
     border-top: 1px solid $sectionBackground;
 }
 
-.bg-light {
-    background-color: $defaultColor !important;
-}
+@import 'nav.scss';
+@import 'help-page.scss';
+
+
 
 body {
     padding: 0px;
     margin: 0px;
     background: $defaultColor;
+    font-size: 16px;
     color: $textColor;
     font-family: Arial, Helvetica, sans-serif; 
-}
-
-.navbar-light .navbar-nav .nav-link {
-    color: $textColor;
-    font-weight: bold;
-
-        &:hover {
-            color: $interactiveHover;
-            text-decoration: underline;
-        }
-}
-
-.dropdown {
-    margin: 0px;
-}
-
-.logo {
-    width: 100px;
 }
 
 /*---CATEGORY PAGES---*/
@@ -119,60 +109,18 @@ footer{
     }   
 }
 
-.sign-up-btn {
-    margin-left: 100px;
-    background-color: $buttonColor;
-    color: $defaultColor;
-    border: none;
-}
-
-.sign-up-btn__link {
-    color: $defaultColor;
-    
-        &:hover {
-            text-decoration: none;
-            color: $defaultColor;
-        }
-}
-
 @media screen and (min-width: 992px){
     
    .jumbotron {
+<<<<<<< HEAD
         background-image: url("mh_header.jpg");
+=======
+        background-image: url("../images/mh_header.jpg");
+>>>>>>> master
         background-color: #cccccc;
         background-size: cover;
         width: 100%;
         height: 550px;
     }
   
-    .dropdown {
-        margin-left: 600px;
-    }
-    
-    .logo {
-        display: none;
-    }
-
-    .user-actions__sign-up-btn {
-        background-color: $buttonColor;
-        color: $defaultColor;
-        border: none;
-    }
-
-    .user-actions__link {
-        color: $defaultColor;
-            &:hover {
-                text-decoration: none;
-                color: $defaultColor;
-            }
-    }
-
-    .user-actions__link--black {
-        color: $textColor;
-        &:hover {
-            text-decoration: none;
-            color: $interactiveHover;
-        }
-    }
-
  }    
