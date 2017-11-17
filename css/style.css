@@ -1,5 +1,518 @@
+@font-face {
+  font-family: 'helveticaneueregular';
+  src: url("helveticaneue-webfont.woff2") format("woff2"), url("helveticaneue-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 
-body{padding:0px;margin:0px;background:#fff;color:#262626}main{margin:auto;max-width:600px}.dropdown{margin-left:600px}.logo{width:100px}h1{color:#1c3045}h1{color:#262626}.blogpost{background-color:#f2f2f2;margin:auto;margin:auto}.blogpost .blogpost__category-button{background-color:#1C4D45;color:#fff;margin:10px}.blogpost .blogpost__user-info{margin:10px}.blogpost .blogpost__user-info p{margin-left:50px;color:#262626}.blogpost .blogpost__user-info .fa-user-circle-o{font-size:3em}.blogpost h2{color:#262626;margin:10px}.blogpost img{max-width:100%}.blogpost .blogpost__blog-description{color:#262626;margin:10px}.blogpost .blogpost__read-more{text-align:right;padding:10px}.blogpost .blogpost__share-button{text-align:right;padding:10px}.blogpost .blogpost__share-button .fa-share-alt{font-size:2em}
+/* line 26, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+.navbar {
+  border-top: 1px solid #f2f2f2;
+}
 
-@font-face{font-family:'helveticaneueregular';src:url("helveticaneue-webfont.woff2") format("woff2"),url("helveticaneue-webfont.woff") format("woff");font-weight:normal;font-style:normal}body{font-family:'helveticaneueregular', Arial, sans-serif;font-weight:normal;font-style:normal;padding:0px;margin:0px;background:#fff;color:#262626}.main{text-align:center;margin:0px auto}.headline{font-size:4em;color:#2E52A1}.dropdown{margin-left:600px}.logo{width:100px}.help{width:95%;text-align:right;font-size:1.2em;color:#2E52A1}.checkboxes_wrapper{text-align:left;margin:2% 5%}.form{font-size:1.5em;color:#262626}.form--theme{font-size:0.7em}input{margin:1em 0;width:90%}input[type="text"]{background-color:#f2f2f2;height:1.5em;font-size:1.2em;appearance:none;border-radius:none;padding:0.3em;border:solid 1px #1C4D45;box-shadow:inset 2px 2px 3px 0 slategray;transition:box-shadow 0.3s;color:#1C4D45}input[type="text"]:focus{outline:none;box-shadow:inset 1px 1px 2px 0 #ccc;border:solid 1px #1C4D45}input[type="submit"]{margin:5% 0;width:50%;height:2em;padding:0.3em 0;font-size:1.1em;color:#f2f2f2;background-color:#1C4D45;border:none;-webkit-border-radius:50px;-moz-border-radius:50px;border-radius:50px;font-size:1.2em}input[type="submit"]:focus{outline:none}input[type="submit"]:hover{background-color:#2E52A1;color:#fff;border:none;cursor:pointer}input[type="file"]{height:1.4em;padding:0.3em;background-color:#f2f2f2;color:#1C4D45;border:solid 1px #1C4D45;box-shadow:inset 2px 2px 3px 0 slategray;cursor:pointer;font-size:1.2em}input[type="file"]:focus{outline:none;box-shadow:inset 1px 1px 2px 0 #f2f2f2;border:solid 1px #1C4D45}input[type="checkbox"]{height:2.4em;width:2.4em;padding:0.3em;margin:0.3em;cursor:pointer}input[type="checkbox"]:checked+label{color:#30854e}.textarea{width:90%;height:150px;padding:0.3em 0;margin:1em 0;border:solid 1px #1C4D45;box-shadow:inset 2px 2px 3px 0 #6d6d6d;transition:box-shadow 0.3s;background-color:#f2f2f2;color:#1C4D45;font-size:1.4em}.textarea:focus{outline:none;box-shadow:inset 1px 1px 2px 0 #f2f2f2;border:solid 1px #1C4D45}.fieldset{border:0}.legend{font-size:1.2em;font-weight:400;color:#2E52A1;margin:0.5em}.label{font-size:0.8em;font-weight:400;color:#1C4D45;margin:1em}.label--checkboxes{font-size:0.9em}.form_wrapper{margin:5%;padding:5%;background-color:rgba(109,109,109,0.44);text-align:center}.instruction{font-size:1.4em}.button{width:20%;height:2.5em;font-size:2em;font-weight:400;cursor:pointer}.button--delete{color:#cc4750}.message--attention{color:#cc4750}@media screen and (min-width: 992px){.jumbotron{background-image:url("images/mh_header.jpg");background-color:#cccccc;background-size:cover;width:100%;height:550px}.form--theme{font-size:1.2em}.label--checkboxes{font-size:1.4em}.form_wrapper{margin:10%}.legend{font-size:2em;font-weight:600;color:#2E52A1;margin:1em}.label{font-size:2em;font-weight:600;color:#1C4D45;margin:1em}}
+/* line 2, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/_nav.scss */
+.navbar {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+/* line 6, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/_nav.scss */
+.navbar-brand {
+  margin-right: 0px;
+}
+
+/* line 10, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/_nav.scss */
+.bg-light {
+  background-color: #fff !important;
+}
+
+/* line 14, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/_nav.scss */
+.navbar-light .navbar-nav .nav-link {
+  color: #262626;
+  font-weight: bold;
+}
+
+/* line 18, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/_nav.scss */
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #2E52A1;
+  text-decoration: underline;
+}
+
+/* line 24, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/_nav.scss */
+.logo {
+  width: 100px;
+}
+
+/* line 28, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/_nav.scss */
+.dropdown {
+  margin: 0px;
+}
+
+/* line 32, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/_nav.scss */
+.sign-up-btn {
+  margin-left: auto;
+  margin-right: 1rem;
+  padding: 8px 10px;
+  border-radius: .25rem;
+  background-color: #1C4D45;
+  color: #fff;
+  border: none;
+}
+
+/* line 42, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/_nav.scss */
+.sign-up-btn__link {
+  color: #fff;
+}
+
+/* line 45, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/_nav.scss */
+.sign-up-btn__link:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+@media screen and (min-width: 992px) {
+  /* line 53, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/_nav.scss */
+  .dropdown-menu-right {
+    right: 0;
+    left: auto;
+  }
+  /* line 58, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/_nav.scss */
+  .dropdown-item {
+    color: #262626;
+  }
+  /* line 61, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/_nav.scss */
+  .dropdown-item:hover {
+    background-color: #2E52A1;
+    color: #fff;
+  }
+  /* line 67, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/_nav.scss */
+  .logo {
+    display: none;
+  }
+  /* line 71, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/_nav.scss */
+  .user-actions {
+    margin-right: 20px;
+  }
+  /* line 75, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/_nav.scss */
+  .user-actions__sign-up-btn {
+    padding: 8px 10px;
+    background-color: #1C4D45;
+    border-radius: .25rem;
+    color: #fff;
+    border: none;
+  }
+  /* line 83, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/_nav.scss */
+  .user-actions__link {
+    color: #fff;
+  }
+  /* line 85, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/_nav.scss */
+  .user-actions__link:hover {
+    text-decoration: none;
+    color: #fff;
+  }
+  /* line 91, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/_nav.scss */
+  .user-actions__link--black {
+    margin-right: 10px;
+    font-weight: bold;
+    color: #262626;
+  }
+  /* line 95, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/_nav.scss */
+  .user-actions__link--black:hover {
+    text-decoration: none;
+    color: #2E52A1;
+  }
+}
+
+/* line 2, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/_help-page.scss */
+.help-article-container {
+  padding: 0px;
+}
+
+/* line 6, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/_help-page.scss */
+.article__wrapper {
+  margin: 0px auto;
+  max-width: 650px;
+  border-right: 1px solid #f2f2f2;
+  border-left: 1px solid #f2f2f2;
+}
+
+/* line 13, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/_help-page.scss */
+.contact {
+  margin: 30px 20px;
+  text-align: center;
+}
+
+/* line 18, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/_help-page.scss */
+.contact__text {
+  display: block;
+}
+
+/* line 22, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/_help-page.scss */
+.contact__btn {
+  margin: 5px;
+  width: 130px;
+  border-radius: .25rem;
+}
+
+/* line 28, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/_help-page.scss */
+.article__content {
+  margin: 10px auto;
+  padding: 20px;
+  background-color: #f2f2f2;
+}
+
+/* line 34, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/_help-page.scss */
+.article__top-header {
+  margin: 20px 0px 0px 10px;
+  color: #1c3045;
+}
+
+/* line 39, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/_help-page.scss */
+.article__question {
+  color: #1c3045;
+}
+
+/* line 43, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/_help-page.scss */
+.article__text {
+  line-height: 1.9;
+}
+
+/* line 35, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+body {
+  font-family: 'helveticaneueregular', Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  padding: 0px;
+  margin: 0px;
+  background: #fff;
+  font-size: 16px;
+  color: #262626;
+}
+
+/*---CATEGORY PAGES---*/
+/* line 48, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+h1 {
+  padding: 0px;
+  margin: 0px;
+  color: #2E52A1;
+}
+
+/* line 54, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+p {
+  margin-top: 0px;
+}
+
+/* line 58, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+.mainBody {
+  margin: 0px auto;
+  padding: 20px;
+  max-width: 600px;
+}
+
+/* line 64, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+.main {
+  text-align: center;
+  margin: 0px auto;
+}
+
+/* line 69, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+.headline {
+  font-size: 4em;
+  color: #2E52A1;
+}
+
+/* line 74, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+article {
+  padding: 15px;
+}
+
+/* line 78, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+article button {
+  background: #1C4D45;
+  color: #fff;
+  border: none;
+  width: 70px;
+  padding: 5px;
+}
+
+/* line 87, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+.categoryPosts {
+  background-color: #f2f2f2;
+}
+
+/* line 91, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+.coverPhoto {
+  padding: 0px;
+  margin: 0px;
+}
+
+/* line 96, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+.coverPhoto img {
+  display: block;
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+}
+
+/* line 106, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+footer .footer__container {
+  text-align: center;
+  max-width: 100%;
+}
+
+/* line 110, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+footer .footer__container button {
+  width: 100px;
+  display: inline-block;
+}
+
+/* line 115, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+footer .footer__container button:nth-child(1) {
+  background-color: #395a93;
+}
+
+/* line 119, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+footer .footer__container button:nth-child(2) {
+  background-color: #8a3ab9;
+  margin: 0 2em;
+}
+
+/* line 124, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+footer .footer__container button:nth-child(3) {
+  background-color: #1C4D45;
+}
+
+/* line 127, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+footer .footer__container .footer__credit {
+  padding-top: 0.3em;
+}
+
+/* line 134, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+.help {
+  width: 95%;
+  text-align: right;
+  font-size: 1.2em;
+  color: #2E52A1;
+}
+
+/* line 141, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+.checkboxes_wrapper {
+  text-align: left;
+  margin: 2% 5%;
+}
+
+/* line 146, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+.form {
+  font-size: 1.5em;
+  color: #262626;
+}
+
+/* line 151, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+.form--theme {
+  font-size: 0.7em;
+}
+
+/* line 156, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+input {
+  margin: 1em 0;
+  width: 90%;
+}
+
+/* line 160, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+input[type="text"] {
+  background-color: #f2f2f2;
+  height: 1.5em;
+  font-size: 1.2em;
+  appearance: none;
+  border-radius: none;
+  padding: 0.3em;
+  border: solid 1px #1C4D45;
+  box-shadow: inset 2px 2px 3px 0 slategray;
+  transition: box-shadow 0.3s;
+  color: #1C4D45;
+}
+
+/* line 173, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+input[type="text"]:focus {
+  outline: none;
+  box-shadow: inset 1px 1px 2px 0 #ccc;
+  border: solid 1px #1C4D45;
+}
+
+/* line 182, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+input[type="submit"] {
+  margin: 5% 0;
+  width: 50%;
+  height: 2em;
+  padding: 0.3em 0;
+  font-size: 1.1em;
+  color: #f2f2f2;
+  background-color: #1C4D45;
+  border: none;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  font-size: 1.2em;
+}
+
+/* line 196, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+input[type="submit"]:focus {
+  outline: none;
+}
+
+/* line 200, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+input[type="submit"]:hover {
+  background-color: #2E52A1;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* line 208, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+input[type="file"] {
+  height: 1.4em;
+  padding: 0.3em;
+  background-color: #f2f2f2;
+  color: #1C4D45;
+  border: solid 1px #1C4D45;
+  box-shadow: inset 2px 2px 3px 0 slategray;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+/* line 219, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+input[type="file"]:focus {
+  outline: none;
+  box-shadow: inset 1px 1px 2px 0 #f2f2f2;
+  border: solid 1px #1C4D45;
+}
+
+/* line 230, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+input[type="checkbox"] {
+  height: 2.4em;
+  width: 2.4em;
+  padding: 0.3em;
+  margin: 0.3em;
+  cursor: pointer;
+}
+
+/* line 238, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+input[type="checkbox"]:checked + label {
+  color: #30854e;
+}
+
+/* line 250, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+.textarea {
+  width: 90%;
+  height: 150px;
+  padding: 0.3em 0;
+  margin: 1em 0;
+  border: solid 1px #1C4D45;
+  box-shadow: inset 2px 2px 3px 0 #6d6d6d;
+  transition: box-shadow 0.3s;
+  background-color: #f2f2f2;
+  color: #1C4D45;
+  font-size: 1.4em;
+}
+
+/* line 263, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+.textarea:focus {
+  outline: none;
+  box-shadow: inset 1px 1px 2px 0 #f2f2f2;
+  border: solid 1px #1C4D45;
+}
+
+/* line 270, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+.fieldset {
+  border: 0;
+}
+
+/* line 274, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+.legend {
+  font-size: 1.2em;
+  font-weight: 400;
+  color: #2E52A1;
+  margin: 0.5em;
+}
+
+/* line 282, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+.label {
+  font-size: 0.8em;
+  font-weight: 400;
+  color: #1C4D45;
+  margin: 1em;
+}
+
+/* line 289, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+.label--checkboxes {
+  font-size: 0.9em;
+}
+
+/* line 295, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+.form_wrapper {
+  margin: 5%;
+  padding: 5%;
+  background-color: rgba(109, 109, 109, 0.44);
+  text-align: center;
+}
+
+/* line 302, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+.instruction {
+  font-size: 1.4em;
+}
+
+/* line 306, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+.button {
+  width: 20%;
+  height: 2.5em;
+  font-size: 2em;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+/* line 313, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+.button--delete {
+  color: #cc4750;
+}
+
+/* line 317, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+.message--attention {
+  color: #cc4750;
+}
+
+@media screen and (min-width: 992px) {
+  /* line 322, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+  .jumbotron {
+    background-image: url("images/mh_header.jpg"), url("../images/mh_header.jpg");
+    background-color: #cccccc;
+    background-size: cover;
+    width: 100%;
+    height: 550px;
+  }
+  /* line 330, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+  .form--theme {
+    font-size: 1.2em;
+  }
+  /* line 335, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+  .label--checkboxes {
+    font-size: 1.4em;
+  }
+  /* line 339, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+  .form_wrapper {
+    margin: 10%;
+  }
+  /* line 343, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+  .legend {
+    font-size: 2em;
+    font-weight: 600;
+    color: #2E52A1;
+    margin: 1em;
+  }
+  /* line 350, /Users/jessicagustavsson/Dropbox/Medieinstitutet/WEB DYN/PHP/Millhouse-By-dreamIT/sass/style.scss */
+  .label {
+    font-size: 2em;
+    font-weight: 600;
+    color: #1C4D45;
+    margin: 1em;
+  }
+}
 
