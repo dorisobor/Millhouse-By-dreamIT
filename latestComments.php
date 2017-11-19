@@ -53,25 +53,19 @@
 
 		
 		<!--latest comments-->
-		<div  class= "">
-         <article>
-           <!--CATEGORY TAG-->
-			<button <a href="#">NAMN PÅ KATEGORI</a>></button>
-			<h2>BLOG TITLE</h2>
-			<figure>
-			</figure>
-             <!--USER IMAGE-->
-			<p class=""></p>
-			<img src="" alt="">
-              <!--USER NAME-->
-			<span></span>
-			<time></time>
-			<p></p>
-		</article>
-		<button></button>
-		<button></button>
+		<div class="container-wrapper">
+			<div  class= "container-latestComments">
+				<article>
+				<!--CATEGORY TAG-->
+				<h2>BLOG POST TITLE</h2>
+				<h3>Commented for  <time><?php echo date("Y/m/d");?></time> days ago.</h3>
+				<p>Loosque tenetur excepturi sapiente cupiditate quae vero quibusdam? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, temporibus! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas quibusdam soluta quis exercitationem atque nisi laboriosam quaerat amet aliquam perferendis, culpa distinctio consequatur maxime hic ex ad repellendus eveniet beatae ipsa qui neque omnis eius, provident doloremque. Praesentium cumque ipsa nostrum fugiat tempora ducimus odit officia nisi soluta a. Deleniti.</p>
+				</article>
+				<button>Edit comment</button>
+				<button>Delete comment</button>
+			</div>
 		</div> 
-	    </div> 
+	    <!--/div--> 
 	</main>
 	<?php require 'footer.php' ?>
 	
