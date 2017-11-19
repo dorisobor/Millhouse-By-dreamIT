@@ -1,3 +1,27 @@
 .dropdown-content{
     text-align: center;
 }
+
+.container-wrapper{
+   margin: 0 1em;
+    .container-latestComments{
+        article{
+            text-align: center;
+            
+        }
+        margin: 1em auto;      
+        background-color: $sectionBackground;
+        border: 1px solid black;
+        max-width: 600px;
+        button{
+            background-color: $buttonColor;
+            width: 10em;
+            margin-bottom: 1em;
+            margin-left: 1em;
+        }
+        button:nth-of-type(2){
+            background-color: $dangerColor;
+        }
+    
+    }
+}
