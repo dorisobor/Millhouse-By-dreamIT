@@ -11,11 +11,9 @@
 <?php require 'logoheader.html'; ?>
 <?php require 'navbar.php'; ?>
 
-    <header>
-        <div class="jumbotron jumbotron-fluid">
-        </div>
-        
-    </header>
+<header>
+	<div class="jumbotron jumbotron-fluid logo-header d-none d-lg-block d-xl-block"></div>    
+</header>
 
 
 	<main>
