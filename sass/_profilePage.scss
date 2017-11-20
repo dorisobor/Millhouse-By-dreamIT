@@ -33,7 +33,6 @@ a{
     max-width: 600px; 
     margin: 0px auto; 
     padding: 20px; 
-    border-top: 1px solid $sectionBackground; 
 
     .profileBox__content-1{
         height: 100px; 
@@ -143,31 +142,30 @@ a{
 
         button{
             font-size: 0.9em; 
-            width: 60px; 
+            width: 5.5rem; 
         }
 
-        a{
-            color: $defaultColor; 
-            width: 80px; 
-        }
-
-        .editButtons{
+        .categoryButton{
             
+            a{
+                color: $defaultColor;
+            }
+        }
+        
+        .editButtons{   
+            
+            .fa-pencil{
+                font-size: 1.2rem; 
+            }
+        
             .delete{
                 background: $dangerColor; 
-        }
-        
-        .share{
-            color: $interactiveHover; 
-            float: right;
-            padding: 10px;
-            
-                .fa-share-alt{
-                    color: $interactiveHover; 
-                    font-size: 2em;
+
+                .fa-trash{
+                    font-size: 1.2rem; 
                 }
-        
         }
+         
 }
 
 }

@@ -72,7 +72,7 @@
 			<div class="profilePosts">
 				<article class="blogpost">
 				<!--CATEGORIE TAG-->
-					<button class = "blogpost__category-button">
+					<button class="categoryButton">
 						<a href="categoryInterior.php">Interior</a>
 					</button>
 			<!--USER INFO-->
@@ -92,16 +92,14 @@
 						sit amet suscipit diam congue et. 
 						Suspendisse tempor commodo lacinia...</p>
 			
-						<div class="share"> 
-							<a href="#">Share<i class="fa fa-share-alt" aria-hidden="true"></i></a>
+						<div class="blogpost__share-button"> 
+							<a href="#">Share <i class="fa fa-share-alt" aria-hidden="true"></i></a>
 						</div>
 					</div>
 
-					<div class="clear"></div>
-
 						<div class="editButtons">
-							<button>Edit</button>
-							<button class="delete">Delete</button>
+							<button><i class="fa fa-pencil" aria-hidden="true"></i> Edit</button>
+							<button class="delete"><i class="fa fa-trash" aria-hidden="true"></i> Delete</button>
 						</div> 
 				</article>
 
