@@ -5,6 +5,7 @@
 @import 'help-page.scss';
 @import 'logoheader.scss';
 @import 'jimmyFooter.scss';
+@import 'category.scss'; 
 
 
 @font-face {
@@ -50,13 +51,13 @@ main {
 
 }
 
-/*---CATEGORY PAGES---*/
-
 h1{
     padding: 0px; 
     margin: 0px; 
     color: $interactiveHover; 
 }
+
+/*---CATEGORY PAGES---*/
 
 p{
     margin-top: 0px;
@@ -89,12 +90,20 @@ article button{
     background-color: $sectionBackground; 
 }
 
-
-h1 {
-    color: $headLineColor;
+.coverPhoto{
+    padding: 0px; 
+    margin: 0px;
 }
 
-/* the blogpost */
+.coverPhoto img{
+    display: block; 
+    width: 100%; 
+    max-height: 500px; 
+    object-fit: cover; 
+}
+
+
+/*---BLOGPOST---*/
 
 .blogpost {
  background-color: $sectionBackground;
@@ -160,6 +169,7 @@ padding: 10px;
 
     }
 
+
 .coverPhoto{
     padding: 0px; 
     margin: 0px;
@@ -171,8 +181,6 @@ padding: 10px;
     max-height: 500px; 
     object-fit: cover; 
 }
-
-
 
 .help {
     width: 95%;
@@ -205,7 +213,7 @@ input {
 
         height: 1.5em;
         font-size: 1.2em;
-        appearance: none;
+        -webkit-appearance: none;
         border-radius: none;
         padding: 0.3em;
         border: solid 1px $buttonColor;
