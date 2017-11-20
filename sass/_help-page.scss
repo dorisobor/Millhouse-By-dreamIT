@@ -19,10 +19,21 @@
     display: block;
 }
 
-.contact__btn {
-    margin: 5px;
-    width: 130px;
+.contact__btn-container {
+    margin: 10px auto;
+    width: 120px;
+    padding: 10px;
+    background-color: $buttonColor;
     border-radius: .25rem;
+}
+
+.contact__btn {
+    color: $defaultColor;
+
+    &:hover {
+        color: $defaultColor;
+        text-decoration: none;
+    }
 }
 
 .article__content {
