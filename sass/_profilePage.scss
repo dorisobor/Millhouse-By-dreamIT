@@ -26,6 +26,10 @@ a{
     color: $textColor; 
 }
 
+button{
+    border-radius: 0.25em; 
+}
+
 /*--PROFILE INFO--*/
 
 .profileBox{
@@ -153,7 +157,10 @@ a{
         }
         
         .editButtons{   
-            
+
+            a{
+                color: $defaultColor; 
+            }
             .fa-pencil{
                 font-size: 1.2rem; 
             }
