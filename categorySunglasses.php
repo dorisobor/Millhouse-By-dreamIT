@@ -10,7 +10,9 @@
 
 
 <header>
-    <img src="" alt="Millhouse logo"/>
+	<figure class="coverPhoto">
+		<img src="images/mh_sunglasses_576.png" alt="interior header photo">
+	</figure>
 </header>
 
 
@@ -18,9 +20,6 @@
 <main>
 	
 	<!-- picture representing the category -->
-	<figure class="coverPhoto">
-		<img src="images/mh_sunglasses_576.png" alt="interior header photo">
-	</figure>
 
 	<div class="mainBody">
 		<h1>Sunglasses</h1>
