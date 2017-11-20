@@ -33,7 +33,6 @@ a{
     max-width: 600px; 
     margin: 0px auto; 
     padding: 20px; 
-    border-top: 1px solid $sectionBackground; 
 
     .profileBox__content-1{
         height: 100px; 
@@ -137,30 +136,36 @@ a{
 }
 
 /*--BLOGPOST--*/
-h2{
-    padding: 0px; 
-    margin: 0px; 
-    color: $interactiveHover; 
-}
 
 .profilePosts{
     padding: 20px; 
 
-    button{
-        font-size: 0.9em; 
-        width: 60px; 
-    }
-
-    a{
-        color: $defaultColor; 
-        width: 80px; 
-    }
-
-    .postButtons{
-        
-        .delete{
-            background: $dangerColor; 
+        button{
+            font-size: 0.9em; 
+            width: 5.5rem; 
         }
+
+        .categoryButton{
+            
+            a{
+                color: $defaultColor;
+            }
+        }
+        
+        .editButtons{   
+            
+            .fa-pencil{
+                font-size: 1.2rem; 
+            }
+        
+            .delete{
+                background: $dangerColor; 
+
+                .fa-trash{
+                    font-size: 1.2rem; 
+                }
+        }
+         
 }
 
 }

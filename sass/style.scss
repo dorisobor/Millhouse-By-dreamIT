@@ -4,6 +4,8 @@
 @import 'nav.scss';
 @import 'help-page.scss';
 @import 'logoheader.scss';
+@import 'jimmyFooter.scss';
+@import 'category.scss'; 
 
 
 @font-face {
@@ -50,14 +52,13 @@ main {
 
 }
 
-
-/*---CATEGORY PAGES---*/
-
 h1{
     padding: 0px; 
     margin: 0px; 
     color: $interactiveHover; 
 }
+
+/*---CATEGORY PAGES---*/
 
 p{
     margin-top: 0px;
@@ -90,12 +91,20 @@ article button{
     background-color: $sectionBackground; 
 }
 
-
-h1 {
-    color: $headLineColor;
+.coverPhoto{
+    padding: 0px; 
+    margin: 0px;
 }
 
-/* the blogpost */
+.coverPhoto img{
+    display: block; 
+    width: 100%; 
+    max-height: 500px; 
+    object-fit: cover; 
+}
+
+
+/*---BLOGPOST---*/
 
 .blogpost {
  background-color: $sectionBackground;
@@ -161,6 +170,7 @@ padding: 10px;
 
     }
 
+
 .coverPhoto{
     padding: 0px; 
     margin: 0px;
@@ -171,35 +181,6 @@ padding: 10px;
     width: 100%; 
     max-height: 500px; 
     object-fit: cover; 
-}
-
-footer{
-
-    .footer__container{
-        text-align: center;
-        max-width: 100%;
-
-        button{
-            width: 100px;
-            display: inline-block;
-        }
-
-        button:nth-child(1){
-            background-color:#395a93;  
-        }
-
-        button:nth-child(2){
-            background-color:#8a3ab9;
-            margin: 0 2em;
-        }
-
-        button:nth-child(3){
-            background-color: $buttonColor;  
-        }
-        .footer__credit{
-           padding-top: 0.3em;
-        }
-    }   
 }
 
 .help {
@@ -233,7 +214,7 @@ input {
 
         height: 1.5em;
         font-size: 1.2em;
-        appearance: none;
+        -webkit-appearance: none;
         border-radius: none;
         padding: 0.3em;
         border: solid 1px $buttonColor;
@@ -442,11 +423,10 @@ input {
 
 }
 
-@media screen and (max-width: 992px) {
  .figures {
     display: none;
  }
  hr {
     display:none;
  }
-}    
+   
