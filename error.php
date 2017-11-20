@@ -6,6 +6,7 @@
 </head>
 
 <body>
+<?php require 'logoheader.html'; ?>
     <?php require 'navbar.php';  ?>
     <main>
         <div class="main">

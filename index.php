@@ -6,10 +6,10 @@
     <title>Millhouse blog</title>
 </head>
 
-
 <body>
 
-<?php require 'navbar.php' ?>
+<?php require 'logoheader.html'; ?>
+<?php require 'navbar.php'; ?>
 
     <header>
         <div class="jumbotron jumbotron-fluid">

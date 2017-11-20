@@ -6,13 +6,9 @@
 </head>
 <body>
 
-<?php require 'navbar.php' ?>
+<?php require 'logoheader.html'; ?>
+<?php require 'navbar.php'; ?>
 
-	<header>
-   </header>
-
-
-	
 	<div class ="" > 
 	<!--USER IMAGE-->
        <p class=""></p>

@@ -5,7 +5,8 @@
 	<title>Latest comments</title>
 </head>
 <body>
-
+	
+<?php require 'logoheader.html'; ?>
 <?php require 'navbar.php' ?>
 
 	<header>
