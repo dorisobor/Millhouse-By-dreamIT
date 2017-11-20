@@ -1,28 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Profile Page- latest posts</title>
+	<?php require 'head.html'; ?>
+	<title>Latest posts</title>
 </head>
 <body>
-	<header>
-   </header>
-	<nav>
-	<a href="url">logut</a>
-	<!--User icon as a dropdown menue-->
-		<div class="dropdown">
-  <img src="" alt="">
-  <div class="dropdown-content">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
-  </div>
-</div>
-  
 
-	</nav>
-	
+<?php require 'logoheader.html'; ?>
+<?php require 'navbar.php'; ?>
+
 	<div class ="" > 
 	<!--USER IMAGE-->
        <p class=""></p>
@@ -65,11 +51,9 @@
 		</div> 
 	    </div> 
 	</main>
-	<footer>
-		<button>facebook</button>
-		<button>instagram</button>
-		<button>contact</button>
-		<span>credit</span>
-	</footer>
+
+<?php require 'footer.php'; ?>
+<?php require 'bootstrapScripts.html'; ?>
+
 </body>
 </html>

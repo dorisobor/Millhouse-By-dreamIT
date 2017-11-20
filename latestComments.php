@@ -1,73 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Profile Page- latest comments</title>
+	<?php require 'head.html'; ?>
+	<title>Latest comments</title>
 </head>
 <body>
-	<header>
-   </header>
-	<nav>
-	<a href="url">logut</a>
-	<!--User icon as a dropdown menue-->
-		<div class="dropdown">
-  <img src="" alt="">
-  <div class="dropdown-content">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
-  </div>
-</div>
-  
-
-	</nav>
 	
-	<div class ="" > 
-	<!--USER IMAGE-->
-       <p class=""></p>
-		<img src="" alt="">
-		<!--edit icon from bootsrap?-->
-		<!--USER NAME-->
-		<span></span>
-		<!--settings icon from bootstrap?-->
+<?php require 'logoheader.html'; ?>
+<?php require 'navbar.php' ?>
+
+	<!--latest comments-->
+	<div class="container-wrapper">
+		<div  class= "container-latestComments">
+			<article>
+			<!--CATEGORY TAG-->
+			<h2>BLOG POST TITLE</h2>
+			<h4>Commented for  <time><?php echo date("Y/m/d");?></time> days ago.</h4>
+			<p>Loosque tenetur excepturi sapiente cupiditate quae vero quibusdam? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, temporibus! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas quibusdam soluta quis exercitationem atque nisi laboriosam quaerat amet aliquam perferendis, culpa distinctio consequatur maxime hic ex ad repellendus eveniet beatae ipsa qui neque omnis eius, provident doloremque. Praesentium cumque ipsa nostrum fugiat tempora ducimus odit officia nisi soluta a. Deleniti.</p>
+			<button><i class="fa fa-pencil" aria-hidden="true"></i><a href="/editPost.php">Edit</button></a>
+			<button><i class="fa fa-trash" aria-hidden="true"></i><a href="#"> Delete</button></a>
+			</article>	
 		</div>
-		<!--bootstrap second nav-->
-		<nav>
-		</nav>
-		<!--wrapping container-->
-		<div class ="wrapper">
-		<h2></h2>
-
-		</div> 
-
-		
-		<!--latest comments-->
-		<div  class= "">
-         <article>
-           <!--CATEGORY TAG-->
-			<button <a href="#">NAMN PÅ KATEGORI</a>></button>
-			<h2>BLOG TITLE</h2>
-			<figure>
-			</figure>
-             <!--USER IMAGE-->
-			<p class=""></p>
-			<img src="" alt="">
-              <!--USER NAME-->
-			<span></span>
-			<time></time>
-			<p></p>
-		</article>
-		<button></button>
-		<button></button>
-		</div> 
-	    </div> 
+	</div> 
+	     
 	</main>
-	<footer>
-		<button>facebook</button>
-		<button>instagram</button>
-		<button>contact</button>
-		<span>credit</span>
-	</footer>
+
+	
+<?php require 'footer.php'; ?>
+<?php require 'bootstrapScripts.html'; ?>
+
+
 </body>
 </html>

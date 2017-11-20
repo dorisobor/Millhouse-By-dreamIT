@@ -1,10 +1,19 @@
+
+@import 'profilePage.scss'; 
+@import 'latestComments.scss';
+@import 'nav.scss';
+@import 'help-page.scss';
+@import 'logoheader.scss';
+@import 'jimmyFooter.scss';
+@import 'category.scss'; 
+
+
 @font-face {
     font-family: 'helveticaneueregular';
     src: url('helveticaneue-webfont.woff2') format('woff2'),
     url('helveticaneue-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
 
 $sectionBackground:#f2f2f2;
@@ -24,15 +33,21 @@ $wrapperColor: rgba(109,
 0.44);
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 .navbar {
     border-top: 1px solid $sectionBackground;
 }
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> master
 body {
     font-family: 'helveticaneueregular', Helvetica, Arial, sans-serif;
     font-weight: normal;
@@ -44,12 +59,20 @@ body {
     color: $textColor;
 }
 
+<<<<<<< HEAD
 
 main {
     margin:auto;
     max-width: 600px;
 }
 /*---CATEGORY PAGES---*/
+=======
+main {
+    margin:auto;
+    max-width: 600px;
+
+}
+>>>>>>> master
 
 h1{
     padding: 0px; 
@@ -57,6 +80,11 @@ h1{
     color: $interactiveHover; 
 }
 
+<<<<<<< HEAD
+=======
+/*---CATEGORY PAGES---*/
+
+>>>>>>> master
 p{
     margin-top: 0px;
 }
@@ -84,13 +112,17 @@ article button{
     border: none; 
     width: 70px; 
     padding: 5px; 
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 }
 
 .categoryPosts{
     background-color: $sectionBackground; 
 }
 
+<<<<<<< HEAD
 
 h1 {
 
@@ -99,21 +131,49 @@ h1 {
 
 
 /*the blogpost*/
+=======
+.coverPhoto{
+    padding: 0px; 
+    margin: 0px;
+}
+
+.coverPhoto img{
+    display: block; 
+    width: 100%; 
+    max-height: 500px; 
+    object-fit: cover; 
+}
+
+
+/*---BLOGPOST---*/
+>>>>>>> master
 
 .blogpost {
  background-color: $sectionBackground;
  margin: auto;
+<<<<<<< HEAD
  margin: auto;
 }
 /* category button*/
+=======
+}
+
+ /* category button */
+>>>>>>> master
 
  .blogpost__category-button{
     background-color: $buttonColor;
     color: $defaultColor;
     margin: 10px;
+<<<<<<< HEAD
     }
 
 /* user's info*/
+=======
+}
+
+ /* user info */
+>>>>>>> master
 
 .blogpost__user-info {
     margin: 10px;
@@ -124,6 +184,7 @@ h1 {
     .fa-user-circle-o {
     font-size: 3em;
     }
+<<<<<<< HEAD
    }
 
 /*    user's blogpost headline*/
@@ -142,11 +203,35 @@ h1 {
     margin: 10px;
     }
 //read more link
+=======
+}
+
+   /* blogpost heading */
+
+   h2 {
+       color: $textColor;
+       margin: 10px;
+   }
+ 
+   /* blogimage */
+
+ img {
+ max-width: 100%;
+ }
+
+.blogpost__blog-description {
+    color: $textColor;
+    margin: 10px;
+}
+
+/* read more link*/
+>>>>>>> master
 
 .blogpost__read-more {
 text-align: right;
 padding: 10px;
 
+<<<<<<< HEAD
     }
     //share icon link
    
@@ -170,8 +255,21 @@ padding: 10px;
     width: 100%; 
     max-height: 500px; 
     object-fit: cover; 
+=======
+>>>>>>> master
 }
+    
+    /* share icon */
+   
+    .blogpost__share-button{
+     text-align: right;
+     padding: 10px;
+     
+     .fa-share-alt{
+      font-size: 2em;
+     }
 
+<<<<<<< HEAD
 
 footer{
 
@@ -200,6 +298,21 @@ footer{
            padding-top: 0.3em;
         }
     }   
+=======
+    }
+
+
+.coverPhoto{
+    padding: 0px; 
+    margin: 0px;
+}
+
+.coverPhoto img{
+    display: block; 
+    width: 100%; 
+    max-height: 500px; 
+    object-fit: cover; 
+>>>>>>> master
 }
 
 
@@ -235,7 +348,7 @@ input {
 
         height: 1.5em;
         font-size: 1.2em;
-        appearance: none;
+        -webkit-appearance: none;
         border-radius: none;
         padding: 0.3em;
         border: solid 1px $buttonColor;
@@ -297,7 +410,6 @@ input {
         }
 
 
-
     }
 
     &[type="checkbox"] {
@@ -317,8 +429,6 @@ input {
 
 
 }
-
-
 
 .textarea {
     width: 90%;
@@ -362,8 +472,6 @@ input {
 .label--checkboxes {
     font-size: 0.9em;
 }
-
-
 
 .form_wrapper {
     margin: 5%;

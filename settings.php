@@ -2,13 +2,15 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Registration</title>
-    <link rel="stylesheet" href="css/style.css">
+    <?php require 'head.html'; ?>
+	<title>User setttings</title>
 </head>
 
 <body>
-    <?php require 'navbar.php';  ?>
+
+<?php require 'logoheader.html'; ?>
+<?php require 'navbar.php';  ?>
+
     <main>
         <div class="main">
             <div class="form_wrapper">
@@ -37,17 +39,15 @@
                       
                         <input type="submit" value="Sign up" />
 
-
-
                     </fieldset>
 
                 </form>
             </div>
         </div>
-
     </main>
 
-    <?php require 'footer.php';  ?>
-</body>
+<?php require 'footer.php'; ?>
+<?php require 'bootstrapScripts.html'; ?>
 
+</body>
 </html>

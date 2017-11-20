@@ -1,63 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Index Page</title>
+	<?php require 'head.html'; ?>
+	<title>Help</title>
 </head>
 <body>
-	<header>
-
-	</header>
-	<nav>
-
-	</nav>
-	<main>
 	
-		<article class="article">
-			<div class="article__content">
-			<h1>FAQ</h1>
-			<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-				Totam sequi laboriosam adipisci, architecto assumenda quidem necessitatibus 
-				ipsa laudantium, excepturi ipsam cupiditate at nesciunt! Mollitia quas 
-				similique ipsam saepe eius 
-				voluptatem!</p>
-			</div>
+<?php require 'logoheader.html'; ?>
+<?php require 'navbar.php' ?>
 
-			<div class="article__content">
-			<h2>Question?</h2>
-			<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-				Totam sequi laboriosam adipisci, architecto assumenda quidem necessitatibus 
-				ipsa laudantium, excepturi ipsam cupiditate at nesciunt! Mollitia quas 
-				similique ipsam saepe eius 
-				voluptatem!</p>
-			</div>
+<main>
+	<article class="help-article-container">
+		<div class="container article__wrapper">
+				<div class="row">
+					<div class="col">
+						<div class="article__top-header">
+							<h1 class="article__heading">Frequently asked questions</h1>
+							<p class="article__text">Having any trouble? Hopefully you'll find your answers below!</p>
+						</div>
+					</div>
+				</div>
 
-			<div class="article__content">
-			<h2>Question?</h2>
-			<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-				Totam sequi laboriosam adipisci, architecto assumenda quidem necessitatibus 
-				ipsa laudantium, excepturi ipsam cupiditate at nesciunt! Mollitia quas 
-				similique ipsam saepe eius 
-				voluptatem!</p>
-			</div>
+				<div class="row">
+					<div class="col">			
+						<div class="article__content">
+							<h2 class="article__question">How do I write a post?</h2>
+							<p class="article__text">
+								Click on your username in the far end of the topmenu, choose the first option
+								"Create new post". You will also find a button for this in your profilepage.
+							</p>
+						</div>
+					</div>
+				</div>
 
-			<div class="article__content">
-			<h2>Question?</h2>
-			<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-				Totam sequi laboriosam adipisci, architecto assumenda quidem necessitatibus 
-				ipsa laudantium, excepturi ipsam cupiditate at nesciunt! Mollitia quas 
-				similique ipsam saepe eius 
-				voluptatem!</p>
+				<div class="row">
+					<div class="col">
+						<div class="article__content">					
+							<h2 class="article__question">How do I edit my posts?</h2>
+							<p class="article__text">
+								Go to the post you want to edit and press the "edit" button. You can also
+								access all your post if you click on the username in the menu and choose 
+								the second option "Profile". There you choose to edit or delete any of your
+								posts.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col">
+						<div class="article__content">
+							<h2 class="article__question">How do I change my password?</h2>
+							<p class="article__text">
+								Click on your username in the far end of the topmenu, choose the last option
+								"Settings". 
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col">
+						<div class="contact">
+							<span class="contact__text">Still wondering something?</span>
+							<a href="contact.php">
+								<button class="contact__btn">Contact us!</button>
+							</a>
+						</div>
+					</div>
+				</div>	
 			</div>
-			
-		</article>
-	
-	</main>
-	<footer>
-		<button>facebook</button>
-		<button>instagram</button>
-		<button>contact</button>
-		<span>credit</span>
-	</footer>
+		</div> 
+	</article>	
+</main>
+
+<?php require 'footer.php'; ?>
+<?php require 'bootstrapScripts.html'; ?>
+
 </body>
+</html>

@@ -1,74 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<?php require 'head.html'; ?>
+  
 	<title>Profile Page</title>
 </head>
 <body>
-	<header>
-   </header>
-	<nav>
-	<a href="url">logut</a>
-	<!--User icon as a dropdown menue-->
-		<div class="dropdown">
-  <img src="" alt="">
-  <div class="dropdown-content">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
-  </div>
-</div>
-  
 
-	</nav>
-	
-	<div class ="" > 
-	<!--USER IMAGE-->
-       <p class=""></p>
-		<img src="" alt="">
-		<!--edit icon from bootsrap?-->
-		<!--USER NAME-->
-		<span></span>
-		<!--settings icon from bootstrap?-->
-		</div>
-		<!--bootstrap second nav-->
-		<nav>
-		</nav>
-		<!--wrapping container-->
-		<div class ="wrapper">
-		<h2></h2>
+<?php require 'logoheader.html'; ?>
+<?php require 'navbar.php'; ?>
+
+	<main>
 		
-		
-		<!--blogposts-->
-		<div class= "">
-         <article>
-           <!--CATEGORIE TAG-->
-			<button <a href="#">NAMN PÅ KATEGORI</a>></button>
-			<h2>BLOG TITLE</h2>
-			<figure>
-                <!--BLOG PICTURE-->
+		<div class="profileBox"> 
+
+		<!--USER IMAGE-->
+			<div class="profileBox__content-1">
 				<img src="" alt="">
-			</figure>
-             <!--USER IMAGE-->
-			<p class=""></p>
-			<img src="" alt="">
-              <!--USER NAME-->
-			<span></span>
-			<time></time>
-			<p></p>
-		</article>
-		<button></button>
-		<button></button>
-		</div> 
-        </div>
+				<div class="userImage">
+					<i class="fa fa-user-circle" aria-hidden="true"></i>
+				</div>
+		
+				<!--edit icon from bootsrap?-->
+				<!--USER NAME-->
+				<div class="profileBox__content-username">
+					<p class="username">Username</p>
+					<p class="aboutMe">Something About Me</p>
+				</div>
+	
+				<div class="settingsIcon">
+					<button class="settings">
+						<a href="settings.php"><i class="fa fa-cog" aria-hidden="true"></i></a>
+					</button>
+				</div>
+			</div>
+
+				<div class="clear"></div>
+			
+			<div class="profileBox__content-2">
+				<div class="profileBox__content-commentsPosts">
+
+					<div class="totalPosts">
+						<a href="#">50 blogposts</a>
+					</div>
+
+					<div class="totalComments">
+						<a href="#">125 comments</a>
+					</div>
+				</div>
+
+				<div class="createNewPost">
+					<button class="create">
+						<a href="createPost.php">Create New Post</a>
+					</button>
+				</div>
+			</div>
+			
+
+
+			<!--settings icon from bootstrap?-->
+		</div>
+
+			<!--BOOTSTRAP SECOND NAV-->
+			<nav class="nav nav-pills nav-justified">
+				<a class="nav-item nav-link active" href="profilePage.php">Profile</a>
+				<a class="nav-item nav-link" href="latestPosts.php">Latest Posts</a>
+				<a class="nav-item nav-link" href="latestComments.php">Latest Comments</a>
+			</nav>
+
+				<!--BLOGPOSTS-->
+			<div class="profilePosts">
+				<article class="blogpost">
+				<!--CATEGORIE TAG-->
+					<button class="categoryButton">
+						<a href="categoryInterior.php">Interior</a>
+					</button>
+			<!--USER INFO-->
+			
+					<h2>Blog title</h2>
+					<figure>
+					<!--BLOG PICTURE-->
+						<img src="images/inredning_kollage.jpg" alt="inredning_kollage">
+					</figure>
+					<div class= "blogpost__blog-description">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+						Pellentesque at eros dolor. Nullam sit amet velit enim. 
+						Etiam ut convallis erat. In ornare risus nec justo tincidunt, 
+						nec eleifend dolor lacinia. Curabitur ut feugiat sem,
+						non tempus tellus. Nunc sed dolor vitae purus 
+						tristique consequat sit amet in libero. Ut rhoncus tempus justo, 
+						sit amet suscipit diam congue et. 
+						Suspendisse tempor commodo lacinia...</p>
+			
+						<div class="blogpost__share-button"> 
+							<a href="#">Share <i class="fa fa-share-alt" aria-hidden="true"></i></a>
+						</div>
+					</div>
+
+						<div class="editButtons">
+							<button><i class="fa fa-pencil" aria-hidden="true"></i> Edit</button>
+							<button class="delete"><i class="fa fa-trash" aria-hidden="true"></i> Delete</button>
+						</div> 
+				</article>
+
+				
+			</div>
 	
 	</main>
-	<footer>
-		<button>facebook</button>
-		<button>instagram</button>
-		<button>contact</button>
-		<span>credit</span>
-	</footer>
+
+<?php require 'footer.php'; ?>
+<?php require 'bootstrapScripts.html'; ?>
+
 </body>
 </html>

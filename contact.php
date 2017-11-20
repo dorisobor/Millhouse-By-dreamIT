@@ -2,20 +2,24 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Create new post</title>
-    <link href="https://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <?php require 'head.html'; ?>
+    <title>Contact</title>
 </head>
-
+  
+  
 <body>
-    <?php require 'navbar.php';  ?>
+  
+<?php require 'logoheader.html'; ?>
+<?php require 'navbar.php';  ?>
+  
     <main>
         <div class="main">
             <div class="form_wrapper">
                 <h1 class="headline">Contact</h1>
-                <p class="instruction">Contact us if you have any questions or issues with the blog!</p>
-
+                <p class="instruction">Contact us if you have any questions or issues with the blog!</p>       
+           <div> 
+             
+                <!-- form container -->
                 <form class="form" action="confirmation.php" method="POST">
                     <fieldset class="fieldset">
                         <legend class="legend">Fill in your contactinformation and email us!</legend>
@@ -41,7 +45,8 @@
         </div>
     </main>
 
-    <?php require 'footer.php';  ?>
-</body>
+<?php require 'footer.php'; ?>
+<?php require 'bootstrapScripts.html'; ?>
 
+</body>
 </html>
