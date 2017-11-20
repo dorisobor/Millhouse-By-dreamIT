@@ -10,12 +10,13 @@
 
 @font-face {
     font-family: 'helveticaneueregular';
-    src: url('helveticaneue-webfont.woff2') format('woff2'),
-    url('helveticaneue-webfont.woff') format('woff');
+    src: url('fonts/helveticaneue/helveticaneue-webfont.woff2') format('woff2'),
+    url('fonts/helveticaneue/helveticaneue-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
+$millhouseFont: 'helveticaneueregular', Helvetica, Arial, sans-serif;
 $sectionBackground:#f2f2f2;
 $defaultColor:#fff;
 $textColor:#262626;
