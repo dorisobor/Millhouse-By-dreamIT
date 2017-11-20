@@ -9,12 +9,18 @@
 <?php require 'logoheader.html'; ?>
 <?php require 'navbar.php'; ?>
 
-<main>
-	
-	<!-- picture representing the category -->
+
+<header>
 	<figure class="coverPhoto">
 		<img src="images/mh_sunglasses_576.png" alt="interior header photo">
 	</figure>
+</header>
+
+
+
+<main>
+	
+	<!-- picture representing the category -->
 
 	<div class="mainBody">
 		<h1>Sunglasses</h1>

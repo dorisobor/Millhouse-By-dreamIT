@@ -24,9 +24,9 @@
 		 <!--USER INFO-->
 		 <div class="blogpost__user-info">
 			 		 <!--USER INFO-->
- <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-     <span>Username</span> <time><p>Date:D/M/YYYY </p></time>
-    </div>
+		 <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+     		<span>Username</span> <time><p>Date:D/M/YYYY </p></time>
+    	</div>
 			<h2>Blog title</h2>
 			<figure>
                 <!--BLOG PICTURE-->
