@@ -6,14 +6,8 @@
 </head>
 <body>
 
-<?php require 'navbar.php' ?>
-
-
-<header>
-    <img src="" alt="Millhouse logo"/>
-</header>
-
-
+<?php require 'logoheader.html'; ?>
+<?php require 'navbar.php'; ?>
 
 <main> 
 	

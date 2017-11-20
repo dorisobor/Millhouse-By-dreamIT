@@ -8,10 +8,8 @@
 
 <body>
 
-<?php require 'navbar.php' ?>
-
-	<header>
-   </header>
+<?php require 'logoheader.html'; ?>
+<?php require 'navbar.php'; ?>
 
 <hr>
 

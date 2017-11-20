@@ -9,11 +9,8 @@
   
 <body>
   
-    <header>
-      <img src="" alt="Millhouse logo"/>
-    </header>
-  
-    <?php require 'navbar.php';  ?>
+<?php require 'logoheader.html'; ?>
+<?php require 'navbar.php';  ?>
   
     <main>
         <div class="main">
