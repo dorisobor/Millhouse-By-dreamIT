@@ -203,7 +203,8 @@ input {
 
         height: 1.5em;
         font-size: 1.2em;
-        appearance: none;
+        -webkit-appearance: none;
+        //appearance: none;
         border-radius: none;
         padding: 0.3em;
         border: solid 1px $buttonColor;
