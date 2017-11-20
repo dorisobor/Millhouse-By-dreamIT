@@ -13,6 +13,12 @@ $wrapperColor: rgba(109,
 
 /*---CATEGORY PAGES---*/
 
+
+button{
+    border-radius: 0.25em; 
+    color: $defaultColor; 
+}
+
 p{
     margin-top: 0px;
 }
@@ -30,7 +36,7 @@ p{
 
 article{
     padding: 15px; 
-}
+
 
 article button{
     background: $buttonColor; 
@@ -38,6 +44,8 @@ article button{
     border: none; 
     width: 70px; 
     padding: 5px; 
+}
+
 }
 
 .coverPhoto{
@@ -54,6 +62,35 @@ article button{
     object-fit: cover; 
 }
 
+.blogpost{
+    padding: 20px; 
 
+        button{
+            font-size: 0.9em; 
+            width: 5.5rem; 
+        }
 
+        .categoryButton{
+            color: $defaultColor; 
+            
+            a{
+                color: $defaultColor;
+            }
+        }
+        
+        .editButtons{   
+            
+            .fa-pencil{
+                font-size: 1.2rem; 
+            }
+        
+            .delete{
+                background: $dangerColor; 
 
+                .fa-trash{
+                    font-size: 1.2rem; 
+                }
+        }
+         
+    }
+}
