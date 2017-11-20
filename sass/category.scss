@@ -1,0 +1,59 @@
+$sectionBackground:#f2f2f2;
+$defaultColor:#fff;
+$textColor:#262626;
+$headLineColor:#1c3045;
+$buttonColor:#1C4D45;
+$interactiveHover:#2E52A1;
+$tabs:#6d6d6d;
+$dangerColor:#cc4750;
+$wrapperColor: rgba(109,
+109,
+109,
+0.44);
+
+/*---CATEGORY PAGES---*/
+
+p{
+    margin-top: 0px;
+}
+
+.mainBody{
+    margin: 0px auto; 
+    padding: 20px;  
+    max-width: 600px;    
+}
+
+.headline {
+    font-size: 4em;
+    color: $interactiveHover;
+}
+
+article{
+    padding: 15px; 
+}
+
+article button{
+    background: $buttonColor; 
+    color: $defaultColor; 
+    border: none; 
+    width: 70px; 
+    padding: 5px; 
+}
+
+.coverPhoto{
+    padding: 0px; 
+    margin: 0px;
+    object-fit: cover; 
+    
+}
+
+.coverPhoto img{
+    display: block; 
+    width: 100%; 
+    max-height: 500px; 
+    object-fit: cover; 
+}
+
+
+
+
