@@ -8,7 +8,55 @@
 	
 <?php require 'logoheader.html'; ?>
 <?php require 'navbar.php' ?>
-
+<main>
+<!--Profile Box-->
+<div class="profileBox"> 
+        <!--USER IMAGE-->
+            <div class="profileBox__content-1">
+                <img src="" alt="">
+                <div class="userImage">
+                    <i class="fa fa-user-circle" aria-hidden="true"></i>
+                </div>
+        
+                <!--edit icon from bootsrap?-->
+                <!--USER NAME-->
+                <div class="profileBox__content-username">
+                    <p class="username">Username</p>
+                    <p class="aboutMe">Something About Me</p>
+                </div>
+    
+                <div class="settingsIcon">
+                    <button class="settings">
+                        <a href="settings.php"><i class="fa fa-cog" aria-hidden="true"></i></a>
+                    </button>
+                </div>
+            </div>
+                <div class="clear"></div>
+            
+            <div class="profileBox__content-2">
+                <div class="profileBox__content-commentsPosts">
+                    <div class="totalPosts">
+                        <a href="#">50 blogposts</a>
+                    </div>
+                    <div class="totalComments">
+                        <a href="#">125 comments</a>
+                    </div>
+                </div>
+                <div class="createNewPost">
+                    <button class="create">
+                        <a href="createPost.php">Create New Post</a>
+                    </button>
+                </div>
+            </div>
+            
+            <!--settings icon from bootstrap?-->
+        </div>
+            <!--BOOTSTRAP SECOND NAV-->
+            <nav class="nav nav-pills nav-justified">
+                <a class="nav-item nav-link" href="profilePage.php">Profile</a>
+                <a class="nav-item nav-link" href="latestPosts.php">Latest Posts</a>
+                <a class="nav-item nav-link active" href="latestComments.php">Latest Comments</a>
+            </nav>
 	<!--latest comments-->
 	<div class="container-wrapper">
 		<div  class= "container-latestComments">
