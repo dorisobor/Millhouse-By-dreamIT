@@ -8,10 +8,8 @@
 
 <body>
 
-<?php require 'navbar.php' ?>
-
-	<header>
-   </header>
+<?php require 'logoheader.html'; ?>
+<?php require 'navbar.php'; ?>
 
 <hr>
 
@@ -41,7 +39,7 @@
 			 tristique consequat sit amet in libero. Ut rhoncus tempus justo, 
 			 sit amet suscipit diam congue et. Suspendisse tempor commodo lacinia...
         
-				 <div class = "blogpost__share-button"> <a href="#"> Share <i class="fa fa-share-alt" aria-hidden="true"></i></a>
+				 <div class="blogpost__share-button"> <a href="#"> Share <i class="fa fa-share-alt" aria-hidden="true"></i></a>
 				 </div>
 						</div>
 		</article>

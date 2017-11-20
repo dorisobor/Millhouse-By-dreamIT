@@ -7,7 +7,10 @@
 </head>
 
 <body>
-    <?php require 'navbar.php';  ?>
+    
+<?php require 'logoheader.html'; ?>
+<?php require 'navbar.php';  ?>
+    
     <main>
         <div class="main">
             <h1 class="headline">Confirmation</h1>
