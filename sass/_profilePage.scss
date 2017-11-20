@@ -137,29 +137,36 @@ a{
 }
 
 /*--BLOGPOST--*/
-h2{
-    padding: 0px; 
-    margin: 0px; 
-    color: $interactiveHover; 
-}
 
 .profilePosts{
     padding: 20px; 
 
-    button{
-        font-size: 0.9em; 
-        width: 60px; 
-    }
+        button{
+            font-size: 0.9em; 
+            width: 60px; 
+        }
 
-    a{
-        color: $defaultColor; 
-        width: 80px; 
-    }
+        a{
+            color: $defaultColor; 
+            width: 80px; 
+        }
 
-    .postButtons{
+        .editButtons{
+            
+            .delete{
+                background: $dangerColor; 
+        }
         
-        .delete{
-            background: $dangerColor; 
+        .share{
+            color: $interactiveHover; 
+            float: right;
+            padding: 10px;
+            
+                .fa-share-alt{
+                    color: $interactiveHover; 
+                    font-size: 2em;
+                }
+        
         }
 }
 

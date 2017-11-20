@@ -70,29 +70,42 @@
 
 				<!--BLOGPOSTS-->
 			<div class="profilePosts">
-				<article class="categoryPosts">
-				<!-- tag -->
-					<button class="tagg">
+				<article class="blogpost">
+				<!--CATEGORIE TAG-->
+					<button class = "blogpost__category-button">
 						<a href="categoryInterior.php">Interior</a>
 					</button>
-					<h2>Blogpost title</h2>
+			<!--USER INFO-->
+			
+					<h2>Blog title</h2>
 					<figure>
-						<img src="" alt="">
+					<!--BLOG PICTURE-->
+						<img src="images/inredning_kollage.jpg" alt="inredning_kollage">
 					</figure>
-					<p class=""></p>
-					<!-- userimage -->
-					<img src="" alt="">
-					<!-- username -->
-					<span></span>
-					<!-- publish date -->
-					<time></time>
-					<!-- share -->
+					<div class= "blogpost__blog-description">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+						Pellentesque at eros dolor. Nullam sit amet velit enim. 
+						Etiam ut convallis erat. In ornare risus nec justo tincidunt, 
+						nec eleifend dolor lacinia. Curabitur ut feugiat sem,
+						non tempus tellus. Nunc sed dolor vitae purus 
+						tristique consequat sit amet in libero. Ut rhoncus tempus justo, 
+						sit amet suscipit diam congue et. 
+						Suspendisse tempor commodo lacinia...</p>
+			
+						<div class="share"> 
+							<a href="#">Share<i class="fa fa-share-alt" aria-hidden="true"></i></a>
+						</div>
+					</div>
 
-					<div class="postButtons">
-						<button>Edit</button>
-						<button class="delete">Delete</button>
-					</div> 
+					<div class="clear"></div>
+
+						<div class="editButtons">
+							<button>Edit</button>
+							<button class="delete">Delete</button>
+						</div> 
 				</article>
+
+				
 			</div>
 	
 	</main>
