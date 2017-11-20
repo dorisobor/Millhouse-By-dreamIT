@@ -39,7 +39,7 @@
     </figure>
   </div>
   
-		<hr>
+		<hr class="d-none d-lg-block d-xl-block">
   
 		<h1>Blogpost</h1>
 	

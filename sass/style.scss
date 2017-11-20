@@ -55,9 +55,9 @@ main {
 .figures {
     display: none;
  }
- 
+
  hr {
-    display:none;
+    display:block;
  }
 
 h1{
@@ -375,6 +375,7 @@ input {
 
 @media screen and (min-width: 992px) {
     .jumbotron {
+        margin-bottom: 0px;
         background-image: url("images/mh_header.jpg"), url("../images/mh_header.jpg");
         background-color: #cccccc;
         background-size: cover;
@@ -430,5 +431,7 @@ input {
     }
 
 }
+
+
 
    
