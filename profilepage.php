@@ -98,8 +98,13 @@
 					</div>
 
 						<div class="editButtons">
-							<button><i class="fa fa-pencil" aria-hidden="true"></i> Edit</button>
-							<button class="delete"><i class="fa fa-trash" aria-hidden="true"></i> Delete</button>
+							<button>
+								<a href="editPost.php"><i class="fa fa-pencil" aria-hidden="true"></i> Edit<a>
+							</button>
+
+							<button class="delete">
+								<a href="deleteConfirm.php"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
+							</button>
 						</div> 
 				</article>
 
