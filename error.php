@@ -12,13 +12,22 @@
     <?php require 'navbar.php';  ?>
     <main>
         <div class="main">
-            <h1  class="headline message--attention">Error</h1>
+
+            <div class="help">
+                <p>
+                    <button type="button" class="close" aria-label="Close">
+  <span aria-hidden="true">&times;</span>
+</button>
+                </p>
+            </div>
+
+            <h1 class="headline message--attention">Error</h1>
             <h2 class="message--attention">Oooops!</h2>
             <p class="instructions">Try again!</p>
-              <button class="button" type="button">Return back</button>
-            
-            
-            
+            <button class="button" type="button">Return back</button>
+
+
+
         </div>
     </main>
 
