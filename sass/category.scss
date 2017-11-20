@@ -13,6 +13,9 @@ $wrapperColor: rgba(109,
 
 /*---CATEGORY PAGES---*/
 
+main{
+    max-width: 900px; 
+}
 
 button{
     border-radius: 0.25em; 
@@ -26,7 +29,6 @@ p{
 .mainBody{
     margin: 0px auto; 
     padding: 20px;  
-    max-width: 700px;    
 }
 
 .headline {
@@ -36,16 +38,6 @@ p{
 
 article{
     padding: 15px; 
-
-
-article button{
-    background: $buttonColor; 
-    color: $defaultColor; 
-    border: none; 
-    width: 70px; 
-    padding: 5px; 
-}
-
 }
 
 .coverPhoto{
@@ -63,7 +55,7 @@ article button{
 }
 
 .blogpost{
-    padding: 20px; 
+    padding: 15px; 
 
         button{
             font-size: 0.9em; 
