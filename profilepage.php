@@ -3,15 +3,15 @@
 
 require_once 'partials/db.php'; 
 
-$stmt = $pdo->prepare("SELECT username, userBio FROM users WHERE userID = 2");  
+$stmt = $pdo->prepare("SELECT username, userBio FROM users WHERE userID = 1");  
 $stmt->execute();
-$userDescription = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$userDescription = $stmt->fetch(PDO::FETCH_ASSOC);
 
-$stmt = $pdo->prepare("SELECT COUNT(postID) as count FROM blogPosts WHERE userID = 2");  
+$stmt = $pdo->prepare("SELECT COUNT(postID) as count FROM blogPosts WHERE userID = 1");  
 $stmt->execute();
 $userPosts = $stmt->fetch(PDO::FETCH_ASSOC);
 
-$stmt = $pdo->prepare("SELECT COUNT(commentID) as count FROM comments WHERE userID = 2");  
+$stmt = $pdo->prepare("SELECT COUNT(commentID) as count FROM comments WHERE userID = 1");  
 $stmt->execute();
 $userComments = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -39,13 +39,11 @@ $userComments = $stmt->fetch(PDO::FETCH_ASSOC);
 				</div>
 				<!--edit icon from bootsrap?-->
 				<!--USER NAME-->
-				<?php foreach ($userDescription as $i => $userInfo): ?>				
 					<div class="profileBox__content-username">
-						<p class="username"><?= $userInfo['username'] ?></p>
-						<p class="aboutMe"><?= $userInfo['userBio'] ?></p>
+						<p class="username"><?= $userDescription['username'] ?></p>
+						<p class="aboutMe"><?= $userDescription['userBio'] ?></p>
 					</div>
-				<?php endforeach; ?>
-
+				
 				<div class="settingsIcon">
 					<button class="settings">
 						<a href="settings.php"><i class="fa fa-cog" aria-hidden="true"></i></a>
@@ -58,11 +56,11 @@ $userComments = $stmt->fetch(PDO::FETCH_ASSOC);
 			<div class="profileBox__content-2">
 				<div class="profileBox__content-commentsPosts">
 					<div class="totalPosts">
-						<a href="#"><?= $userPosts['count']; ?>  post(s)</a>	
+						<span><?= $userPosts['count']; ?>  post(s)</span>
 					</div>
 
 					<div class="totalComments">
-						<a href="#"><?= $userComments['count']; ?> comment(s)</a>
+						<span><?= $userComments['count']; ?> comment(s)</span>
 					</div>
 				</div>
 				
