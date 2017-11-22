@@ -3,11 +3,34 @@
 <head>
 	<?php require 'head.html'; ?>
 	<title>Latest comments</title>
-</head>
+</head>   
 <body>
-	
+<?php
+
+$pdo = new PDO(
+  "mysql:host=localhost;dbname=millhouse;charset=utf8",
+  "root",
+  "root"
+);
+
+//hantering av felmeddelande
+$pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+//hinder mot simulerade förfrågningar
+$pdo -> setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+
+?>
+
+<?php 
+    $selectComments = "SELECT commentText FROM comments";
+    $statment = $pdo->prepare(
+    $selectComments
+    );
+
+    $selectComments->execute();
+    $allComments = $statement->fetchAll(PDO::FETCH_ASSOC);
+?>
 <?php require 'logoheader.html'; ?>
-<?php require 'navbar.php' ?>
+<?php require 'navbar.php'; ?>
 <main>
 <!--Profile Box-->
 <div class="profileBox"> 
