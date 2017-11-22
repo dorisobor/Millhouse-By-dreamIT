@@ -1,4 +1,6 @@
 <?php
+  require_once 'partials/db.php';
+?>
 
 $pdo = new PDO(
   "mysql:host=localhost;dbname=millhouse;charset=utf8",
