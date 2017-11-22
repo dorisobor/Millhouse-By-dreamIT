@@ -1,8 +1,26 @@
+
+<?php 
+
+require_once 'partials/db.php'; 
+
+$stmt = $pdo->prepare("SELECT username, userBio FROM users WHERE userID = 2");  
+$stmt->execute();
+$userDescription = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+$stmt = $pdo->prepare("SELECT COUNT(postID) as count FROM blogPosts WHERE userID = 2");  
+$stmt->execute();
+$userPosts = $stmt->fetch(PDO::FETCH_ASSOC);
+
+$stmt = $pdo->prepare("SELECT COUNT(commentID) as count FROM comments WHERE userID = 2");  
+$stmt->execute();
+$userComments = $stmt->fetch(PDO::FETCH_ASSOC);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<?php require 'head.html'; ?>
-  
 	<title>Profile Page</title>
 </head>
 <body>
@@ -13,21 +31,21 @@
 	<main>
 		
 		<div class="profileBox"> 
-
 		<!--USER IMAGE-->
 			<div class="profileBox__content-1">
 				<img src="" alt="">
 				<div class="userImage">
 					<i class="fa fa-user-circle" aria-hidden="true"></i>
 				</div>
-		
 				<!--edit icon from bootsrap?-->
 				<!--USER NAME-->
-				<div class="profileBox__content-username">
-					<p class="username">Username</p>
-					<p class="aboutMe">Something About Me</p>
-				</div>
-	
+				<?php foreach ($userDescription as $i => $userInfo): ?>				
+					<div class="profileBox__content-username">
+						<p class="username"><?= $userInfo['username'] ?></p>
+						<p class="aboutMe"><?= $userInfo['userBio'] ?></p>
+					</div>
+				<?php endforeach; ?>
+
 				<div class="settingsIcon">
 					<button class="settings">
 						<a href="settings.php"><i class="fa fa-cog" aria-hidden="true"></i></a>
@@ -35,30 +53,25 @@
 				</div>
 			</div>
 
-				<div class="clear"></div>
+			<div class="clear"></div>
 			
 			<div class="profileBox__content-2">
 				<div class="profileBox__content-commentsPosts">
-
 					<div class="totalPosts">
-						<a href="#">50 blogposts</a>
+						<a href="#"><?= $userPosts['count']; ?>  post(s)</a>	
 					</div>
 
 					<div class="totalComments">
-						<a href="#">125 comments</a>
+						<a href="#"><?= $userComments['count']; ?> comment(s)</a>
 					</div>
 				</div>
-
+				
 				<div class="createNewPost">
 					<button class="create">
 						<a href="createPost.php">Create New Post</a>
 					</button>
 				</div>
 			</div>
-			
-
-
-			<!--settings icon from bootstrap?-->
 		</div>
 
 			<!--BOOTSTRAP SECOND NAV-->
