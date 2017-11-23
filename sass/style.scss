@@ -76,11 +76,6 @@ p{
     padding: 20px;    
 }
 
-.headline {
-    font-size: 4em;
-    color: $interactiveHover;
-}
-
 article{
     padding: 15px; 
 }
@@ -196,13 +191,16 @@ padding: 10px;
     color: $interactiveHover;
 }
 
+
+/*--FORMS--*/
+
 .checkboxes_wrapper {
     text-align: left;
     margin: 2% 5%;
 }
 
 .form {
-    font-size: 1.5em;
+    font-size: 0.9em;
     color: $textColor;
 }
 
@@ -211,72 +209,49 @@ padding: 10px;
 
 }
 
-input {
-    margin: 1em 0;
-    width: 90%;
+.form_wrapper {
+    padding: 15px;
+    margin: 20px; 
+    background-color: $sectionBackground;
+    max-width: 900px; 
 
-    &[type="text"] {
-        background-color: $sectionBackground;
+}
 
-        height: 1.5em;
-        font-size: 1.2em;
+input { /*--input settings--*/
+    width: 90%; 
+    margin: 10px;
+
+    &[type="text"] { /*--username / email / password etc.--*/
+        background-color: $defaultColor;
         -webkit-appearance: none;
-        border-radius: none;
-        padding: 0.3em;
-        border: solid 1px $buttonColor;
-        box-shadow: inset 2px 2px 3px 0 slategray;
-        transition: box-shadow 0.3s;
-        color: $buttonColor;
-
-        &:focus {
-            outline: none;
-            box-shadow: inset 1px 1px 2px 0 #ccc;
-            border: solid 1px $buttonColor;
-        }
     }
 
-
-
-    &[type="submit"] {
-        margin: 5% 0;
-        width: 50%;
-        height: 2em;
-        padding: 0.3em 0;
-        font-size: 1.1em;
-        color: $sectionBackground;
+    &[type="submit"] { /*--submit button--*/
+        width: 5.5rem;
+        padding: 5px;   
+        color: $defaultColor; 
         background-color: $buttonColor;
-        border: none;
-        -webkit-border-radius: 50px;
-        -moz-border-radius: 50px;
-        border-radius: 50px;
-        font-size: 1.2em;
-
-        &:focus {
-            outline: none;
-        }
+        -webkit-border-radius:0.25rem;
+        -moz-border-radius: 0.25rem;
+        border-radius: 0.25rem;
 
         &:hover {
             background-color: $interactiveHover;
-            color: $defaultColor;
-            border: none;
             cursor: pointer;
         }
     }
 
     &[type="file"] {
-
         height: 1.4em;
         padding: 0.3em;
         background-color: $sectionBackground;
         color: $buttonColor;
         border: solid 1px $buttonColor;
-        box-shadow: inset 2px 2px 3px 0 slategray;
         cursor: pointer;
         font-size: 1.2em;
 
         &:focus {
             outline: none;
-            box-shadow: inset 1px 1px 2px 0 $sectionBackground;
             border: solid 1px $buttonColor;
 
         }
@@ -302,28 +277,19 @@ input {
 
 }
 
-.textarea {
+.textarea { /*--change your profile description--*/
     width: 90%;
-    height: 150px;
+    height: 100px;
     padding: 0.3em 0;
-    margin: 1em 0;
-    border: solid 1px $buttonColor;
-    box-shadow: inset 2px 2px 3px 0 #6d6d6d;
-    transition: box-shadow 0.3s;
-    background-color: $sectionBackground;
-    color: $buttonColor;
-    font-size: 1.4em;
-
+    background-color: $defaultColor;
 
     &:focus {
         outline: none;
-        box-shadow: inset 1px 1px 2px 0 $sectionBackground;
         border: solid 1px $buttonColor;
     }
 }
 
 .fieldset {
-    border: 0;
 }
 
 .legend {
@@ -331,25 +297,6 @@ input {
     font-weight: 400;
     color: $interactiveHover;
     margin: 0.5em;
-}
-
-
-.label {
-    font-size: 0.8em;
-    font-weight: 400;
-    color: $buttonColor;
-    margin: 1em;
-}
-
-.label--checkboxes {
-    font-size: 0.9em;
-}
-
-.form_wrapper {
-    margin: 5%;
-    padding: 5%;
-    background-color: $wrapperColor;
-    text-align: center;
 }
 
 .instruction {
@@ -370,6 +317,9 @@ input {
 .message--attention{
     color: $dangerColor;
 }
+
+
+/*------HÄR BÖRJAR MEDIA SCREEN----------*/
 
 @media screen and (min-width: 992px) {
     main {max-width: 900px;}
@@ -397,15 +347,14 @@ input {
     
      }
     figcaption{
-    text-align: center;
-    text-color: $headLineColor;
+        text-align: center;
+        text-color: $headLineColor;
     }
     }   
     }
    
     .form--theme {
         font-size: 1.2em;
-
     }
 
     .label--checkboxes {
@@ -420,14 +369,11 @@ input {
         font-size: 2em;
         font-weight: 600;
         color: $interactiveHover;
-        margin: 1em;
     }
 
     .label {
         font-size: 2em;
         font-weight: 600;
-        color: $buttonColor;
-        margin: 1em;
     }
 
 }
