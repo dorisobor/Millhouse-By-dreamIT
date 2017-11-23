@@ -141,6 +141,20 @@ button{
 
 /*--BLOGPOST--*/
 
+.blogpost {
+    margin-top: 15px !important;
+    margin-bottom: 15px !important;
+}
+
+.blogpost__title {
+    float: left;
+}
+
+.blogpost__date {
+    float: right;
+    margin-top: 20px;
+}
+
 .profilePosts{
     padding: 15px; 
 
@@ -150,6 +164,7 @@ button{
         }
 
         .categoryButton{
+            display: block;
             
             a{
                 color: $defaultColor;
