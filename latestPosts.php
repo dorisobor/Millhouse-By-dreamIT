@@ -1,3 +1,12 @@
+<?php 
+
+require_once 'partials/db.php'; 
+require 'functions.php';
+
+$user = getUserInfo($GLOBALS['userID']);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,8 +30,8 @@
 
 			<!-- username and info -->
 			<div class="profileBox__content-username">
-				<p class="username">Username</p>
-				<p class="aboutMe">Something About Me</p>
+				<p class="username"><?= $user['username'] ?></p>
+				<p class="aboutMe"><?= $user['userBio'] ?></p>
 			</div>
 
 			<!-- settings icon -->
@@ -38,10 +47,10 @@
         <div class="profileBox__content-2">
 			<div class="profileBox__content-commentsPosts">
 				<div class="totalPosts">
-					<a href="#">50 blogposts</a>
+					<span><?= getUserStatisticsPosts($GLOBALS['userID']) ?>  post(s)</span>
 				</div>
 				<div class="totalComments">
-					<a href="#">125 comments</a>
+					<span><?= getUserStatisticsComments($GLOBALS['userID']) ?>  post(s)</span>
 				</div>
 			</div>
 			<div class="createNewPost">
@@ -60,6 +69,8 @@
 	</nav>
 			
 	<div class="profilePosts">
+
+	<?php foreach (getAllBlogpostsByUserID($userID) as $i => $totalPost): ?>
 		<article class="blogpost">
 
 			<!-- category tag -->
@@ -68,23 +79,20 @@
 			</button>
 
 			<!-- blogpost title -->
-			<h2>Blog title</h2>
+			<h2 class="blogpost__title"><?= $totalPost['postTitle'] ?></h2>
+			<date><p class="blogpost__date"><?= $totalPost['postDate'] ?></p></date>
 
 			<!-- blogpost image -->
-			<figure>
-				<img src="images/inredning_kollage.jpg" alt="inredning_kollage">
-			</figure>
+			<?php foreach (getAllImagesByPostID($totalPost['postID']) as $i => $latestPostImage): ?>
+				<figure>
+					<img src="<?= $latestPostImage['postImage']?>" alt="inredning_kollage">
+				</figure>
+			<?php endforeach; ?>
+
+			<div class="clear"></div> 
 
 			<div class= "blogpost__blog-description">
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-				Pellentesque at eros dolor. Nullam sit amet velit enim. 
-				Etiam ut convallis erat. In ornare risus nec justo tincidunt, 
-				nec eleifend dolor lacinia. Curabitur ut feugiat sem,
-				non tempus tellus. Nunc sed dolor vitae purus 
-				tristique consequat sit amet in libero. Ut rhoncus tempus justo, 
-				sit amet suscipit diam congue et. 
-				Suspendisse tempor commodo lacinia...</p>
-
+				<p><?= $totalPost['postText'] ?></p>
 				<div class="blogpost__read-more"> 
 					<a href="#" >
 						Read More <i class="fa fa-chevron-right" aria-hidden="true"></i>
@@ -94,13 +102,13 @@
 				<div class="blogpost__share-button"> 
 					<a href="#">Share <i class="fa fa-share-alt" aria-hidden="true"></i></a>
 				</div>
-			</div>
-
-			<div class="editButtons">
-				<button><i class="fa fa-pencil" aria-hidden="true"></i> Edit</button>
-				<button class="delete"><i class="fa fa-trash" aria-hidden="true"></i> Delete</button>
-			</div> 
-		</article>
+				</div>
+				<div class="editButtons">
+					<button><i class="fa fa-pencil" aria-hidden="true"></i> Edit</button>
+					<button class="delete"><i class="fa fa-trash" aria-hidden="true"></i> Delete</button>
+				</div> 
+			</article>
+		<?php endforeach; ?>
 	</div>
 </main>
 

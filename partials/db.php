@@ -1,11 +1,10 @@
 <?php
-  require_once 'partials/db.php';
-?>
+$GLOBALS['userID'] = 1;
 
 $pdo = new PDO(
   "mysql:host=localhost;dbname=millhouse;charset=utf8",
   "root",
-  ""
+  "root"
 );
 
 //handling of error messages
