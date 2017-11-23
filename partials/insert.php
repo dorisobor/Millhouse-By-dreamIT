@@ -4,7 +4,7 @@
 
 
 if(isset($_POST['publish'])){
-    
+    require_once 'partials/db.php';
     $sql = "
     INSERT INTO `blogposts`(`date`, `headline`, `postText`) VALUES (NOW(),:headline,:postText)
     ";
@@ -19,6 +19,7 @@ if(isset($_POST['publish'])){
     if($statement){
         $success = true;
     }
+    $pdo = null;
 
    
 }
