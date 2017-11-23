@@ -50,7 +50,7 @@ $user = getUserInfo($GLOBALS['userID']);
 					<span><?= getUserStatisticsPosts($GLOBALS['userID']) ?>  post(s)</span>
 				</div>
 				<div class="totalComments">
-					<span><?= getUserStatisticsComments($GLOBALS['userID']) ?>  post(s)</span>
+					<span><?= getUserStatisticsComments($GLOBALS['userID']) ?>  comments(s)</span>
 				</div>
 			</div>
 			<div class="createNewPost">
@@ -80,7 +80,7 @@ $user = getUserInfo($GLOBALS['userID']);
 
 			<!-- blogpost title -->
 			<h2 class="blogpost__title"><?= $totalPost['postTitle'] ?></h2>
-			<date><p class="blogpost__date"><?= $totalPost['postDate'] ?></p></date>
+			<date><p class="blogpost__date"><?= substr($totalPost['postDate'], 0, 16) ?></p></date>
 
 			<!-- blogpost image -->
 			<?php foreach (getAllImagesByPostID($totalPost['postID']) as $i => $latestPostImage): ?>
