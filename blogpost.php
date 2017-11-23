@@ -35,7 +35,7 @@
 	
 <?php 
         
- //foreach to show the task
+ //foreach to show the blogposts
     foreach($blogposts as $blogpost) {
         
 ?>
