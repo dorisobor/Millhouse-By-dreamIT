@@ -83,18 +83,18 @@ $pdo -> setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
             </nav>
 	<!--latest comments-->
 	<div class="container-wrapper">
+    <?php foreach($allComments as $allComment){?>
 		<div  class= "container-latestComments">
             <!--CATEGORY TAG-->
-            <?php foreach($allComments as $allComment){?>
 			<article>			
 			<h2>BLOG POST TITLE</h2>
 			<h4>Commented for  <time><?php echo date("Y/m/d");?></time> days ago.</h4>
-			<p><?php echo $allComment['commentText'] ?> </p>
+			<p><?php echo $allComment['commentText']; ?> </p>
 			<button><i class="fa fa-pencil" aria-hidden="true"></i><a href="/editPost.php">Edit</button></a>
 			<button><i class="fa fa-trash" aria-hidden="true"></i><a href="#"> Delete</button></a>
-			</article>
-            <?php }?>	
+			</article>	
 		</div>
+        <?php }?>
 	</div> 
 	     
 	</main>
