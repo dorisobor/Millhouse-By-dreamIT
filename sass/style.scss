@@ -194,32 +194,16 @@ padding: 10px;
 
 /*--FORMS--*/
 
-.checkboxes_wrapper {
-    text-align: left;
-    margin: 2% 5%;
-}
-
-.form {
-    font-size: 0.9em;
-    color: $textColor;
-}
-
-.form--theme {
-    font-size: 0.7em;
-
-}
-
 .form_wrapper {
     padding: 15px;
     margin: 20px; 
     background-color: $sectionBackground;
     max-width: 900px; 
-
 }
 
 input { /*--input settings--*/
     width: 90%; 
-    margin: 10px;
+    margin-bottom: 10px;
 
     &[type="text"] { /*--username / email / password etc.--*/
         background-color: $defaultColor;
@@ -271,33 +255,16 @@ input { /*--input settings--*/
             color: #30854e;
 
         }
-
     }
-
-
 }
 
 .textarea { /*--change your profile description--*/
     width: 90%;
     height: 100px;
-    padding: 0.3em 0;
-    background-color: $defaultColor;
-
-    &:focus {
-        outline: none;
-        border: solid 1px $buttonColor;
-    }
+    background-color: $defaultColor;    
+    border: 1px solid $buttonColor;
 }
 
-.fieldset {
-}
-
-.legend {
-    font-size: 1.2em;
-    font-weight: 400;
-    color: $interactiveHover;
-    margin: 0.5em;
-}
 
 .instruction {
     font-size: 1.4em;
