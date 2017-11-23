@@ -11,6 +11,7 @@
 <?php require 'logoheader.html';
 	  require 'partials/navbar.php'; 
 	  require_once 'partials/db.php';
+	  
 
 	  if(isset($_GET['view_post']) ){ 
 		$postID = $_GET ['view_post'];
@@ -43,7 +44,7 @@
 		
 <article class="blogpost">
 	<!--CATEGORIE TAG-->
-	<button class="blogpost__category-button" <a href="#">Category name</a></button>
+	<button class="blogpost__category-button" <a href="#">Category</a></button>
 	<!--USER INFO-->
 	<div class="blogpost__user-info">
 		<!--USER INFO-->
@@ -61,8 +62,18 @@
 	   <p><?=$blogpost['postText'];?>
 		</p>
 
-			<div class="blogpost__share-button"> <a href="#"> Share <i class="fa fa-share-alt" aria-hidden="true"></i></a>
-			</div>
+	 <div class="blogpost__share-button"> <a href="#"> Share <i class="fa fa-share-alt" aria-hidden="true"></i></a>
+	 </div>
+
+	 <div class="editButtons">
+        <button>
+          <a href="editPost.php"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
+        </button>
+        <button class="delete">
+          <a href="deleteBlogpost.php?delete_post=<?=$blogpost['postID'];?>"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
+         </button>
+    </div> 
+	
 	</div>
 </article>
 	
