@@ -11,8 +11,10 @@
 <?php require 'logoheader.html';
       require 'partials/navbar.php';
       require_once 'partials/db.php';
-			require_once 'partials/fetch_all_blogposts.php'; 
-			
+      require_once 'partials/fetch_all_blogposts.php';
+      
+      
+      
 ?>
 
 <header>
@@ -48,10 +50,10 @@
 	<h1>Blogpost</h1>
 	
 <?php 
-
-//foreach to show all the blogposts
+  //foreach to show all the blogposts and sort the 5 latest posts
+  $i=0;
   foreach($blogposts as $blogpost) {
-        
+    if($i <= 4) {
 ?>
    
 	<article class="blogpost">
@@ -85,7 +87,9 @@
 		</div>
 	</article>
 <?php 
-
+//end if    
+ }
+ $i++;
 //end of loop     
    }
   ?>
