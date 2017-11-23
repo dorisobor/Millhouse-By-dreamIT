@@ -5,9 +5,6 @@
 .container-wrapper{
    margin: 0 1em;
     .container-latestComments{
-        article{
-            text-align: center;  
-        }
         margin: 1em auto;      
         background-color: $sectionBackground;
         border: 1px solid black;
@@ -28,6 +25,7 @@
             button:nth-of-type(2){
                 background-color: $dangerColor;
                 margin-top: 1em;
+                margin-left: 0.5rem;
             }
     
     }
