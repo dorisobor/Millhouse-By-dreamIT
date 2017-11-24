@@ -1,76 +1,123 @@
 <!DOCTYPE html>
+<!--?php 
+require_once 'partials/db.php'; 
+require 'getUserinfo.php';
+?-->
 <html lang="en">
 <head>
 	<?php require 'head.html'; ?>
 	<title>Latest comments</title>
-</head>
+</head>   
 <body>
-	
+
 <?php require 'logoheader.html'; ?>
 <?php require 'navbar.php' ?>
 
 	<header>
 	<div class="jumbotron jumbotron-fluid"></div>
    </header>
-	
 
-	
+<?php
 
-	
-	<!--User icon as a dropdown menue-->
-		<div class="dropdown">
-  <img src="" alt="">
-  <div class="dropdown-content">
-    <a href="#">Profile |</a>
-    <a href="#">Latest Posts |</a>
-    <a href="#">Latest Comments |</a>
-  </div>
-</div>
-  
+$pdo = new PDO(
+  "mysql:host=localhost;dbname=millhouse;charset=utf8",
+  "root",
+  "root"
+);
 
+//hantering av felmeddelande
+$pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+//hinder mot simulerade förfrågningar
+$pdo -> setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
-	
-	<div class ="" > 
-	<!--USER IMAGE-->
-       <p class=""></p>
-		<img src="" alt="">
-		<!--edit icon from bootsrap?-->
-		<!--USER NAME-->
-		<span></span>
-		<!--settings icon from bootstrap?-->
-		</div>
-		<!--bootstrap second nav-->
-		<nav>
-		</nav>
-		<!--wrapping container-->
-		<div class ="wrapper">
-		<h2></h2>
+    $statement = $pdo->prepare
+    ("SELECT comments.commentID, comments.userID, comments.commentText, comments.commentDate, users.userID, users.username, blogPosts.postTitle, blogPosts.postID 
+    FROM comments
+    JOIN users
+    JOIN blogPosts
+    ON comments.commentID = users.userID AND comments.commentID = blogPosts.postID 
+    ORDER BY comments.commentDate DESC 
+    LIMIT 5
+    ");                           
+    
+    $statement->execute();
+    
+    $infos = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-		</div> 
+      require 'logoheader.html'; 
+      require 'navbar.php'; 
 
-		
-		<!--latest comments-->
-		<div class="container-wrapper">
-			<div  class= "container-latestComments">
-				<article>
-				<!--CATEGORY TAG-->
-				<h2>BLOG POST TITLE</h2>
-				<h3>Commented for  <time><?php echo date("Y/m/d");?></time> days ago.</h3>
-				<p>Loosque tenetur excepturi sapiente cupiditate quae vero quibusdam? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, temporibus! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas quibusdam soluta quis exercitationem atque nisi laboriosam quaerat amet aliquam perferendis, culpa distinctio consequatur maxime hic ex ad repellendus eveniet beatae ipsa qui neque omnis eius, provident doloremque. Praesentium cumque ipsa nostrum fugiat tempora ducimus odit officia nisi soluta a. Deleniti.</p>
-				</article>
-				<button>Edit comment</button>
-				<button>Delete comment</button>
-			</div>
-		</div> 
-	    <!--/div--> 
+ ?>
+<main>
+
+<div class="profileBox"> 
+        <!--USER IMAGE-->
+            <div class="profileBox__content-1">
+                <img src="" alt="">
+                <div class="userImage">
+                    <i class="fa fa-user-circle" aria-hidden="true"></i>
+                </div>
+        
+                <!--edit icon from bootsrap?-->
+                <!--USER NAME-->
+                <div class="profileBox__content-username">
+                    <p class="username">Username</p>
+                    <p class="aboutMe">Something About Me</p>
+                </div>
+    
+                <div class="settingsIcon">
+                    <button class="settings">
+                        <a href="settings.php"><i class="fa fa-cog" aria-hidden="true"></i></a>
+                    </button>
+                </div>
+            </div>
+                <div class="clear"></div>
+            
+            <div class="profileBox__content-2">
+                <div class="profileBox__content-commentsPosts">
+                    <div class="totalPosts">
+                        <a href="#">50 blogposts</a>
+                    </div>
+                    <div class="totalComments">
+                        <a href="#">125 comments</a>
+                    </div>
+                </div>
+                <div class="createNewPost">
+                    <button class="create">
+                        <a href="createPost.php">Create New Post</a>
+                    </button>
+                </div>
+            </div>
+            
+            <!--settings icon from bootstrap?-->
+        </div>
+            <!--BOOTSTRAP SECOND NAV-->
+            <nav class="nav nav-pills nav-justified">
+                <a class="nav-item nav-link" href="profilePage.php">All Posts</a>
+                <a class="nav-item nav-link" href="latestPosts.php">Latest Posts</a>
+                <a class="nav-item nav-link active" href="latestComments.php">Latest Comments</a>
+            </nav>
+
+	<!--latest comments-->
+	<div class="container-wrapper">
+            <?php foreach($infos as $info){?>  
+            <div class= "container-latestComments">
+                <!--CATEGORY TAG-->
+                <article>			
+                <h6>User: <?= $info["username"]; ?> </h6>
+                <h6>Comment date : <time> <?= $info["commentDate"]; ?> </time></h6>
+                <h2> <?= $info["postTitle"]; ?> </h2>
+                <p> <?= $info["commentText"]; ?> </p>
+                <button><i class="fa fa-pencil" aria-hidden="true"></i><a href="/editPost.php">Edit</button></a>
+                <button><i class="fa fa-trash" aria-hidden="true"></i><a href="#"> Delete</button></a>
+                </article>	
+            </div>
+            <?php }?>
+            <!--?php }?-->
+            <!--?php }?-->
+	</div> 
+            
 	</main>
-
-	<?php require 'footer.php' ?>
-	
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-
 
 <?php require 'footer.php'; ?>
 <?php require 'bootstrapScripts.html'; ?>
