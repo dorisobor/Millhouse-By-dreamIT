@@ -1,3 +1,4 @@
+<?php require_once 'partials/update.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,14 +17,12 @@
             <div class="form_wrapper">
                 <div class="help">
                     <p>
-                        <span class="fa-stack fa-2x">
-                          <i class="fa fa-circle fa-stack-2x"></i>
-                          <a class="btn btn-default btn-sm" href="help.php"><i class="fa fa fa-question fa-stack-1x fa-inverse"></i></a>
-                    </span>
+                    <a href="help.php"><i class="fa fa-question-circle" aria-hidden="true"></i></a> 
                     </p>
                 </div>
-                <form class="form" action="confirmation.php" method="post" enctype="multipart/form-data">
-                    <fieldset class="fieldset">
+               
+<form class="form" action="editPost.php" method="post" enctype="multipart/form-data">
+                     <fieldset class="fieldset">
                         <legend class="legend"> Edit the post </legend>
 
 
@@ -34,11 +33,11 @@
                         <br /> <br />
 
                         <!--Uppload an image-->
-                        <label class="label" for="image"> Change image </label> <br />
-                        <input type="file" name="image" id="image" />
+                        <label class="label" for="upload"> Change image </label> <br />
+                        <input type="file" name="upload" id="upload" />
                         <br />
                         <label class="label" for="blog_post"> Change post</label> <br />
-                        <textarea class="textarea" id="blog_post" name="blog_post" rows="6" cols="50" placeholder="Your text" required></textarea>
+                        <textarea class="textarea" id="postText" name="postText"  rows="6" cols="50" placeholder="Your text" required></textarea>
                         <br />
 
                         <!--Checkboxes-->
@@ -47,18 +46,34 @@
                             <br />
 
 
-                            <input type="checkbox" name="checkbox" id="checkbox_1" value="Sunglasses">
-                            <label class="label label--checkboxes" for="checkbox_1">Sunglasses</label><br>
-                            <input type="checkbox" name="checkbox" id="checkbox_2" value="Watches">
-                            <label class="label label--checkboxes" for="checkbox_2">Watches</label><br>
-                            <input type="checkbox" name="checkbox" id="checkbox_3" value="Interior">
-                            <label class="label label--checkboxes" for="checkbox_3">Interior</label><br>
+                            <input type="radio" name="category" id="category_1" value="Sunglasses"  required >
+                            <label class="label" for="category_1">Sunglasses</label><br>
+                            <input type="radio" name="category" id="category_2" value="Watches">
+                            <label class="label" for="category_2">Watches</label><br>
+                            <input type="radio" name="category" id="category_3" value="Interior">
+                            <label class="label" for="category_3">Interior</label><br>
                         </div>
-                        <!--Publish-->
-                        <input type="submit" value="Update post" />
+                      
+                        <input type="submit" value="publish" name="publish">
                     </fieldset>
                 </form>
             </div>
+            
+            <?php 
+    var_dump($_POST);
+   if(isset($success)){
+       $imgCopyName = $_FILES['upload']['tmp_name'];
+       $imgName = $_FILES['upload']['name'];
+       $imgSize = $_FILES['upload']['size'];
+    echo  $imgCopyName . "<br>";
+       echo  $imgName;
+        echo '<br> <br> Published!<br> <script type="text/javascript">alert("Published!");</script>'; 
+       echo  $imgSize . " Kb";
+//           sleep(5);
+//         header("Location: blogpost.php", true, 303);
+        //then should redirect to page with full blogpost
+   }
+?>
         </div>
     </main>
 
