@@ -279,6 +279,25 @@ input { /*--input settings--*/
     color: $dangerColor;
 }
 
+.editButtons{   
+    
+                a{
+                    color: $defaultColor; 
+                }
+                .fa-pencil{
+                    font-size: 1.2rem; 
+                }
+            
+                .delete{
+                    background: $dangerColor; 
+    
+                    .fa-trash{
+                        font-size: 1.2rem; 
+                    }
+            }
+             
+    }
+
 
 /*------HÄR BÖRJAR MEDIA SCREEN----------*/
 
