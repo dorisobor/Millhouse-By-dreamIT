@@ -3,13 +3,39 @@
 <head>
 	<?php require 'head.html'; ?>
 	<title>Latest comments</title>
-</head>
+</head>   
 <body>
-	
-<?php require 'logoheader.html'; ?>
-<?php require 'navbar.php' ?>
+
+<?php
+
+$pdo = new PDO(
+  "mysql:host=localhost;dbname=millhouse;charset=utf8",
+  "root",
+  "root"
+);
+
+//hantering av felmeddelande
+$pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+//hinder mot simulerade förfrågningar
+$pdo -> setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+
+    $statement = $pdo->prepare("SELECT * FROM comments
+    ORDER BY commentDate DESC LIMIT 5");
+    $statement->execute();
+    $commentsByUsers = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+    $statement = $pdo->prepare("SELECT postTitle FROM blogPosts LIMIT 5");
+    $statement->execute();
+    $allPostTitles = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+
+      require 'logoheader.html'; 
+      require 'navbar.php'; 
+
+
+ ?>
 <main>
-<!--Profile Box-->
+
 <div class="profileBox"> 
         <!--USER IMAGE-->
             <div class="profileBox__content-1">
@@ -59,16 +85,20 @@
             </nav>
 	<!--latest comments-->
 	<div class="container-wrapper">
-		<div  class= "container-latestComments">
-			<article>
-			<!--CATEGORY TAG-->
-			<h2>BLOG POST TITLE</h2>
-			<h4>Commented for  <time><?php echo date("Y/m/d");?></time> days ago.</h4>
-			<p>Loosque tenetur excepturi sapiente cupiditate quae vero quibusdam? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, temporibus! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas quibusdam soluta quis exercitationem atque nisi laboriosam quaerat amet aliquam perferendis, culpa distinctio consequatur maxime hic ex ad repellendus eveniet beatae ipsa qui neque omnis eius, provident doloremque. Praesentium cumque ipsa nostrum fugiat tempora ducimus odit officia nisi soluta a. Deleniti.</p>
-			<button><i class="fa fa-pencil" aria-hidden="true"></i><a href="/editPost.php">Edit</button></a>
-			<button><i class="fa fa-trash" aria-hidden="true"></i><a href="#"> Delete</button></a>
-			</article>	
-		</div>
+            <?php foreach($allPostTitles as $allPostTitle){?>
+            <?php foreach($commentsByUsers as $commentsByUser){?>   
+            <div class= "container-latestComments">
+                <!--CATEGORY TAG-->
+                <article>			
+                <h2> <?= $allPostTitle['postTitle']; ?> </h2>
+                <h4>Commented for  <time></time> days ago.</h4>
+                <p> <?= $commentsByUser['commentText']; ?> </p>
+                <button><i class="fa fa-pencil" aria-hidden="true"></i><a href="/editPost.php">Edit</button></a>
+                <button><i class="fa fa-trash" aria-hidden="true"></i><a href="#"> Delete</button></a>
+                </article>	
+            </div>
+        <?php }?>
+        <?php }?>
 	</div> 
 	     
 	</main>

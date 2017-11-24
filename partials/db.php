@@ -1,5 +1,9 @@
 <?php
+
   require_once 'partials/db.php';
+
+
+$GLOBALS['userID'] = 1;
 
 
 $pdo = new PDO(
