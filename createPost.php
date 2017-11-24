@@ -19,26 +19,29 @@
             </div>
 
             <div class="help">
-            <i class="fa fa-question-circle" aria-hidden="true"></i>
+                <i class="fa fa-question-circle" aria-hidden="true"></i>
             </div>
 
             <form class="form" action="confirmation.php" method="post" enctype="multipart/form-data">
                 <fieldset class="fieldset">
-                    <p>Title</p>
-                    <input type="text" name="headline" placeholder="Headline" id="headline" aria-required="true" required />
+                    <p>Blogpost Title</p>
+                    <input type="text" name="headline" placeholder="Title" id="headline" aria-required="true" required />
+                    <br></br>
 
                     <!--Uppload an image-->
                     <p>Choose an image</p>
                     <input type="file" name="image" id="image"/>
+                    <br></br>
                     
                     <p> Write post</p>
                     <textarea class="textarea" id="blog_post" name="blog_post" rows="6" cols="50" placeholder="Your text" required></textarea>
+                    <br></br>
 
                     <!--Checkboxes-->
                     <div class="form checkboxes_wrapper">
-                        <p>Select one or several categories for your post:</p>
+                        <p>Select one category for your post:</p>
                         <input type="checkbox" name="checkbox" id="checkbox_1" value="Sunglasses">
-                        <label class="label label--checkboxes" for="checkbox_1">Sunglasses</label><br>
+                        <label class="label label--checkboxes" for="checkbox_1"></label><p>Sunglasses</p>
                         <input type="checkbox" name="checkbox" id="checkbox_2" value="Watches">
                         <label class="label label--checkboxes" for="checkbox_2">Watches</label><br>
                         <input type="checkbox" name="checkbox" id="checkbox_3" value="Interior">
