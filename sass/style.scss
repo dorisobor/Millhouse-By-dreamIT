@@ -195,15 +195,16 @@ padding: 10px;
 /*--FORMS--*/
 
 .form_wrapper {
-    padding: 15px;
-    margin: 20px; 
+    padding: 20px;
     background-color: $sectionBackground;
-    max-width: 900px; 
+    max-width: 700px; 
+    margin: 0px auto; 
 }
 
 input { /*--input settings--*/
     width: 90%; 
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    height: 35px; 
 
     &[type="text"] { /*--username / email / password etc.--*/
         background-color: $defaultColor;
@@ -218,6 +219,7 @@ input { /*--input settings--*/
         -webkit-border-radius:0.25rem;
         -moz-border-radius: 0.25rem;
         border-radius: 0.25rem;
+        margin: 0px auto; 
 
         &:hover {
             background-color: $interactiveHover;
@@ -258,6 +260,7 @@ input { /*--input settings--*/
     background-color: $defaultColor;    
     border: 1px solid $buttonColor;
 }
+
 
 
 .instruction {
@@ -344,6 +347,21 @@ input { /*--input settings--*/
         font-size: 2em;
         font-weight: 600;
     }
+
+fieldset{
+    text-align: center; 
+}
+
+.form_wrapper {
+    padding: 20px;
+    background-color: $sectionBackground;
+    max-width: 700px; 
+    margin: 0px auto; 
+
+    .form_heading{
+        margin-left: 30px; 
+    }
+}
 
 }
 
