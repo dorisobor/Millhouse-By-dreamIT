@@ -17,7 +17,7 @@ require_once 'partials/fetch_all_blogposts.php';
 ?>
 
 <header>
-	<div class="jumbotron jumbotron-fluid logo-header d-none d-lg-block d-xl-block"></div>    
+	<div class="jumbotron jumbotron-fluid logo-header"></div>    
 </header>
   
 <main>
@@ -48,7 +48,7 @@ require_once 'partials/fetch_all_blogposts.php';
 
   <div class="mainBody">
   
-	<h1>Blogpost</h1>
+	<h1>Latest Stories</h1>
 	
 <?php 
   //foreach to show all the blogposts and sort the 5 latest posts
