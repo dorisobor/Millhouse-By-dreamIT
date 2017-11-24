@@ -8,9 +8,10 @@
 
 <body>
  <!--Included files-->
+
 <?php 
 require 'logoheader.html';
-require 'partials/navbar.php';            
+require 'partials/navbar.php';
 require_once 'partials/db.php';
 require_once 'partials/fetch_all_blogposts.php';
 ?>
@@ -44,6 +45,8 @@ require_once 'partials/fetch_all_blogposts.php';
   </div>
   
 	<hr class="d-none d-lg-block d-xl-block">
+
+  <div class="mainBody">
   
 	<h1>Blogpost</h1>
 	
@@ -84,13 +87,15 @@ require_once 'partials/fetch_all_blogposts.php';
 			</div>
 		</div>
 	</article>
-<?php 
+  <?php 
 //end if    
  }
  $i++;
 //end of loop     
    }
   ?>
+  </div>
+
 </main>
 
 <?php require 'footer.php'; ?>
