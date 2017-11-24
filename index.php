@@ -12,9 +12,6 @@
       require 'partials/navbar.php';
       require_once 'partials/db.php';
       require_once 'partials/fetch_all_blogposts.php';
-      
-      
-      
 ?>
 
 <header>
