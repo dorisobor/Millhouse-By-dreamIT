@@ -46,6 +46,8 @@
   </div>
   
 	<hr class="d-none d-lg-block d-xl-block">
+
+  <div class="mainBody">
   
 	<h1>Blogpost</h1>
 	
@@ -86,13 +88,15 @@
 			</div>
 		</div>
 	</article>
-<?php 
+  <?php 
 //end if    
  }
  $i++;
 //end of loop     
    }
   ?>
+  </div>
+
 </main>
 
 <?php require 'footer.php'; ?>

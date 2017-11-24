@@ -33,6 +33,9 @@
 <hr>
 
 <main>
+
+<div class="mainBody">
+
 	
 <?php 
         
@@ -40,6 +43,7 @@
     foreach($blogposts as $blogpost) {
         
 ?>
+
 	 <h1>Blogpost</h1>
 		
 <article class="blogpost">
@@ -76,6 +80,7 @@
 	
 	</div>
 </article>
+</div>
 	
 <?php 
 
