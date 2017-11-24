@@ -86,7 +86,7 @@ $pdo -> setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
         </div>
             <!--BOOTSTRAP SECOND NAV-->
             <nav class="nav nav-pills nav-justified">
-                <a class="nav-item nav-link" href="profilePage.php">Profile</a>
+                <a class="nav-item nav-link" href="profilePage.php">All Posts</a>
                 <a class="nav-item nav-link" href="latestPosts.php">Latest Posts</a>
                 <a class="nav-item nav-link active" href="latestComments.php">Latest Comments</a>
             </nav>
