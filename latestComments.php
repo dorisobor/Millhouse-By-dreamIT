@@ -30,7 +30,7 @@ $pdo -> setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
 
       require 'logoheader.html'; 
-      require 'navbar.php'; 
+      require 'partials/navbar.php'; 
 
 
  ?>

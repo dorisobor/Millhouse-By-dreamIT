@@ -28,8 +28,8 @@ $loggedOn = true;
       
     	<div class="navbar-nav">
             <a class="nav-item nav-link" href="index.php">Home</a>
+            <a class="nav-item nav-link" href="categoryWatches.php">Waches</a>
             <a class="nav-item nav-link" href="categorySunglasses.php">Sunglasses</a>
-            <a class="nav-item nav-link" href="categoryWatches.php">Watches</a>
             <a class="nav-item nav-link" href="categoryInterior.php">Interior</a>
             <a class="nav-item nav-link" href="contact.php">Contact</a><br>
 
