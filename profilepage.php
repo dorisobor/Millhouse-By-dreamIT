@@ -17,7 +17,7 @@ $user = getUserInfo($GLOBALS['userID']);
 <body>
 
 <?php require 'logoheader.html'; ?>
-<?php require 'navbar.php'; ?>
+<?php require 'partials/navbar.php'; ?>
 
 	<main>
 		<div class="profileBox"> 
