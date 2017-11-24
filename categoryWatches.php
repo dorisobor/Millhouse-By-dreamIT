@@ -8,7 +8,7 @@
 
 
 <?php require 'logoheader.html'; ?>
-<?php require 'navbar.php'; ?>
+<?php require 'partials/navbar.php'; ?>
 
 
 <header>
