@@ -64,7 +64,7 @@ $user = getUserInfo($GLOBALS['userID']);
 
 		<!--BOOTSTRAP SECOND NAV-->
 		<nav class="nav nav-pills nav-justified">
-			<a class="nav-item nav-link active" href="profilePage.php">Profile</a>
+			<a class="nav-item nav-link active" href="profilePage.php">All Posts</a>
 			<a class="nav-item nav-link" href="latestPosts.php">Latest Posts</a>
 			<a class="nav-item nav-link" href="latestComments.php">Latest Comments</a>
 		</nav>
@@ -73,17 +73,21 @@ $user = getUserInfo($GLOBALS['userID']);
 		<div class="profilePosts">
 		<?php foreach (getAllBlogpostsByUserID($userID) as $i => $totalPost): ?>
 			<article class="blogpost">
+
 				<!--CATEGORIE TAG-->
-				<button class="categoryButton">
-					<a href="categoryInterior.php">Interior</a>
-				</button>
+				<?php foreach (getAllCategories($totalPost['postID']) as $i => $totalPostCategory): ?>
+					<button class="categoryButton">
+						<a href=""><?= $totalPostCategory['category'] ?></a>
+					</button>
+				<?php endforeach ?>
+
 				<!--USER INFO-->
 				<h2 class="blogpost__title"><?= $totalPost['postTitle'] ?></h2>
 				<date><p class="blogpost__date"><?= substr($totalPost['postDate'], 0, 16) ?></p></date>
 		
 				<?php foreach (getAllImagesByPostID($totalPost['postID']) as $i => $latestPostImage): ?>
 					<figure>
-						<img src="<?= $latestPostImage['postImage']?>" alt="inredning_kollage">
+						<img src="<?= $latestPostImage['postImage'] ?>" alt="inredning_kollage">
 					</figure>
 				<?php endforeach; ?>
 

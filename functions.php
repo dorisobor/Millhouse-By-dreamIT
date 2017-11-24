@@ -44,6 +44,15 @@ function getAllBlogpostsByUserID ($userID) {
     return $userBlogposts;
 }
 
+function getAllCategories ($postID) {
+    global $pdo;
+    $stmt = $pdo->prepare("SELECT * FROM blogPosts JOIN categories ON categories.categoryID = blogPosts.categoryID WHERE blogPosts.postID = :id");
+    $stmt->bindParam(":id", $postID);
+    $stmt->execute();
+    $postCategories = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $postCategories;
+}
+
 function getAllImagesByPostID ($postID) {
 	global $pdo;
 	$stmt = $pdo->prepare("SELECT * FROM blogPosts JOIN images ON images.postID = blogPosts.postID WHERE blogPosts.postID = :id");  

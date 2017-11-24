@@ -63,7 +63,7 @@ $user = getUserInfo($GLOBALS['userID']);
 	
 	<!-- Tab menu -->
 	<nav class="nav nav-pills nav-justified">
-		<a class="nav-item nav-link" href="profilePage.php">Profile</a>
+		<a class="nav-item nav-link" href="profilePage.php">All Posts</a>
 		<a class="nav-item nav-link active" href="latestPosts.php">Latest Posts</a>
 		<a class="nav-item nav-link" href="latestComments.php">Latest Comments</a>
 	</nav>
