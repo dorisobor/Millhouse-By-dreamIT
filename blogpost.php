@@ -30,8 +30,6 @@
  ?>
 
 
-<hr>
-
 <main>
 
 <div class="mainBody">
