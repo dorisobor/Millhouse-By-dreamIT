@@ -70,7 +70,7 @@ $user = getUserInfo($GLOBALS['userID']);
 			
 	<div class="profilePosts">
 
-	<?php foreach (getAllBlogpostsByUserID($userID) as $i => $totalPost): ?>
+	<?php foreach (getLatestBlogpostByUserID($userID) as $i => $latestPost): ?>
 		<article class="blogpost">
 
 			<!-- category tag -->
@@ -79,20 +79,18 @@ $user = getUserInfo($GLOBALS['userID']);
 			</button>
 
 			<!-- blogpost title -->
-			<h2 class="blogpost__title"><?= $totalPost['postTitle'] ?></h2>
-			<date><p class="blogpost__date"><?= substr($totalPost['postDate'], 0, 16) ?></p></date>
+			<h2 class="blogpost__title"><?= $latestPost['postTitle'] ?></h2>
+			<date><p class="blogpost__date"><?= substr($latestPost['postDate'], 0, 16) ?></p></date>
 
 			<!-- blogpost image -->
-			<?php foreach (getAllImagesByPostID($totalPost['postID']) as $i => $latestPostImage): ?>
-				<figure>
-					<img src="<?= $latestPostImage['postImage']?>" alt="inredning_kollage">
-				</figure>
-			<?php endforeach; ?>
+			<figure>
+				<img src="<?= $latestPost['postImage']?>" alt="inredning_kollage">
+			</figure>
 
 			<div class="clear"></div> 
 
 			<div class= "blogpost__blog-description">
-				<p><?= $totalPost['postText'] ?></p>
+				<p><?= $latestPost['postText'] ?></p>
 				<div class="blogpost__read-more"> 
 					<a href="#" >
 						Read More <i class="fa fa-chevron-right" aria-hidden="true"></i>
