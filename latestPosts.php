@@ -84,7 +84,7 @@ $user = getUserInfo($GLOBALS['userID']);
 
 			<!-- blogpost image -->
 			<figure>
-				<img src="<?= $latestPost['postImage']?>" alt="inredning_kollage">
+				<img src="<?= $latestPost['postImage']?>" alt="">
 			</figure>
 
 			<div class="clear"></div> 

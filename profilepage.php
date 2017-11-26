@@ -85,7 +85,7 @@ $user = getUserInfo($GLOBALS['userID']);
 				<date><p class="blogpost__date"><?= substr($totalPost['postDate'], 0, 16) ?></p></date>
 		
 				<figure>
-					<img src="<?= $totalPost['postImage'] ?>" alt="inredning_kollage">
+					<img src="<?= $totalPost['postImage'] ?>" alt="">
 				</figure>
 
 				<div class="clear"></div> 
