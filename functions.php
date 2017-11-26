@@ -68,7 +68,9 @@ function getAllBlogpostsByCategory ($postCategory){
     $stmt = $pdo->prepare("SELECT * FROM blogPosts
     JOIN categories ON categories.categoryID = blogPosts.categoryID
     LEFT JOIN images ON images.postID = blogPosts.postID
-    WHERE categories.categoryID = :categoryID");  
+    JOIN users ON users.userID = blogPosts.userID
+    WHERE categories.categoryID = :categoryID
+    ORDER BY blogPosts.postID DESC");  
     $stmt->bindParam(":categoryID", $postCategory);    
     $stmt->execute();
     $blogposts = $stmt->fetchAll(PDO::FETCH_ASSOC);

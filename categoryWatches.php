@@ -30,20 +30,25 @@ $user = getUserInfo($GLOBALS['userID']);
 		<h1>Watches</h1>
 		<p>Here you can read all about Millhouse exclusive watches!</p>
 		<!-- article = blogpost -->
-		<?php foreach (getAllBlogpostsOnWatches(1) as $i => $blogposts): ?>
+		<?php foreach (getAllBlogpostsOnWatches(1) as $i => $blogpost): ?>
 		<article class="blogpost">
 		<!--CATEGORIE TAG-->
 			<button class="categoryButton">
-				<a href="categoryWatches.php"><?= $blogposts['categoryName'] ?></a>
+				<a href="categoryWatches.php"><?= $blogpost['categoryName'] ?></a>
 			</button>
-			<h2><?= $blogposts['postTitle'] ?></h2>
+			<div class="blogpost__user-info">
+				<i class="fa fa-user-circle-o" aria-hidden="true"></i>
+				<span><?= $blogpost['username'] ?></span> 
+				<time><p><?= substr($blogpost['postDate'], 0, 16); ?></p></time>
+			</div>
+			<h2><?= $blogpost['postTitle'] ?></h2>
 			<!--BLOG PICTURE-->
 			<figure>
-				<img src="<?= $blogposts['postImage'] ?>" alt="">
+				<img src="<?= $blogpost['postImage'] ?>" alt="">
 			</figure>
 			<div class= "blogpost__blog-description">
 				<p>
-					<?= $blogposts['postText'] ?>
+					<?= substr($blogpost['postText'],0,200) ?>
 				</p>
 				<div class="blogpost__read-more"> 
 					<a href="blogpost.php">Read More <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
