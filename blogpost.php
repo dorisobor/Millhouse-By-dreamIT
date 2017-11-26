@@ -30,9 +30,10 @@
  ?>
 
 
-<hr>
-
 <main>
+
+<div class="mainBody">
+
 	
 <?php 
         
@@ -40,7 +41,8 @@
     foreach($blogposts as $blogpost) {
         
 ?>
-	 <h1>Blogpost</h1>
+
+	 <h1>Story</h1>
 		
 <article class="blogpost">
 	<!--CATEGORIE TAG-->
@@ -76,6 +78,7 @@
 	
 	</div>
 </article>
+</div>
 	
 <?php 
 

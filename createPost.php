@@ -41,31 +41,8 @@
             <a class="nav-item nav-link" href="categoryInterior.php">Interior</a>
             <a class="nav-item nav-link" href="contact.php">Contact</a><br>
 
-                            <a class="nav-item nav-link d-lg-none d-xl-none" href="createPost.php">Create new post</a>
-                <a class="nav-item nav-link d-lg-none d-xl-none" href="profilepage.php">Profile</a>
-                <a class="nav-item nav-link d-lg-none d-xl-none" href="help.php">Help</a>
-                <a class="nav-item nav-link d-lg-none d-xl-none" href="settings.php">Settings</a>
-            
-        </div>
-
-                <div class="user-actions d-none d-lg-block d-xl-block ml-auto">
-            <a class="user-actions__link" href="signOut.php.php"> 
-                <button class="user-actions__sign-up-btn">
-                    <i class="fa fa-sign-out" aria-hidden="true"></i> Sign out
-                </button>
-            </a>
-        </div>
-            
-                    <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle d-none d-lg-block d-xl-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-user-circle-o" aria-hidden="true"></i> User menu
-                </button>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="createPost.php">Create new post</a>
-                    <a class="dropdown-item" href="profilepage.php">Profile</a>
-                    <a class="dropdown-item" href="help.php">Help</a>
-                    <a class="dropdown-item" href="settings.php">Settings</a>
-                </div>
+            <div class="help">
+                <i class="fa fa-question-circle" aria-hidden="true"></i>
             </div>
             
     </div>

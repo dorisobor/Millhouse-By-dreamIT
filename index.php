@@ -8,37 +8,36 @@
 
 <body>
  <!--Included files-->
-<?php require 'logoheader.html';
-      require 'partials/navbar.php';
-      require_once 'partials/db.php';
-      require_once 'partials/fetch_all_blogposts.php';
-      
-      
-      
+
+<?php 
+require 'logoheader.html';
+require 'partials/navbar.php';
+require_once 'partials/db.php';
+require_once 'partials/fetch_all_blogposts.php';
 ?>
 
 <header>
-	<div class="jumbotron jumbotron-fluid logo-header d-none d-lg-block d-xl-block"></div>    
+	<div class="jumbotron jumbotron-fluid logo-header"></div>    
 </header>
   
 <main>
   <div class="figures">
     <figure>
-      <img class ="figures__category-image" src="images/mh_watch_576.png" alt="watches">
+      <img class ="figures__category-image" src="images/square_watch.png" alt="watches">
       <figcaption>
         <h3><a href="#">Watches</a></h3>
       </figcaption>
     </figure>
 
     <figure>
-      <img class ="figures__category-image" src="images/mh_sunglasses_576.png" alt="sunglasses">
+      <img class ="figures__category-image" src="images/square_glasses.png" alt="sunglasses">
        <figcaption>
          <h3><a href="#">Sunglasses</a></h3>
       </figcaption>
     </figure>
 
     <figure>
-       <img class ="figures__category-image" src="images/mh_interior_576.png" alt="interior">
+       <img class ="figures__category-image" src="images/square_interior.png" alt="interior">
        <figcaption>
         <h3><a href="#">Interior</a></h3>
       </figcaption>
@@ -46,8 +45,10 @@
   </div>
   
 	<hr class="d-none d-lg-block d-xl-block">
+
+  <div class="mainBody">
   
-	<h1>Blogpost</h1>
+	<h1>Latest Stories</h1>
 	
 <?php 
   //foreach to show all the blogposts and sort the 5 latest posts
@@ -86,13 +87,15 @@
 			</div>
 		</div>
 	</article>
-<?php 
+  <?php 
 //end if    
  }
  $i++;
 //end of loop     
    }
   ?>
+  </div>
+
 </main>
 
 <?php require 'footer.php'; ?>

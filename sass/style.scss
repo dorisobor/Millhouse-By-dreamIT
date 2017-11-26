@@ -7,7 +7,6 @@
 @import 'jimmyFooter.scss';
 @import 'category.scss'; 
 
-
 @font-face {
     font-family: 'helveticaneueregular';
     src: url('fonts/helveticaneue/helveticaneue-webfont.woff2') format('woff2'),
@@ -30,9 +29,18 @@ $wrapperColor: rgba(109,
 109,
 0.44);
 
-
 .navbar {
     border-top: 1px solid $sectionBackground;
+}
+
+.jumbotron {
+    display: block;
+    margin-bottom: 0px;
+    background-image: url("images/mh_header.jpg"), url("../images/mh_header.jpg");
+    background-color: #cccccc;
+    background-size: cover;
+    width: 100%;
+    height: 300px;
 }
 
 body {
@@ -55,8 +63,10 @@ main {
     display: none;
  }
 
- hr {
+hr {
     display:block;
+    max-width: 900px; 
+    margin: 20px; 
  }
 
 h1{
@@ -68,7 +78,7 @@ h1{
 /*---CATEGORY PAGES---*/
 
 p{
-    margin-top: 0px;
+    margin: 0px;
 }
 
 .mainBody{
@@ -109,8 +119,7 @@ article button{
 
 .blogpost {
  background-color: $sectionBackground;
- margin: auto;
- padding:15px;
+ padding:20px;
 }
 
  /* category button */
@@ -138,7 +147,6 @@ article button{
 
    h2 {
        color: $textColor;
-       margin: 10px;
    }
  
    /* blogimage */
@@ -172,7 +180,6 @@ padding: 10px;
 
     }
 
-
 .coverPhoto{
     padding: 0px; 
     margin: 0px;
@@ -188,15 +195,16 @@ padding: 10px;
 /*--FORMS--*/
 
 .form_wrapper {
-    padding: 15px;
-    margin: 20px; 
+    padding: 20px;
     background-color: $sectionBackground;
-    max-width: 900px; 
+    max-width: 700px; 
+    margin: 0px auto; 
 }
 
 input { /*--input settings--*/
     width: 90%; 
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    height: 35px; 
 
     &[type="text"] { /*--username / email / password etc.--*/
         background-color: $defaultColor;
@@ -211,6 +219,7 @@ input { /*--input settings--*/
         -webkit-border-radius:0.25rem;
         -moz-border-radius: 0.25rem;
         border-radius: 0.25rem;
+        margin: 0px auto; 
 
         &:hover {
             background-color: $interactiveHover;
@@ -219,18 +228,14 @@ input { /*--input settings--*/
     }
 
     &[type="file"] {
-        height: 1.4em;
-        padding: 0.3em;
-        background-color: $sectionBackground;
-        color: $buttonColor;
-        border: solid 1px $buttonColor;
-        cursor: pointer;
-        font-size: 1.2em;
+        background-color: $defaultColor;
+        color: $tabs; 
 
         &:focus {
             outline: none;
             border: solid 1px $buttonColor;
-
+            cursor: pointer;
+            
         }
 
 
@@ -238,6 +243,8 @@ input { /*--input settings--*/
 
     &[type="checkbox"] {
         cursor: pointer;
+        margin: 0px; 
+        padding: 0px; 
 
 
         &:checked + label {
@@ -253,6 +260,7 @@ input { /*--input settings--*/
     background-color: $defaultColor;    
     border: 1px solid $buttonColor;
 }
+
 
 
 .instruction {
@@ -274,6 +282,25 @@ input { /*--input settings--*/
     color: $dangerColor;
 }
 
+.editButtons{   
+    
+                a{
+                    color: $defaultColor; 
+                }
+                .fa-pencil{
+                    font-size: 1.2rem; 
+                }
+            
+                .delete{
+                    background: $dangerColor; 
+    
+                    .fa-trash{
+                        font-size: 1.2rem; 
+                    }
+            }
+             
+    }
+
 
 /*------HÄR BÖRJAR MEDIA SCREEN----------*/
 
@@ -286,41 +313,30 @@ input { /*--input settings--*/
         background-color: #cccccc;
         background-size: cover;
         width: 100%;
-        height: 550px;
+        height: 400px;
     }
     
     .figures {
         display: flex;
         flex-direction: row;
+        padding: 10px; 
     
-    figure {
-    padding: 5px;
-     margin:  0 auto;
+        figure {
+            margin:  0 auto;
         
-    .figures__category-image {
-    height:200px;
-    width:200px;
-    
-     }
-    figcaption{
-        text-align: center;
-        text-color: $headLineColor;
-    }
-    }   
-    }
-   
-    .form--theme {
-        font-size: 1.2em;
-    }
+        .figures__category-image {
+            height:300px;
+            width:300px;
+            padding: 10px; 
+        }
 
-    .label--checkboxes {
-        font-size: 1.4em;
+            figcaption{
+                text-align: center;
+                color: $headLineColor;
+            }
+        }   
     }
-
-    .form_wrapper {
-        margin: 10%;
-    }
-
+  
     .legend {
         font-size: 2em;
         font-weight: 600;
@@ -331,6 +347,21 @@ input { /*--input settings--*/
         font-size: 2em;
         font-weight: 600;
     }
+
+fieldset{
+    text-align: center; 
+}
+
+.form_wrapper {
+    padding: 20px;
+    background-color: $sectionBackground;
+    max-width: 700px; 
+    margin: 0px auto; 
+
+    .form_heading{
+        margin-left: 30px; 
+    }
+}
 
 }
 
