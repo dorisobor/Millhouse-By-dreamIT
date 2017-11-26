@@ -50,3 +50,27 @@ function getAllBlogpostsByUserID ($userID) {
     $blogposts = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $blogposts;
 }
+
+function getAllBlogpostsOnWatches () {
+    return getAllBlogpostsByCategory(1);
+}
+
+function getAllBlogpostsOnSunglasses () {
+    return getAllBlogpostsByCategory(2);
+}
+
+function getAllBlogpostsOnInterior() {
+    return getAllBlogpostsByCategory(3);
+}
+
+function getAllBlogpostsByCategory ($postCategory){
+    global $pdo;    
+    $stmt = $pdo->prepare("SELECT * FROM blogPosts
+    JOIN categories ON categories.categoryID = blogPosts.categoryID
+    LEFT JOIN images ON images.postID = blogPosts.postID
+    WHERE categories.categoryID = :categoryID");  
+    $stmt->bindParam(":categoryID", $postCategory);    
+    $stmt->execute();
+    $blogposts = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $blogposts;
+}
