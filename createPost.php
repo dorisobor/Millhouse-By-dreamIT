@@ -41,36 +41,8 @@
             <a class="nav-item nav-link" href="categoryInterior.php">Interior</a>
             <a class="nav-item nav-link" href="contact.php">Contact</a><br>
 
-<<<<<<< HEAD
             <div class="help">
                 <i class="fa fa-question-circle" aria-hidden="true"></i>
-=======
-                            <a class="nav-item nav-link d-lg-none d-xl-none" href="createPost.php">Create new post</a>
-                <a class="nav-item nav-link d-lg-none d-xl-none" href="profilepage.php">Profile</a>
-                <a class="nav-item nav-link d-lg-none d-xl-none" href="help.php">Help</a>
-                <a class="nav-item nav-link d-lg-none d-xl-none" href="settings.php">Settings</a>
-            
-        </div>
-
-                <div class="user-actions d-none d-lg-block d-xl-block ml-auto">
-            <a class="user-actions__link" href="signOut.php.php"> 
-                <button class="user-actions__sign-up-btn">
-                    <i class="fa fa-sign-out" aria-hidden="true"></i> Sign out
-                </button>
-            </a>
-        </div>
-            
-                    <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle d-none d-lg-block d-xl-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-user-circle-o" aria-hidden="true"></i> User menu
-                </button>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="createPost.php">Create new post</a>
-                    <a class="dropdown-item" href="profilepage.php">Profile</a>
-                    <a class="dropdown-item" href="help.php">Help</a>
-                    <a class="dropdown-item" href="settings.php">Settings</a>
-                </div>
->>>>>>> 9609c38e92b11415e3dc72def4fad8b863179f88
             </div>
             
     </div>
@@ -88,40 +60,6 @@
                     <fieldset class="fieldset">
                         <legend class="legend"> Create a new post </legend>
 
-<<<<<<< HEAD
-            <form class="form" action="confirmation.php" method="post" enctype="multipart/form-data">
-                <fieldset class="fieldset">
-                    <p>Blogpost Title</p>
-                    <input type="text" name="headline" placeholder="Title" id="headline" aria-required="true" required />
-                    <br></br>
-
-                    <!--Uppload an image-->
-                    <p>Choose an image</p>
-                    <input type="file" name="image" id="image"/>
-                    <br></br>
-                    
-                    <p> Write post</p>
-                    <textarea class="textarea" id="blog_post" name="blog_post" rows="6" cols="50" placeholder="Your text" required></textarea>
-                    <br></br>
-
-                    <!--Checkboxes-->
-                    <div class="form checkboxes_wrapper">
-                        <p>Select one category for your post:</p>
-                        <input type="checkbox" name="checkbox" id="checkbox_1" value="Sunglasses">
-                        <label class="label label--checkboxes" for="checkbox_1"></label><p>Sunglasses</p>
-                        <input type="checkbox" name="checkbox" id="checkbox_2" value="Watches">
-                        <label class="label label--checkboxes" for="checkbox_2">Watches</label><br>
-                        <input type="checkbox" name="checkbox" id="checkbox_3" value="Interior">
-                        <label class="label label--checkboxes" for="checkbox_3">Interior</label><br>
-                    </div>
-
-                    <!--Publish-->
-                    <div class="publishPost">
-                        <input type="submit" value="Publish post"/>
-                    </div>
-                </fieldset>
-            </form>
-=======
 
 
                         <label class="label" for="headline">Headline</label>
@@ -170,7 +108,6 @@
        echo  $imgSize . " Kb";
    }
 ?>
->>>>>>> 9609c38e92b11415e3dc72def4fad8b863179f88
         </div>
     </main>
 
