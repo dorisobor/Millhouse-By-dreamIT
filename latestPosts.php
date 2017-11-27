@@ -23,9 +23,10 @@ $user = getUserInfo($GLOBALS['userID']);
 <main>
 	<div class="profileBox"> 
 		<div class="profileBox__content-1">
+			
 			<!-- Userimage instead of icon -->
-			<div class="userImage">
-				<i class="fa fa-user-circle" aria-hidden="true"></i>
+			<div class="user-image__container">
+				<img class="user-image__image" src="<?= $user['userAvatar'] ?>"/>
 			</div>
 
 			<!-- username and info -->

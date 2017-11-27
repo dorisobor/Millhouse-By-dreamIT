@@ -28,7 +28,7 @@ $pdo -> setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
         FROM blogPosts
         JOIN users
         JOIN comments 
-        ON users.userID = blogPosts.userID AND comments.postID = blogPosts.postID and users.userID = 3 LIMIT 5
+        ON users.userID = blogPosts.userID AND comments.postID = blogPosts.postID and users.userID = 1 LIMIT 5
     ");                           
     
     $statement->execute();

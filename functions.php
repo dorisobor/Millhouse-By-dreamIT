@@ -2,7 +2,7 @@
 
 function getUserInfo ($userID) {
     global $pdo;            
-    $stmt = $pdo->prepare("SELECT username, userBio FROM users WHERE userID = :id");  
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE userID = :id");  
     $stmt->bindParam(":id", $userID);    
     $stmt->execute();
     $userInfo = $stmt->fetch(PDO::FETCH_ASSOC);
