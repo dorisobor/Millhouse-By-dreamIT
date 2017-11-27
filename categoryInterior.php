@@ -36,9 +36,9 @@ $user = getUserInfo($GLOBALS['userID']);
 		<?php foreach(getAllBlogpostsOnInterior(3) as $i => $blogpost): ?>
 		<article class="blogpost">
 		<!--CATEGORIE TAG-->
-			<button class="categoryButton">
-				<a href="categoryInterior.php"><?= $blogpost['categoryName'] ?></a>
-			</button>
+			<div class="blogpost__category-button--no-link">
+				<span><?= $blogpost['categoryName'] ?></span>
+			</div>
 			<div class="blogpost__user-info">
 				<i class="fa fa-user-circle-o" aria-hidden="true"></i>
 				<span><?= $blogpost['username'] ?></span> 
