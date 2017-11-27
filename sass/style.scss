@@ -201,6 +201,15 @@ padding: 10px;
     margin: 0px auto; 
 }
 
+.fa-question-circle{
+    font-size: 2rem; 
+}
+
+.formCheckboxesWrapper{
+    text-align: left; 
+
+}
+
 input { /*--input settings--*/
     width: 90%; 
     margin-bottom: 20px;
@@ -247,7 +256,7 @@ input { /*--input settings--*/
         padding: 0px; 
 
 
-        &:checked + label {
+        &:checked {
             color: $interactiveHover;
 
         }
@@ -332,7 +341,19 @@ input { /*--input settings--*/
     }
 
 fieldset{
-    text-align: center; 
+
+    input{
+        text-align: center; 
+    }
+    
+
+    label{
+
+        p{
+        text-align: left; 
+        }
+    }
+
 }
 
 .form_wrapper {
