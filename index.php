@@ -23,22 +23,25 @@ require_once 'partials/fetch_all_blogposts.php';
 <main>
   <div class="figures">
     <figure>
-      <img class ="figures__category-image" src="images/square_watch.png" alt="watches">
-      <figcaption>
+    <a href="categoryWatches.php"> 
+    <img class ="figures__category-image" src="images/square_watch.png" alt="watches">
+    </a><figcaption>
         <h3><a href="categoryWatches.php">Watches</a></h3>
       </figcaption>
     </figure>
 
     <figure>
-      <img class ="figures__category-image" src="images/square_glasses.png" alt="sunglasses">
-       <figcaption>
+    <a href="categorySunglasses.php"> 
+    <img class ="figures__category-image" src="images/square_glasses.png" alt="sunglasses">
+    </a><figcaption>
          <h3><a href="categorySunglasses.php">Sunglasses</a></h3>
       </figcaption>
     </figure>
 
     <figure>
-       <img class ="figures__category-image" src="images/square_interior.png" alt="interior">
-       <figcaption>
+    <a href="categoryInterior.php"> 
+    <img class ="figures__category-image" src="images/square_interior.png" alt="interior">
+    </a><figcaption>
         <h3><a href="categoryInterior.php">Interior</a></h3>
       </figcaption>
     </figure>
