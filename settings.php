@@ -15,7 +15,7 @@
         <div class="mainBody">
             <div class="form_wrapper">
                 <div class="form_heading">
-                    <h1>Settings</h1>
+                    <label class="label" for="headline"><h1>Settings</h1></label>
                     <p>Change your settings here.</p>
                     <br>
                 </div>
