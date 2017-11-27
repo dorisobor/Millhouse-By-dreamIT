@@ -29,7 +29,7 @@ function getUserStatisticsComments ($userID){
 
 function getLatestBlogpostByUserID ($userID) {
     global $pdo;   
-    $stmt = $pdo->prepare("SELECT * FROM blogPosts 
+    $stmt = $pdo->prepare("SELECT images.*,blogPosts.*,categories.* FROM blogPosts 
     JOIN categories ON categories.categoryID = blogPosts.categoryID
     LEFT JOIN images ON images.postID = blogPosts.postID
     WHERE userID = :id ORDER BY postDate DESC LIMIT 5");  
@@ -41,7 +41,7 @@ function getLatestBlogpostByUserID ($userID) {
 
 function getAllBlogpostsByUserID ($userID) {
     global $pdo;    
-    $stmt = $pdo->prepare("SELECT * FROM blogPosts 
+    $stmt = $pdo->prepare("SELECT images.*,blogPosts.*,categories.* FROM blogPosts 
     JOIN categories ON categories.categoryID = blogPosts.categoryID
     LEFT JOIN images ON images.postID = blogPosts.postID
     WHERE userID = :id ORDER BY postDate DESC");  
