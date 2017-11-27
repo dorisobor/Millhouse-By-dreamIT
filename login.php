@@ -1,42 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <?php require 'head.html'; ?>
 	<title>Login</title>
-</head>
 <body>
 
-<?php require 'logoheader.html'; ?>
-<?php require 'partials/navbar.php'; ?>
+    <?php require 'logoheader.html'; ?>
+    <?php require 'partials/navbar.php';  ?>
 
-<main>
-	
-    <!-- form container -->
-    <div> 
+    <main>
+        <div class="main">
+            <div class="mainBody">
+                <div class="form_wrapper">    
+                    <form class="form" action="createPost.php" method="post" enctype="multipart/form-data">
+                        <div class="topInfo">
+                            <legend class="legend"><h1>Login</h1></legend>
+                            <p>Login to your account here.</p>
+                            <br>
+                        </div>
 
-        <h1>Login</h1>
+                        <fieldset class="fieldset">
+                            <div class="contactForm">
+                                <input type="text" name="username" value="" placeholder="Email or Username"/><br>
+                                <input type="text" name="password" value="" placeholder="Password"/><br>
+                            </div>
+                            
+                            <div class="submitButton">
+                                <input type="submit" value="Log In"/><br>
+                            </div>
+                        </fieldset>
+                    </form>
+                    <br>
+                    <div class="newAccount">
+                        <a href="#">Create New Account</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 
-        <form action="" method="POST">
-            <fieldset>
-                <legend>Fill in your login information</legend>
-                <label for="username">Fill in your username or email</label>
-                <input type="text" name="username" value="" placeholder="email or username"/><br>
+    <?php require 'partials/footer.php'; ?>
+    <?php require 'bootstrapScripts.html'; ?> 
 
-                <label for="password">Fill in your password</label>
-                <input type="text" name="password" value="" placeholder="password"/><br>
-
-                <input type="submit" value="Log In"/><br>
-            </fieldset>
-        </form>
-
-        <a href="">create a new account</a>
-
-    </div>
-
-</main>
-
-<?php require 'partials/footer.php'; ?>
-<?php require 'bootstrapScripts.html'; ?>
-    
 </body>
 </html>
