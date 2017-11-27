@@ -21,11 +21,9 @@
                     </p>
                 </div>
                
-<form class="form" action="editPost.php" method="post" enctype="multipart/form-data">
-                     <fieldset class="fieldset">
+                <form class="form" action="editPost.php" method="post" enctype="multipart/form-data">
+                    <fieldset class="fieldset">
                         <legend class="legend"> Edit the post </legend>
-
-
 
                         <label class="label" for="headline">Change headline</label>
                         <br />
@@ -41,7 +39,7 @@
                         <br />
 
                         <!--Checkboxes-->
-                        <div class="form checkboxes_wrapper">
+                        <div class="checkboxWrapper">
                             <p class="form form--theme">Change categories for your post:</p>
                             <br />
 

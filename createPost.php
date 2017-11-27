@@ -1,11 +1,14 @@
-<?php require_once 'partials/insert.php'; ?>
- require_once 'partials/fetch_one_blogpost.php';
+<?php 
+require_once 'partials/insert.php';
+require_once 'partials/fetch_all_blogposts.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <?php require 'head.html'; ?>
-	<title>Create New createPost</title>
+	<title>Create New Post</title>
 <body>
 
     <?php require 'logoheader.html'; ?>
@@ -17,47 +20,43 @@
                 <div class="form_wrapper">    
                     <form class="form" action="createPost.php" method="post" enctype="multipart/form-data">
                         <div class="topInfo">
-                            <legend class="legend"><h1>Create New Post</h1></legend>
-                            <p>Create your post here. For help press the icon.</p>
-
+                            <legend class="legend"><h1>Create New Story</h1></legend>
                             <div class="help">
+                                <p>Create your story here. For help press the icon</p>
                                 <p><a href="help.php"><i class="fa fa-question-circle" aria-hidden="true"></i></a></p>
                             </div>
                         </div>
+
                         <br></br>
 
                         <div class="clear"></div>
 
                         <div class="createForm">
                             <fieldset class="fieldset">
-                                <label class="label" for="blogtitle"><h6>Blog Title</h6></label>
-                                <input type="text" name="blogtitle" placeholder="Title" id="headline" aria-required="true" required />
+                                <input type="text" name="blogtitle" placeholder="Blog title" id="headline" aria-required="true" required />
                                 <br>
-                            
-                                <label class="label" for="upload">Choose Image</label>
+                                 
+                                <textarea class="textarea" id="postText" name="postText" rows="6" cols="50" placeholder="Write your text here" required></textarea>
+                                <br>
+
                                 <input type="file" name="upload" id="image" value="">
                                 <input type="hidden" name="action" value="upload"> 
                                 <br>
-                                
-                                <label class="label" for="postText">Write Post</label>
-                                <textarea class="textarea" id="postText" name="postText" rows="6" cols="50" placeholder="Write your text here" required></textarea>
-                                <br>
                             </div>
 
-                                <div class="formCheckboxesWrapper">
-                                    <br>
-                                    <p class="form form--theme">Select one or several categories for your post:</p>
-
-                                    <input type="radio" name="category" id="Sunglasses" value="Sunglasses">
-                                    <label class="label label--checkboxes" for="category_1">Sunglasses</label>
+                                <div class="checkboxWrapper">
+                                    <p class="formTheme">Select a category for your story:</p>
+                            
+                                    <input type="radio" name="category" id="Sunglasses" value="Sunglasses" required>
+                                    <label class="labelCheckboxes" for="category_1">Sunglasses</label>
                                     <br>
 
                                     <input type="radio" name="category" id="Watches" value="Watches">
-                                    <label class="label label--checkboxes" for="category_2">Watches</label>
+                                    <label class="labelCheckboxes" for="category_2">Watches</label>
                                     <br>
 
                                     <input type="radio" name="category" id="Interior" value="Interior">
-                                    <label class="label label--checkboxes" for="category_3">Interior</label>
+                                    <label class="labelCheckboxes" for="category_3">Interior</label>
                                     <br>
                                 </div>
                             
@@ -69,7 +68,6 @@
                 </div>
                 
     <?php 
-        var_dump($_POST);
     if(isset($success)){
         $imgCopyName = $_FILES['upload']['tmp_name'];
         $imgName = $_FILES['upload']['name'];

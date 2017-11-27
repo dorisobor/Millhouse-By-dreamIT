@@ -200,45 +200,39 @@ padding: 10px;
     background-color: $sectionBackground;
     max-width: 700px; 
     margin: 0px auto; 
-}
 
-.topInfo{
-    p{
-        float: left;
+    .topInfo{
+
+        .help{
+            line-height: 30px; 
+        }
+
+        p{
+            float: left;
+            margin-right: 5px; 
+        }
+
+        .fa-question-circle{
+            float: left; 
+            font-size: 1.7rem; 
+        }
     }
 
-    .fa-question-circle{
-        float: left; 
+    .createForm{
+
+        input{
+            width: 90%; 
+        }
     }
-}
 
-.formCheckboxesWrapper{
-    text-align: left; 
-}
-
-.form_input{
-
-    input{
-        width: 90%; 
+    .submitButton{
+        text-align: center; 
     }
+
 }
-
-.createForm{
-
-    input{
-        width: 90%; 
-        text-align: left; 
-    }
-}
-
-.submitButton{
-    text-align: center; 
-}
-
 
 input { /*--input settings--*/
-    margin-bottom: 20px;
-    height: 35px; 
+    margin-bottom: 20px; 
 
     &[type="text"] { /*--username / email / password etc.--*/
         background-color: $defaultColor;
@@ -267,17 +261,16 @@ input { /*--input settings--*/
             outline: none;
             border: solid 1px $buttonColor;
             cursor: pointer;
-            
         }
-
 
     }
 
-    &[type="checkbox"] {
+    &[type="radio"] {
         cursor: pointer;
         margin: 0px; 
         padding: 0px; 
-
+        width: 20px; 
+        height: 20px; 
 
         &:checked {
             color: $interactiveHover;
@@ -300,6 +293,7 @@ input { /*--input settings--*/
     font-weight: 400;
     cursor: pointer;
 }
+
 .button--delete{
     color: $dangerColor;
 }
@@ -376,21 +370,18 @@ fieldset{
 
 .topInfo{
     margin-left: 30px; 
-}    
+}  
 
-.formCheckboxesWrapper{
+.createButton{
     margin-left: 30px; 
 }
 
-.form_wrapper {
-    padding: 20px;
-    background-color: $sectionBackground;
-    max-width: 700px; 
-    margin: 0px auto; 
+.checkboxWrapper{
+    margin-left: 30px; 
+}
 
-    .form_heading{
-        margin-left: 30px; 
-    }
+.form_heading{
+    margin-left: 30px; 
 }
 
 }
