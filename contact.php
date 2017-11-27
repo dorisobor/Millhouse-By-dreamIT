@@ -23,13 +23,15 @@
                     </div>
 
                     <!-- form container -->
-                    <form class="form" action="confirmation.php" method="POST">
+                    <form class="form" action="confirmation.php" method="_POST">
                         <fieldset class="fieldset">
-                            <input type="text" name="name" value="" placeholder="Your Name" required /><br>
-                            <input type="text" name="email" value="" placeholder="Email" required /><br>
-                            <input type="text" name="subject" value="" placeholder="Subject" required /><br>
-                            <textarea class="textarea" id="message" rows="6" cols="50" placeholder="Write your message here..." required></textarea><br>
-                            <input type="submit" value="Send"/>
+                            <div class="form_input">
+                                <input type="text" name="name" value="" placeholder="Your Name" required /><br>
+                                <input type="text" name="email" value="" placeholder="Email" required /><br>
+                                <input type="text" name="subject" value="" placeholder="Subject" required /><br>
+                                <textarea class="textarea" id="message" rows="6" cols="50" placeholder="Write your message here..." required></textarea><br>
+                                <input type="submit" value="Send"/>
+                            </div>
                         </fieldset>
                     </form>
                 </div>

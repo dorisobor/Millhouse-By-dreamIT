@@ -202,17 +202,37 @@ padding: 10px;
     margin: 0px auto; 
 }
 
-.fa-question-circle{
-    font-size: 2rem; 
+.topInfo{
+    p{
+        float: left;
+    }
+
+    .fa-question-circle{
+        float: left; 
+    }
 }
 
 .formCheckboxesWrapper{
     text-align: left; 
+}
 
+.form_input{
+
+    input{
+        width: 90%; 
+        text-align: left; 
+    }
+}
+
+.createForm{
+
+    input{
+        width: 90%; 
+        text-align: left; 
+    }
 }
 
 input { /*--input settings--*/
-    width: 90%; 
     margin-bottom: 20px;
     height: 35px; 
 
@@ -342,19 +362,22 @@ input { /*--input settings--*/
     }
 
 fieldset{
-
-    input{
-        text-align: center; 
-    }
-    
+    text-align: center; 
 
     label{
-
-        p{
+        display: block; 
+        margin-bottom: 0px;         
         text-align: left; 
-        }
+        margin-left: 30px; 
     }
+}  
 
+.topInfo{
+    margin-left: 30px; 
+}    
+
+.formCheckboxesWrapper{
+    margin-left: 30px; 
 }
 
 .form_wrapper {
