@@ -101,10 +101,16 @@ $user = getUserInfo($GLOBALS['userID']);
 				<div class="blogpost__share-button"> 
 					<a href="#">Share <i class="fa fa-share-alt" aria-hidden="true"></i></a>
 				</div>
-				</div>
+			</div>
 				<div class="editButtons">
-					<button><i class="fa fa-pencil" aria-hidden="true"></i> Edit</button>
-					<button class="delete"><i class="fa fa-trash" aria-hidden="true"></i> Delete</button>
+					<button>
+						<a href="editPost.php"><i class="fa fa-pencil" aria-hidden="true"></i> Edit<a>
+					</button>
+					<button class="delete">
+						<a href="deleteBlogpost.php?delete_post=<?= $latestPost['postID']; ?>&redirectto=latestPosts.php">
+							<i class="fa fa-trash" aria-hidden="true"></i> Delete
+						</a>
+					</button>
 				</div> 
 			</article>
 		<?php endforeach; ?>

@@ -76,7 +76,7 @@ $user = getUserInfo($GLOBALS['userID']);
 
 				<!--CATEGORIE TAG-->
 				<div class="blogpost__category-link">
-					<a class="blogpost__category-link " href="category<?= $totalPost['categoryName'] ?>.php"><?= $totalPost['categoryName']?></a>
+					<a class="blogpost__category-link" href="category<?= $totalPost['categoryName'] ?>.php"><?= $totalPost['categoryName']?></a>
 				</div>
 
 				<date><p class="blogpost__date"><?= substr($totalPost['postDate'], 0, 16) ?></p></date>
@@ -104,8 +104,10 @@ $user = getUserInfo($GLOBALS['userID']);
 							<a href="editPost.php"><i class="fa fa-pencil" aria-hidden="true"></i> Edit<a>
 						</button>
 						<button class="delete">
-							<a href="deleteConfirm.php"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
-						</button>
+							<a href="deleteBlogpost.php?delete_post=<?= $totalPost['postID']; ?>&redirectto=profilepage.php">
+								<i class="fa fa-trash" aria-hidden="true"></i> Delete
+							</a>
+        				 </button>
 					</div> 
 				</article>
 			<?php endforeach; ?>
