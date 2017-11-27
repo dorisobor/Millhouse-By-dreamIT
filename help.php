@@ -62,8 +62,8 @@
 			<div class="col">
 				<div class="contact">
 					<span class="contact__text">Still wondering something?</span>
-					<div class="contact__btn-container">
-						<a class="contact__btn" href="contact.php">Contact us!</a>
+					<div class="contact__link-container">
+						<a class="contact__link" href="contact.php">Contact us!</a>
 					</div>
 				</div>
 			</div>
