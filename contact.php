@@ -30,7 +30,10 @@
                                 <input type="text" name="email" value="" placeholder="Email" required /><br>
                                 <input type="text" name="subject" value="" placeholder="Subject" required /><br>
                                 <textarea class="textarea" id="message" rows="6" cols="50" placeholder="Write your message here..." required></textarea><br>
-                                <input type="submit" value="Send"/>
+                                
+                                <div class="submitButton">
+                                    <input type="submit" value="Send"/>
+                                </div>
                             </div>
                         </fieldset>
                     </form>

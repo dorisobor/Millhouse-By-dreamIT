@@ -220,7 +220,6 @@ padding: 10px;
 
     input{
         width: 90%; 
-        text-align: left; 
     }
 }
 
@@ -231,6 +230,11 @@ padding: 10px;
         text-align: left; 
     }
 }
+
+.submitButton{
+    text-align: center; 
+}
+
 
 input { /*--input settings--*/
     margin-bottom: 20px;
@@ -243,13 +247,11 @@ input { /*--input settings--*/
 
     &[type="submit"] { /*--submit button--*/
         width: 5.5rem;
-        padding: 5px;   
         color: $defaultColor; 
         background-color: $buttonColor;
         -webkit-border-radius:0.25rem;
         -moz-border-radius: 0.25rem;
         border-radius: 0.25rem;
-        margin: 0px auto; 
 
         &:hover {
             background-color: $interactiveHover;

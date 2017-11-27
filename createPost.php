@@ -61,7 +61,9 @@
                                     <br>
                                 </div>
                             
-                                <input type="submit" value="publish" name="publish">
+                                <div class="createButton">
+                                    <input type="submit" value="Create" name="create">
+                                </div>
                             </fieldset>
                     </form>
                 </div>
@@ -82,7 +84,7 @@
         </div>
     </main>
 
-    <?php require 'footer.php'; ?>
+    <?php require 'partials/footer.php'; ?>
     <?php require 'bootstrapScripts.html'; ?> 
 
 </body>

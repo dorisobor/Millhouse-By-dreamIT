@@ -31,7 +31,7 @@
                                 <input type="text" id="passwordConfirm" name="passwordConfirm" value="" placeholder="Confirm New Password*" /><br>
                             </div>
                             
-                            <div class="form_submit">
+                            <div class="submitButton">
                                 <input type="submit" value="Submit" />
                             </div>
                         </fieldset>
