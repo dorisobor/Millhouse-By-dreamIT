@@ -201,7 +201,7 @@ padding: 10px;
     max-width: 700px; 
     margin: 0px auto; 
 
-    .topInfo{
+    .topInfoCreate{
 
         .help{
             line-height: 30px; 
@@ -218,6 +218,13 @@ padding: 10px;
         }
     }
 
+    .contactForm{
+        
+        input{
+            width: 90%; 
+        }
+    }
+
     .createForm{
 
         input{
@@ -227,6 +234,7 @@ padding: 10px;
 
     .submitButton{
         text-align: center; 
+        height: 40px; 
     }
 
 }
@@ -241,6 +249,7 @@ input { /*--input settings--*/
 
     &[type="submit"] { /*--submit button--*/
         width: 5.5rem;
+        height: 2.5rem; 
         color: $defaultColor; 
         background-color: $buttonColor;
         -webkit-border-radius:0.25rem;
@@ -279,11 +288,24 @@ input { /*--input settings--*/
     }
 }
 
-.textarea { /*--change your profile description--*/
-    width: 90%;
-    height: 100px;
-    background-color: $defaultColor;    
-    border: 1px solid $buttonColor;
+.contactForm{
+    
+        .textarea { /*--change your profile description--*/
+            width: 90%;
+            height: 100px;
+            background-color: $defaultColor;    
+            margin-bottom: 15px; 
+        }
+    }
+
+.createForm{
+
+    .textarea { /*--change your profile description--*/
+        width: 90%;
+        height: 400px;
+        background-color: $defaultColor;    
+        margin-bottom: 15px; 
+    }
 }
 
 .button{
@@ -361,10 +383,7 @@ fieldset{
     text-align: center; 
 
     label{
-        display: block; 
-        margin-bottom: 0px;         
         text-align: left; 
-        margin-left: 30px; 
     }
 }  
 
@@ -373,10 +392,12 @@ fieldset{
 }  
 
 .createButton{
+    text-align: left; 
     margin-left: 30px; 
 }
 
 .checkboxWrapper{
+    text-align: left; 
     margin-left: 30px; 
 }
 

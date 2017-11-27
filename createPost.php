@@ -19,10 +19,10 @@ require_once 'partials/fetch_all_blogposts.php';
             <div class="mainBody">
                 <div class="form_wrapper">    
                     <form class="form" action="createPost.php" method="post" enctype="multipart/form-data">
-                        <div class="topInfo">
-                            <legend class="legend"><h1>Create New Story</h1></legend>
+                        <div class="topInfoCreate">
+                            <legend class="legend"><h1>Create Story</h1></legend>
                             <div class="help">
-                                <p>Create your story here. For help press the icon</p>
+                                <p>For help press the icon</p>
                                 <p><a href="help.php"><i class="fa fa-question-circle" aria-hidden="true"></i></a></p>
                             </div>
                         </div>
@@ -31,11 +31,11 @@ require_once 'partials/fetch_all_blogposts.php';
 
                         <div class="clear"></div>
 
-                        <div class="createForm">
-                            <fieldset class="fieldset">
+                        <fieldset class="fieldset">
+                            <div class="createForm">
                                 <input type="text" name="blogtitle" placeholder="Blog title" id="headline" aria-required="true" required />
                                 <br>
-                                 
+                                    
                                 <textarea class="textarea" id="postText" name="postText" rows="6" cols="50" placeholder="Write your text here" required></textarea>
                                 <br>
 
@@ -61,9 +61,9 @@ require_once 'partials/fetch_all_blogposts.php';
                                 </div>
                             
                                 <div class="createButton">
-                                    <input type="submit" value="Create" name="create">
+                                    <input type="submit" value="Publish" name="create">
                                 </div>
-                            </fieldset>
+                        </fieldset>
                     </form>
                 </div>
                 
