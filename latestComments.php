@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<!--?php 
+require_once 'partials/db.php'; 
+require 'getUserinfo.php';
+?-->
 <html lang="en">
 <head>
 	<?php require 'head.html'; ?>
@@ -19,19 +23,20 @@ $pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 //hinder mot simulerade förfrågningar
 $pdo -> setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
-    $statement = $pdo->prepare("SELECT * FROM comments
-    ORDER BY commentDate DESC LIMIT 5");
+    $statement = $pdo->prepare
+    ("SELECT users.userID, users.username, comments.userID, comments.commentDate, comments.commentText,comments.postID, blogPosts.userID, blogPosts.postTitle, blogPosts.postID
+        FROM blogPosts
+        JOIN users
+        JOIN comments 
+        ON users.userID = blogPosts.userID AND comments.postID = blogPosts.postID and users.userID = 3 LIMIT 5
+    ");                           
+    
     $statement->execute();
-    $commentsByUsers = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-    $statement = $pdo->prepare("SELECT postTitle FROM blogPosts LIMIT 5");
-    $statement->execute();
-    $allPostTitles = $statement->fetchAll(PDO::FETCH_ASSOC);
-
+    
+    $infos = $statement->fetchAll(PDO::FETCH_ASSOC);
 
       require 'logoheader.html'; 
       require 'partials/navbar.php'; 
-
 
  ?>
 <main>
@@ -79,32 +84,32 @@ $pdo -> setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
         </div>
             <!--BOOTSTRAP SECOND NAV-->
             <nav class="nav nav-pills nav-justified">
-                <a class="nav-item nav-link" href="profilePage.php">Profile</a>
+                <a class="nav-item nav-link" href="profilePage.php">All Posts</a>
                 <a class="nav-item nav-link" href="latestPosts.php">Latest Posts</a>
                 <a class="nav-item nav-link active" href="latestComments.php">Latest Comments</a>
             </nav>
+
 	<!--latest comments-->
 	<div class="container-wrapper">
-            <?php foreach($allPostTitles as $allPostTitle){?>
-            <?php foreach($commentsByUsers as $commentsByUser){?>   
+            <?php foreach($infos as $info){?>  
             <div class= "container-latestComments">
                 <!--CATEGORY TAG-->
                 <article>			
-                <h2> <?= $allPostTitle['postTitle']; ?> </h2>
-                <h4>Commented for  <time></time> days ago.</h4>
-                <p> <?= $commentsByUser['commentText']; ?> </p>
+                <h6><time> <?= $info["commentDate"]; ?> </time></h6>
+                <h2> <?= $info["postTitle"]; ?> </h2>
+                <p> <?= $info["commentText"]; ?> </p>
                 <button><i class="fa fa-pencil" aria-hidden="true"></i><a href="/editPost.php">Edit</button></a>
                 <button><i class="fa fa-trash" aria-hidden="true"></i><a href="#"> Delete</button></a>
                 </article>	
             </div>
-        <?php }?>
-        <?php }?>
+            <?php }?>
+            <!--?php }?-->
+            <!--?php }?-->
 	</div> 
-	     
+            
 	</main>
 
-	
-<?php require 'footer.php'; ?>
+<?php require 'partials/footer.php'; ?>
 <?php require 'bootstrapScripts.html'; ?>
 
 
