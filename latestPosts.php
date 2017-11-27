@@ -47,7 +47,7 @@ $user = getUserInfo($GLOBALS['userID']);
         <div class="profileBox__content-2">
 			<div class="profileBox__content-commentsPosts">
 				<div class="totalPosts">
-					<span><?= getUserStatisticsPosts($GLOBALS['userID']) ?>  post(s)</span>
+					<span><?= getUserStatisticsPosts($GLOBALS['userID']) ?> stories(s)</span>
 				</div>
 				<div class="totalComments">
 					<span><?= getUserStatisticsComments($GLOBALS['userID']) ?>  comments(s)</span>
@@ -63,8 +63,8 @@ $user = getUserInfo($GLOBALS['userID']);
 	
 	<!-- Tab menu -->
 	<nav class="nav nav-pills nav-justified">
-		<a class="nav-item nav-link" href="profilePage.php">All Posts</a>
-		<a class="nav-item nav-link active" href="latestPosts.php">Latest Posts</a>
+		<a class="nav-item nav-link" href="profilePage.php">All Stories</a>
+		<a class="nav-item nav-link active" href="latestPosts.php">Latest Stories</a>
 		<a class="nav-item nav-link" href="latestComments.php">Latest Comments</a>
 	</nav>
 			
@@ -75,12 +75,12 @@ $user = getUserInfo($GLOBALS['userID']);
 
 			<!-- category tag -->
 			<button class="categoryButton">
-				<a href="categoryInterior.php">Interior</a>
+				<a href="category<?= $latestPost['categoryName'] ?>.php"><?= $latestPost['categoryName']?></a>
 			</button>
 
 			<!-- blogpost title -->
-			<h2 class="blogpost__title"><?= $latestPost['postTitle'] ?></h2>
 			<date><p class="blogpost__date"><?= substr($latestPost['postDate'], 0, 16) ?></p></date>
+			<h2 class="blogpost__title"><?= $latestPost['postTitle'] ?></h2>
 
 			<!-- blogpost image -->
 			<figure>
