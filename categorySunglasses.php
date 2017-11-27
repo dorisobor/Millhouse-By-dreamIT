@@ -33,7 +33,7 @@ $user = getUserInfo($GLOBALS['userID']);
 		<?php foreach(getAllBlogpostsOnSunglasses(2) as $i => $blogpost): ?>
 		<article class="blogpost">
 			<!--CATEGORIE TAG-->
-			<div class="blogpost__category-button--no-link">
+			<div class="blogpost__category-tag">
 				<span><?= $blogpost['categoryName'] ?></span>
 			</div>
 			<div class="blogpost__user-info">
@@ -47,9 +47,9 @@ $user = getUserInfo($GLOBALS['userID']);
 				<img src="<?= $blogpost['postImage'] ?>" alt="">
 			</figure>
 			<div class= "blogpost__blog-description">
-				<p>
+				<p><a href="#">
 					<?= substr($blogpost['postText'],0,200) ?>
-				</p>
+					</a></p>
 				<div class="blogpost__read-more"> 
 					<a href="blogpost.php">Read More <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 				</div>

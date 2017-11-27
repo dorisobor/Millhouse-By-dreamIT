@@ -47,7 +47,7 @@ $user = getUserInfo($GLOBALS['userID']);
 			<div class="profileBox__content-2">
 				<div class="profileBox__content-commentsPosts">
 					<div class="totalPosts">
-						<span><?= getUserStatisticsPosts($GLOBALS['userID']) ?>  post(s)</span>
+						<span><?= getUserStatisticsPosts($GLOBALS['userID']) ?>  stories(s)</span>
 					</div>
 
 					<div class="totalComments">
@@ -65,8 +65,8 @@ $user = getUserInfo($GLOBALS['userID']);
 
 		<!--BOOTSTRAP SECOND NAV-->
 		<nav class="nav nav-pills nav-justified">
-			<a class="nav-item nav-link active" href="profilePage.php">All Posts</a>
-			<a class="nav-item nav-link" href="latestPosts.php">Latest Posts</a>
+			<a class="nav-item nav-link active" href="profilePage.php">All Stories</a>
+			<a class="nav-item nav-link" href="latestPosts.php">Latest Stories</a>
 			<a class="nav-item nav-link" href="latestComments.php">Latest Comments</a>
 		</nav>
 
@@ -76,14 +76,13 @@ $user = getUserInfo($GLOBALS['userID']);
 			<article class="blogpost">
 
 				<!--CATEGORIE TAG-->
-				<button class="categoryButton">
-					<a href=""><?= $totalPost['categoryName']?></a>
-				</button>
+				<div class="blogpost__category-link">
+					<a class="blogpost__category-link " href="category<?= $totalPost['categoryName'] ?>.php"><?= $totalPost['categoryName']?></a>
+				</div>
 
-				<!--USER INFO-->
-				<h2 class="blogpost__title"><?= $totalPost['postTitle'] ?></h2>
 				<date><p class="blogpost__date"><?= substr($totalPost['postDate'], 0, 16) ?></p></date>
-		
+				<h2 class="blogpost__title"><?= $totalPost['postTitle'] ?></h2>
+
 				<figure>
 					<img src="<?= $totalPost['postImage'] ?>" alt="">
 				</figure>
