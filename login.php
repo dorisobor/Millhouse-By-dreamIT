@@ -35,7 +35,7 @@
 
 </main>
 
-<?php require 'footer.php'; ?>
+<?php require 'partials/footer.php'; ?>
 <?php require 'bootstrapScripts.html'; ?>
     
 </body>

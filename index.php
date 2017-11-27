@@ -98,7 +98,7 @@ require_once 'partials/fetch_all_blogposts.php';
 
 </main>
 
-<?php require 'footer.php'; ?>
+<?php require 'partials/footer.php'; ?>
 <?php require 'bootstrapScripts.html'; ?>
 
 </body>

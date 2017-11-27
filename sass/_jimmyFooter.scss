@@ -1,14 +1,17 @@
 footer{
     border: 1px solid rgba(0,0,0,.15);
     .footer__container{
-        
+        margin:10px;
         text-align: center;
         max-width: 100%;
-            a{ 
-                .fa{
-                    font-size: 2em;
-                }   
-            }
+            .footer__link{
+                    margin: 10px;
+            
+                    .fa{
+                        font-size: 2em;
+                    }   
+        }
+    
     }   
 }
 

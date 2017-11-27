@@ -24,13 +24,11 @@ $pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $pdo -> setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
     $statement = $pdo->prepare
-    ("SELECT comments.commentID, comments.userID, comments.commentText, comments.commentDate, users.userID, users.username, blogPosts.postTitle, blogPosts.postID 
-    FROM comments
-    JOIN users
-    JOIN blogPosts
-    ON comments.commentID = users.userID AND comments.commentID = blogPosts.postID 
-    ORDER BY comments.commentDate DESC 
-    LIMIT 5
+    ("SELECT users.userID, users.username, comments.userID, comments.commentDate, comments.commentText,comments.postID, blogPosts.userID, blogPosts.postTitle, blogPosts.postID
+        FROM blogPosts
+        JOIN users
+        JOIN comments 
+        ON users.userID = blogPosts.userID AND comments.postID = blogPosts.postID and users.userID = 3 LIMIT 5
     ");                           
     
     $statement->execute();
@@ -97,8 +95,7 @@ $pdo -> setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
             <div class= "container-latestComments">
                 <!--CATEGORY TAG-->
                 <article>			
-                <h6>User: <?= $info["username"]; ?> </h6>
-                <h6>Comment date : <time> <?= $info["commentDate"]; ?> </time></h6>
+                <h6><time> <?= $info["commentDate"]; ?> </time></h6>
                 <h2> <?= $info["postTitle"]; ?> </h2>
                 <p> <?= $info["commentText"]; ?> </p>
                 <button><i class="fa fa-pencil" aria-hidden="true"></i><a href="/editPost.php">Edit</button></a>
@@ -112,7 +109,7 @@ $pdo -> setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
             
 	</main>
 
-<?php require 'footer.php'; ?>
+<?php require 'partials/footer.php'; ?>
 <?php require 'bootstrapScripts.html'; ?>
 
 
