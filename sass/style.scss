@@ -286,6 +286,16 @@ input { /*--input settings--*/
 
         }
     }
+
+    &[type="checkbox"] {
+        cursor: pointer;
+        margin: 0px; 
+        padding: 0px; 
+        width: 20px; 
+        height: 20px; 
+        text-align: left; 
+    }
+
 }
 
 .contactForm{
@@ -403,6 +413,7 @@ fieldset{
 .checkboxWrapper{
     text-align: left; 
     margin-left: 30px; 
+    height: 200px; 
 }
 
 .form_heading{
