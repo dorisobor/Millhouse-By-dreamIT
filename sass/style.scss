@@ -261,12 +261,6 @@ input { /*--input settings--*/
     border: 1px solid $buttonColor;
 }
 
-
-
-.instruction {
-    font-size: 1.4em;
-}
-
 .button{
    width: 20%;
     height: 2.5em;
@@ -335,17 +329,6 @@ input { /*--input settings--*/
                 color: $headLineColor;
             }
         }   
-    }
-  
-    .legend {
-        font-size: 2em;
-        font-weight: 600;
-        color: $interactiveHover;
-    }
-
-    .label {
-        font-size: 2em;
-        font-weight: 600;
     }
 
 fieldset{

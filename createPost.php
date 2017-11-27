@@ -4,49 +4,13 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-<link href="https://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="css/style.css">    <title>Create new post</title>
-</head>
-
+    <?php require 'head.html'; ?>
+	<title>Create New createPost</title>
 <body>
 
-<div class="logo-header d-none d-lg-block d-xl-block">
-    <a href="index.php">
-        <img class="logo d-none d-lg-block d-xl-block" src="images/Logo.png" alt="Logotype for Millhouse"/>
-    </a>
-</div>
+    <?php require 'logoheader.html'; ?>
+    <?php require 'partials/navbar.php';  ?>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-	<a class="navbar-brand hidden-md-up" href="index.php"><img class="logo" src="images/logo.png"></a>
-        
-        <button class="sign-up-btn d-md-none d-lg-none d-xl-none">
-        <a class="sign-up-btn__link" href="signOut.php">
-            <i class="fa fa-sign-out" aria-hidden="true"></i> Sign out
-        </a>
-    </button>
-    
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-  	<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      
-    	<div class="navbar-nav">
-            <a class="nav-item nav-link" href="index.php">Home</a>
-            <a class="nav-item nav-link" href="categorySunglasses.php">Sunglasses</a>
-            <a class="nav-item nav-link" href="categoryWatches.php">Watches</a>
-            <a class="nav-item nav-link" href="categoryInterior.php">Interior</a>
-            <a class="nav-item nav-link" href="contact.php">Contact</a><br>
-
-            <div class="help">
-                <i class="fa fa-question-circle" aria-hidden="true"></i>
-            </div>
-            
-    </div>
-</nav>
     <main>
         <div class="main">
             <div class="form_wrapper">
@@ -56,7 +20,7 @@
                     </p>
                 </div>
                 
-<form class="form" action="createPost.php" method="post" enctype="multipart/form-data">
+                <form class="form" action="createPost.php" method="post" enctype="multipart/form-data">
                     <fieldset class="fieldset">
                         <legend class="legend"> Create a new post </legend>
 
@@ -111,17 +75,8 @@
         </div>
     </main>
 
-    <footer>
-		<div class="footer__container">
-		<a href="https://www.facebook.com/"><i class="fa fa-facebook-square" aria-hidden="true"></i> Facebook</a>
-		<a href="https://www.instagram.com/"><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</a>
-		<a href="/contact.php"><i class="fa fa-envelope" aria-hidden="true"></i> Contact</a>
-			<div class="footer__credit">
-			<span>&copy;dreamIT 2017</span>
-			</div>
-		</div>
-	</footer><script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>    
+    <?php require 'footer.php'; ?>
+    <?php require 'bootstrapScripts.html'; ?> 
+
 </body>
 </html>
