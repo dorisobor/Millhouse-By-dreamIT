@@ -20,7 +20,7 @@ require_once 'partials/fetch_all_blogposts.php';
                 <div class="form_wrapper">    
                     <form class="form" action="createPost.php" method="post" enctype="multipart/form-data">
                         <div class="topInfoCreate">
-                            <legend class="legend"><h1>Create Story</h1></legend>
+                            <legend class="legend"><h1>Create New Story</h1></legend>
                             <div class="help">
                                 <p>For help press the icon</p>
                                 <p><a href="help.php"><i class="fa fa-question-circle" aria-hidden="true"></i></a></p>
