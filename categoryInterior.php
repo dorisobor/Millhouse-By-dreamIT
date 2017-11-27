@@ -1,3 +1,12 @@
+<?php 
+
+require_once 'partials/db.php'; 
+require 'functions.php';
+
+$user = getUserInfo($GLOBALS['userID']);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,54 +27,42 @@
 </header>
 
 <main>
-
-	<!-- picture representing the category -->
-
 	<div class="mainBody">
-
 		<div class="mainTitle">
 			<h1>Interior</h1>
 		</div>
-
-		<p>Here you can read all about
-		<br>Millhouse exclusive interior details!</p>
-
-
-		<!-- article = blogpost -->
-					
+		<p>Here you can read all about Millhouse exclusive interior details!</p>
+		<!-- article = blogpost -->	
+		<?php foreach(getAllBlogpostsOnInterior(3) as $i => $blogpost): ?>
 		<article class="blogpost">
 		<!--CATEGORIE TAG-->
-			<button class="categoryButton">
-				<a href="categoryInterior.php">Interior</a>
-			</button>
-	<!--USER INFO-->
-	
-			<h2>Blog title</h2>
+			<div class="blogpost__category-tag">
+				<span><?= $blogpost['categoryName'] ?></span>
+			</div>
+			<div class="blogpost__user-info">
+				<i class="fa fa-user-circle-o" aria-hidden="true"></i>
+				<span><?= $blogpost['username'] ?></span> 
+				<time><p><?= substr($blogpost['postDate'], 0, 16); ?></p></time>
+			</div>
+			<h2><?= $blogpost['postTitle'] ?></h2>
 			<figure>
 			<!--BLOG PICTURE-->
-				<img src="images/inredning_kollage.jpg" alt="inredning_kollage">
+				<img src="<?= $blogpost['postImage'] ?>" alt="">
 			</figure>
 			<div class= "blogpost__blog-description">
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-				Pellentesque at eros dolor. Nullam sit amet velit enim. 
-				Etiam ut convallis erat. In ornare risus nec justo tincidunt, 
-				nec eleifend dolor lacinia. Curabitur ut feugiat sem,
-				non tempus tellus. Nunc sed dolor vitae purus 
-				tristique consequat sit amet in libero. Ut rhoncus tempus justo, 
-				sit amet suscipit diam congue et. 
-				Suspendisse tempor commodo lacinia...</p>
-
+				<p><a href="#">
+					<?= substr($blogpost['postText'],0,200) ?>
+				</a></p>
 				<div class="blogpost__read-more"> 
-					<a href="blogpost.php" >Read More<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+					<a href="blogpost.php">Read More <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 				</div>
-	
 				<div class="blogpost__share-button"> 
 					<a href="#">Share <i class="fa fa-share-alt" aria-hidden="true"></i></a>
 				</div>
 			</div>
 		</article>
-</div>
-	
+		<?php endforeach; ?>
+	</div>
 </main>
 
 <?php require 'partials/footer.php'; ?>

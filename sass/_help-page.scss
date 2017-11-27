@@ -20,20 +20,16 @@
     display: block;
 }
 
-.contact__btn-container {
+.contact__link-container {
     margin: 10px auto;
-    width: 120px;
-    padding: 10px;
-    background-color: $buttonColor;
-    border-radius: .25rem;
+    @extend .blogpost__category-tag;
 }
 
-.contact__btn {
+.contact__link {
     color: $defaultColor;
 
     &:hover {
         color: $defaultColor;
-        text-decoration: none;
     }
 }
 

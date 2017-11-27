@@ -6,6 +6,7 @@
 @import 'logoheader.scss';
 @import 'jimmyFooter.scss';
 @import 'category.scss'; 
+@import 'category2.scss'; 
 
 @font-face {
     font-family: 'helveticaneueregular';
@@ -201,6 +202,15 @@ padding: 10px;
     margin: 0px auto; 
 }
 
+.fa-question-circle{
+    font-size: 2rem; 
+}
+
+.formCheckboxesWrapper{
+    text-align: left; 
+
+}
+
 input { /*--input settings--*/
     width: 90%; 
     margin-bottom: 20px;
@@ -247,7 +257,7 @@ input { /*--input settings--*/
         padding: 0px; 
 
 
-        &:checked + label {
+        &:checked {
             color: $interactiveHover;
 
         }
@@ -259,12 +269,6 @@ input { /*--input settings--*/
     height: 100px;
     background-color: $defaultColor;    
     border: 1px solid $buttonColor;
-}
-
-
-
-.instruction {
-    font-size: 1.4em;
 }
 
 .button{
@@ -336,20 +340,21 @@ input { /*--input settings--*/
             }
         }   
     }
-  
-    .legend {
-        font-size: 2em;
-        font-weight: 600;
-        color: $interactiveHover;
-    }
-
-    .label {
-        font-size: 2em;
-        font-weight: 600;
-    }
 
 fieldset{
-    text-align: center; 
+
+    input{
+        text-align: center; 
+    }
+    
+
+    label{
+
+        p{
+        text-align: left; 
+        }
+    }
+
 }
 
 .form_wrapper {

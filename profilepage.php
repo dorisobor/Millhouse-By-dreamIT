@@ -1,4 +1,3 @@
-
 <?php 
 
 require_once 'partials/db.php'; 
@@ -21,18 +20,20 @@ $user = getUserInfo($GLOBALS['userID']);
 
 	<main>
 		<div class="profileBox"> 
+
 		<!--USER IMAGE-->
 			<div class="profileBox__content-1">
 				<img src="" alt="">
 				<div class="userImage">
 					<i class="fa fa-user-circle" aria-hidden="true"></i>
 				</div>
+				
 				<!--edit icon from bootsrap?-->
 				<!--USER NAME-->
-					<div class="profileBox__content-username">
-						<p class="username"><?= $user['username'] ?></p>
-						<p class="aboutMe"><?= $user['userBio'] ?></p>
-					</div>
+				<div class="profileBox__content-username">
+					<p class="username"><?= $user['username'] ?></p>
+					<p class="aboutMe"><?= $user['userBio'] ?></p>
+				</div>
 				
 				<div class="settingsIcon">
 					<button class="settings">
@@ -46,7 +47,7 @@ $user = getUserInfo($GLOBALS['userID']);
 			<div class="profileBox__content-2">
 				<div class="profileBox__content-commentsPosts">
 					<div class="totalPosts">
-						<span><?= getUserStatisticsPosts($GLOBALS['userID']) ?>  post(s)</span>
+						<span><?= getUserStatisticsPosts($GLOBALS['userID']) ?>  stories(s)</span>
 					</div>
 
 					<div class="totalComments">
@@ -64,8 +65,8 @@ $user = getUserInfo($GLOBALS['userID']);
 
 		<!--BOOTSTRAP SECOND NAV-->
 		<nav class="nav nav-pills nav-justified">
-			<a class="nav-item nav-link active" href="profilePage.php">Profile</a>
-			<a class="nav-item nav-link" href="latestPosts.php">Latest Posts</a>
+			<a class="nav-item nav-link active" href="profilePage.php">All Stories</a>
+			<a class="nav-item nav-link" href="latestPosts.php">Latest Stories</a>
 			<a class="nav-item nav-link" href="latestComments.php">Latest Comments</a>
 		</nav>
 
@@ -73,19 +74,18 @@ $user = getUserInfo($GLOBALS['userID']);
 		<div class="profilePosts">
 		<?php foreach (getAllBlogpostsByUserID($userID) as $i => $totalPost): ?>
 			<article class="blogpost">
+
 				<!--CATEGORIE TAG-->
-				<button class="categoryButton">
-					<a href="categoryInterior.php">Interior</a>
-				</button>
-				<!--USER INFO-->
-				<h2 class="blogpost__title"><?= $totalPost['postTitle'] ?></h2>
+				<div class="blogpost__category-link">
+					<a class="blogpost__category-link " href="category<?= $totalPost['categoryName'] ?>.php"><?= $totalPost['categoryName']?></a>
+				</div>
+
 				<date><p class="blogpost__date"><?= substr($totalPost['postDate'], 0, 16) ?></p></date>
-		
-				<?php foreach (getAllImagesByPostID($totalPost['postID']) as $i => $latestPostImage): ?>
-					<figure>
-						<img src="<?= $latestPostImage['postImage']?>" alt="inredning_kollage">
-					</figure>
-				<?php endforeach; ?>
+				<h2 class="blogpost__title"><?= $totalPost['postTitle'] ?></h2>
+
+				<figure>
+					<img src="<?= $totalPost['postImage'] ?>" alt="">
+				</figure>
 
 				<div class="clear"></div> 
 
