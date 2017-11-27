@@ -33,7 +33,7 @@
                     </form>
                     <br>
                     <div class="newAccount">
-                        <a href="#">Create New Account</a>
+                        <a href="register.php">Create New Account</a>
                     </div>
                 </div>
             </div>

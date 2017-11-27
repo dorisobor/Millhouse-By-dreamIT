@@ -40,6 +40,9 @@
                             </div>
                         </fieldset>
                     </form>
+                    <div class="newAccount">
+                        <a href="login.php">I have an Account</a>
+                    </div>
                 </div>
             </div>
         </div>
