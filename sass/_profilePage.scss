@@ -26,6 +26,10 @@ a{
     color: $textColor; 
 }
 
+button{
+    border-radius: 0.25em; 
+}
+
 /*--PROFILE INFO--*/
 
 .profileBox{
@@ -33,7 +37,6 @@ a{
     max-width: 600px; 
     margin: 0px auto; 
     padding: 20px; 
-    border-top: 1px solid $sectionBackground; 
 
     .profileBox__content-1{
         height: 100px; 
@@ -125,7 +128,7 @@ a{
 /*--PROFILE NAVBAR--*/
 .nav-justified{
     font-size: 0.8em;
-    max-width: 600px; 
+    max-width: 900px; 
     margin: 0px auto; 
     border-top: 1px solid $sectionBackground; 
     border-bottom: 1px solid $sectionBackground; 
@@ -137,30 +140,54 @@ a{
 }
 
 /*--BLOGPOST--*/
-h2{
-    padding: 0px; 
-    margin: 0px; 
-    color: $interactiveHover; 
+
+.blogpost {
+    margin-top: 15px !important;
+    margin-bottom: 15px !important;
+}
+
+.blogpost__title {
+    float: left;
+}
+
+.blogpost__date {
+    float: right;
+    margin-top: 20px;
 }
 
 .profilePosts{
-    padding: 20px; 
+    padding: 15px; 
 
-    button{
-        font-size: 0.9em; 
-        width: 60px; 
-    }
-
-    a{
-        color: $defaultColor; 
-        width: 80px; 
-    }
-
-    .postButtons{
-        
-        .delete{
-            background: $dangerColor; 
+        button{
+            font-size: 0.9em; 
+            width: 5.5rem; 
         }
+
+        .categoryButton{
+            display: block;
+            
+            a{
+                color: $defaultColor;
+            }
+        }
+        
+        .editButtons{   
+
+            a{
+                color: $defaultColor; 
+            }
+            .fa-pencil{
+                font-size: 1.2rem; 
+            }
+        
+            .delete{
+                background: $dangerColor; 
+
+                .fa-trash{
+                    font-size: 1.2rem; 
+                }
+        }
+         
 }
 
 }

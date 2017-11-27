@@ -1,3 +1,12 @@
+<?php
+    $pdo = new PDO(
+        "mysql:host=localhost;dbname=millhouse;charset=utf8",
+        "root",
+        "root"
+    );
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +18,7 @@
 <body>
 
 <?php require 'logoheader.html'; ?>
-<?php require 'navbar.php';  ?>
+<?php require 'partials/navbar.php';  ?>
 
     <main>
         <div class="main">

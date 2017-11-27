@@ -1,6 +1,7 @@
 
 .help-article-container {
-    padding: 0px;
+    padding: 4px;
+    margin: 0px 12px;
 }
 
 .article__wrapper {
@@ -19,24 +20,38 @@
     display: block;
 }
 
-.contact__btn {
-    margin: 5px;
-    width: 130px;
+.contact__btn-container {
+    margin: 10px auto;
+    width: 120px;
+    padding: 10px;
+    background-color: $buttonColor;
     border-radius: .25rem;
 }
 
+.contact__btn {
+    color: $defaultColor;
+
+    &:hover {
+        color: $defaultColor;
+        text-decoration: none;
+    }
+}
+
 .article__content {
-    margin: 10px auto; 
-    padding: 20px;  
+    margin: 0px auto; 
+    margin: 12px;
+    padding: 12px;
     background-color: $sectionBackground;
 }
 
-.article__top-header{
+.article__top-header {
     margin: 20px 0px 0px 10px;
     color: $headLineColor;
 }
 
-.article__question{
+.article__question {
+    margin-left: 0px;
+    padding: 0px;
     color: $headLineColor;
 }
 

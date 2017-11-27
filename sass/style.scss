@@ -7,7 +7,6 @@
 @import 'jimmyFooter.scss';
 @import 'category.scss'; 
 
-
 @font-face {
     font-family: 'helveticaneueregular';
     src: url('fonts/helveticaneue/helveticaneue-webfont.woff2') format('woff2'),
@@ -30,9 +29,18 @@ $wrapperColor: rgba(109,
 109,
 0.44);
 
-
 .navbar {
     border-top: 1px solid $sectionBackground;
+}
+
+.jumbotron {
+    display: block;
+    margin-bottom: 0px;
+    background-image: url("images/mh_header.jpg"), url("../images/mh_header.jpg");
+    background-color: #cccccc;
+    background-size: cover;
+    width: 100%;
+    height: 300px;
 }
 
 body {
@@ -48,9 +56,18 @@ body {
 
 main {
     margin:auto;
-    max-width: 600px;
-
+    padding: 0px;
 }
+
+.figures {
+    display: none;
+ }
+
+hr {
+    display:block;
+    max-width: 900px; 
+    margin: 20px; 
+ }
 
 h1{
     padding: 0px; 
@@ -61,18 +78,12 @@ h1{
 /*---CATEGORY PAGES---*/
 
 p{
-    margin-top: 0px;
+    margin: 0px;
 }
 
 .mainBody{
     margin: 0px auto; 
-    padding: 20px;  
-    max-width: 600px;    
-}
-
-.headline {
-    font-size: 4em;
-    color: $interactiveHover;
+    padding: 20px;    
 }
 
 article{
@@ -108,7 +119,7 @@ article button{
 
 .blogpost {
  background-color: $sectionBackground;
- margin: auto;
+ padding:20px;
 }
 
  /* category button */
@@ -136,7 +147,6 @@ article button{
 
    h2 {
        color: $textColor;
-       margin: 10px;
    }
  
    /* blogimage */
@@ -170,7 +180,6 @@ padding: 10px;
 
     }
 
-
 .coverPhoto{
     padding: 0px; 
     margin: 0px;
@@ -183,168 +192,76 @@ padding: 10px;
     object-fit: cover; 
 }
 
-.help {
-    width: 95%;
-    text-align: right;
-    font-size: 1.2em;
-    color: $interactiveHover;
+/*--FORMS--*/
+
+.form_wrapper {
+    padding: 20px;
+    background-color: $sectionBackground;
+    max-width: 700px; 
+    margin: 0px auto; 
 }
 
-.checkboxes_wrapper {
-    text-align: left;
-    margin: 2% 5%;
-}
+input { /*--input settings--*/
+    width: 90%; 
+    margin-bottom: 20px;
+    height: 35px; 
 
-.form {
-    font-size: 1.5em;
-    color: $textColor;
-}
-
-.form--theme {
-    font-size: 0.7em;
-
-}
-
-input {
-    margin: 1em 0;
-    width: 90%;
-
-    &[type="text"] {
-        background-color: $sectionBackground;
-
-        height: 1.5em;
-        font-size: 1.2em;
+    &[type="text"] { /*--username / email / password etc.--*/
+        background-color: $defaultColor;
         -webkit-appearance: none;
-        border-radius: none;
-        padding: 0.3em;
-        border: solid 1px $buttonColor;
-        box-shadow: inset 2px 2px 3px 0 slategray;
-        transition: box-shadow 0.3s;
-        color: $buttonColor;
-
-        &:focus {
-            outline: none;
-            box-shadow: inset 1px 1px 2px 0 #ccc;
-            border: solid 1px $buttonColor;
-        }
     }
 
-
-
-    &[type="submit"] {
-        margin: 5% 0;
-        width: 50%;
-        height: 2em;
-        padding: 0.3em 0;
-        font-size: 1.1em;
-        color: $sectionBackground;
+    &[type="submit"] { /*--submit button--*/
+        width: 5.5rem;
+        padding: 5px;   
+        color: $defaultColor; 
         background-color: $buttonColor;
-        border: none;
-        -webkit-border-radius: 50px;
-        -moz-border-radius: 50px;
-        border-radius: 50px;
-        font-size: 1.2em;
-
-        &:focus {
-            outline: none;
-        }
+        -webkit-border-radius:0.25rem;
+        -moz-border-radius: 0.25rem;
+        border-radius: 0.25rem;
+        margin: 0px auto; 
 
         &:hover {
             background-color: $interactiveHover;
-            color: $defaultColor;
-            border: none;
             cursor: pointer;
         }
     }
 
     &[type="file"] {
-
-        height: 1.4em;
-        padding: 0.3em;
-        background-color: $sectionBackground;
-        color: $buttonColor;
-        border: solid 1px $buttonColor;
-        box-shadow: inset 2px 2px 3px 0 slategray;
-        cursor: pointer;
-        font-size: 1.2em;
+        background-color: $defaultColor;
+        color: $tabs; 
 
         &:focus {
             outline: none;
-            box-shadow: inset 1px 1px 2px 0 $sectionBackground;
             border: solid 1px $buttonColor;
-
+            cursor: pointer;
+            
         }
 
 
     }
 
     &[type="checkbox"] {
-        height: 2.4em;
-        width: 2.4em;
-        padding: 0.3em;
-        margin: 0.3em;
         cursor: pointer;
+        margin: 0px; 
+        padding: 0px; 
 
 
         &:checked + label {
-            color: #30854e;
+            color: $interactiveHover;
 
         }
-
     }
-
-
 }
 
-.textarea {
+.textarea { /*--change your profile description--*/
     width: 90%;
-    height: 150px;
-    padding: 0.3em 0;
-    margin: 1em 0;
-    border: solid 1px $buttonColor;
-    box-shadow: inset 2px 2px 3px 0 #6d6d6d;
-    transition: box-shadow 0.3s;
-    background-color: $sectionBackground;
-    color: $buttonColor;
-    font-size: 1.4em;
-
-
-    &:focus {
-        outline: none;
-        box-shadow: inset 1px 1px 2px 0 $sectionBackground;
-        border: solid 1px $buttonColor;
-    }
-}
-
-.fieldset {
-    border: 0;
-}
-
-.legend {
-    font-size: 1.2em;
-    font-weight: 400;
-    color: $interactiveHover;
-    margin: 0.5em;
+    height: 100px;
+    background-color: $defaultColor;    
+    border: 1px solid $buttonColor;
 }
 
 
-.label {
-    font-size: 0.8em;
-    font-weight: 400;
-    color: $buttonColor;
-    margin: 1em;
-}
-
-.label--checkboxes {
-    font-size: 0.9em;
-}
-
-.form_wrapper {
-    margin: 5%;
-    padding: 5%;
-    background-color: $wrapperColor;
-    text-align: center;
-}
 
 .instruction {
     font-size: 1.4em;
@@ -365,40 +282,89 @@ input {
     color: $dangerColor;
 }
 
+.editButtons{   
+    
+                a{
+                    color: $defaultColor; 
+                }
+                .fa-pencil{
+                    font-size: 1.2rem; 
+                }
+            
+                .delete{
+                    background: $dangerColor; 
+    
+                    .fa-trash{
+                        font-size: 1.2rem; 
+                    }
+            }
+             
+    }
+
+
+/*------HÄR BÖRJAR MEDIA SCREEN----------*/
+
 @media screen and (min-width: 992px) {
+    main {max-width: 900px;}
+    
     .jumbotron {
+        margin-bottom: 0px;
         background-image: url("images/mh_header.jpg"), url("../images/mh_header.jpg");
         background-color: #cccccc;
         background-size: cover;
         width: 100%;
-        height: 550px;
+        height: 400px;
     }
+    
+    .figures {
+        display: flex;
+        flex-direction: row;
+        padding: 10px; 
+    
+        figure {
+            margin:  0 auto;
+        
+        .figures__category-image {
+            height:300px;
+            width:300px;
+            padding: 10px; 
+        }
 
-    .form--theme {
-        font-size: 1.2em;
-
+            figcaption{
+                text-align: center;
+                color: $headLineColor;
+            }
+        }   
     }
-
-    .label--checkboxes {
-        font-size: 1.4em;
-    }
-
-    .form_wrapper {
-        margin: 10%;
-    }
-
+  
     .legend {
         font-size: 2em;
         font-weight: 600;
         color: $interactiveHover;
-        margin: 1em;
     }
 
     .label {
         font-size: 2em;
         font-weight: 600;
-        color: $buttonColor;
-        margin: 1em;
     }
 
+fieldset{
+    text-align: center; 
 }
+
+.form_wrapper {
+    padding: 20px;
+    background-color: $sectionBackground;
+    max-width: 700px; 
+    margin: 0px auto; 
+
+    .form_heading{
+        margin-left: 30px; 
+    }
+}
+
+}
+
+
+
+   
