@@ -74,9 +74,9 @@ $user = getUserInfo($GLOBALS['userID']);
 		<article class="blogpost">
 
 			<!-- category tag -->
-			<button class="categoryButton">
-				<a href="category<?= $latestPost['categoryName'] ?>.php"><?= $latestPost['categoryName']?></a>
-			</button>
+			<div class="blogpost__category-link">
+				<a class="blogpost__category-link" href="category<?= $latestPost['categoryName'] ?>.php"><?= $latestPost['categoryName']?></a>
+			</div>
 
 			<!-- blogpost title -->
 			<date><p class="blogpost__date"><?= substr($latestPost['postDate'], 0, 16) ?></p></date>

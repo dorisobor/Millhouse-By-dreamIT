@@ -33,7 +33,7 @@ $user = getUserInfo($GLOBALS['userID']);
 		<?php foreach (getAllBlogpostsOnWatches(1) as $i => $blogpost): ?>
 		<article class="blogpost">
 		<!--CATEGORIE TAG-->
-			<div class="blogpost__category-button--no-link">
+			<div class="blogpost__category-tag">
 				<span><?= $blogpost['categoryName'] ?></span>
 			</div>
 			<div class="blogpost__user-info">

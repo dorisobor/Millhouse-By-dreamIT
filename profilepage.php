@@ -76,14 +76,13 @@ $user = getUserInfo($GLOBALS['userID']);
 			<article class="blogpost">
 
 				<!--CATEGORIE TAG-->
-				<button class="categoryButton">
-					<a href="category<?= $totalPost['categoryName'] ?>.php"><?= $totalPost['categoryName']?></a>
-				</button>
+				<div class="blogpost__category-link">
+					<a class="blogpost__category-link " href="category<?= $totalPost['categoryName'] ?>.php"><?= $totalPost['categoryName']?></a>
+				</div>
 
-				<!--USER INFO-->
 				<date><p class="blogpost__date"><?= substr($totalPost['postDate'], 0, 16) ?></p></date>
 				<h2 class="blogpost__title"><?= $totalPost['postTitle'] ?></h2>
-		
+
 				<figure>
 					<img src="<?= $totalPost['postImage'] ?>" alt="">
 				</figure>

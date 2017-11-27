@@ -1,4 +1,4 @@
-.blogpost__category-button--no-link {
+.blogpost__category-tag {
     max-width: 100px;
     padding: 5px;   
     color: $defaultColor; 
@@ -8,3 +8,14 @@
     border-radius: 0.25rem;
     text-align: center;
 }
+
+.blogpost__category-link {
+    @extend .blogpost__category-tag;
+    color: $defaultColor; 
+
+        &:hover {
+            text-decoration: underline;
+            color: $defaultColor; 
+        }
+}
+
