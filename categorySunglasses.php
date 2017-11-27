@@ -46,14 +46,14 @@
 				<img src="images/mh_sunglasses_blogpost.jpeg" alt="inredning_kollage">
 			</figure>
 			<div class= "blogpost__blog-description">
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+			<a href ="#"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 				Pellentesque at eros dolor. Nullam sit amet velit enim. 
 				Etiam ut convallis erat. In ornare risus nec justo tincidunt, 
 				nec eleifend dolor lacinia. Curabitur ut feugiat sem,
 				non tempus tellus. Nunc sed dolor vitae purus 
 				tristique consequat sit amet in libero. Ut rhoncus tempus justo, 
 				sit amet suscipit diam congue et. 
-				Suspendisse tempor commodo lacinia...</p>
+				Suspendisse tempor commodo lacinia...</p><a/>
 
 				<div class="blogpost__read-more"> 
 					<a href="blogpost.php" >Read More<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
