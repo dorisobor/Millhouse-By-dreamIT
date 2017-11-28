@@ -33,7 +33,7 @@ require_once 'partials/fetch_all_blogposts.php';
 
                         <fieldset class="fieldset">
                             <div class="createForm">
-                                <input type="text" name="blogtitle" placeholder="Blog title" id="headline" aria-required="true" required />
+                                <input type="text" name="blogtitle" placeholder="Story title" id="headline" aria-required="true" required />
                                 <br>
                                     
                                 <textarea class="textarea" id="postText" name="postText" rows="6" cols="50" placeholder="Write your text here" required></textarea>

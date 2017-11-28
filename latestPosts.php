@@ -56,7 +56,7 @@ $user = getUserInfo($GLOBALS['userID']);
 			</div>
 			<div class="createNewPost">
 				<button class="create">
-					<a href="createPost.php">Create New Post</a>
+					<a href="createPost.php">Create New Story</a>
 				</button>
 			</div>
 		</div>      

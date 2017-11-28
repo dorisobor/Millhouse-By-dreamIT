@@ -29,7 +29,7 @@
 
                         <fieldset class="fieldset">
                             <div class="createForm">
-                                <input type="text" name="blogtitle" placeholder="Blog title" id="headline" aria-required="true" required />
+                                <input type="text" name="blogtitle" placeholder="Story title" id="headline" aria-required="true" required />
                                 <br>
                                     
                                 <textarea class="textarea" id="postText" name="postText" rows="6" cols="50" placeholder="Write your text here" required></textarea>
@@ -41,7 +41,7 @@
                             </div>
 
                                 <div class="checkboxWrapper">
-                                    <p class="formTheme">Change category for your post:</p>
+                                    <p class="formTheme">Change category for your story:</p>
                             
                                     <input type="radio" name="category" id="Sunglasses" value="Sunglasses" required>
                                     <label class="labelCheckboxes" for="category_1">Sunglasses</label>

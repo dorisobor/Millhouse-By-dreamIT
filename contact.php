@@ -27,7 +27,6 @@ require_once 'partials/fetch_all_blogposts.php';
 
                         <fieldset class="fieldset">
                             <div class="contactForm">
-                                <input type="text" name="blogtitle" placeholder="Blog title" id="headline" aria-required="true" required/>                            
                                 <input type="text" name="name" value="" placeholder="Your Name" required/>
                                 <input type="text" name="email" value="" placeholder="Email" required/>
                                 <input type="text" name="subject" value="" placeholder="Subject" required/>

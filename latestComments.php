@@ -68,7 +68,7 @@ $infos = $statement->fetchAll(PDO::FETCH_ASSOC);
 			</div>
             <div class="createNewPost">
                 <button class="create">
-                    <a href="createPost.php">Create New Post</a>
+                    <a href="createPost.php">Create New Story</a>
                 </button>
             </div>
         </div>   

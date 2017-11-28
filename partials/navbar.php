@@ -34,7 +34,7 @@ $loggedOn = true;
             <a class="nav-item nav-link" href="contact.php">Contact</a><br>
 
             <?php if ($loggedOn): ?>
-                <a class="nav-item nav-link d-lg-none d-xl-none" href="createPost.php">Create new post</a>
+                <a class="nav-item nav-link d-lg-none d-xl-none" href="createPost.php">Create New Story</a>
                 <a class="nav-item nav-link d-lg-none d-xl-none" href="profilepage.php">Profile</a>
                 <a class="nav-item nav-link d-lg-none d-xl-none" href="help.php">Help</a>
                 <a class="nav-item nav-link d-lg-none d-xl-none" href="settings.php">Settings</a>
@@ -71,7 +71,7 @@ $loggedOn = true;
                     <i class="fa fa-user-circle-o" aria-hidden="true"></i> User menu
                 </button>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="createPost.php">Create new post</a>
+                    <a class="dropdown-item" href="createPost.php">Create New Story</a>
                     <a class="dropdown-item" href="profilepage.php">Profile</a>
                     <a class="dropdown-item" href="help.php">Help</a>
                     <a class="dropdown-item" href="settings.php">Settings</a>
