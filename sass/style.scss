@@ -72,6 +72,10 @@ h1{
     color: $interactiveHover; 
 }
 
+.clear{
+    clear: both; 
+}
+
 /*---CATEGORY PAGES---*/
 
 p{
@@ -124,19 +128,35 @@ article button{
  .blogpost__category-button{
     background-color: $buttonColor;
     color: $defaultColor;
-    margin: 10px;
+    margin-bottom: 10px; 
 }
 
  /* user info */
 
 .blogpost__user-info {
-    margin: 10px;
-    p {
-    margin-left:50px;
-    color: $textColor;
+    max-width: 350px; 
+
+    .user-image__container{
+        font-size: 3em; 
+        float: left; 
+        width: 15%; 
     }
-    .fa-user-circle-o {
-    font-size: 3em;
+
+    .user-image__image {
+        width: 50px;
+        vertical-align: text-top;
+    }
+
+    .blogpost__content-username{
+        float: left;
+        width: 80%; 
+        padding: 10px; 
+        margin-left: 10px; 
+    }
+
+    p{
+        margin: 0px;
+        padding: 0px; 
     }
 }
 
@@ -398,6 +418,9 @@ input { /*--input settings--*/
             }
         }   
     }
+
+
+
 
 fieldset{
     text-align: center; 

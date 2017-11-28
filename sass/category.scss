@@ -57,33 +57,39 @@ article{
 .blogpost{
     padding: 15px; 
 
-        button{
-            font-size: 0.9em; 
-            width: 5.5rem; 
-        }
+    .blogpost__category-tag{
+        margin-bottom: 10px; 
+    }
 
-        .categoryButton{
-            color: $defaultColor; 
-           margin: 15px;
-           margin-left:5px;
-            a{
-                color: $defaultColor;
-            }
+    button{
+        font-size: 0.9em; 
+        width: 5.5rem; 
+    }
+
+    .categoryButton{
+        color: $defaultColor; 
+        margin: 15px;
+        margin-left:5px;
+        a{
+            color: $defaultColor;
         }
+    }
         
-        .editButtons{   
-            
-            .fa-pencil{
+    .editButtons{   
+        
+        .fa-pencil{
+            font-size: 1.2rem; 
+        }
+    
+        .delete{
+            background: $dangerColor; 
+
+            .fa-trash{
                 font-size: 1.2rem; 
             }
-        
-            .delete{
-                background: $dangerColor; 
-
-                .fa-trash{
-                    font-size: 1.2rem; 
-                }
-        }
+    }
          
     }
 }
+
+
