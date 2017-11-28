@@ -37,10 +37,18 @@ $user = getUserInfo($GLOBALS['userID']);
 				<span><?= $blogpost['categoryName'] ?></span>
 			</div>
 			<div class="blogpost__user-info">
-				<i class="fa fa-user-circle-o" aria-hidden="true"></i>
-				<span><?= $blogpost['username'] ?></span> 
-				<time><p><?= substr($blogpost['postDate'], 0, 16); ?></p></time>
+				<div class="user-image__container">
+					<img class="user-image__image" src="<?= $user['userAvatar'] ?>"/>
+				</div>
+			
+				<div class="blogpost__content-username">
+					<p class="username"><?= $user['username'] ?></p>
+					<time><p>Date: <?=$blogpost['postDate'];?></p></time>
+				</div>
 			</div>
+		
+			<div class="clear"></div>
+
 			<h2><?= $blogpost['postTitle'] ?></h2>
 			<figure>
 			<!--BLOG PICTURE-->

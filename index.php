@@ -1,3 +1,12 @@
+<?php 
+
+require_once 'partials/db.php'; 
+require 'functions.php';
+
+$user = getUserInfo($GLOBALS['userID']);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,35 +26,35 @@ require_once 'partials/fetch_all_blogposts.php';
 ?>
 
 <header>
-	<div class="jumbotron jumbotron-fluid logo-header"></div>    
+  <div class="jumbotron jumbotron-fluid logo-header"></div>    
 </header>
   
 <main>
-  <div class="figures">
-    <figure>
-    <a href="categoryWatches.php"> 
-    <img class ="figures__category-image" src="images/square_watch.png" alt="watches">
-    </a><figcaption>
-        <h3><a href="categoryWatches.php">Watches</a></h3>
-      </figcaption>
-    </figure>
+    <div class="figures">
+        <figure>
+        <a href="categoryWatches.php"> 
+        <img class ="figures__category-image" src="images/square_watch.png" alt="watches">
+        </a><figcaption>
+            <h3><a href="categoryWatches.php">Watches</a></h3>
+          </figcaption>
+        </figure>
 
-    <figure>
-    <a href="categorySunglasses.php"> 
-    <img class ="figures__category-image" src="images/square_glasses.png" alt="sunglasses">
-    </a><figcaption>
-         <h3><a href="categorySunglasses.php">Sunglasses</a></h3>
-      </figcaption>
-    </figure>
+        <figure>
+        <a href="categorySunglasses.php"> 
+        <img class ="figures__category-image" src="images/square_glasses.png" alt="sunglasses">
+        </a><figcaption>
+            <h3><a href="categorySunglasses.php">Sunglasses</a></h3>
+          </figcaption>
+        </figure>
 
-    <figure>
-    <a href="categoryInterior.php"> 
-    <img class ="figures__category-image" src="images/square_interior.png" alt="interior">
-    </a><figcaption>
-        <h3><a href="categoryInterior.php">Interior</a></h3>
-      </figcaption>
-    </figure>
-  </div>
+        <figure>
+        <a href="categoryInterior.php"> 
+        <img class ="figures__category-image" src="images/square_interior.png" alt="interior">
+        </a><figcaption>
+            <h3><a href="categoryInterior.php">Interior</a></h3>
+          </figcaption>
+        </figure>
+      </div>
   
 	<hr class="d-none d-lg-block d-xl-block">
 
@@ -64,10 +73,21 @@ require_once 'partials/fetch_all_blogposts.php';
   <!--CATEGORIE TAG-->
 		<button class = "blogpost__category-button"<a href="#">Category</a></button>
 	<!--USER INFO-->
+  
 		<div class="blogpost__user-info">
-		<i class="fa fa-user-circle-o" aria-hidden="true"></i>
-		<span>Username</span> <time><p>Date: <?=$blogpost['postDate'];?></p></time>
-		</div>
+        <div class="user-image__container">
+					  <img class="user-image__image" src="<?= $user['userAvatar'] ?>"/>
+        </div>
+        
+        <div class="blogpost__content-username">
+            <p class="username"><?= $user['username'] ?></p>
+            <time><p>Date: <?=$blogpost['postDate'];?></p></time>
+        </div>
+    </div>
+    
+
+    <div class="clear"></div>
+
   	<!--The blog title-->
 		<h2><?=$blogpost['postTitle'];?></h2>
   

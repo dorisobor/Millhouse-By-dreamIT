@@ -1,3 +1,12 @@
+<?php 
+
+require_once 'partials/db.php'; 
+require 'functions.php';
+
+$user = getUserInfo($GLOBALS['userID']);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,13 +55,25 @@
 		
 <article class="blogpost">
 	<!--CATEGORIE TAG-->
-	<button class="blogpost__category-button" <a href="#">Category</a></button>
+	<button class="blogpost__category-button" 
+		<a href="#">Category</a>
+	</button>
 	<!--USER INFO-->
+
 	<div class="blogpost__user-info">
-		<!--USER INFO-->
-		<i class="fa fa-user-circle-o" aria-hidden="true"></i>
-		<span>Username</span> <time><p>Date: <?=$blogpost['postDate'];?> </p></time>
+		<div class="user-image__container">
+			<img class="user-image__image" src="<?= $user['userAvatar'] ?>"/>
+		</div>
+	
+		<div class="blogpost__content-username">
+			<p class="username"><?= $user['username'] ?></p>
+			<time><p>Date: <?=$blogpost['postDate'];?></p></time>
+		</div>
 	</div>
+
+
+<div class="clear"></div>
+
 	<!--The blog title-->
     <h2><?=$blogpost['postTitle'];?></h2>
 	<figure>
