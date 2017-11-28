@@ -3,7 +3,7 @@
 require_once 'partials/db.php'; 
 require 'functions.php';
 
-$user = getUserInfo($GLOBALS['userID']);
+
 
 ?>
 
@@ -78,12 +78,12 @@ require_once 'partials/fetch_all_blogposts.php';
   
 		<div class="blogpost__user-info">
         <div class="user-image__container">
-					  <img class="user-image__image" src="<?= $user['userAvatar'] ?>"/>
+					  <img class="user-image__image" src="<?= $blogpost['userAvatar'] ?>"/>
         </div>
         
         <div class="blogpost__content-username">
-            <p class="username"><?= $user['username'] ?></p>
-            <time><p>Date: <?=$blogpost['postDate'];?></p></time>
+            <p class="username"><?= $blogpost['username'] ?></p>
+            <time><p>Date:<?= substr($blogpost['postDate'],0,16)?></p></time>
         </div>
     </div>
     
