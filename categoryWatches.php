@@ -1,3 +1,12 @@
+<?php 
+
+require_once 'partials/db.php'; 
+require 'functions.php';
+
+$user = getUserInfo($GLOBALS['userID']);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,10 +15,8 @@
 </head>
 <body>
 
-
 <?php require 'logoheader.html'; ?>
-<?php require 'navbar.php'; ?>
-
+<?php require 'partials/navbar.php'; ?>
 
 <header>
 	<figure class="coverPhoto">
@@ -17,40 +24,45 @@
 	</figure>
 </header>
 
-
 <main> 
-	
 	<!-- picture representing the category -->
 	<div class="mainBody">
 		<h1>Watches</h1>
-		<p>Here you can read all about 
-		<br>Millhouse exclusive watches!</p>
-
-			
+		<p>Here you can read all about Millhouse exclusive watches!</p>
 		<!-- article = blogpost -->
-			
-		<article class="categoryPosts">
-			<!-- tag -->
-			<button <a href="#">Category</a></button>
-			<h2>Blogpost title</h2>
+		<?php foreach (getAllBlogpostsOnWatches(1) as $i => $blogpost): ?>
+		<article class="blogpost">
+		<!--CATEGORIE TAG-->
+			<div class="blogpost__category-tag">
+				<span><?= $blogpost['categoryName'] ?></span>
+			</div>
+			<div class="blogpost__user-info">
+				<i class="fa fa-user-circle-o" aria-hidden="true"></i>
+				<span><?= $blogpost['username'] ?></span> 
+				<time><p><?= substr($blogpost['postDate'], 0, 16); ?></p></time>
+			</div>
+			<h2><?= $blogpost['postTitle'] ?></h2>
+			<!--BLOG PICTURE-->
 			<figure>
-				<img src="" alt="">
+				<img src="<?= $blogpost['postImage'] ?>" alt="">
 			</figure>
-			<p class=""></p>
-			<!-- userimage -->
-			<img src="" alt="">
-			<!-- username -->
-			<span></span>
-			<!-- publish date -->
-			<time></time>
-			<!-- share -->
-			<button></button>
+			<div class= "blogpost__blog-description">
+				<p><a href="#">
+					<?= substr($blogpost['postText'],0,200) ?>
+					</a></p>
+				<div class="blogpost__read-more"> 
+					<a href="blogpost.php">Read More <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+				</div>
+				<div class="blogpost__share-button"> 
+					<a href="#">Share <i class="fa fa-share-alt" aria-hidden="true"></i></a>
+				</div>
+			</div>
 		</article>
+		<?php endforeach; ?>
 	</div>
-	
 </main>
 
-<?php require 'footer.php'; ?>
+<?php require 'partials/footer.php'; ?>
 <?php require 'bootstrapScripts.html'; ?>
 
 </body>

@@ -7,7 +7,7 @@
 
 <body>
 <?php require 'logoheader.html'; ?>
-    <?php require 'navbar.php';  ?>
+    <?php require 'partials/navbar.php';  ?>
     <main>
         <div class="main">
             <h1  class="headline message--attention">Error</h1>
@@ -20,7 +20,7 @@
         </div>
     </main>
 
-<?php require 'footer.php';  ?>
+<?php require 'partials/footer.php';  ?>
 <?php require 'bootstrapScripts.html'; ?>
 
 </body>

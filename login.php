@@ -7,7 +7,7 @@
 <body>
 
 <?php require 'logoheader.html'; ?>
-<?php require 'navbar.php'; ?>
+<?php require 'partials/navbar.php'; ?>
 
 <main>
 	
@@ -35,7 +35,7 @@
 
 </main>
 
-<?php require 'footer.php'; ?>
+<?php require 'partials/footer.php'; ?>
 <?php require 'bootstrapScripts.html'; ?>
     
 </body>

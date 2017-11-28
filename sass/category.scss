@@ -13,6 +13,15 @@ $wrapperColor: rgba(109,
 
 /*---CATEGORY PAGES---*/
 
+main{
+    max-width: 900px; 
+}
+
+button{
+    border-radius: 0.25em; 
+    color: $defaultColor; 
+}
+
 p{
     margin-top: 0px;
 }
@@ -20,7 +29,6 @@ p{
 .mainBody{
     margin: 0px auto; 
     padding: 20px;  
-    max-width: 600px;    
 }
 
 .headline {
@@ -30,14 +38,6 @@ p{
 
 article{
     padding: 15px; 
-}
-
-article button{
-    background: $buttonColor; 
-    color: $defaultColor; 
-    border: none; 
-    width: 70px; 
-    padding: 5px; 
 }
 
 .coverPhoto{
@@ -54,6 +54,36 @@ article button{
     object-fit: cover; 
 }
 
+.blogpost{
+    padding: 15px; 
 
+        button{
+            font-size: 0.9em; 
+            width: 5.5rem; 
+        }
 
+        .categoryButton{
+            color: $defaultColor; 
+           margin: 15px;
+           margin-left:5px;
+            a{
+                color: $defaultColor;
+            }
+        }
+        
+        .editButtons{   
+            
+            .fa-pencil{
+                font-size: 1.2rem; 
+            }
+        
+            .delete{
+                background: $dangerColor; 
 
+                .fa-trash{
+                    font-size: 1.2rem; 
+                }
+        }
+         
+    }
+}
