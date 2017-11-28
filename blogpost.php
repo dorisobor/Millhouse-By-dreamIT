@@ -24,17 +24,9 @@ $user = getUserInfo($GLOBALS['userID']);
 
 	  if(isset($_GET['view_post']) ){ 
 		$postID = $_GET ['view_post'];
-	  
-//Prepare statement that will help showing the specific blogpost with the id
-	  $statement = $pdo->prepare("SELECT * FROM blogposts
-	    WHERE postID ='$postID'");
-	   
- //execute it
-	  $statement->execute();
-	  
-// Fetch all rows
-	  $blogposts =  $statement ->fetchAll(PDO::FETCH_ASSOC); 
-	  
+		
+		
+	  require_once 'partials/fetch_all_blogposts.php';
 	  }
  ?>
 
@@ -55,9 +47,9 @@ $user = getUserInfo($GLOBALS['userID']);
 		
 <article class="blogpost">
 	<!--CATEGORIE TAG-->
-	<button class="blogpost__category-button" 
-		<a href="#">Category</a>
-	</button>
+	<div class="blogpost__category-tag">
+	<span><?= $blogpost['categoryName'] ?></span>
+	</div>
 	<!--USER INFO-->
 
 	<div class="blogpost__user-info">
@@ -78,7 +70,8 @@ $user = getUserInfo($GLOBALS['userID']);
     <h2><?=$blogpost['postTitle'];?></h2>
 	<figure>
 		<!--BLOG PICTURE-->
-		<img src="images/inredning_kollage.jpg" alt="inredning_kollage">
+	<img src="<?= $blogpost['postImage'] ?>" alt="">
+
 	</figure>
 	<div class="blogpost__blog-description">
 	
