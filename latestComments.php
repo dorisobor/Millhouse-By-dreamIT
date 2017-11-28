@@ -25,7 +25,7 @@ $infos = $statement->fetchAll(PDO::FETCH_ASSOC);
 <html lang="en">
 
 <head>
-	<?php require 'head.html'; ?>
+    <?php require 'head.html'; ?>
 	<title>Latest comments</title>
 </head>  
 
@@ -91,14 +91,39 @@ $infos = $statement->fetchAll(PDO::FETCH_ASSOC);
                 <p> <?= $info["commentText"]; ?> </p>
                 <button><i class="fa fa-pencil" aria-hidden="true"></i><a href="/editPost.php">Edit</button></a>
                 <button class="delete">
-                    <a href="deleteComment.php?commentID=<?= $info['commentID']?>&redirectto=latestComments.php">
+                    <a class="delete"  data-toggle="modal" data-target="#delete-confirmation">
                         <i class="fa fa-trash" aria-hidden="true"></i> Delete
                     </a>
                 </button>
             </article>	
         </div>
         <?php }?>
-	</div>      
+    </div>  
+
+    <!-- popup window -->
+    <div class="modal fade" id="delete-confirmation">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title">Delete confirmation</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <p>Are your sure you want to delete this comment?
+					   Once you've deleted it, the comment cant be re-created.
+					</p>
+                </div>
+                <div class="modal-footer">
+                    <a class="modal-footer__link" href="deleteComment.php?commentID=<?= $info['commentID']?>&redirectto=latestComments.php">
+                        Yes, delete
+                    </a>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Dont delete</button>
+                </div>
+            </div>
+        </div>
+    </div>   
 </main>
 
 <?php require 'partials/footer.php'; ?>

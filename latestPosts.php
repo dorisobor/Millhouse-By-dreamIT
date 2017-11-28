@@ -70,7 +70,6 @@ $user = getUserInfo($GLOBALS['userID']);
 	</nav>
 			
 	<div class="profilePosts">
-
 	<?php foreach (getLatestBlogpostByUserID($userID) as $i => $latestPost): ?>
 		<article class="blogpost">
 
@@ -97,7 +96,6 @@ $user = getUserInfo($GLOBALS['userID']);
 						Read More <i class="fa fa-chevron-right" aria-hidden="true"></i>
 					</a>
 				</div>
-			
 				<div class="blogpost__share-button"> 
 					<a href="#">Share <i class="fa fa-share-alt" aria-hidden="true"></i></a>
 				</div>
@@ -106,14 +104,37 @@ $user = getUserInfo($GLOBALS['userID']);
 					<button>
 						<a href="editPost.php"><i class="fa fa-pencil" aria-hidden="true"></i> Edit<a>
 					</button>
-					<button class="delete">
-						<a href="deleteBlogpost.php?delete_post=<?= $latestPost['postID']; ?>&redirectto=latestPosts.php">
-							<i class="fa fa-trash" aria-hidden="true"></i> Delete
-						</a>
+					<button class="delete" type="button" data-toggle="modal" data-target="#delete-confirmation">
+						<i class="fa fa-trash" aria-hidden="true"></i> Delete
 					</button>
 				</div> 
 			</article>
 		<?php endforeach; ?>
+	</div>
+
+	<!-- popup window -->
+	<div class="modal fade" id="delete-confirmation">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+				<h5 class="modal-title">Delete confirmation</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+				</button>
+				</div>
+				<div class="modal-body">
+					<p>Are your sure you want to delete this story?
+					   Once you've deleted it, the story cant be re-created.
+					</p>
+				</div>
+				<div class="modal-footer">
+					<a class="modal-footer__link" href="deleteBlogpost.php?delete_post=<?= $latestPost['postID']; ?>&redirectto=latestPosts.php">
+						Yes, delete
+					</a>
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Dont delete</button>
+				</div>
+			</div>
+		</div>
 	</div>
 </main>
 
