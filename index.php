@@ -71,7 +71,9 @@ require_once 'partials/fetch_all_blogposts.php';
    
 	<article class="blogpost">
   <!--CATEGORIE TAG-->
-		<button class = "blogpost__category-button"<a href="#">Category</a></button>
+	<div class="blogpost__category-tag">
+	<span><?= $blogpost['categoryName'] ?></span>
+	</div>
 	<!--USER INFO-->
   
 		<div class="blogpost__user-info">
@@ -93,7 +95,7 @@ require_once 'partials/fetch_all_blogposts.php';
   
 	<!--BLOG PICTURE-->
 		<figure>
-			<img src="images/inredning_kollage.jpg" alt="inredning_kollage">
+		<img src="<?= $blogpost['postImage'] ?>" alt="">
 		</figure>
   <!--The blog text-->
     <div class= "blogpost__blog-description">
