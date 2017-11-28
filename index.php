@@ -119,6 +119,9 @@ require_once 'partials/fetch_all_blogposts.php';
 //end of loop     
    }
   ?>
+
+  <?php require 'messagePlainEmpty.php';?>
+
   </div>
 
 </main>

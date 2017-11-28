@@ -68,6 +68,9 @@ $user = getUserInfo($GLOBALS['userID']);
 			</div>
 		</article>
 		<?php endforeach; ?>
+
+		<?php require 'messageEmptyCategory.php'; ?>
+	
 	</div>
 </main>
 
