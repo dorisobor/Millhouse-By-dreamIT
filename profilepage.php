@@ -74,7 +74,6 @@ $user = getUserInfo($GLOBALS['userID']);
 	<div class="profilePosts">
 	<?php foreach (getAllBlogpostsByUserID($userID) as $i => $totalPost): ?>
 		<article class="blogpost">
-
 			<!--CATEGORIE TAG-->
 			<div class="blogpost__category-link">
 				<a class="blogpost__category-link" href="category<?= $totalPost['categoryName'] ?>.php"><?= $totalPost['categoryName']?></a>
@@ -110,6 +109,19 @@ $user = getUserInfo($GLOBALS['userID']);
 				</div>
 			</article>
 		<?php endforeach; ?>	
+
+		<?php if (empty($totalPost)): ?>
+			<div class="message">
+				<p class="message__if-empty">
+					You haven't published anything yet! 
+					If you need some help creating a post
+					<a class="message__link" href="help.php">
+						click here to find our FAQ
+					</a>
+				</p>
+			</div>
+		<?php endif; ?>
+
 	</div>
 	
 	<!-- popup window -->
