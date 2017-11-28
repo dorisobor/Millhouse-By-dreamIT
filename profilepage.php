@@ -48,17 +48,14 @@ $user = getUserInfo($GLOBALS['userID']);
 				<div class="totalPosts">
 					<span><?= getUserStatisticsPosts($GLOBALS['userID']) ?>  stories(s)</span>
 				</div>
-<<<<<<< HEAD
 				
 				<div class="createNewPost">
 					<button class="create">
 						<a href="createPost.php">Create New Story</a>
 					</button>
-=======
 
 				<div class="totalComments">
 					<span><?= getUserStatisticsComments($GLOBALS['userID']) ?>  comments(s)</span>
->>>>>>> 08f64cbef70cd1807614f0daefda5c271cfe862e
 				</div>
 			</div>
 			
