@@ -45,8 +45,8 @@ $user = getUserInfo($GLOBALS['userID']);
 				</div>
 			
 				<div class="blogpost__content-username">
-					<p class="username"><?= $user['username'] ?></p>
-					<time><p>Date: <?=$blogpost['postDate'];?></p></time>
+					<p class="username"><?= $blogpost['username'] ?></p>
+					<time><p><?= substr($blogpost['postDate'], 0, 16) ?></p></time>
 				</div>
 			</div>
 		
