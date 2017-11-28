@@ -21,6 +21,13 @@ $statement= $pdo->prepare("
 		
  $statement->execute(array(":postID" => $_GET["delete_post"],));
 
+ $statement= $pdo->prepare("
+ DELETE FROM blogposts
+       WHERE postID = :postID
+ ");
+
+$statement->execute(array(":postID" => $_GET["delete_post"],));
+
 }
 
 $redirect = 'index.php';

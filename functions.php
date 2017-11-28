@@ -1,5 +1,12 @@
 <?php 
 
+function deleteComment ($commentID) {
+    global $pdo;            
+    $stmt = $pdo->prepare("DELETE FROM comments WHERE commentID = :commentID");  
+    $stmt->bindParam(":commentID", $commentID);    
+    $stmt->execute();
+}
+
 function getUserInfo ($userID) {
     global $pdo;            
     $stmt = $pdo->prepare("SELECT * FROM users WHERE userID = :id");  

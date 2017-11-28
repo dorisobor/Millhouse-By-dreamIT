@@ -104,7 +104,7 @@ $user = getUserInfo($GLOBALS['userID']);
 							<a href="editPost.php"><i class="fa fa-pencil" aria-hidden="true"></i> Edit<a>
 						</button>
 						<button class="delete">
-							<a href="deleteBlogpost.php?delete_post=<?= $totalPost['postID']; ?>&redirectto=profilepage.php">
+							<a href="deleteComment.php?delete_post=<?= $totalPost['postID']; ?>&redirectto=profilepage.php">
 								<i class="fa fa-trash" aria-hidden="true"></i> Delete
 							</a>
         				 </button>

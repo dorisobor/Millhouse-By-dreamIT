@@ -12,49 +12,47 @@ require 'getUserinfo.php';
 
 <?php
 
-$pdo = new PDO(
-  "mysql:host=localhost;dbname=millhouse;charset=utf8",
-  "root",
-  "root"
-);
+require 'partials/db.php';
+require 'functions.php';
 
-//hantering av felmeddelande
-$pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-//hinder mot simulerade förfrågningar
-$pdo -> setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+$user = getUserInfo($GLOBALS['userID']);
 
-    $statement = $pdo->prepare
-    ("SELECT users.userID, users.username, comments.userID, comments.commentDate, comments.commentText,comments.postID, blogPosts.userID, blogPosts.postTitle, blogPosts.postID
-        FROM blogPosts
-        JOIN users
-        JOIN comments 
-        ON users.userID = blogPosts.userID AND comments.postID = blogPosts.postID and users.userID = 1 LIMIT 5
-    ");                           
-    
-    $statement->execute();
-    
-    $infos = $statement->fetchAll(PDO::FETCH_ASSOC);
+$statement = $pdo->prepare
+("SELECT users.userID, users.username, comments.commentID, comments.userID, comments.commentDate, comments.commentText,comments.postID, 
+        blogPosts.userID, blogPosts.postTitle, blogPosts.postID
+    FROM blogPosts
+    JOIN users
+    JOIN comments 
+    ON users.userID = blogPosts.userID AND comments.postID = blogPosts.postID 
+    AND users.userID = :id LIMIT 5
+");  
 
-      require 'logoheader.html'; 
-      require 'partials/navbar.php'; 
+$statement->bindParam(":id", $GLOBALS['userID']);    
+
+$statement->execute();
+
+$infos = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+    require 'logoheader.html'; 
+    require 'partials/navbar.php'; 
 
  ?>
+
 <main>
 
 <div class="profileBox"> 
         <!--USER IMAGE-->
             <div class="profileBox__content-1">
-                <img src="" alt="">
-                <div class="userImage">
-                    <i class="fa fa-user-circle" aria-hidden="true"></i>
-                </div>
+                 <div class="user-image__container">
+					<img class="user-image__image" src="<?= $user['userAvatar'] ?>"/>
+				</div>
         
                 <!--edit icon from bootsrap?-->
                 <!--USER NAME-->
                 <div class="profileBox__content-username">
-                    <p class="username">Username</p>
-                    <p class="aboutMe">Something About Me</p>
-                </div>
+					<p class="username"><?= $user['username'] ?></p>
+					<p class="aboutMe"><?= $user['userBio'] ?></p>
+				</div>
     
                 <div class="settingsIcon">
                     <button class="settings">
@@ -66,13 +64,14 @@ $pdo -> setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
             
             <div class="profileBox__content-2">
                 <div class="profileBox__content-commentsPosts">
-                    <div class="totalPosts">
-                        <a href="#">50 blogposts</a>
-                    </div>
-                    <div class="totalComments">
-                        <a href="#">125 comments</a>
-                    </div>
-                </div>
+					<div class="totalPosts">
+						<span><?= getUserStatisticsPosts($GLOBALS['userID']) ?>  stories(s)</span>
+					</div>
+
+					<div class="totalComments">
+						<span><?= getUserStatisticsComments($GLOBALS['userID']) ?>  comments(s)</span>
+					</div>
+				</div>
                 <div class="createNewPost">
                     <button class="create">
                         <a href="createPost.php">Create New Post</a>
@@ -99,7 +98,11 @@ $pdo -> setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
                 <h2> <?= $info["postTitle"]; ?> </h2>
                 <p> <?= $info["commentText"]; ?> </p>
                 <button><i class="fa fa-pencil" aria-hidden="true"></i><a href="/editPost.php">Edit</button></a>
-                <button><i class="fa fa-trash" aria-hidden="true"></i><a href="#"> Delete</button></a>
+                <button class="delete">
+                    <a href="deleteComment.php?commentID=<?= $info['commentID']?>&redirectto=latestComments.php">
+                        <i class="fa fa-trash" aria-hidden="true"></i> Delete
+                    </a>
+        		</button>
                 </article>	
             </div>
             <?php }?>
