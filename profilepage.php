@@ -141,8 +141,5 @@ $user = getUserInfo($GLOBALS['userID']);
 <?php require 'partials/footer.php'; ?>
 <?php require 'bootstrapScripts.html'; ?>
 
-
-<script src="https://cdn.jsdelivr.net/npm/tota11y@0.1.6/build/tota11y.min.js"></script>
-
 </body>
 </html>
