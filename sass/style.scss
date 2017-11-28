@@ -25,10 +25,6 @@ $buttonColor:#1C4D45;
 $interactiveHover:#2E52A1;
 $tabs:#6d6d6d;
 $dangerColor:#cc4750;
-$wrapperColor: rgba(109,
-109,
-109,
-0.44);
 
 .navbar {
     border-top: 1px solid $sectionBackground;
@@ -200,45 +196,61 @@ padding: 10px;
     background-color: $sectionBackground;
     max-width: 700px; 
     margin: 0px auto; 
-}
 
-.topInfo{
-    p{
-        float: left;
+    .topInfoCreate{
+
+        .help{
+            line-height: 30px; 
+        }
+
+        p{
+            float: left;
+            margin-right: 5px; 
+        }
+
+        .fa-question-circle{
+            float: left; 
+            font-size: 1.7rem; 
+        }
     }
 
-    .fa-question-circle{
-        float: left; 
+    .contactForm{
+        
+        input{
+            width: 90%; 
+        }
+    }
+
+    .createForm{
+
+        input{
+            width: 90%; 
+        }
+    }
+
+    .submitButton{
+        text-align: center; 
+        height: 40px; 
+        margin: 10px; 
     }
 }
 
-.formCheckboxesWrapper{
-    text-align: left; 
-}
-
-.form_input{
-
-    input{
-        width: 90%; 
-    }
-}
-
-.createForm{
-
-    input{
-        width: 90%; 
-        text-align: left; 
-    }
-}
-
-.submitButton{
+.newAccount{
+    background: $headLineColor;
+    height: 35px;
+    width: 200px; 
+    padding: 5px; 
+    border-radius: 0.25rem; 
     text-align: center; 
-}
+    margin: 0px auto; 
 
+    a{
+    color: $defaultColor; 
+    }
+}
 
 input { /*--input settings--*/
-    margin-bottom: 20px;
-    height: 35px; 
+    margin-bottom: 20px; 
 
     &[type="text"] { /*--username / email / password etc.--*/
         background-color: $defaultColor;
@@ -247,6 +259,7 @@ input { /*--input settings--*/
 
     &[type="submit"] { /*--submit button--*/
         width: 5.5rem;
+        height: 2.5rem; 
         color: $defaultColor; 
         background-color: $buttonColor;
         -webkit-border-radius:0.25rem;
@@ -267,30 +280,52 @@ input { /*--input settings--*/
             outline: none;
             border: solid 1px $buttonColor;
             cursor: pointer;
-            
         }
-
 
     }
 
-    &[type="checkbox"] {
+    &[type="radio"] {
         cursor: pointer;
         margin: 0px; 
         padding: 0px; 
-
+        width: 20px; 
+        height: 20px; 
 
         &:checked {
             color: $interactiveHover;
 
         }
     }
+
+    &[type="checkbox"] {
+        cursor: pointer;
+        margin: 0px; 
+        padding: 0px; 
+        width: 20px; 
+        height: 20px; 
+        text-align: left; 
+    }
+
 }
 
-.textarea { /*--change your profile description--*/
-    width: 90%;
-    height: 100px;
-    background-color: $defaultColor;    
-    border: 1px solid $buttonColor;
+.contactForm{
+    
+        .textarea { /*--change your profile description--*/
+            width: 90%;
+            height: 100px;
+            background-color: $defaultColor;    
+            margin-bottom: 15px; 
+        }
+    }
+
+.createForm{
+
+    .textarea { /*--change your profile description--*/
+        width: 90%;
+        height: 400px;
+        background-color: $defaultColor;    
+        margin-bottom: 15px; 
+    }
 }
 
 .button{
@@ -300,6 +335,7 @@ input { /*--input settings--*/
     font-weight: 400;
     cursor: pointer;
 }
+
 .button--delete{
     color: $dangerColor;
 }
@@ -367,30 +403,30 @@ fieldset{
     text-align: center; 
 
     label{
-        display: block; 
-        margin-bottom: 0px;         
         text-align: left; 
-        margin-left: 30px; 
     }
 }  
 
 .topInfo{
     margin-left: 30px; 
-}    
+}
 
-.formCheckboxesWrapper{
+.topInfoCreate{
+    margin-left: 30px; 
+}  
+
+.createButton{
+    text-align: left; 
     margin-left: 30px; 
 }
 
-.form_wrapper {
-    padding: 20px;
-    background-color: $sectionBackground;
-    max-width: 700px; 
-    margin: 0px auto; 
+.checkboxWrapper{
+    text-align: left; 
+    margin-left: 30px; 
+}
 
-    .form_heading{
-        margin-left: 30px; 
-    }
+.form_heading{
+    margin-left: 30px; 
 }
 
 }

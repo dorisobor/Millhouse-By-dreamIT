@@ -10,8 +10,16 @@ require 'getUserinfo.php';
 </head>   
 <body>
 
+<?php require 'logoheader.html'; ?>
+<?php require 'navbar.php' ?>
+
+	<header>
+	<div class="jumbotron jumbotron-fluid"></div>
+   </header>
+
 <?php
 
+<<<<<<< HEAD
 require 'partials/db.php';
 require 'functions.php';
 
@@ -35,6 +43,35 @@ $infos = $statement->fetchAll(PDO::FETCH_ASSOC);
 
     require 'logoheader.html'; 
     require 'partials/navbar.php'; 
+=======
+$pdo = new PDO(
+  "mysql:host=localhost;dbname=millhouse;charset=utf8",
+  "root",
+  "root"
+);
+
+//hantering av felmeddelande
+$pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+//hinder mot simulerade förfrågningar
+$pdo -> setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+
+    $statement = $pdo->prepare
+    ("SELECT comments.commentID, comments.userID, comments.commentText, comments.commentDate, users.userID, users.username, blogPosts.postTitle, blogPosts.postID 
+    FROM comments
+    JOIN users
+    JOIN blogPosts
+    ON comments.commentID = users.userID AND comments.commentID = blogPosts.postID 
+    ORDER BY comments.commentDate DESC 
+    LIMIT 5
+    ");                           
+    
+    $statement->execute();
+    
+    $infos = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+      require 'logoheader.html'; 
+      require 'navbar.php'; 
+>>>>>>> origin/master
 
  ?>
 
