@@ -207,17 +207,19 @@ button{
     font-weight: bold;
 }
 
-.post-information__title {
-    font-size: 2rem;
-    font-weight: bold;
+.post-information__text {
     display: inline-block;
+    font-size: 1.2rem;
 }
 
-.post-information__author {
-    font-size: 1.5rem;
+.post-information__text--author,
+.post-information__text--title {
+    font-weight: bold;
     display: inline-block;
+    font-size: 1.2rem;
 }
 
-.comment-date {
-    font-weight: bold;
+.post-information__comment {
+    margin-top: 10px;
 }
+
