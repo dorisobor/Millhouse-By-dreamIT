@@ -177,26 +177,26 @@ article button{
 /* read more link*/
 
 .blogpost__read-more {
-text-align: right;
-padding: 10px;
-
+    text-align: right; 
+    margin-top: 10px; 
+    font-style: italic; 
 }
     
     /* share icon */
    
-    .blogpost__share-button{
-     text-align: right;
-     padding: 10px;
-     
-     .fa-share-alt{
-      font-size: 2em;
-     }
-
+.blogpost__share-button{
+    float: right;
+    max-width: 30%; 
+    
+    .fa-share-alt{
+        font-size: 2em;
     }
+}
 
     /* comment link */
 
 .commentLink{
+    float: left; 
     background: $buttonColor; 
     width: 150px; 
     height: 30px;     
@@ -216,6 +216,7 @@ padding: 10px;
         width: 100%; 
     }
 }
+
 
 .commentInput{
 

@@ -120,6 +120,8 @@ require_once 'partials/fetch_all_blogposts.php';
         <span><?= getUserStatisticsComments($GLOBALS['userID']) ?>  comment(s)</span></a>
       </div>
 
+      <div class="clear"></div>
+
 		</div>
 	</article>
   <?php 
