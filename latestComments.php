@@ -82,13 +82,25 @@ $infos = $statement->fetchAll(PDO::FETCH_ASSOC);
 	<div class="container-wrapper">
         <?php foreach($infos as $info){?>  
         <div class= "container-latestComments">
-            <article>			
-                <p class="post-information__title"><?= $info["postTitle"]; ?></p>
-                <p class="post-information__author">written by  <?= $info["username"]; ?></p>
-                <p class="comment-date">Commented on: <time> <?= substr($info["commentDate"], 0, 16) ?></time></p>
-
-                <p><?=  $info["commentText"]; ?></p>
-                <button><i class="fa fa-pencil" aria-hidden="true"></i><a href="/editPost.php">Edit</button></a>
+            <article>
+                <p class="post-information__text">On</p> 
+                <p class="post-information__text post-information__text--title">
+                    <?= $info["postTitle"]; ?>
+                </p>
+                <p class="post-information__text">written by</p>
+                <p class="post-information__text post-information__text--author">
+                    <?= $info["username"]; ?>
+                </p></br>
+                <p class="post-information__text">
+                    the <time> 
+                    <?= substr($info["commentDate"], 0, 16) ?></time> 
+                    you wrote:
+                </p>
+                <p class="post-information__comment"> <?= $info["commentText"]; ?></p>
+                <button>
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                    <a href="/editPost.php">Edit</button></a>
+                </button>
                 <button class="delete">
                     <a class="delete"  data-toggle="modal" data-target="#delete-confirmation">
                         <i class="fa fa-trash" aria-hidden="true"></i> Delete
@@ -97,6 +109,7 @@ $infos = $statement->fetchAll(PDO::FETCH_ASSOC);
             </article>	
         </div>
         <?php }?>
+
         <?php if (empty($info)): ?>
 			<div class="message">
 				<p class="message__if-empty">
@@ -107,7 +120,8 @@ $infos = $statement->fetchAll(PDO::FETCH_ASSOC);
 					</a>
 				</p>
 			</div>
-		<?php endif; ?>
+        <?php endif; ?>
+        
     </div>  
 
     <!-- popup window -->
@@ -129,7 +143,7 @@ $infos = $statement->fetchAll(PDO::FETCH_ASSOC);
                     <a class="modal-footer__link" href="deleteComment.php?commentID=<?= $info['commentID']?>&redirectto=latestComments.php">
                         Yes, delete
                     </a>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Dont delete</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Don't delete</button>
                 </div>
             </div>
         </div>

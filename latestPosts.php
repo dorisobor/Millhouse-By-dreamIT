@@ -144,7 +144,7 @@ $user = getUserInfo($GLOBALS['userID']);
 					<a class="modal-footer__link" href="deleteBlogpost.php?delete_post=<?= $latestPost['postID']; ?>&redirectto=latestPosts.php">
 						Yes, delete
 					</a>
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Dont delete</button>
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Don't delete</button>
 				</div>
 			</div>
 		</div>
