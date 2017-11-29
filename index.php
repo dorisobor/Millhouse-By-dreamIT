@@ -106,7 +106,7 @@ require_once 'partials/fetch_all_blogposts.php';
          <!--a read more link-->
      <div class="blogpost__read-more">
       <a href="blogpost.php?view_post=<?=$blogpost['postID'];?>">
-      Read More<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+      Read More <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
      </div>
      <br>
 
