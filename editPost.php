@@ -1,14 +1,16 @@
 <?php 
-$_GET ['edit_postID'] = 15; //take it from blogpost postID where it is published
-$postID = $_GET ['edit_postID'];
+$postID = $_REQUEST['postID'];
+//$_GET ['edit_postID'] = 15;take it from blogpost postID where it is published $postID = $_REQUEST['postID'];  
+//$postID = $_GET ['edit_postID'];
+//var_dump($_REQUEST);
 require_once 'partials/db.php';
 
 
 
 
 
-if(isset($_GET['edit_postID']) && is_numeric($_GET ['edit_postID']) && empty($_POST)){ 
-		
+if(isset($_GET['postID']) && is_numeric($_GET ['postID']) && empty($_POST)){ 
+		$postID =$_GET['postID'];
 			// fetch all the blogposts that will order the posts by date
 //$statement = $pdo->prepare("SELECT DISTINCT `postID`, `postDate`, `postTitle`, `postText`, `userID`, `categoryID`, `postImage` FROM `blogposts`, `images`  WHERE `postID` = '$postID'");	
 		// fetch all the blogposts that will order the posts by date
@@ -18,14 +20,15 @@ $statement->execute();
 
 
 $blogposts = $statement->fetchAll(PDO::FETCH_ASSOC); 
-var_dump($blogposts); 
+//var_dump($blogposts); 
     
- foreach($blogposts as $blogpost)  { 
+ foreach($blogposts as $blogpost)  {
+    $postID  = $blogpost['postID'];
     $postTitle = $blogpost['postTitle'];   
     $postText = $blogpost['postText']; 
     $categoryName = $blogpost['categoryName'];
     $imageName = $blogpost['imageName']; 
-     $postDate = $blogpost['postDate'];
+    $postDate = $blogpost['postDate'];
  }
 //    
 //$sunglasses = 'Sunglasses';
@@ -92,7 +95,7 @@ var_dump($blogposts);
         <div class="main">
             <div class="mainBody">
                 <div class="form_wrapper">
-                    <form class="form" action="editPost.php" method="post" enctype="multipart/form-data">
+                    <form class="form" action="editPost.php" method="POST" enctype="multipart/form-data">
                         <div class="topInfoCreate">
                             <legend class="legend">
                                 <h1>Edit Your Story</h1>
@@ -106,16 +109,20 @@ var_dump($blogposts);
                         <br><br>
 
                         <div class="clear"></div>
-
+<?php 
+//    var_dump($postID); 
+ ?>
                         <fieldset class="fieldset">
                             <div class="createForm">
+                               <input type="hidden" name="postID" value="<?= $postID ?>">
                                 <input type="text" name="headline" placeholder="<?= $postTitle ?>" value="<?= $postTitle ?>" id="headline" aria-required="true" required />
                                 <br>
 
                                 <textarea class="textarea" id="postText" name="postText" rows="6" cols="50" placeholder="Write your text here" required>
                                    <?php echo $postText; 
-                                   
+                                   if(isset($imageName)){
                                     echo '<img src="images/' . $imageName . '" alt="'. $postTitle . '">';
+                                   }
                                     ?></textarea>
                                 <br>
 
