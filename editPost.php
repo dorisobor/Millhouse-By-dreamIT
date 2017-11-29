@@ -152,6 +152,11 @@ $blogposts = $statement->fetchAll(PDO::FETCH_ASSOC);
                             <div class="createButton">
                                 <input type="submit" value="Publish" name="publish">
                             </div>
+                            <div class="createButton">
+                                <button type="button">
+                                  <a href="blogpost.php?view_post=<?= $postID ?>">View post</a>
+                                </button>
+                            </div> 
                         </fieldset>
                     </form>
                 </div>
