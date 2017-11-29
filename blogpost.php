@@ -88,6 +88,15 @@ $user = getUserInfo($GLOBALS['userID']);
         <button class="delete">
           <a href="deleteBlogpost.php?delete_post=<?=$blogpost['postID'];?>"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
          </button>
+
+		<div class="commentInput">
+			<div class="commentHr"><hr></div>
+			<p>Comment on this Story</p>
+			<textarea class="textarea" id="message" rows="6" cols="50" placeholder="Write comment here..." required></textarea>
+		</div>
+		<div class="commentButton">
+			<input type="submit" value="Publish"/>
+		</div>
     </div> 
 	
 	</div>
