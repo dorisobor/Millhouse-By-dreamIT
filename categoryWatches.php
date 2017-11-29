@@ -56,15 +56,28 @@ $user = getUserInfo($GLOBALS['userID']);
 				<img src="<?= $blogpost['postImage'] ?>" alt="">
 			</figure>
 			<div class= "blogpost__blog-description">
-				<p><a href="#">
-					<?= substr($blogpost['postText'],0,200) ?>
-					</a></p>
+				<a href="blogpost.php?view_post=<?=$blogpost['postID'];?>">
+				<p><?=substr ($blogpost['postText'],0,200)?>
+				...</p></a>
+
 				<div class="blogpost__read-more"> 
 					<a href="blogpost.php">Read More <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 				</div>
+
+				<br>
+
 				<div class="blogpost__share-button"> 
 					<a href="#">Share <i class="fa fa-share-alt" aria-hidden="true"></i></a>
 				</div>
+
+				<div class="commentLink">
+					<i class="fa fa-commenting-o" aria-hidden="true"></i>
+					<a href="blogpost.php?view_post=<?=$blogpost['postID'];?>">
+					<span><?= getUserStatisticsComments($GLOBALS['userID']) ?>  comment(s)</span></a>
+				</div>	
+
+     			<div class="clear"></div>
+
 			</div>
 		</article>
 		<?php endforeach; ?>
