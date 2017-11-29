@@ -5,7 +5,7 @@ $GLOBALS['userID'] = 1; //should be changed later
     $pdo = new PDO(
       "mysql:host=localhost;dbname=millhouse;charset=utf8",
       "root",
-      "root"
+      ""
     );    
     }
        catch (PDOException $e) {

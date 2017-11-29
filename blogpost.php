@@ -91,9 +91,15 @@ require_once 'partials/db.php';
 	 </div>
 
 	 <div class="editButtons">
+<!--
         <button>
           <a href="editPost.php"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
         </button>
+-->
+        <button>
+          <a href="editPost.php?postID=<?=$blogpost['postID'];?>"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
+        </button>
+        
         <button class="delete">
           <a href="deleteBlogpost.php?delete_post=<?=$blogpost['postID'];?>"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
          </button>
