@@ -5,17 +5,17 @@ require 'functions.php';
 
 $user = getUserInfo($GLOBALS['userID']);
 
+
+
 $statement = $pdo->prepare
-("SELECT users.userID, users.username, comments.commentID, comments.userID, comments.commentDate, comments.commentText,comments.postID, 
-        blogPosts.userID, blogPosts.postTitle, blogPosts.postID
-    FROM blogPosts
-    JOIN users
-    JOIN comments 
-    ON users.userID = blogPosts.userID AND comments.postID = blogPosts.postID 
-    AND users.userID = :id LIMIT 5
+("SELECT * FROM blogPosts
+JOIN comments ON comments.postID = blogPosts.postID 
+JOIN users on users.userID = blogPosts.userID
+WHERE comments.userID = :id1 LIMIT 5
 ");  
 
-$statement->bindParam(":id", $GLOBALS['userID']);    
+$statement->bindParam(":id1", $userID);   
+  
 $statement->execute();
 $infos = $statement->fetchAll(PDO::FETCH_ASSOC);
 
@@ -86,9 +86,11 @@ $infos = $statement->fetchAll(PDO::FETCH_ASSOC);
         <?php foreach($infos as $info){?>  
         <div class= "container-latestComments">
             <article>			
-                <h6><time> <?= substr($info["commentDate"], 0, 16) ?> </time></h6>
-                <h2> <?= $info["postTitle"]; ?> </h2>
-                <p> <?= $info["commentText"]; ?> </p>
+                <p class="post-information__title"><?= $info["postTitle"]; ?></p>
+                <p class="post-information__author">written by  <?= $info["username"]; ?></p>
+                <p class="comment-date">Commented on: <time> <?= substr($info["commentDate"], 0, 16) ?></time></p>
+
+                <p><?=  $info["commentText"]; ?></p>
                 <button><i class="fa fa-pencil" aria-hidden="true"></i><a href="/editPost.php">Edit</button></a>
                 <button class="delete">
                     <a class="delete"  data-toggle="modal" data-target="#delete-confirmation">
@@ -139,6 +141,8 @@ $infos = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 <?php require 'partials/footer.php'; ?>
 <?php require 'bootstrapScripts.html'; ?>
+
+<script src="https://cdn.jsdelivr.net/npm/tota11y@0.1.6/build/tota11y.min.js"></script>
 
 
 </body>
