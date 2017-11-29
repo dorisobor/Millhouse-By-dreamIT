@@ -78,6 +78,8 @@ $user = getUserInfo($GLOBALS['userID']);
 	   <p><?=$blogpost['postText'];?>
 		</p>
 
+		<br>
+
 	 <div class="blogpost__share-button"> <a href="#"> Share <i class="fa fa-share-alt" aria-hidden="true"></i></a>
 	 </div>
 
