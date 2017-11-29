@@ -95,7 +95,7 @@ require_once 'partials/fetch_all_blogposts.php';
   
 	<!--BLOG PICTURE-->
 		<figure>
-		<img src="<?= $blogpost['postImage'] ?>" alt="">
+		<img src="<?= $blogpost['imageName'] ?>" alt="">
 		</figure>
   <!--The blog text-->
     <div class= "blogpost__blog-description">
