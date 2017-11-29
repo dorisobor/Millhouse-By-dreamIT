@@ -104,12 +104,22 @@ require_once 'partials/fetch_all_blogposts.php';
 			<p><?=substr ($blogpost['postText'],0,200)?>
 			...</p></a>
          <!--a read more link-->
-     <div class="blogpost__read-more"><a href="blogpost.php?view_post=<?=$blogpost['postID'];?>">
-		 Read More<i class="fa fa-chevron-right" aria-hidden="true"></i></a></div><br>
+     <div class="blogpost__read-more">
+      <a href="blogpost.php?view_post=<?=$blogpost['postID'];?>">
+      Read More<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+     </div>
+     <br>
 
 			<div class = "blogpost__share-button"> 
 				<a href="#"> Share <i class="fa fa-share-alt" aria-hidden="true"></i></a>
 			</div>
+
+      <div class="commentLink">
+        <i class="fa fa-commenting-o" aria-hidden="true"></i>
+        <a href="blogpost.php?view_post=<?=$blogpost['postID'];?>">
+        <span><?= getUserStatisticsComments($GLOBALS['userID']) ?>  comment(s)</span></a>
+      </div>
+
 		</div>
 	</article>
   <?php 
