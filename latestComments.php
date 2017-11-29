@@ -5,17 +5,14 @@ require 'functions.php';
 
 $user = getUserInfo($GLOBALS['userID']);
 
-
-
 $statement = $pdo->prepare
 ("SELECT * FROM blogPosts
 JOIN comments ON comments.postID = blogPosts.postID 
 JOIN users on users.userID = blogPosts.userID
-WHERE comments.userID = :id1 LIMIT 5
+WHERE comments.userID = :id ORDER BY commentDate DESC LIMIT 5
 ");  
 
-$statement->bindParam(":id1", $userID);   
-  
+$statement->bindParam(":id", $userID);   
 $statement->execute();
 $infos = $statement->fetchAll(PDO::FETCH_ASSOC);
 
@@ -141,9 +138,6 @@ $infos = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 <?php require 'partials/footer.php'; ?>
 <?php require 'bootstrapScripts.html'; ?>
-
-<script src="https://cdn.jsdelivr.net/npm/tota11y@0.1.6/build/tota11y.min.js"></script>
-
 
 </body>
 </html>
