@@ -26,7 +26,7 @@ require_once 'partials/fetch_all_blogposts.php';
 ?>
 
 <header>
-  <div class="jumbotron jumbotron-fluid logo-header"></div>    
+  <div class="jumbotron_indexHeader"></div>    
 </header>
   
 <main>

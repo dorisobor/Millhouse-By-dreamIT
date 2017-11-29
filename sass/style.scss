@@ -30,7 +30,7 @@ $dangerColor:#cc4750;
     border-top: 1px solid $sectionBackground;
 }
 
-.jumbotron {
+.jumbotron_indexHeader{
     display: block;
     margin-bottom: 0px;
     background-image: url("images/mh_jumbo.png"), url("../images/mh_jumbo.png");
@@ -410,7 +410,7 @@ input { /*--input settings--*/
 @media screen and (min-width: 992px) {
     main {max-width: 900px;}
     
-    .jumbotron {
+    .jumbotron_indexHeader{
         margin-bottom: 0px;
         background-image: url("images/mh_jumboBig.png"), url("../images/mh_jumboBig.png");
         background-color: #cccccc;
