@@ -90,11 +90,9 @@ $user = getUserInfo($GLOBALS['userID']);
 
 			<div class= "blogpost__blog-description">
 				<p><?= $totalPost['postText'] ?></p>
-				<div class="blogpost__read-more"> 
-					<a href="#" >
-						Read More <i class="fa fa-chevron-right" aria-hidden="true"></i>
-					</a>
-				</div>
+				
+				<br>
+
 				<div class="blogpost__share-button"> 
 					<a href="#">Share <i class="fa fa-share-alt" aria-hidden="true"></i></a>
 				</div>
