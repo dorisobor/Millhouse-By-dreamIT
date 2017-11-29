@@ -1,7 +1,5 @@
 <?php
 
-// saves postID that should be updated
-
 
 if(isset($_POST['publish'])){
     require_once 'partials/db.php';
@@ -12,7 +10,7 @@ if(isset($_POST['publish'])){
     
     $statement->bindValue(':headline', $_POST['headline'], PDO::PARAM_STR);
     $statement->bindValue(':postText', $_POST['postText'], PDO::PARAM_STR);
-       $statement->bindValue(':categoryName', $_POST['categoryName']);
+    $statement->bindValue(':categoryName', $_POST['categoryName']);
     $statement->bindValue(':imageName', $_FILES['upload']['name']);
     $statement->execute();
     
