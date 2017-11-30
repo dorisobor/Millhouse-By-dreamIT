@@ -122,6 +122,28 @@ article{
     }
 }
 
+.blogpost__category-tag {
+    max-width: 100px;
+    padding: 5px;   
+    color: $defaultColor; 
+    background-color: $buttonColor;
+    -webkit-border-radius:0.25rem;
+    -moz-border-radius: 0.25rem;
+    border-radius: 0.25rem;
+    text-align: center;
+}
+
+.blogpost__category-link {
+    @extend .blogpost__category-tag;
+    color: $defaultColor; 
+
+        &:hover {
+            text-decoration: underline;
+            color: $defaultColor; 
+        }
+}
+
+
 @media screen and (min-width: 992px) {
 
 .jumbotron_watchesHeader{
