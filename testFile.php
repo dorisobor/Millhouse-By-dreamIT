@@ -2,7 +2,7 @@
 
 <?php 
 require 'partials/db.php';
-    if(isset($_post['create'])) {
+    if(isset($_post['publish'])) {
         $imageInfo = $_FILES['upload'];
         print_r($imageInfo);
         $path = $_FILES["upload"]["tmp_name"];

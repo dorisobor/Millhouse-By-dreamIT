@@ -22,15 +22,13 @@ require_once 'partials/insert.php';
     <?php require 'logoheader.html'; ?>
     <?php require 'partials/navbar.php';  ?>
     <?php 
-    $userID = 5; //should be taken from POST or GET
+   // $userID = 5; /*should be taken from POST or GETT*/
 ?>
     <main>
         <div class="main">
             <div class="mainBody">
-
                 <div class="form_wrapper">    
                     <form class="form" action="testFile.php" method="post" enctype="multipart/form-data">
-
                         <div class="topInfoCreate">
                             <legend class="legend">
                                 <h1>Create New Story</h1>
@@ -84,35 +82,15 @@ require_once 'partials/insert.php';
                         </fieldset>
                     </form>
                 </div>
-
-
-
-
-                <?php 
-    if(!empty($success)){
-//        $imgCopyName = $_FILES['upload']['tmp_name'];
-//        $image = $_FILES['upload']['name'];
-//        $imgSize = $_FILES['upload']['size'];
-//        echo  $imgCopyName . "<br>";
-//        echo  $imgName;
-            echo '<br> <br> Published!<br> <script type="text/javascript">alert("Published!");</script>'; 
-//        echo  $imgSize . " Kb";
-   }
-              
-//              else{
-//                  echo "no success";
-//              }
-    ?>
-
             </div>
         </div>
     </main>
-		<script>
+		<!--script>
 			CKEDITOR.replace( 'postText' );
-		</script>
+		</script-->
    
-<!--
-   <script>
+
+   <!--script>
 			ClassicEditor
 				.create( document.querySelector( '#postText' ) )
 				.then( editor => {
@@ -121,8 +99,8 @@ require_once 'partials/insert.php';
 				.catch( error => {
 					console.error( error );
 				} );
-		</script>
--->
+		</script-->
+
     <?php require 'partials/footer.php'; ?>
     <?php require 'bootstrapScripts.html'; ?>
 
