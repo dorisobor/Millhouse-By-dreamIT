@@ -82,7 +82,7 @@ require_once 'partials/fetch_all_blogposts.php';
         </div>
         
         <div class="blogpost__content-username">
-            <p class="username"><?= $blogpost['username'] ?></p>
+            <p class="username"><?= $blogpost['userID'] ?></p>
             <time><p>Date:<?= substr($blogpost['postDate'],0,16)?></p></time>
         </div>
     </div>
@@ -95,7 +95,8 @@ require_once 'partials/fetch_all_blogposts.php';
   
 	<!--BLOG PICTURE-->
 		<figure>
-		<img src="<?= $blogpost['postImage'] ?>" alt="">
+			
+	<img src="images/<?= $blogpost['imageName'] ?>" alt="<?=$blogpost['postTitle'];?>">
 		</figure>
   <!--The blog text-->
     <div class= "blogpost__blog-description">

@@ -3,7 +3,7 @@ require_once 'partials/insert.php';
 
 ?>
 <?php
-     $categoryArray = array('Sunglasses','Watches','Interior');
+//     $categoryArray = array('Sunglasses','Watches','Interior');
 //     $categoryName = $categoriesArray[$_POST['category']];
 ?>  
 <!DOCTYPE html>
@@ -22,6 +22,8 @@ require_once 'partials/insert.php';
     <?php require 'logoheader.html'; ?>
     <?php require 'partials/navbar.php';  ?>
     <?php 
+    
+    $postID = 1;
     $userID = 5; //should be taken from POST or GET
 ?>
     <main>
@@ -53,7 +55,7 @@ require_once 'partials/insert.php';
                                 <textarea class="textarea" id="postText" name="postText" rows="6" cols="50" placeholder="Write your text here" required></textarea>
                                 <br>
 
-                                <input type="file" name="upload" id="image" value="image.jpg">
+                                <input type="file" name="upload" id="image" value="">
 
                                 <input type="hidden" name="action" value="upload">
                                 <br>
@@ -81,6 +83,12 @@ require_once 'partials/insert.php';
                             <div class="createButton">
                                 <input type="submit" value="Publish" name="publish">
                             </div>
+                                                        <div class="createButton">
+                                <button type="button">
+                                  <a href="blogpost.php?view_post=<?= $last_id ?>">View post</a>
+                                </button>
+                               
+                            </div> 
                         </fieldset>
                     </form>
                 </div>
@@ -89,9 +97,11 @@ require_once 'partials/insert.php';
 
                 <?php 
     if(!empty($success)){
-//        $imgCopyName = $_FILES['upload']['tmp_name'];
-//        $imageName = $_FILES['upload']['name'];
-//        $imgSize = $_FILES['upload']['size'];
+       
+       
+        $imgCopyName = $_FILES['upload']['tmp_name'];
+        $imageName = $_FILES['upload']['name'];
+        $imgSize = $_FILES['upload']['size'];
 //        echo  $imgCopyName . "<br>";
 //        echo  $imgName;
             echo '<br> <br> Published!<br> <script type="text/javascript">alert("Published!");</script>'; 
