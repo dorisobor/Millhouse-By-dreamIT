@@ -19,9 +19,7 @@ $user = getUserInfo($GLOBALS['userID']);
 <?php require 'partials/navbar.php'; ?>
 
 <header>
-	<figure class="coverPhoto">
-		<img src="images/mh_watch_576.png" alt="interior header photo">
-	</figure>
+	<div class="jumbotron_watchesHeader"></div>    
 </header>
 
 <main> 
