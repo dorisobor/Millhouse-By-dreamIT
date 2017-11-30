@@ -27,15 +27,10 @@ require_once 'partials/insert.php';
     <main>
         <div class="main">
             <div class="mainBody">
-<<<<<<< HEAD
+
                 <div class="form_wrapper">    
                     <form class="form" action="testFile.php" method="post" enctype="multipart/form-data">
-=======
-                <div class="form_wrapper">
 
-
-                    <form class="form" action="createPost.php" method="post" enctype="multipart/form-data">
->>>>>>> 7a2dbab050882c5a998d62b21ce7f1f41fadf1aa
                         <div class="topInfoCreate">
                             <legend class="legend">
                                 <h1>Create New Story</h1>
@@ -89,8 +84,7 @@ require_once 'partials/insert.php';
                         </fieldset>
                     </form>
                 </div>
-<<<<<<< HEAD
-=======
+
 
 
 
@@ -109,7 +103,7 @@ require_once 'partials/insert.php';
 //                  echo "no success";
 //              }
     ?>
->>>>>>> 7a2dbab050882c5a998d62b21ce7f1f41fadf1aa
+
             </div>
         </div>
     </main>
