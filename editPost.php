@@ -12,9 +12,9 @@ require_once 'partials/db.php';
 if(isset($_GET['postID']) && is_numeric($_GET ['postID']) && empty($_POST)){ 
 		$postID =$_GET['postID'];
 			// fetch all the blogposts that will order the posts by date
-//$statement = $pdo->prepare("SELECT DISTINCT `postID`, `postDate`, `postTitle`, `postText`, `userID`, `categoryID`, `postImage` FROM `blogposts`, `images`  WHERE `postID` = '$postID'");	
+//$statement = $pdo->prepare("SELECT DISTINCT `postID`, `postDate`, `postTitle`, `postText`, `userID`, `categoryID`, `image` FROM `blogposts`, `images`  WHERE `postID` = '$postID'");	
 		// fetch all the blogposts that will order the posts by date
-$statement = $pdo->prepare("SELECT `postID`, `postDate`, `postTitle`, `postText`, `userID`, `categoryName`, `imageName` FROM `blogposts` WHERE postID = '$postID'");
+$statement = $pdo->prepare("SELECT `postID`, `postDate`, `postTitle`, `postText`, `userID`, `categoryName`, `image` FROM `blogposts` WHERE postID = '$postID'");
  
 $statement->execute();
 
@@ -27,7 +27,7 @@ $blogposts = $statement->fetchAll(PDO::FETCH_ASSOC);
     $postTitle = $blogpost['postTitle'];   
     $postText = $blogpost['postText']; 
     $categoryName = $blogpost['categoryName'];
-    $imageName = $blogpost['imageName']; 
+    $image = $blogpost['image']; 
     $postDate = $blogpost['postDate'];
  }
 //    
@@ -50,7 +50,7 @@ $blogposts = $statement->fetchAll(PDO::FETCH_ASSOC);
 //    echo $postID . "yes!";
 //    echo $postTitle . "yes!";
 //    echo $postText . "yes!";
-//    echo  $imageName  . "yes!";
+//    echo  $image  . "yes!";
 //    echo  $categoryName . "yes!";
     
     
@@ -59,7 +59,7 @@ $blogposts = $statement->fetchAll(PDO::FETCH_ASSOC);
     $postTitle = $_POST['headline'];   
     $postText = $_POST['postText']; 
     $categoryName = $_POST['categoryName'];
-    $imageName = $_FILES['upload']['name']; 
+    $image = $_FILES['upload']['name']; 
    
   
 //   echo "no!";
@@ -67,7 +67,7 @@ $blogposts = $statement->fetchAll(PDO::FETCH_ASSOC);
 //    echo $postID . "no!";
 //    echo $postTitle . "no!";
 //    echo $postText . "no!";
-//    echo  $imageName  . "no!";
+//    echo  $image  . "no!";
 //    echo  $categoryName . "no!"; 
 }
 
@@ -120,15 +120,15 @@ $blogposts = $statement->fetchAll(PDO::FETCH_ASSOC);
 
                                 <textarea class="textarea" id="postText" name="postText" rows="6" cols="50" placeholder="Write your text here" required>
                                    <?php echo $postText; 
-                                   if(isset($imageName)){
-                                    echo '<img src="images/' . $imageName . '" alt="'. $postTitle . '">';
+                                   if(isset($image)){
+                                    echo '<img src="images/' . $image . '" alt="'. $postTitle . '">';
                                    }
                                     ?></textarea>
                                 <br>
 
                                 <input type="file" name="upload" id="image" value="">
                                 
-                                 <input type="hidden" name="imageName" value="<?php $imageName ?>">
+                                 <input type="hidden" name="image" value="<?php $image ?>">
                                 <input type="hidden" name="action" value="upload">
                                 <br>
                             </div>
@@ -166,10 +166,10 @@ $blogposts = $statement->fetchAll(PDO::FETCH_ASSOC);
                                      
         if(isset($success)){
             $imgCopyName = $_FILES['upload']['tmp_name'];
-            $imageName = $_FILES['upload']['name'];
+            $image = $_FILES['upload']['name'];
             $imgSize = $_FILES['upload']['size'];
 //        echo  $imgCopyName . "<br>";
-//        echo  $imageName;
+//        echo  $image;
 //        echo  $imgSize . " Kb";
             require_once 'partials/update.php';  
         echo '<br> <br> Published!<br> <script type="text/javascript">alert("Published!");</script>'; 

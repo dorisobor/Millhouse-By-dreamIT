@@ -77,7 +77,7 @@ require_once 'partials/db.php';
     <h2><?=$blogpost['postTitle'];?></h2>
 	<figure>
 		<!--BLOG PICTURE-->
-	<img src="<?= $blogpost['imageName'] ?>" alt="">
+	<img src="<?= $blogpost['image'] ?>" alt="">
 
 	</figure>
 	<div class="blogpost__blog-description">

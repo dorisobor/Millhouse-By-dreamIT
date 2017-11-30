@@ -58,7 +58,7 @@ require_once 'partials/insert.php';
                                 <input type="hidden" name="action" value="upload">
                                 <br>
 
-                                <input type="hidden" name="imageName" value="<?php $imageName ?>">
+                                <input type="hidden" name="image" value="<?php $image ?>">
                             </div>
  
     
@@ -90,7 +90,7 @@ require_once 'partials/insert.php';
                 <?php 
     if(!empty($success)){
 //        $imgCopyName = $_FILES['upload']['tmp_name'];
-//        $imageName = $_FILES['upload']['name'];
+//        $image = $_FILES['upload']['name'];
 //        $imgSize = $_FILES['upload']['size'];
 //        echo  $imgCopyName . "<br>";
 //        echo  $imgName;

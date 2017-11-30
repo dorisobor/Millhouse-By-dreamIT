@@ -10,7 +10,7 @@ if(isset($_POST['publish'])){
  
     
     $sql = "
-    INSERT INTO `blogposts`(`postDate`, `postTitle`, `postText`,`userID`, `categoryName`, `imageName`) VALUES (NOW(),:headline,:postText,$userID, :categoryName,:imageName)
+    INSERT INTO `blogposts`(`postDate`, `postTitle`, `postText`,`userID`, `categoryName`, `image`) VALUES (NOW(),:headline,:postText,$userID, :categoryName,:image)
     ";
     
     $statement = $pdo -> prepare($sql);
@@ -18,7 +18,7 @@ if(isset($_POST['publish'])){
     $statement->bindValue(':headline', $_POST['headline']);
     $statement->bindValue(':postText', $_POST['postText']);
     $statement->bindValue(':categoryName', $_POST['categoryName']);
-    $statement->bindValue(':imageName', $_FILES['upload']['name']);
+    $statement->bindValue(':image', $_FILES['upload']['name']);
     
     $statement->execute();
     
