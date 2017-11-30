@@ -22,7 +22,7 @@ require_once 'partials/insert.php';
     <?php require 'logoheader.html'; ?>
     <?php require 'partials/navbar.php';  ?>
     <?php 
-   // $userID = 5; /*should be taken from POST or GETT*/
+    $userID = 1; /*should be taken from POST or GETT*/
 ?>
     <main>
         <div class="main">
@@ -53,7 +53,7 @@ require_once 'partials/insert.php';
 
                                 <input type="file" name="upload" id="image" value="image.jpg">
 
-                                <input type="hidden" name="action" value="upload">
+                                <input type="hidden" name="action" value="">
                                 <br>
 
                                 <input type="hidden" name="image" value="<?php $image ?>">

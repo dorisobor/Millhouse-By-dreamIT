@@ -2,16 +2,12 @@
 
 <?php 
 require 'partials/db.php';
-    if(isset($_post['publish'])) {
+    
         $imageInfo = $_FILES['upload'];
         print_r($imageInfo);
         $path = $_FILES["upload"]["tmp_name"];
         $filename = $_FILES["upload"]["name"];
-        $fileSize = $_FILES['upload']['size'];
-        $fileError = $_FILES['upload']['error'];
-        $fileType = $_FILES['upload']['type'];
-
-        $allowed = array ('jpg', 'jpeg', 'png');
+        
 
         if(move_uploaded_file($path, 'images/' . $filename)){
         
@@ -27,7 +23,7 @@ require 'partials/db.php';
         } else {
             echo "FAIL!";
         }
-    }    
+        
     /*if (isset($_post['create'])) {
         $file = $_FILES['upload'];
         print_r($file);
