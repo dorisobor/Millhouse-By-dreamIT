@@ -113,51 +113,22 @@ $user = getUserInfo($GLOBALS['userID']);
 					<button>
 						<a href="editPost.php"><i class="fa fa-pencil" aria-hidden="true"></i> Edit<a>
 					</button>
-					<button class="delete" type="button" data-toggle="modal" data-target="#delete-confirmation">
+					<button class="delete" type="button" data-toggle="modal" data-target=".delete-confirmation-modal" 
+					data-postid="<?= $totalPost['postID'] ?>" data-redirect-page="profilepage.php"> 
 							<i class="fa fa-trash" aria-hidden="true"></i> Delete
 					</button>
 				</div>
 			</article>
 		<?php endforeach; ?>	
-
-		<?php if (empty($totalPost)): ?>
-			<div class="message">
-				<p class="message__if-empty">
-					You haven't published anything yet! 
-					If you need some help creating a post
-					<a class="message__link" href="help.php">
-						click here to find our FAQ
-					</a>
-				</p>
-			</div>
-		<?php endif; ?>
+		
+		<!-- shows a message to user if sh/e doesn't have any posts -->
+		<?php require 'messages/messageEmptyProfileAllPosts.php'; ?>
 
 	</div>
 	
 	<!-- popup window -->
-	<div class="modal fade" id="delete-confirmation">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-				<h5 class="modal-title">Delete confirmation</h5>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				<span aria-hidden="true">&times;</span>
-				</button>
-				</div>
-				<div class="modal-body">
-					<p>Are your sure you want to delete this story?
-					   Once you've deleted it, the story cant be re-created.
-					</p>
-				</div>
-				<div class="modal-footer">
-					<a class="modal-footer__link" href="deleteBlogpost.php?delete_post=<?= $totalPost['postID']; ?>&redirectto=profilepage.php">
-						Yes, delete
-					</a>
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Don't delete</button>
-				</div>
-			</div>
-		</div>
-	</div>
+	<?php require 'modals/modalDeletePost.php'; ?>
+
 </main>
 
 <?php require 'partials/footer.php'; ?>

@@ -3,8 +3,6 @@
 require_once 'partials/db.php'; 
 require 'functions.php';
 
-
-
 ?>
 
 <!DOCTYPE html>
@@ -138,7 +136,7 @@ require_once 'partials/fetch_all_blogposts.php';
    }
   ?>
 
-  <?php require 'messagePlainEmpty.php';?>
+<?php require 'messages/messageEmptyHome.php';?>
 
   </div>
 
