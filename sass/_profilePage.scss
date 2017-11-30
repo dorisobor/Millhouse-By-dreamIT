@@ -193,9 +193,25 @@ button{
 }
 
 .modal-footer__link {
-    margin-right: 20px !important;
-    font-weight: bold;
-    color: red;
+    margin-right: 10px !important;
+    padding: 7px 10px;
+    border-radius: 0.25em;
+    color: $defaultColor;
+    background-color: #cc4750;
+
+    &:hover {
+        color: $defaultColor;
+        text-decoration: underline;
+    }
+}
+
+.btn-secondary {
+    border: none;
+    &:hover {
+        text-decoration: underline;
+        background-color: #868e96;
+        border: none;
+    }
 }
 
 .message {
