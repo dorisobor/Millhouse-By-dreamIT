@@ -101,7 +101,8 @@ $infos = $statement->fetchAll(PDO::FETCH_ASSOC);
                 <br>
 
                 <div class="deleteButton">
-					<button class="deleteComment" type="button" data-toggle="modal" data-target="#delete-confirmation">
+                    <button class="deleteComment" type="button" data-toggle="modal" data-target=".delete-confirmation-comment-modal"
+                    data-comment-id="<?= $info['commentID']?>" data-redirect-page="latestComments.php">
 							<i class="fa fa-trash" aria-hidden="true"></i> Delete
 					</button>
                 </div>
@@ -110,44 +111,13 @@ $infos = $statement->fetchAll(PDO::FETCH_ASSOC);
         </div>
         <?php }?>
 
-        <?php if (empty($info)): ?>
-			<div class="message">
-				<p class="message__if-empty">
-					You haven't commented on any story yet! 
-					Don't know where to start? 
-					<a class="message__link" href="index.php">
-						Click here to see the latest stories
-					</a>
-				</p>
-			</div>
-        <?php endif; ?>
+        <?php require 'messages/messageEmptyProfileComments.php'; ?>
         
     </div>  
 
     <!-- popup window -->
-    <div class="modal fade" id="delete-confirmation">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                <h5 class="modal-title">Delete confirmation</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-                </div>
-                <div class="modal-body">
-                    <p>Are your sure you want to delete this comment?
-					   Once you've deleted it, the comment cant be re-created.
-					</p>
-                </div>
-                <div class="modal-footer">
-                    <a class="modal-footer__link" href="deleteComment.php?commentID=<?= $info['commentID']?>&redirectto=latestComments.php">
-                        Yes, delete
-                    </a>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Don't delete</button>
-                </div>
-            </div>
-        </div>
-    </div>   
+    <?php require 'modals/modalDeleteComment.php'; ?>
+
 </main>
 
 <?php require 'partials/footer.php'; ?>
