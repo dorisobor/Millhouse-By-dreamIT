@@ -97,15 +97,15 @@ $infos = $statement->fetchAll(PDO::FETCH_ASSOC);
                     you wrote:
                 </p>
                 <p class="post-information__comment"> <?= $info["commentText"]; ?></p>
-                <button>
-                    <i class="fa fa-pencil" aria-hidden="true"></i>
-                    <a href="/editPost.php">Edit</button></a>
-                </button>
-                <button class="delete">
-                    <a class="delete"  data-toggle="modal" data-target="#delete-confirmation">
-                        <i class="fa fa-trash" aria-hidden="true"></i> Delete
-                    </a>
-                </button>
+
+                <br>
+
+                <div class="deleteButton">
+					<button class="deleteComment" type="button" data-toggle="modal" data-target="#delete-confirmation">
+							<i class="fa fa-trash" aria-hidden="true"></i> Delete
+					</button>
+                </div>
+                
             </article>	
         </div>
         <?php }?>
