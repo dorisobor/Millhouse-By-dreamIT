@@ -23,8 +23,10 @@ require_once 'partials/db.php';
 		$postID = $_GET ['view_post'];
 		
 	    //Prepare statement that will help showing the specific task with the id
-		$statement = $pdo->prepare("SELECT blogposts.* ,users.*   FROM blogposts 
+		$statement = $pdo->prepare("SELECT blogposts.* ,users.*,categories.* 
+		FROM blogposts 
 		JOIN users ON users.userID = blogposts.userID
+		JOIN categories ON categories.categoryID = blogPosts.categoryID
         WHERE postID ='$postID'");
 	   
 	   //execute it
