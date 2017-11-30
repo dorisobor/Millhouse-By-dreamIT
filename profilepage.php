@@ -86,6 +86,7 @@ $user = getUserInfo($GLOBALS['userID']);
 				<img src="<?= $totalPost['postImage'] ?>" alt="">
 			</figure>	
 
+
 			<div class="clear"></div> 
 
 			<div class= "blogpost__blog-description">
