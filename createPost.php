@@ -18,7 +18,7 @@ require_once 'partials/fetch_all_blogposts.php';
         <div class="main">
             <div class="mainBody">
                 <div class="form_wrapper">    
-                    <form class="form" action="createPost.php" method="post" enctype="multipart/form-data">
+                    <form class="form" action="testFile.php" method="post" enctype="multipart/form-data">
                         <div class="topInfoCreate">
                             <legend class="legend"><h1>Create New Story</h1></legend>
                             <div class="help">
@@ -66,18 +66,6 @@ require_once 'partials/fetch_all_blogposts.php';
                         </fieldset>
                     </form>
                 </div>
-                
-    <?php 
-    if(isset($success)){
-        $imgCopyName = $_FILES['upload']['tmp_name'];
-        $imgName = $_FILES['upload']['name'];
-        $imgSize = $_FILES['upload']['size'];
-        echo  $imgCopyName . "<br>";
-        echo  $imgName;
-            echo '<br> <br> Published!<br> <script type="text/javascript">alert("Published!");</script>'; 
-        echo  $imgSize . " Kb";
-    }
-    ?>
             </div>
         </div>
     </main>
