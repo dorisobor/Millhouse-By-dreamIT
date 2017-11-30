@@ -54,12 +54,20 @@ $user = getUserInfo($GLOBALS['userID']);
 				<img src="<?= $blogpost['postImage'] ?>" alt="">
 			</figure>
 			<div class= "blogpost__blog-description">
+			<?php if (strlen($blogpost['postText']) > 200 ):?>
 				<a href="blogpost.php?view_post=<?=$blogpost['postID'];?>">
-				<p><?=substr ($blogpost['postText'],0,200)?>
-				...</p></a>
+					<p><?=substr ($blogpost['postText'],0,200)?> ...</p>
+				</a>
+			<?php else: ?>
+				<a href="blogpost.php?view_post=<?=$blogpost['postID'];?>">
+					<p><?= $blogpost['postText'] ?></p>
+				</a>
+			<?php endif; ?>
 
 				<div class="blogpost__read-more"> 
-					<a href="blogpost.php">Read More <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+					<a href="blogpost.php?view_post=<?=$blogpost['postID'];?>">
+						Read More <i class="fa fa-chevron-right" aria-hidden="true"></i>
+					</a>
 				</div>
 
 				<br>
