@@ -85,9 +85,9 @@ require_once 'partials/insert.php';
             </div>
         </div>
     </main>
-		<!--script>
+		<script>
 			CKEDITOR.replace( 'postText' );
-		</script-->
+		</script>
    
 
    <!--script>

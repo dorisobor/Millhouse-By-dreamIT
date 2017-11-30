@@ -2,15 +2,17 @@
 
 <?php 
 require 'partials/db.php';
-    
+        
         $imageInfo = $_FILES['upload'];
+        //use print_r() to see info about the image
         print_r($imageInfo);
+        //$path is the pemporery place where the image stores befoor it moves to database
         $path = $_FILES["upload"]["tmp_name"];
         $filename = $_FILES["upload"]["name"];
         
-
+        // Move the image file from $path to folder images
         if(move_uploaded_file($path, 'images/' . $filename)){
-        
+        // Insert file in database. 
             $statement  = $pdo->prepare("
                 INSERT INTO images 
                 (postImage) 
