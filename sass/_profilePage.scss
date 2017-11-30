@@ -198,4 +198,28 @@ button{
     color: red;
 }
 
+.message {
+    margin: 0px;
+    height: 200px;
+}
+
+.message__link {
+    font-weight: bold;
+}
+
+.post-information__text {
+    display: inline-block;
+    font-size: 1.2rem;
+}
+
+.post-information__text--author,
+.post-information__text--title {
+    font-weight: bold;
+    display: inline-block;
+    font-size: 1.2rem;
+}
+
+.post-information__comment {
+    margin-top: 10px;
+}
 

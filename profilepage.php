@@ -74,7 +74,6 @@ $user = getUserInfo($GLOBALS['userID']);
 	<div class="profilePosts">
 	<?php foreach (getAllBlogpostsByUserID($userID) as $i => $totalPost): ?>
 		<article class="blogpost">
-
 			<!--CATEGORIE TAG-->
 			<div class="blogpost__category-link">
 				<a class="blogpost__category-link" href="category<?= $totalPost['categoryName'] ?>.php"><?= $totalPost['categoryName']?></a>
@@ -87,15 +86,14 @@ $user = getUserInfo($GLOBALS['userID']);
 				<img src="<?= $totalPost['postImage'] ?>" alt="">
 			</figure>	
 
+
 			<div class="clear"></div> 
 
 			<div class= "blogpost__blog-description">
 				<p><?= $totalPost['postText'] ?></p>
-				<div class="blogpost__read-more"> 
-					<a href="#" >
-						Read More <i class="fa fa-chevron-right" aria-hidden="true"></i>
-					</a>
-				</div>
+				
+				<br>
+
 				<div class="blogpost__share-button"> 
 					<a href="#">Share <i class="fa fa-share-alt" aria-hidden="true"></i></a>
 				</div>
@@ -110,6 +108,19 @@ $user = getUserInfo($GLOBALS['userID']);
 				</div>
 			</article>
 		<?php endforeach; ?>	
+
+		<?php if (empty($totalPost)): ?>
+			<div class="message">
+				<p class="message__if-empty">
+					You haven't published anything yet! 
+					If you need some help creating a post
+					<a class="message__link" href="help.php">
+						click here to find our FAQ
+					</a>
+				</p>
+			</div>
+		<?php endif; ?>
+
 	</div>
 	
 	<!-- popup window -->
@@ -131,7 +142,7 @@ $user = getUserInfo($GLOBALS['userID']);
 					<a class="modal-footer__link" href="deleteBlogpost.php?delete_post=<?= $totalPost['postID']; ?>&redirectto=profilepage.php">
 						Yes, delete
 					</a>
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Dont delete</button>
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Don't delete</button>
 				</div>
 			</div>
 		</div>

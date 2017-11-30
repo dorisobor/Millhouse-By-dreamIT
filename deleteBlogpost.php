@@ -13,6 +13,15 @@ DELETE FROM images
 
 $statement->execute(array(":postID" =>  $deletePost));
 
+// make sure that comments linked to the post gets deleted
+$statement= $pdo->prepare("
+DELETE FROM comments
+      WHERE postID = :postID
+");
+
+$statement->execute(array(":postID" =>  $deletePost));
+
+
 // delete post (ONLY TEXT ELEMENTS)
 $statement= $pdo->prepare("
 			DELETE FROM blogposts

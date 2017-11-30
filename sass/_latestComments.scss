@@ -3,28 +3,21 @@
 }
 
 .container-wrapper{
-   margin: 0 1em;
+   margin: 0px auto;
+   padding: 20px;
     .container-latestComments{
         margin: 1em auto;      
         background-color: $sectionBackground;
-            button{
-                align-self: center;
-                background-color: $buttonColor;
-                width: 5.5rem;  
-                a{
-                    color: white;
-                    &:hover{
-                        color:white;
-                        text-decoration: underline;
-                    }
-                }      
-            }
             
-            button:nth-of-type(2){
-                background-color: $dangerColor;
-                margin-top: 1em;
-                margin-left: 0.5rem;
+        .deleteButton{
+
+            .deleteComment{
+                background: $dangerColor; 
+                width: 5.5rem; 
             }
+        }
+            
+            
     
     }
 }

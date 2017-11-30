@@ -1,9 +1,7 @@
 <?php 
 
 require_once 'partials/db.php'; 
-require 'functions.php';
 
-$user = getUserInfo($GLOBALS['userID']);
 
 ?>
 
@@ -19,14 +17,23 @@ $user = getUserInfo($GLOBALS['userID']);
  <!--Included files-->
 <?php require 'logoheader.html';
 	  require 'partials/navbar.php'; 
-	  require_once 'partials/db.php';
 	  
 
 	  if(isset($_GET['view_post']) ){ 
 		$postID = $_GET ['view_post'];
 		
+	    //Prepare statement that will help showing the specific task with the id
+		$statement = $pdo->prepare("SELECT blogposts.* ,users.*   FROM blogposts 
+		JOIN users ON users.userID = blogposts.userID
+        WHERE postID ='$postID'");
+	   
+	   //execute it
+	$statement->execute();
+	  
+	   // Fetch all rows
+	 $blogposts =  $statement ->fetchAll(PDO::FETCH_ASSOC); 
+	  
 		
-	  require_once 'partials/fetch_all_blogposts.php';
 	  }
  ?>
 
@@ -54,12 +61,12 @@ $user = getUserInfo($GLOBALS['userID']);
 
 	<div class="blogpost__user-info">
 		<div class="user-image__container">
-			<img class="user-image__image" src="<?= $user['userAvatar'] ?>"/>
+			<img class="user-image__image" src="<?= $blogpost['userAvatar'] ?>"/>
 		</div>
 	
 		<div class="blogpost__content-username">
-			<p class="username"><?= $user['username'] ?></p>
-			<time><p>Date: <?=$blogpost['postDate'];?></p></time>
+			<p class="username"><?= $blogpost['username'] ?></p>
+			<time><p>Date: <?= substr($blogpost['postDate'],0,16)?></p></time>
 		</div>
 	</div>
 
@@ -70,7 +77,7 @@ $user = getUserInfo($GLOBALS['userID']);
     <h2><?=$blogpost['postTitle'];?></h2>
 	<figure>
 		<!--BLOG PICTURE-->
-	<img src="<?= $blogpost['postImage'] ?>" alt="">
+	<img src="<?= $blogpost['imageName'] ?>" alt="">
 
 	</figure>
 	<div class="blogpost__blog-description">
@@ -78,16 +85,33 @@ $user = getUserInfo($GLOBALS['userID']);
 	   <p><?=$blogpost['postText'];?>
 		</p>
 
+		<br>
+
 	 <div class="blogpost__share-button"> <a href="#"> Share <i class="fa fa-share-alt" aria-hidden="true"></i></a>
 	 </div>
 
 	 <div class="editButtons">
+<!--
         <button>
           <a href="editPost.php"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
         </button>
+-->
+        <button>
+          <a href="editPost.php?postID=<?=$blogpost['postID'];?>"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
+        </button>
+        
         <button class="delete">
           <a href="deleteBlogpost.php?delete_post=<?=$blogpost['postID'];?>"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
          </button>
+
+		<div class="commentInput">
+			<div class="commentHr"><hr></div>
+			<p>Comment on this Story</p>
+			<textarea class="textarea" id="message" rows="6" cols="50" placeholder="Write comment here..." required></textarea>
+		</div>
+		<div class="commentButton">
+			<input type="submit" value="Publish"/>
+		</div>
     </div> 
 	
 	</div>

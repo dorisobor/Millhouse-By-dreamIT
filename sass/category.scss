@@ -13,6 +13,36 @@ $wrapperColor: rgba(109,
 
 /*---CATEGORY PAGES---*/
 
+.jumbotron_watchesHeader{
+    margin-bottom: 0px;
+    background-image: url("../images/mh_watch.jpeg");
+    background-color: #cccccc;
+    background-size: cover;
+    background-position: center; 
+    width: 100%;
+    height: 300px;
+}
+
+.jumbotron_sunglassesHeader{
+    margin-bottom: 0px;
+    background-image: url("../images/mh_sunglasses.jpeg");
+    background-color: #cccccc;
+    background-size: cover;
+    background-position: top; 
+    width: 100%;
+    height: 300px;
+}
+
+.jumbotron_interiorHeader{
+    margin-bottom: 0px;
+    background-image: url("../images/mh_interior.png");
+    background-color: #cccccc;
+    background-size: cover;
+    background-position: center; 
+    width: 100%;
+    height: 300px;
+}
+
 main{
     max-width: 900px; 
 }
@@ -92,4 +122,37 @@ article{
     }
 }
 
+@media screen and (min-width: 992px) {
+
+.jumbotron_watchesHeader{
+    margin-bottom: 0px;
+    background-image: url("../images/mh_watchBig.png");
+    background-color: #cccccc;
+    background-size: cover;
+    background-position: center; 
+    width: 100%;
+    height: 300px;
+}
+
+.jumbotron_sunglassesHeader{
+    margin-bottom: 0px;
+    background-image: url("../images/mh_sunglassesBig.png");
+    background-color: #cccccc;
+    background-size: cover;
+    background-position: center; 
+    width: 100%;
+    height: 300px;
+}
+
+.jumbotron_interiorHeader{
+    margin-bottom: 0px;
+    background-image: url("../images/mh_interiorBig.png");
+    background-color: #cccccc;
+    background-size: cover;
+    background-position: center; 
+    width: 100%;
+    height: 300px;
+}
+
+}
 

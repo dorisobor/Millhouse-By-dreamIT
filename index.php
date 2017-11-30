@@ -3,7 +3,7 @@
 require_once 'partials/db.php'; 
 require 'functions.php';
 
-$user = getUserInfo($GLOBALS['userID']);
+
 
 ?>
 
@@ -26,7 +26,7 @@ require_once 'partials/fetch_all_blogposts.php';
 ?>
 
 <header>
-  <div class="jumbotron jumbotron-fluid logo-header"></div>    
+  <div class="jumbotron_indexHeader"></div>    
 </header>
   
 <main>
@@ -78,12 +78,12 @@ require_once 'partials/fetch_all_blogposts.php';
   
 		<div class="blogpost__user-info">
         <div class="user-image__container">
-					  <img class="user-image__image" src="<?= $user['userAvatar'] ?>"/>
+					  <img class="user-image__image" src="<?= $blogpost['userAvatar'] ?>"/>
         </div>
         
         <div class="blogpost__content-username">
-            <p class="username"><?= $user['username'] ?></p>
-            <time><p>Date: <?=$blogpost['postDate'];?></p></time>
+            <p class="username"><?= $blogpost['username'] ?></p>
+            <time><p>Date:<?= substr($blogpost['postDate'],0,16)?></p></time>
         </div>
     </div>
     
@@ -95,7 +95,7 @@ require_once 'partials/fetch_all_blogposts.php';
   
 	<!--BLOG PICTURE-->
 		<figure>
-		<img src="<?= $blogpost['postImage'] ?>" alt="">
+		<img src="<?= $blogpost['imageName'] ?>" alt="">
 		</figure>
   <!--The blog text-->
     <div class= "blogpost__blog-description">
@@ -104,12 +104,24 @@ require_once 'partials/fetch_all_blogposts.php';
 			<p><?=substr ($blogpost['postText'],0,200)?>
 			...</p></a>
          <!--a read more link-->
-     <div class="blogpost__read-more"><a href="blogpost.php?view_post=<?=$blogpost['postID'];?>">
-		 Read More<i class="fa fa-chevron-right" aria-hidden="true"></i></a></div><br>
+     <div class="blogpost__read-more">
+      <a href="blogpost.php?view_post=<?=$blogpost['postID'];?>">
+      Read More <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+     </div>
+     <br>
 
 			<div class = "blogpost__share-button"> 
 				<a href="#"> Share <i class="fa fa-share-alt" aria-hidden="true"></i></a>
 			</div>
+
+      <div class="commentLink">
+        <i class="fa fa-commenting-o" aria-hidden="true"></i>
+        <a href="blogpost.php?view_post=<?=$blogpost['postID'];?>">
+        <span><?= getUserStatisticsComments($GLOBALS['userID']) ?>  comment(s)</span></a>
+      </div>
+
+      <div class="clear"></div>
+
 		</div>
 	</article>
   <?php 
@@ -119,6 +131,9 @@ require_once 'partials/fetch_all_blogposts.php';
 //end of loop     
    }
   ?>
+
+  <?php require 'messagePlainEmpty.php';?>
+
   </div>
 
 </main>

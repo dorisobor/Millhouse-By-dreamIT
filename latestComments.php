@@ -6,16 +6,13 @@ require 'functions.php';
 $user = getUserInfo($GLOBALS['userID']);
 
 $statement = $pdo->prepare
-("SELECT users.userID, users.username, comments.commentID, comments.userID, comments.commentDate, comments.commentText,comments.postID, 
-        blogPosts.userID, blogPosts.postTitle, blogPosts.postID
-    FROM blogPosts
-    JOIN users
-    JOIN comments 
-    ON users.userID = blogPosts.userID AND comments.postID = blogPosts.postID 
-    AND users.userID = :id LIMIT 5
+("SELECT * FROM blogPosts
+JOIN comments ON comments.postID = blogPosts.postID 
+JOIN users on users.userID = blogPosts.userID
+WHERE comments.userID = :id ORDER BY commentDate DESC LIMIT 5
 ");  
 
-$statement->bindParam(":id", $GLOBALS['userID']);    
+$statement->bindParam(":id", $userID);   
 $statement->execute();
 $infos = $statement->fetchAll(PDO::FETCH_ASSOC);
 
@@ -85,19 +82,46 @@ $infos = $statement->fetchAll(PDO::FETCH_ASSOC);
 	<div class="container-wrapper">
         <?php foreach($infos as $info){?>  
         <div class= "container-latestComments">
-            <article>			
-                <h6><time> <?= substr($info["commentDate"], 0, 16) ?> </time></h6>
-                <h2> <?= $info["postTitle"]; ?> </h2>
-                <p> <?= $info["commentText"]; ?> </p>
-                <button><i class="fa fa-pencil" aria-hidden="true"></i><a href="/editPost.php">Edit</button></a>
-                <button class="delete">
-                    <a class="delete"  data-toggle="modal" data-target="#delete-confirmation">
-                        <i class="fa fa-trash" aria-hidden="true"></i> Delete
-                    </a>
-                </button>
+            <article>
+                <p class="post-information__text">On</p> 
+                <p class="post-information__text post-information__text--title">
+                    <?= $info["postTitle"]; ?>
+                </p>
+                <p class="post-information__text">written by</p>
+                <p class="post-information__text post-information__text--author">
+                    <?= $info["username"]; ?>
+                </p></br>
+                <p class="post-information__text">
+                    the <time> 
+                    <?= substr($info["commentDate"], 0, 16) ?></time> 
+                    you wrote:
+                </p>
+                <p class="post-information__comment"> <?= $info["commentText"]; ?></p>
+
+                <br>
+
+                <div class="deleteButton">
+					<button class="deleteComment" type="button" data-toggle="modal" data-target="#delete-confirmation">
+							<i class="fa fa-trash" aria-hidden="true"></i> Delete
+					</button>
+                </div>
+                
             </article>	
         </div>
         <?php }?>
+
+        <?php if (empty($info)): ?>
+			<div class="message">
+				<p class="message__if-empty">
+					You haven't commented on any story yet! 
+					Don't know where to start? 
+					<a class="message__link" href="index.php">
+						Click here to see the latest stories
+					</a>
+				</p>
+			</div>
+        <?php endif; ?>
+        
     </div>  
 
     <!-- popup window -->
@@ -119,7 +143,7 @@ $infos = $statement->fetchAll(PDO::FETCH_ASSOC);
                     <a class="modal-footer__link" href="deleteComment.php?commentID=<?= $info['commentID']?>&redirectto=latestComments.php">
                         Yes, delete
                     </a>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Dont delete</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Don't delete</button>
                 </div>
             </div>
         </div>
@@ -128,7 +152,6 @@ $infos = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 <?php require 'partials/footer.php'; ?>
 <?php require 'bootstrapScripts.html'; ?>
-
 
 </body>
 </html>
