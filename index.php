@@ -31,7 +31,7 @@ require_once 'partials/fetch_all_blogposts.php';
     <div class="figures">
         <figure>
         <a href="categoryWatches.php"> 
-        <img class ="figures__category-image" src="images/square_watch.png" alt="watches">
+        <img class ="figures__category-image" src="images/square_watch_2.png" alt="watches">
         </a><figcaption>
             <h3><a href="categoryWatches.php">Watches</a></h3>
           </figcaption>
@@ -39,7 +39,7 @@ require_once 'partials/fetch_all_blogposts.php';
 
         <figure>
         <a href="categorySunglasses.php"> 
-        <img class ="figures__category-image" src="images/square_glasses.png" alt="sunglasses">
+        <img class ="figures__category-image" src="images/square_sunglasses_2.png" alt="sunglasses">
         </a><figcaption>
             <h3><a href="categorySunglasses.php">Sunglasses</a></h3>
           </figcaption>
