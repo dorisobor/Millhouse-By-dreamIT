@@ -90,13 +90,24 @@ $user = getUserInfo($GLOBALS['userID']);
 			<div class="clear"></div> 
 
 			<div class= "blogpost__blog-description">
+			<?php if (strlen($totalPost['postText']) > 200 ):?>
+				<a href="blogpost.php?view_post=<?=$totalPost['postID'];?>">
+					<p><?=substr ($totalPost['postText'],0,200)?> ...</p>
+				</a>
+      		<?php else: ?>
+       		<a href="blogpost.php?view_post=<?=$totalPost['postID'];?>">
 				<p><?= $totalPost['postText'] ?></p>
-				
-				<br>
-
-				<div class="blogpost__share-button"> 
-					<a href="#">Share <i class="fa fa-share-alt" aria-hidden="true"></i></a>
-				</div>
+       		</a>
+      		<?php endif; ?>
+			<div class="blogpost__read-more">
+      			<a href="blogpost.php?view_post=<?=$totalPost['postID'];?>">
+      				Read More <i class="fa fa-chevron-right" aria-hidden="true"></i>
+				</a>
+     		</div>
+			<br>
+			<div class="blogpost__share-button"> 
+				<a href="#">Share <i class="fa fa-share-alt" aria-hidden="true"></i></a>
+			</div>
 			</div>
 				<div class="editButtons">
 					<button>
