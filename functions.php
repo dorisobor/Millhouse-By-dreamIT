@@ -72,7 +72,8 @@ function getAllBlogpostsOnInterior() {
 
 function getAllBlogpostsByCategory ($postCategory){
     global $pdo;    
-    $stmt = $pdo->prepare("SELECT * FROM blogPosts
+    $stmt = $pdo->prepare("SELECT images.*, blogPosts.*, categories.*, users.* 
+    FROM blogPosts
     JOIN categories ON categories.categoryID = blogPosts.categoryID
     LEFT JOIN images ON images.postID = blogPosts.postID
     JOIN users ON users.userID = blogPosts.userID

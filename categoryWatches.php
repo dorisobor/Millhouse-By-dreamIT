@@ -28,7 +28,7 @@ $user = getUserInfo($GLOBALS['userID']);
 		<h1>Watches</h1>
 		<p>Here you can read all about Millhouse exclusive watches!</p>
 		<!-- article = blogpost -->
-		<?php foreach (getAllBlogpostsOnWatches(1) as $i => $blogpost): ?>
+		<?php foreach (getAllBlogpostsOnWatches() as $i => $blogpost): ?>
 		<article class="blogpost">
 		<!--CATEGORIE TAG-->
 			<div class="blogpost__category-tag">
