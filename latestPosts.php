@@ -75,7 +75,9 @@ $user = getUserInfo($GLOBALS['userID']);
 
 			<!-- category tag -->
 			<div class="blogpost__category-link">
-				<a class="blogpost__category-link" href="category<?= $latestPost['categoryName'] ?>.php"><?= $latestPost['categoryName']?></a>
+				<a class="blogpost__category-link" href="category<?= $latestPost['categoryName'] ?>.php">
+					<?= $latestPost['categoryName']?>
+				</a>
 			</div>
 
 			<!-- blogpost title -->
@@ -89,11 +91,23 @@ $user = getUserInfo($GLOBALS['userID']);
 
 			<div class="clear"></div> 
 
-			<div class= "blogpost__blog-description">
-				<p><?= $latestPost['postText'] ?></p>
-				
-				<br>
+				<div class= "blogpost__blog-description">
+				<?php if (strlen($latestPost['postText']) > 200 ):?>
+					<a href="blogpost.php?view_post=<?=$latestPost['postID'];?>">
+						<p><?=substr ($latestPost['postText'],0,200)?> ...</p>
+					</a>
+      			<?php else: ?>
+					<a href="blogpost.php?view_post=<?=$latestPost['postID'];?>">
+						<p><?= $latestPost['postText'] ?></p>
+					</a>
+      			<?php endif; ?>
 
+				<div class="blogpost__read-more">
+     				<a href="blogpost.php?view_post=<?=$latestPost['postID'];?>">
+						Read More <i class="fa fa-chevron-right" aria-hidden="true"></i>
+					</a>
+     			</div>
+				<br>
 				<div class="blogpost__share-button"> 
 					<a href="#">Share <i class="fa fa-share-alt" aria-hidden="true"></i></a>
 				</div>

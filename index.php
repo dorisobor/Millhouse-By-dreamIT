@@ -99,11 +99,17 @@ require_once 'partials/fetch_all_blogposts.php';
 		</figure>
   <!--The blog text-->
     <div class= "blogpost__blog-description">
-  <!--limits the text to show the first 200 characters-->
-      <a href="blogpost.php?view_post=<?=$blogpost['postID'];?>">
-			<p><?=substr ($blogpost['postText'],0,200)?>
-			...</p></a>
-         <!--a read more link-->
+  <!--limits the text to show the first if a post is more than 200 characters-->
+      <?php if (strlen($blogpost['postText']) > 200 ):?>
+        <a href="blogpost.php?view_post=<?=$blogpost['postID'];?>">
+          <p><?=substr ($blogpost['postText'],0,200)?> ...</p>
+        </a>
+      <?php else: ?>
+        <a href="blogpost.php?view_post=<?=$blogpost['postID'];?>">
+          <p><?= $blogpost['postText'] ?></p>
+        </a>
+      <?php endif; ?>
+      <!--a read more link-->
      <div class="blogpost__read-more">
       <a href="blogpost.php?view_post=<?=$blogpost['postID'];?>">
       Read More <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
