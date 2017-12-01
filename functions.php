@@ -1,5 +1,15 @@
 <?php 
 
+//
+function validateLogin() {
+    global $pdo;            
+    $stmt = $pdo->prepare("SELECT * FROM users");
+    $stmt->execute();
+    $users = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $users;
+
+}
+
 // deletes comments from userprofile
 function deleteComment ($commentID) {
     global $pdo;            
