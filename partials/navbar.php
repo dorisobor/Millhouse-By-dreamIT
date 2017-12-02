@@ -1,14 +1,14 @@
 
 <?php 
 
-$loggedOn = true;
+require_once 'functions.php';
 
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
 	<a class="navbar-brand hidden-md-up" href="index.php"><img class="logo" src="images/logo.png"></a>
         
-    <?php if ($loggedOn): ?>
+    <?php if (isLoggedIn()): ?>
     <button class="sign-up-btn d-md-none d-lg-none d-xl-none">
         <a class="sign-up-btn__link" href="signOut.php">
             <i class="fa fa-sign-out" aria-hidden="true"></i> Sign out
@@ -33,7 +33,7 @@ $loggedOn = true;
             <a class="nav-item nav-link" href="categoryInterior.php">Interior</a>
             <a class="nav-item nav-link" href="contact.php">Contact</a><br>
 
-            <?php if ($loggedOn): ?>
+            <?php if (isLoggedIn()): ?>
                 <a class="nav-item nav-link d-lg-none d-xl-none" href="createPost.php">Create New Story</a>
                 <a class="nav-item nav-link d-lg-none d-xl-none" href="profilepage.php">Profile</a>
                 <a class="nav-item nav-link d-lg-none d-xl-none" href="help.php">Help</a>
@@ -46,9 +46,9 @@ $loggedOn = true;
 
         </div>
 
-        <?php if ($loggedOn): ?>
+        <?php if (isLoggedIn()): ?>
         <div class="user-actions d-none d-lg-block d-xl-block ml-auto">
-            <a class="user-actions__link" href="signOut.php.php"> 
+            <a class="user-actions__link" href="signOut.php"> 
                 <button class="user-actions__sign-up-btn">
                     <i class="fa fa-sign-out" aria-hidden="true"></i> Sign out
                 </button>
@@ -65,7 +65,7 @@ $loggedOn = true;
             </div>
         <?php endif; ?>
     
-        <?php if ($loggedOn): ?>
+        <?php if (isLoggedIn()): ?>
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle d-none d-lg-block d-xl-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-user-circle-o" aria-hidden="true"></i> User menu

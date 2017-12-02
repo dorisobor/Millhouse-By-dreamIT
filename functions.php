@@ -1,5 +1,40 @@
 <?php 
 
+//searches the database for matches on what the user has put in
+//the login form in login.php
+function validateLoginInput () {
+    global $pdo;            
+    $stmt = $pdo->prepare("SELECT * FROM users
+    WHERE (username = :username  OR userEmail = :email) 
+    AND password = :password");
+    $stmt->bindParam('username', $_POST['username']);
+    $stmt->bindParam('email', $_POST['username']);        
+    $stmt->bindParam('password', $_POST['password']);        
+    $stmt->execute();
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $user;
+}
+
+//fetches the userID of the logged in user
+function getLoggedInUserID () {
+    if (isLoggedIn()){
+        return (int) $_SESSION['userID'];
+    }
+    else {
+        return 0;
+    }
+}
+
+//checks if anyone is logged in
+function isLoggedIn () {
+    if (isset($_SESSION['userID'])){
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
 // deletes comments from userprofile
 function deleteComment ($commentID) {
     global $pdo;            
