@@ -1,9 +1,16 @@
 <?php
 
-require 'partials/db.php';
+session_start();         
+require_once 'partials/db.php'; 
 require 'functions.php';
 
-$user = getUserInfo($GLOBALS['userID']);
+if (!isLoggedIn()){
+	header('Location: login.php');
+	return;
+}
+
+$user = getUserInfo($_SESSION['userID']);
+$userID = $user['userID'];
 
 $statement = $pdo->prepare
 ("SELECT * FROM blogPosts
@@ -65,10 +72,10 @@ $infos = $statement->fetchAll(PDO::FETCH_ASSOC);
             <!-- prints out total posts and comments the user has published -->
             <div class="profileBox__content-commentsPosts">
                 <div class="totalPosts">
-                    <span><?= getUserStatisticsPosts($GLOBALS['userID']) ?>  stories(s)</span>
+                    <span>Published stories: <?= getUserStatisticsPosts($userID)?></span>
                 </div>
                 <div class="totalComments">
-                    <span><?= getUserStatisticsComments($GLOBALS['userID']) ?>  comments(s)</span>
+                    <span>Comments: <?= getUserStatisticsComments($userID) ?></span>
                 </div>
 			</div>
         </div>   
