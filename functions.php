@@ -15,6 +15,15 @@ function validateLoginInput () {
     return $user;
 }
 
+function getLoggedInUserID () {
+    if (isLoggedIn()){
+        return (int) $_SESSION['userID'];
+    }
+    else {
+        return 0;
+    }
+}
+
 //checks if anyone is logged in
 function isLoggedIn () {
     if (isset($_SESSION['userID'])){
