@@ -4,6 +4,7 @@ session_start();
 require_once 'partials/db.php'; 
 require 'functions.php';
 
+//if user is not logged in sh/e gets redirected to home
 if (!isLoggedIn()){
 	header('Location: login.php');
 	return;

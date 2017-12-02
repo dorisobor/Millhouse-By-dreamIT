@@ -15,6 +15,7 @@ function validateLoginInput () {
     return $user;
 }
 
+//fetches the userID of the logged in user
 function getLoggedInUserID () {
     if (isLoggedIn()){
         return (int) $_SESSION['userID'];
