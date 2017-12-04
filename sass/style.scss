@@ -73,6 +73,10 @@ h1{
     color: $interactiveHover; 
 }
 
+figure{
+    text-align: center;
+}
+
 .clear{
     clear: both; 
 }
@@ -278,8 +282,6 @@ article button{
 }
 
 .newAccount{
-    background: $headLineColor;
-    height: 35px;
     width: 200px; 
     padding: 5px; 
     border-radius: 0.25rem; 
@@ -289,6 +291,14 @@ article button{
     a{
     color: $defaultColor; 
     }
+}
+
+.loginAccount{
+    width: 200px; 
+    padding: 5px; 
+    border-radius: 0.25rem; 
+    text-align: center; 
+    margin: 0px auto; 
 }
 
 input { /*--input settings--*/
@@ -367,6 +377,10 @@ input { /*--input settings--*/
         height: 400px;
         background-color: $defaultColor;    
         margin-bottom: 15px; 
+    }
+
+    .cke_chrome{
+        width: 90%; 
     }
 }
 
@@ -450,6 +464,13 @@ input { /*--input settings--*/
     background-position: center; 
 }
 
+.createForm{
+    
+    .cke_chrome{
+        width: 90%; 
+        margin: 0px auto; 
+    }
+}
 
 fieldset{
     text-align: center; 
