@@ -282,23 +282,15 @@ article button{
 }
 
 .newAccount{
-    width: 200px; 
     padding: 5px; 
     border-radius: 0.25rem; 
     text-align: center; 
     margin: 0px auto; 
 
     a{
-    color: $defaultColor; 
+        color: $interactiveHover; 
+        font-weight: 700; 
     }
-}
-
-.loginAccount{
-    width: 200px; 
-    padding: 5px; 
-    border-radius: 0.25rem; 
-    text-align: center; 
-    margin: 0px auto; 
 }
 
 input { /*--input settings--*/

@@ -40,12 +40,12 @@ session_start();
                             </div>
 
                             <div class="submitButton">
-                                <input type="submit" value="Sign Up"/>
+                                <input type="submit" value="Register"/>
                             </div>
                         </fieldset>
                     </form>
                     <div class="newAccount">
-                        <a href="login.php">I have an Account</a>
+                        Already have an account? <a href="login.php">Log in.</a>
                     </div>
                 </div>
             </div>
