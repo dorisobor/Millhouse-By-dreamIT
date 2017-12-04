@@ -91,7 +91,7 @@ if (isset($_POST['submit'])) {
                             <textarea name="textarea" rows="1" cols="71" placeholder="For example: I love sunglasses!" value="<?= $formData['textarea'] ?? '' ?>"></textarea>
                         </div> 
                       <div class="submitButton">
-                                <input type="submit" value="Register"/>
+                                <input type="submit" name="submit" value="Register"/>
                             </div>
                         </fieldset>
                     </form>
