@@ -1,5 +1,4 @@
 <?php
-
 //starts sesson, get pdo connection and fetches validateLoginInput function 
 session_start();         
 require_once 'partials/db.php';
@@ -19,6 +18,13 @@ if (isset($_POST['submit'])) {
         if ($user["username"] == $_POST['username']) {
             if (password_verify($_POST['password'], $user['password'])){
                 $_SESSION['userID'] = $user['userID'];
+                //saves userID in cookie that lasts for an hour
+                setcookie("userID", $user['userID'], time() + 3600, "/"); 
+                //saves corresponding userpassword (hashed) in order to
+                //make it harder for someone to access userlogin by changing
+                //the userID in the browser 
+                setcookie("userHash", $user['password'], time() + 3600, "/"); 
+                //redirects to index
                 header('Location: index.php');   
             }       
         } else {

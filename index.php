@@ -1,9 +1,7 @@
 <?php 
-
 session_start();         
 require_once 'partials/db.php'; 
 require 'functions.php';
-
 ?>
 
 <!DOCTYPE html>

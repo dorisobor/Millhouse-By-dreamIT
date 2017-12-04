@@ -1,11 +1,8 @@
 <?php 
-
 session_start();         
 require_once 'partials/db.php'; 
 require 'functions.php';
-
 $user = getUserInfo($GLOBALS['userID']);
-
 ?>
 
 <!DOCTYPE html>
@@ -44,7 +41,7 @@ $user = getUserInfo($GLOBALS['userID']);
 				
 				<!-- username and publish date -->
 				<div class="blogpost__content-username">
-					<p class="username">Auhtor: <?= $blogpost['username'] ?></p>
+					<p class="username">Author: <?= $blogpost['username'] ?></p>
 					<time><p>Publish date: <?= substr($blogpost['postDate'], 0, 16)?></p></time>
 				</div>
 			</div>

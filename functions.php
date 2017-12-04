@@ -21,7 +21,7 @@ function createNewUser () {
     $stmt->bindParam(':username', $_POST['username']);   
     $stmt->bindParam(':password', $password);
     $stmt->bindParam(':userEmail', $_POST['email']);
-    $stmt->bindParam(':userBio', $_POST['textarea']);
+    $stmt->bindParam(':userBio', $_POST['user-bio']);
     $stmt->execute(); 
     $userID = $pdo->lastInsertId();    
     return $userID;
@@ -56,8 +56,26 @@ function isLoggedIn () {
         return true;
     }
     else {
+        //checks if there is a cookie and if yes, if userID matches userpassword
+        if (isset($_COOKIE['userID']) && isset($_COOKIE['userHash'])){
+            if (isUserIDAndPasswordMatch($_COOKIE['userID'], $_COOKIE['userHash'])){
+                $_SESSION['userID'] = intval($_COOKIE['userID']);
+                return true;
+            }
+        }
         return false;
     }
+}
+
+function isUserIDAndPasswordMatch ($userID, $userHash) {
+    global $pdo;                
+    $stmt = $pdo->prepare("SELECT username FROM users
+    WHERE userID = :userID AND password = :userHash");  
+    $stmt->bindParam(':userID', $userID);
+    $stmt->bindParam(':userHash', $userHash);    
+    $stmt->execute();
+    $existingUsername = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $existingUsername != null;
 }
 
 // deletes comments from userprofile

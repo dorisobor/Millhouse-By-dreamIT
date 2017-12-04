@@ -1,5 +1,4 @@
 <?php
-
 session_start();         
 require_once 'partials/db.php'; 
 require 'functions.php';
@@ -23,7 +22,6 @@ WHERE comments.userID = :id ORDER BY commentDate DESC LIMIT 5
 $statement->bindParam(":id", $userID);   
 $statement->execute();
 $infos = $statement->fetchAll(PDO::FETCH_ASSOC);
-
 ?>
 
 <!DOCTYPE html>

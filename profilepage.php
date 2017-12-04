@@ -1,5 +1,4 @@
 <?php 
-
 session_start();         
 require_once 'partials/db.php'; 
 require 'functions.php';
@@ -12,7 +11,6 @@ if (!isLoggedIn()){
 
 $user = getUserInfo($_SESSION['userID']);
 $userID = $user['userID'];
-
 ?>
 
 <!DOCTYPE html>
