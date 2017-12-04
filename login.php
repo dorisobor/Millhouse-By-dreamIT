@@ -72,7 +72,7 @@ if (isset($_POST['submit'])) {
                 </form>
                 <!-- links the user to register page -->
                 <div class="newAccount">
-                    <a href="register.php">Create New Account</a>
+                Not a member yet? <a href="register.php">Create Account.</a>
                 </div>
             </div>
         </div>

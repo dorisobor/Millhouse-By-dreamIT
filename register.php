@@ -90,14 +90,14 @@ if (isset($_POST['submit'])) {
                             <label for="textarea">Describe yourself, this will display in your profile (maximum 32 characters)</label>
                             <textarea name="textarea" rows="1" cols="71" placeholder="For example: I love sunglasses!" value="<?= $formData['textarea'] ?? '' ?>"></textarea>
                         </div> 
-                        <div class="submitButton">
-                            <input name="submit" type="submit" value="Sign Up"/>
-                        </div>
-                    </fieldset>
-                </form>
-                <div class="newAccount">
-                    <a href="login.php">I have an Account</a>
-                </div>
+                      <div class="submitButton">
+                                <input type="submit" value="Register"/>
+                            </div>
+                        </fieldset>
+                    </form>
+                    <div class="newAccount">
+                        Already have an account? <a href="login.php">Log in.</a>
+                  </div>
             </div>
         </div>
     </div>

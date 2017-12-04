@@ -11,12 +11,12 @@ require_once 'functions.php';
     <?php if (isLoggedIn()): ?>
     <button class="sign-up-btn d-md-none d-lg-none d-xl-none">
         <a class="sign-up-btn__link" href="signOut.php">
-            <i class="fa fa-sign-out" aria-hidden="true"></i> Sign out
+            <i class="fa fa-sign-out" aria-hidden="true"></i> Log out
         </a>
     </button>
     <?php else: ?>
     <button class="sign-up-btn d-md-none d-lg-none d-xl-none">
-        <a class="sign-up-btn__link" href="register.php">Sign up</a>
+        <a class="sign-up-btn__link" href="register.php">Register</a>
     </button>
     <?php endif; ?>
 
@@ -40,7 +40,7 @@ require_once 'functions.php';
                 <a class="nav-item nav-link d-lg-none d-xl-none" href="settings.php">Settings</a>
             <?php else:  ?>
                 <a class="nav-item nav-link d-md-none d-lg-none d-xl-none" href="login.php">
-                    <i class="fa fa-sign-in" aria-hidden="true"></i> Sign in
+                    <i class="fa fa-sign-in" aria-hidden="true"></i> Log In
                 </a>
             <?php endif; ?>
 
@@ -50,17 +50,17 @@ require_once 'functions.php';
         <div class="user-actions d-none d-lg-block d-xl-block ml-auto">
             <a class="user-actions__link" href="signOut.php"> 
                 <button class="user-actions__sign-up-btn">
-                    <i class="fa fa-sign-out" aria-hidden="true"></i> Sign out
+                    <i class="fa fa-sign-out" aria-hidden="true"></i> Log Out
                 </button>
             </a>
         </div>
         <?php else: ?>
             <div class="user-actions d-none d-lg-block d-xl-block ml-auto">
                 <a class="user-actions__link--black" href="login.php">
-                    <i class="fa fa-sign-in" aria-hidden="true"></i> Sign in
+                    <i class="fa fa-sign-in" aria-hidden="true"></i>Log In
                 </a>
                 <a class="user-actions__link" href="register.php"> 
-                    <button class="user-actions__sign-up-btn">Sign up</button>
+                    <button class="user-actions__sign-up-btn">Register</button>
                 </a>
             </div>
         <?php endif; ?>
