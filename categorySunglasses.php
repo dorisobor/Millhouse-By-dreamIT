@@ -1,11 +1,8 @@
 <?php 
-
 session_start();         
 require_once 'partials/db.php'; 
 require 'functions.php';
-
 $user = getUserInfo($GLOBALS['userID']);
-
 ?>
 
 <!DOCTYPE html>

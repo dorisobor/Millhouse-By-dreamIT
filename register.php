@@ -6,17 +6,25 @@ require_once 'partials/db.php';
 require_once 'functions.php';
 
 $emailError = false;
+$emailIsNotValid = false;
 $passwordError = false;
 $usernameNotUniqe = false;
+$userBioTooLong = false;
 
 if (isset($_POST['submit'])) {
     //checks if user has filled in both email fields with the same email
     if ($_POST['email'] != $_POST['email-repeat']){
         $emailError = true;        
     }
+    if (!strpbrk($_POST['user-bio'], '@')){
+        $emailIsNotValid = true;
+    }
     //checks if the user has filled in the passwords field with the same email
     if ($_POST['password'] != $_POST['password-repeat']){
         $passwordError = true;        
+    }
+    if (strlen($_POST['user-bio']) > 32){
+        $userBioTooLong = true;
     }
     //checks if the user has filled in a uniqe username
     if (!isUsernameUniqe($_POST['username'])) {
@@ -24,8 +32,10 @@ if (isset($_POST['submit'])) {
     }
 
     $informationComplete = !$emailError 
-    && !$passwordError 
-    && ! $usernameNotUniqe;
+    && !$emailIsNotValid 
+    && !$passwordError
+    && !$usernameNotUniqe
+    && !$userBioTooLong;
 
     if($informationComplete) {
     //saves all userinput collected from form into session
@@ -39,7 +49,6 @@ if (isset($_POST['submit'])) {
 
     }   
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -76,6 +85,9 @@ if (isset($_POST['submit'])) {
                             <?php if($emailError):?>
                                 <span class="error-msg">Email doesn't match</span>
                             <?php endif; ?>
+                            <?php if($emailIsNotValid ): ?>
+                                <span class="error-msg">Enter a valid email, example: someone@mail.com</span>
+                            <?php endif; ?>
                             <label for="email">Fill in your email *</label>
                             <input type="text" name="email" placeholder="Email" value="<?= $formData['email'] ?? '' ?>" required />
                             <label for="email-repeat">Repeat email to confirm *</label>
@@ -87,8 +99,11 @@ if (isset($_POST['submit'])) {
                             <input type="password" name="password" placeholder="Password"  required/>
                             <label for="password-repeat">Repeat password to confirm *</label>
                             <input type="password" name="password-repeat" placeholder="Confirm Password" required/>
+                            <?php if($userBioTooLong): ?>
+                                <span class="error-msg">Only 32 characters is allowed</span>
+                            <?php endif; ?>
                             <label for="textarea">Describe yourself, this will display in your profile (maximum 32 characters)</label>
-                            <textarea name="textarea" rows="1" cols="71" placeholder="For example: I love sunglasses!" value="<?= $formData['textarea'] ?? '' ?>"></textarea>
+                            <textarea name="user-bio" rows="1" cols="71" placeholder="For example: I love sunglasses!" ><?= $formData['user-bio'] ?? '' ?></textarea>
                         </div> 
                       <div class="submitButton">
                                 <input type="submit" name="submit" value="Register"/>
