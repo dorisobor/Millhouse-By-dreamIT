@@ -15,17 +15,17 @@ $loginError = false;
 if (isset($_POST['submit'])) {
 
     if (isset($_POST['username'])){
-        $user = validateLoginInput ();
-
-        if ($user != null) {
-            $_SESSION['userID'] = $user['userID'];           
-            header('Location: index.php');
+        $user = validateLoginInput();
+        if ($user["username"] == $_POST['username']) {
+            if (password_verify($_POST['password'], $user['password'])){
+                $_SESSION['userID'] = $user['userID'];
+                header('Location: index.php');   
+            }       
         } else {
             $loginError = true;
         }
     }
 }
-
 ?>
 
 <!DOCTYPE html>

@@ -1,15 +1,40 @@
 <?php 
 
+//checks if new user chooses a uniqe username that doesnt
+//allready exists in the database
+function isUsernameUniqe ($username) {
+    global $pdo;                
+    $stmt = $pdo->prepare("SELECT username FROM users
+    WHERE username = :username");  
+    $stmt->bindParam(':username', $username);
+    $stmt->execute();
+    $existingUsername = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $existingUsername == null;
+}
+
+//inserts new userinfo into databse
+function createNewUser () {
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    global $pdo;                
+    $stmt = $pdo->prepare("INSERT INTO users (username, password, userEmail, userBio)
+    VALUES (:username, :password, :userEmail, :userBio)");  
+    $stmt->bindParam(':username', $_POST['username']);   
+    $stmt->bindParam(':password', $password);
+    $stmt->bindParam(':userEmail', $_POST['email']);
+    $stmt->bindParam(':userBio', $_POST['textarea']);
+    $stmt->execute(); 
+    $userID = $pdo->lastInsertId();    
+    return $userID;
+}
+
 //searches the database for matches on what the user has put in
 //the login form in login.php
 function validateLoginInput () {
     global $pdo;            
     $stmt = $pdo->prepare("SELECT * FROM users
-    WHERE (username = :username  OR userEmail = :email) 
-    AND password = :password");
+    WHERE (username = :username OR userEmail = :email)");
     $stmt->bindParam('username', $_POST['username']);
     $stmt->bindParam('email', $_POST['username']);        
-    $stmt->bindParam('password', $_POST['password']);        
     $stmt->execute();
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
     return $user;

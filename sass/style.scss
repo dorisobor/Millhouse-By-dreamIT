@@ -405,6 +405,9 @@ input { /*--input settings--*/
              
     }
 
+.createForm__label {
+    text-align: left;
+}
 
 /*------HÄR BÖRJAR MEDIA SCREEN----------*/
 
@@ -452,7 +455,6 @@ input { /*--input settings--*/
 
 
 fieldset{
-    text-align: center; 
 
     label{
         text-align: left; 
@@ -460,7 +462,7 @@ fieldset{
 }  
 
 .topInfo{
-    margin-left: 30px; 
+    margin: 0px 0px 30px 30px;
 }
 
 .topInfoCreate{
