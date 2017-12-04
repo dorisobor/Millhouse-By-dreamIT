@@ -1,5 +1,41 @@
 <?php 
 
+//searches the database for matches on what the user has put in
+//the login form in login.php
+function validateLoginInput () {
+    global $pdo;            
+    $stmt = $pdo->prepare("SELECT * FROM users
+    WHERE (username = :username  OR userEmail = :email) 
+    AND password = :password");
+    $stmt->bindParam('username', $_POST['username']);
+    $stmt->bindParam('email', $_POST['username']);        
+    $stmt->bindParam('password', $_POST['password']);        
+    $stmt->execute();
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $user;
+}
+
+//fetches the userID of the logged in user
+function getLoggedInUserID () {
+    if (isLoggedIn()){
+        return (int) $_SESSION['userID'];
+    }
+    else {
+        return 0;
+    }
+}
+
+//checks if anyone is logged in
+function isLoggedIn () {
+    if (isset($_SESSION['userID'])){
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+// deletes comments from userprofile
 function deleteComment ($commentID) {
     global $pdo;            
     $stmt = $pdo->prepare("DELETE FROM comments WHERE commentID = :commentID");  
@@ -7,6 +43,7 @@ function deleteComment ($commentID) {
     $stmt->execute();
 }
 
+// fetches userinfo 
 function getUserInfo ($userID) {
     global $pdo;            
     $stmt = $pdo->prepare("SELECT * FROM users WHERE userID = :id");  
@@ -16,6 +53,7 @@ function getUserInfo ($userID) {
     return $userInfo;
 }
 
+// counts the total posts that the user has made
 function getUserStatisticsPosts($userID) {
     global $pdo;                
     $stmt = $pdo->prepare("SELECT COUNT(postID) as count FROM blogPosts WHERE userID = :id");  
@@ -25,6 +63,7 @@ function getUserStatisticsPosts($userID) {
     return $userPosts['count'];
 }
 
+// counts the total comments that the user has made
 function getUserStatisticsComments ($userID){
     global $pdo;                    
     $stmt = $pdo->prepare("SELECT COUNT(commentID) as count FROM comments WHERE userID = :id"); 
@@ -34,6 +73,7 @@ function getUserStatisticsComments ($userID){
     return $userComments['count'];
 }
 
+// fetches the 5 latest posts the user has made
 function getLatestBlogpostByUserID ($userID) {
     global $pdo;   
     $stmt = $pdo->prepare("SELECT images.*,blogPosts.*,categories.* FROM blogPosts 
@@ -46,6 +86,7 @@ function getLatestBlogpostByUserID ($userID) {
     return $blogposts;
 }
 
+// fetches all the posts the user has made
 function getAllBlogpostsByUserID ($userID) {
     global $pdo;    
     $stmt = $pdo->prepare("SELECT images.*,blogPosts.*,categories.* FROM blogPosts 
@@ -58,18 +99,7 @@ function getAllBlogpostsByUserID ($userID) {
     return $blogposts;
 }
 
-function getAllBlogpostsOnWatches () {
-    return getAllBlogpostsByCategory(1);
-}
-
-function getAllBlogpostsOnSunglasses () {
-    return getAllBlogpostsByCategory(2);
-}
-
-function getAllBlogpostsOnInterior() {
-    return getAllBlogpostsByCategory(3);
-}
-
+// gets all posts in order to sort them in categories
 function getAllBlogpostsByCategory ($postCategory){
     global $pdo;    
     $stmt = $pdo->prepare("SELECT images.*, blogPosts.*, categories.*, users.* 
@@ -83,4 +113,19 @@ function getAllBlogpostsByCategory ($postCategory){
     $stmt->execute();
     $blogposts = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $blogposts;
+}
+
+// gets all posts in category: watches
+function getAllBlogpostsOnWatches () {
+    return getAllBlogpostsByCategory(1);
+}
+
+// gets all posts in category: sunglasses
+function getAllBlogpostsOnSunglasses () {
+    return getAllBlogpostsByCategory(2);
+}
+
+// gets all posts in category: interior
+function getAllBlogpostsOnInterior() {
+    return getAllBlogpostsByCategory(3);
 }

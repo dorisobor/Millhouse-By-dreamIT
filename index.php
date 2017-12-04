@@ -1,5 +1,6 @@
 <?php 
 
+session_start();         
 require_once 'partials/db.php'; 
 require 'functions.php';
 
@@ -70,7 +71,7 @@ require_once 'partials/fetch_all_blogposts.php';
 	<article class="blogpost">
   <!--CATEGORIE TAG-->
 	<div class="blogpost__category-tag">
-	<span><?= $blogpost['categoryName'] ?></span>
+    <a class="blogpost__category-link" href="category<?= $blogpost['categoryName'] ?>.php"><?= $blogpost['categoryName']?></a>
 	</div>
 	<!--USER INFO-->
   
@@ -80,8 +81,8 @@ require_once 'partials/fetch_all_blogposts.php';
         </div>
         
         <div class="blogpost__content-username">
-            <p class="username"><?= $blogpost['username'] ?></p>
-            <time><p>Date:<?= substr($blogpost['postDate'],0,16)?></p></time>
+            <p class="username">Author: <?= $blogpost['username'] ?></p>
+            <time><p>Publish date: <?= substr($blogpost['postDate'],0,16)?></p></time>
         </div>
     </div>
     
@@ -136,7 +137,8 @@ require_once 'partials/fetch_all_blogposts.php';
    }
   ?>
 
-<?php require 'messages/messageEmptyHome.php';?>
+  <!-- user gets a message if theres no posts published -->
+  <?php require 'messages/messageEmptyHome.php';?>
 
   </div>
 
