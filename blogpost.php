@@ -1,4 +1,5 @@
 <?php 
+session_start();
 require_once 'partials/db.php'; 
 require 'functions.php';
 
@@ -67,8 +68,10 @@ require_once 'partials/fetch_all_blogposts.php';
 <article class="blogpost">
 	<!--CATEGORIE TAG-->
 	<div class="blogpost__category-tag">
-	<span><?= $blogpost['categoryName'] ?></span>
-	</div>
+		<a class="blogpost__category-link" href="category<?= $blogpost['categoryName'] ?>.php">
+			<?= $blogpost['categoryName']?>
+		</a>
+    </div>
 	<!--USER INFO-->
 
 	<div class="blogpost__user-info">
@@ -89,7 +92,7 @@ require_once 'partials/fetch_all_blogposts.php';
     <h2><?=$blogpost['postTitle'];?></h2>
 	<figure>
 		<!--BLOG PICTURE-->
-	<img src="images/<?= $blogpost['imageName'] ?>" alt="<?=$blogpost['postTitle'];?>">
+	<img src="images/<?= $blogpost['imageName'] ?>" alt="<?php $blogpost['postTitle'];?>">
 
 	</figure>
 	<div class="blogpost__blog-description">
@@ -147,8 +150,10 @@ require_once 'partials/fetch_all_blogposts.php';
   ?>
 </main>
 	
-<?php require 'partials/footer.php'; ?>
-<?php require 'bootstrapScripts.html'; ?>
+<?php 
+require 'partials/footer.php';
+require 'bootstrapScripts.html';
+?>
 
 </body>
 </html>

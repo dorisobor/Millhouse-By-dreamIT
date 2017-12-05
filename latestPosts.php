@@ -23,8 +23,10 @@ $userID = $user['userID'];
 
 <body>
 
-<?php require 'logoheader.html'; ?>
-<?php require 'partials/navbar.php'; ?>
+<?php 
+require 'logoheader.html';
+require 'partials/navbar.php';
+?>
 
 <main>
 	<div class="profileBox"> 
@@ -147,8 +149,10 @@ $userID = $user['userID'];
 
 </main>
 
-<?php require 'partials/footer.php'; ?>
-<?php require 'bootstrapScripts.html'; ?>
+<?php 
+require 'partials/footer.php';
+require 'bootstrapScripts.html'; 
+?>
 
 </body>
 </html>

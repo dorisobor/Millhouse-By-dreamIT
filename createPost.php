@@ -108,8 +108,10 @@ if(isset($_FILES['upload'])){
     CKEDITOR.replace( 'postText' );
 </script>
 
-<?php require 'partials/footer.php'; ?>
-<?php require 'bootstrapScripts.html'; ?>
+<?php 
+require 'partials/footer.php';
+require 'bootstrapScripts.html'; 
+?>
 
 </body>
 </html>
