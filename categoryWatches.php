@@ -1,11 +1,8 @@
 <?php 
-
 session_start();         
 require_once 'partials/db.php'; 
 require 'functions.php';
-
 $user = getUserInfo($GLOBALS['userID']);
-
 ?>
 
 <!DOCTYPE html>
@@ -39,12 +36,12 @@ $user = getUserInfo($GLOBALS['userID']);
 			<!-- useravatar -->
 			<div class="blogpost__user-info">
 				<div class="user-image__container">
-					<img class="user-image__image" src="<?= $user['userAvatar'] ?>"/>
+					<img class="user-image__image" src="<?= $blogpost['userAvatar'] ?>"/>
 				</div>
 				
 				<!-- username and publish date -->
 				<div class="blogpost__content-username">
-					<p class="username">Auhtor: <?= $blogpost['username'] ?></p>
+					<p class="username">Author: <?= $blogpost['username'] ?></p>
 					<time><p>Publish date: <?= substr($blogpost['postDate'], 0, 16)?></p></time>
 				</div>
 			</div>
