@@ -11,6 +11,7 @@
 <body>
   <!--the pagination -->
 <div class="paginations">
+
   <!--if the page starts at 1 you can only go forward -->
 <?php if ($page == 1): ?>
  
@@ -19,13 +20,7 @@
     next
     <i class="fa fa-arrow-right" aria-hidden="true"></i>
  </a>
-
-<?php elseif (empty($latestPost)): ?>
-  <a href="?page=<?php echo $page-1;?>">
-    <i class="fa fa-arrow-left" aria-hidden="true"></i>
-    previous
-    </a>
-<?php elseif ($page <= $pages): ?>
+ <?php elseif ($page <= $pages): ?>
     <!--the pages will increase by 1 each page if you move backwards the page-->
    <a href="?page=<?php echo $page-1;?>">
     <i class="fa fa-arrow-left" aria-hidden="true"></i>
@@ -37,6 +32,12 @@
     <i class="fa fa-arrow-right" aria-hidden="true"></i>
 
   </a>
+<?php elseif (empty($latestPost)): ?>
+  <a href="?page=<?php echo $page-1;?>">
+    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+    previous
+    </a>
+
   <?php endif; ?>
 
 </div>
