@@ -121,7 +121,7 @@ require_once 'partials/fetch_all_blogposts.php';
 
       <div class="commentLink">
         <i class="fa fa-commenting-o" aria-hidden="true"></i>
-        <a href="blogpost.php?view_post=<?= $blogpost['postID'].'#comment'; ?>">
+        <a href="blogpost.php?view_post=<?= $blogpost['postID'].'#comment'; ?>"></a>
       </div>
 
       <div class="clear"></div>
