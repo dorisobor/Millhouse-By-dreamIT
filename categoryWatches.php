@@ -2,7 +2,6 @@
 session_start();         
 require_once 'partials/db.php'; 
 require 'functions.php';
-$user = getUserInfo($GLOBALS['userID']);
 ?>
 
 <!DOCTYPE html>
@@ -13,8 +12,10 @@ $user = getUserInfo($GLOBALS['userID']);
 </head>
 <body>
 
-<?php require 'logoheader.html'; ?>
-<?php require 'partials/navbar.php'; ?>
+<?php 
+require 'logoheader.html';
+require 'partials/navbar.php'; 
+?>
 
 <header>
 	<div class="jumbotron_watchesHeader"></div>    
@@ -53,7 +54,7 @@ $user = getUserInfo($GLOBALS['userID']);
 
 			<!-- blogpost image -->
 			<figure>
-				<img src="<?= $blogpost['postImage'] ?>" alt="">
+				<img src="images/<?= $blogpost['imageName'] ?>" alt="">
 			</figure>
 
 			<!-- prints out the preview of the post, if it has more than 200
@@ -85,8 +86,7 @@ $user = getUserInfo($GLOBALS['userID']);
 				<!-- link to full post -->
 				<div class="commentLink">
 					<i class="fa fa-commenting-o" aria-hidden="true"></i>
-					<a href="blogpost.php?view_post=<?=$blogpost['postID'];?>">
-					<span><?= getUserStatisticsComments($GLOBALS['userID']) ?>  comment(s)</span></a>
+					<a href="blogpost.php?view_post=<?=$blogpost['postID'];?>"></a>
 				</div>	
 
      			<div class="clear"></div>
@@ -101,8 +101,10 @@ $user = getUserInfo($GLOBALS['userID']);
 	</div>
 </main>
 
-<?php require 'partials/footer.php'; ?>
-<?php require 'bootstrapScripts.html'; ?>
+<?php 
+require 'partials/footer.php';
+require 'bootstrapScripts.html';
+?>
 
 </body>
 </html>

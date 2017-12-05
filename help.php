@@ -10,8 +10,10 @@ session_start();
 </head>
 <body>
 	
-<?php require 'logoheader.html'; ?>
-<?php require 'partials/navbar.php' ?>
+<?php 
+require 'logoheader.html';
+require 'partials/navbar.php';
+?>
 
 <main>
 	<article class="help-article-container">
@@ -75,8 +77,10 @@ session_start();
 	</article>	
 </main>
 
-<?php require 'partials/footer.php'; ?>
-<?php require 'bootstrapScripts.html'; ?>
+<?php 
+require 'partials/footer.php';
+require 'bootstrapScripts.html';
+?>
 
 </body>
 </html>

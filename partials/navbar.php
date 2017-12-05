@@ -1,9 +1,4 @@
-
-<?php 
-
-require_once 'functions.php';
-
-?>
+<?php require_once 'functions.php'; ?>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
 	<a class="navbar-brand hidden-md-up" href="index.php"><img class="logo" src="images/logo.png"></a>
@@ -15,7 +10,7 @@ require_once 'functions.php';
         </a>
     </button>
     <?php else: ?>
-    <button class="sign-up-btn d-md-none d-lg-none d-xl-none">
+    <button class="sign-up-btn d-lg-none d-xl-none">
         <a class="sign-up-btn__link" href="register.php">Register</a>
     </button>
     <?php endif; ?>
@@ -57,7 +52,7 @@ require_once 'functions.php';
         <?php else: ?>
             <div class="user-actions d-none d-lg-block d-xl-block ml-auto">
                 <a class="user-actions__link--black" href="login.php">
-                    <i class="fa fa-sign-in" aria-hidden="true"></i>Log In
+                    <i class="fa fa-sign-in" aria-hidden="true"></i> Log In
                 </a>
                 <a class="user-actions__link" href="register.php"> 
                     <button class="user-actions__sign-up-btn">Register</button>

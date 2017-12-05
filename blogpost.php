@@ -1,7 +1,13 @@
 <?php 
-
+session_start();
 require_once 'partials/db.php'; 
+require 'functions.php';
 
+//commented out since they dont exist in this version
+// require_once 'partials/writeComment.php';
+// require_once 'partials/readComments.php';
+
+require_once 'partials/fetch_all_blogposts.php';
 ?>
 
 <!DOCTYPE html>
@@ -13,20 +19,25 @@ require_once 'partials/db.php';
 </head>
 
 <body>
+
  <!--Included files-->
 <?php require 'logoheader.html';
 	  require 'partials/navbar.php'; 
+	  require_once 'partials/db.php';
+	  
 
 	  if(isset($_GET['view_post']) ){ 
 		$postID = $_GET ['view_post'];
+
+		if(isset($_GET['view_post']) ){ 
+		$postID = $_GET ['view_post'];
 		
 	    //Prepare statement that will help showing the specific task with the id
-		$statement = $pdo->prepare("SELECT blogposts.* ,users.*,categories.* 
-		FROM blogposts 
-		JOIN users ON users.userID = blogposts.userID
+		$statement = $pdo->prepare("SELECT blogPosts.* , users.* ,categories.*  FROM blogPosts 
+		JOIN users ON users.userID = blogPosts.userID
 		JOIN categories ON categories.categoryID = blogPosts.categoryID
-        WHERE postID ='$postID'");
-	   
+		WHERE postID ='$postID'");
+	
 	   //execute it
 	$statement->execute();
 	  
@@ -34,13 +45,16 @@ require_once 'partials/db.php';
 	 $blogposts =  $statement ->fetchAll(PDO::FETCH_ASSOC); 
 	  
 		
-	}
+	  }
+	  
+	  }
  ?>
 
 
 <main>
 
 <div class="mainBody">
+
 	
 <?php 
         
@@ -49,13 +63,15 @@ require_once 'partials/db.php';
         
 ?>
 
-<h1>Story</h1>
+	 <h1>Story</h1>
 		
 <article class="blogpost">
 	<!--CATEGORIE TAG-->
 	<div class="blogpost__category-tag">
-	<span><?= $blogpost['categoryName'] ?></span>
-	</div>
+		<a class="blogpost__category-link" href="category<?= $blogpost['categoryName'] ?>.php">
+			<?= $blogpost['categoryName']?>
+		</a>
+    </div>
 	<!--USER INFO-->
 
 	<div class="blogpost__user-info">
@@ -65,25 +81,24 @@ require_once 'partials/db.php';
 	
 		<div class="blogpost__content-username">
 			<p class="username">Author: <?= $blogpost['username'] ?></p>
-			<time><p>Publish date: <?= substr($blogpost['postDate'],0,16)?></p></time>
+			<time><p>Date: <?=$blogpost['postDate'];?></p></time>
 		</div>
 	</div>
 
-	<div class="clear"></div>
+
+<div class="clear"></div>
 
 	<!--The blog title-->
     <h2><?=$blogpost['postTitle'];?></h2>
 	<figure>
 		<!--BLOG PICTURE-->
-	<img src="<?= $blogpost['imageName'] ?>" alt="">
+	<img src="images/<?= $blogpost['imageName'] ?>" alt="<?php $blogpost['postTitle'];?>">
 
 	</figure>
 	<div class="blogpost__blog-description">
 	
 	   <p><?=$blogpost['postText'];?>
 		</p>
-
-		<br>
 
 	 <div class="blogpost__share-button"> <a href="#"> Share <i class="fa fa-share-alt" aria-hidden="true"></i></a>
 	 </div>
@@ -101,15 +116,27 @@ require_once 'partials/db.php';
         <button class="delete">
           <a href="deleteBlogpost.php?delete_post=<?=$blogpost['postID'];?>"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
          </button>
-
-		<div class="commentInput">
-			<div class="commentHr"><hr></div>
-			<p>Comment on this Story</p>
-			<textarea class="textarea" id="message" rows="6" cols="50" placeholder="Write comment here..." required></textarea>
-		</div>
-		<div class="commentButton">
-			<input type="submit" value="Publish"/>
-		</div>
+        <form action="blogpost.php" method="post">
+			<div class="commentInput">
+				<div class="commentHr">
+					<hr>
+				</div>
+				<p id="comment">Comment on this Story</p>
+		        <input type="hidden" id="postID" name="postID" value="<?= $postID ?>">
+				<?php
+				//  foreach($comments as $commentRow) {
+				// 	 foreach($commentRow as $comment => $value){
+				// 		echo $comment['commentText'];
+				// 		echo "<br>";
+				// 	}
+				// }
+				?>
+				<textarea class="textarea" id="message" rows="6" cols="50" name="comment" placeholder="Write comment here..." required> </textarea>
+			</div>
+			<div class="commentButton">
+				<input type="submit" name="publish" value="Publish" />
+			</div>
+		</form>
     </div> 
 	
 	</div>
@@ -123,8 +150,10 @@ require_once 'partials/db.php';
   ?>
 </main>
 	
-<?php require 'partials/footer.php'; ?>
-<?php require 'bootstrapScripts.html'; ?>
+<?php 
+require 'partials/footer.php';
+require 'bootstrapScripts.html';
+?>
 
 </body>
 </html>
