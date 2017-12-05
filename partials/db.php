@@ -1,6 +1,5 @@
 <?php
 
-$GLOBALS['userID'] = 1; //should be changed later
     try {
     $pdo = new PDO(
       "mysql:host=localhost;dbname=millhouse;charset=utf8",

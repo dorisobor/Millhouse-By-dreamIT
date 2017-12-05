@@ -95,7 +95,7 @@ $userID = $user['userID'];
 
 			<!-- blogpost image -->
 			<figure>
-				<img src="<?= $latestPost['postImage']?>" alt="">
+				<img src="images/<?= $latestPost['imageName'] ?>" alt="">
 			</figure>
 
 			<div class="clear"></div> 
