@@ -136,8 +136,8 @@ require_once 'partials/fetch_all_blogposts.php';
 <!-- user gets a message if theres no posts published -->
 <?php require 'messages/messageEmptyHome.php';?>
 
- </div>
-<?php require 'pagination.php' ?>
+</div>
+    <?php require 'pagination.php' ?>
 </main>
 
 <?php require 'partials/footer.php'; ?>
