@@ -1,5 +1,5 @@
 <?php 
-session_start();
+session_start();         
 require_once 'partials/db.php'; 
 require 'functions.php';
 ?>
@@ -61,9 +61,8 @@ require_once 'partials/fetch_all_blogposts.php';
 	
 <?php 
   //foreach to show all the blogposts and sort the 5 latest posts
-  $i=0;
   foreach($blogposts as $blogpost) {
-    if($i <= 4) {
+   
 ?>
    
 	<article class="blogpost">
@@ -130,17 +129,15 @@ require_once 'partials/fetch_all_blogposts.php';
 		</div>
 	</article>
   <?php 
-//end if    
- }
- $i++;
 //end of loop     
    }
   ?>
-  <!-- user gets a message if theres no posts published -->
-  <?php require 'messages/messageEmptyHome.php';?>
 
-  </div>
+<!-- user gets a message if theres no posts published -->
+<?php require 'messages/messageEmptyHome.php';?>
 
+</div>
+    <?php require 'pagination.php' ?>
 </main>
 
 <?php require 'partials/footer.php'; ?>

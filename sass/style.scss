@@ -81,6 +81,16 @@ figure{
     clear: both; 
 }
 
+.paginations{
+    text-align: center;
+    padding: 10px;
+    
+    a{
+        color: $interactiveHover; 
+        margin: 20px; 
+    }
+}
+
 /*---CATEGORY PAGES---*/
 
 p{
