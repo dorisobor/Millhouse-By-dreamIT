@@ -2,7 +2,6 @@
 
 require_once 'partials/db.php'; 
 
-
 ?>
 
 <!DOCTYPE html>
@@ -17,14 +16,15 @@ require_once 'partials/db.php';
  <!--Included files-->
 <?php require 'logoheader.html';
 	  require 'partials/navbar.php'; 
-	  
 
 	  if(isset($_GET['view_post']) ){ 
 		$postID = $_GET ['view_post'];
 		
 	    //Prepare statement that will help showing the specific task with the id
-		$statement = $pdo->prepare("SELECT blogposts.* ,users.*   FROM blogposts 
+		$statement = $pdo->prepare("SELECT blogposts.* ,users.*,categories.* 
+		FROM blogposts 
 		JOIN users ON users.userID = blogposts.userID
+		JOIN categories ON categories.categoryID = blogPosts.categoryID
         WHERE postID ='$postID'");
 	   
 	   //execute it
@@ -34,14 +34,13 @@ require_once 'partials/db.php';
 	 $blogposts =  $statement ->fetchAll(PDO::FETCH_ASSOC); 
 	  
 		
-	  }
+	}
  ?>
 
 
 <main>
 
 <div class="mainBody">
-
 	
 <?php 
         
@@ -50,7 +49,7 @@ require_once 'partials/db.php';
         
 ?>
 
-	 <h1>Story</h1>
+<h1>Story</h1>
 		
 <article class="blogpost">
 	<!--CATEGORIE TAG-->
@@ -65,13 +64,12 @@ require_once 'partials/db.php';
 		</div>
 	
 		<div class="blogpost__content-username">
-			<p class="username"><?= $blogpost['username'] ?></p>
-			<time><p>Date: <?= substr($blogpost['postDate'],0,16)?></p></time>
+			<p class="username">Author: <?= $blogpost['username'] ?></p>
+			<time><p>Publish date: <?= substr($blogpost['postDate'],0,16)?></p></time>
 		</div>
 	</div>
 
-
-<div class="clear"></div>
+	<div class="clear"></div>
 
 	<!--The blog title-->
     <h2><?=$blogpost['postTitle'];?></h2>

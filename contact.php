@@ -1,4 +1,5 @@
 <?php 
+session_start();         
 require_once 'partials/insert.php';
 require_once 'partials/fetch_all_blogposts.php';
 ?>

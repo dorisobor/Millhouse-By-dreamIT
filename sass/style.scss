@@ -6,7 +6,8 @@
 @import 'logoheader.scss';
 @import 'jimmyFooter.scss';
 @import 'category.scss'; 
-@import 'category2.scss'; 
+@import 'login.scss'; 
+
 
 @font-face {
     font-family: 'helveticaneueregular';
@@ -70,6 +71,10 @@ h1{
     padding: 0px; 
     margin: 0px; 
     color: $interactiveHover; 
+}
+
+figure{
+    text-align: center;
 }
 
 .clear{
@@ -277,16 +282,14 @@ article button{
 }
 
 .newAccount{
-    background: $headLineColor;
-    height: 35px;
-    width: 200px; 
     padding: 5px; 
     border-radius: 0.25rem; 
     text-align: center; 
     margin: 0px auto; 
 
     a{
-    color: $defaultColor; 
+        color: $interactiveHover; 
+        font-weight: 700; 
     }
 }
 
@@ -367,6 +370,10 @@ input { /*--input settings--*/
         background-color: $defaultColor;    
         margin-bottom: 15px; 
     }
+
+    .cke_chrome{
+        width: 90%; 
+    }
 }
 
 .button{
@@ -404,6 +411,9 @@ input { /*--input settings--*/
              
     }
 
+.createForm__label {
+    text-align: left;
+}
 
 /*------HÄR BÖRJAR MEDIA SCREEN----------*/
 
@@ -449,9 +459,15 @@ input { /*--input settings--*/
     background-position: center; 
 }
 
+.createForm{
+    
+    .cke_chrome{
+        width: 90%; 
+        margin: 0px auto; 
+    }
+}
 
 fieldset{
-    text-align: center; 
 
     label{
         text-align: left; 
@@ -459,7 +475,7 @@ fieldset{
 }  
 
 .topInfo{
-    margin-left: 30px; 
+    margin: 0px 0px 30px 30px;
 }
 
 .topInfoCreate{
