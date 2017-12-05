@@ -1,0 +1,23 @@
+.dropdown-content{
+    text-align: center;
+}
+
+.container-wrapper{
+   margin: 0px auto;
+   padding: 20px;
+    .container-latestComments{
+        margin: 1em auto;      
+        background-color: $sectionBackground;
+            
+        .deleteButton{
+
+            .deleteComment{
+                background: $dangerColor; 
+                width: 5.5rem; 
+            }
+        }
+            
+            
+    
+    }
+}
