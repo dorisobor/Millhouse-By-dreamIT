@@ -1,9 +1,7 @@
 <?php 
-
 session_start();         
 require_once 'partials/db.php'; 
 require 'functions.php';
-
 ?>
 
 <!DOCTYPE html>
@@ -70,7 +68,7 @@ require_once 'partials/fetch_all_blogposts.php';
 	<article class="blogpost">
   <!--CATEGORIE TAG-->
 	<div class="blogpost__category-tag">
-    <a class="blogpost__category-link" href="category<?= $blogpost['categoryName'] ?>.php"><?= $blogpost['categoryName']?></a>
+	<span><?= $blogpost['categoryName'] ?></span>
 	</div>
 	<!--USER INFO-->
   
@@ -81,7 +79,7 @@ require_once 'partials/fetch_all_blogposts.php';
         
         <div class="blogpost__content-username">
             <p class="username">Author: <?= $blogpost['username'] ?></p>
-            <time><p>Publish date: <?= substr($blogpost['postDate'],0,16)?></p></time>
+            <time><p>Date:<?= substr($blogpost['postDate'],0,16)?></p></time>
         </div>
     </div>
     
@@ -93,23 +91,26 @@ require_once 'partials/fetch_all_blogposts.php';
   
 	<!--BLOG PICTURE-->
 		<figure>
-		<img src="<?= $blogpost['imageName'] ?>" alt="">
+			
+	<img src="images/<?= $blogpost['imageName'] ?>">
 		</figure>
   <!--The blog text-->
     <div class= "blogpost__blog-description">
-  <!--limits the text to show the first if a post is more than 200 characters-->
-      <?php if (strlen($blogpost['postText']) > 200 ):?>
-        <a href="blogpost.php?view_post=<?=$blogpost['postID'];?>">
-          <p><?=substr ($blogpost['postText'],0,200)?> ...</p>
-        </a>
+
+  <!--limits the text to show the first 200 characters-->
+      <?php if (strlen($blogpost['postText']) > 200 ): ?>
+				<a href="blogpost.php?view_post=<?= $totalPost['postID']; ?>">
+					<p><?= substr($blogpost['postText'],0,200) ?> ...</p>
+				</a>
       <?php else: ?>
-        <a href="blogpost.php?view_post=<?=$blogpost['postID'];?>">
-          <p><?= $blogpost['postText'] ?></p>
-        </a>
-      <?php endif; ?>
-      <!--a read more link-->
+				<a href="blogpost.php?view_post=<?= $blogpost['postID']; ?>">
+					<p><?= $blogpost['postText'] ?></p>
+				</a>
+			<?php endif; ?>
+
+         <!--a read more link-->
      <div class="blogpost__read-more">
-      <a href="blogpost.php?view_post=<?=$blogpost['postID'];?>">
+      <a href="blogpost.php?view_post=<?= $blogpost['postID']; ?>">
       Read More <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
      </div>
      <br>
@@ -120,8 +121,7 @@ require_once 'partials/fetch_all_blogposts.php';
 
       <div class="commentLink">
         <i class="fa fa-commenting-o" aria-hidden="true"></i>
-        <a href="blogpost.php?view_post=<?=$blogpost['postID'];?>">
-        <span><?= getUserStatisticsComments($GLOBALS['userID']) ?>  comment(s)</span></a>
+        <a href="blogpost.php?view_post=<?= $blogpost['postID'].'#comment'; ?>">
       </div>
 
       <div class="clear"></div>

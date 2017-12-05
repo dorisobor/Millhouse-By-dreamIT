@@ -2,7 +2,6 @@
 session_start();         
 require_once 'partials/db.php'; 
 require 'functions.php';
-$user = getUserInfo($GLOBALS['userID']);
 ?>
 
 <!DOCTYPE html>
@@ -86,7 +85,6 @@ $user = getUserInfo($GLOBALS['userID']);
 				<div class="commentLink">
 					<i class="fa fa-commenting-o" aria-hidden="true"></i>
 					<a href="blogpost.php?view_post=<?=$blogpost['postID'];?>">
-					<span><?= getUserStatisticsComments($GLOBALS['userID']) ?>  comment(s)</span></a>
 				</div>	
 
      			<div class="clear"></div>
