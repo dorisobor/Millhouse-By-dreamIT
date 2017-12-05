@@ -9,23 +9,30 @@
 	<title></title>
 </head>
 <body>
+  <!--the pagination -->
 <div class="paginations">
-  
+  <!--if the page starts at 1 you can only go forward -->
 <?php if ($page == 1): ?>
-
-<a href="?page=<?php echo $page+1;?>">
+ 
+  <!--the pages will decrease by 1 each page if you move forward the page-->
+  <a href="?page=<?php echo $page+1;?>">
     next
     <i class="fa fa-arrow-right" aria-hidden="true"></i>
+ </a>
 
-  </a>
-<?php elseif ($page <= $pages): ?>
-   
-    <a href="?page=<?php echo $page-1;?>">
+<?php elseif (empty($latestPost)): ?>
+  <a href="?page=<?php echo $page-1;?>">
     <i class="fa fa-arrow-left" aria-hidden="true"></i>
     previous
-</a>
-    
-  <a href="?page=<?php echo $page+1;?>">
+    </a>
+<?php elseif ($page <= $pages): ?>
+    <!--the pages will increase by 1 each page if you move backwards the page-->
+   <a href="?page=<?php echo $page-1;?>">
+    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+    previous
+  </a>
+     <!--the pages will decrease by 1 each page if you move forwards the page-->
+   <a href="?page=<?php echo $page+1;?>">
     next
     <i class="fa fa-arrow-right" aria-hidden="true"></i>
 
