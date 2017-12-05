@@ -42,8 +42,10 @@ if (isset($_POST['submit'])) {
 	<title>Login</title>
 <body>
 
-<?php require 'logoheader.html'; ?>
-<?php require 'partials/navbar.php';  ?>
+<?php 
+require 'logoheader.html';
+require 'partials/navbar.php'; 
+?>
 
 <main>
     <div class="main">
@@ -85,8 +87,10 @@ if (isset($_POST['submit'])) {
     </div>
 </main>
 
-<?php require 'partials/footer.php'; ?>
-<?php require 'bootstrapScripts.html'; ?> 
+<?php
+require 'partials/footer.php';
+require 'bootstrapScripts.html';
+?> 
 
 </body>
 </html>

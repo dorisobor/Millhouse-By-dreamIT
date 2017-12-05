@@ -34,8 +34,10 @@ $infos = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 <body>
 
-<?php require 'logoheader.html'; ?>
-<?php require 'partials/navbar.php' ?>
+<?php 
+require 'logoheader.html';
+require 'partials/navbar.php'; 
+?>
 
 <main>
     <div class="profileBox"> 
@@ -137,8 +139,10 @@ $infos = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 </main>
 
-<?php require 'partials/footer.php'; ?>
-<?php require 'bootstrapScripts.html'; ?>
+<?php 
+require 'partials/footer.php';
+require 'bootstrapScripts.html'; 
+?>
 
 </body>
 </html>
