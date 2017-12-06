@@ -292,6 +292,15 @@ article button{
     }
 }
 
+.register_wrapper{
+    margin: 0px auto; 
+    max-width: 600px;
+    
+    textarea{
+        width: 300px; 
+    }
+}
+
 .newAccount{
     padding: 5px; 
     border-radius: 0.25rem; 
@@ -484,10 +493,6 @@ fieldset{
         text-align: left; 
     }
 }  
-
-.topInfo{
-    margin: 0px 0px 30px 30px;
-}
 
 .topInfoCreate{
     margin-left: 30px; 

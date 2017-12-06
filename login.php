@@ -50,34 +50,36 @@ require 'partials/navbar.php';
 <main>
     <div class="main">
         <div class="mainBody">
-            <div class="form_wrapper">    
-                <form class="form" method="post" enctype="multipart/form-data">
-                    <div class="topInfo">
-                        <legend class="legend"><h1>Login</h1></legend>
-                        <p class="topInfo__instruction">Login to your account here.</p>
-                    </div>
-                    <fieldset class="fieldset">
-                        <div class="contactForm">
-                            <div class="contactForm__input">
-                                <label for="username" class="login-label">Username</label>
+            <div class="form_wrapper"> 
+                <div class="login_wrapper">   
+                    <form class="form" method="post" enctype="multipart/form-data">
+                        <div class="topInfo">
+                            <legend class="legend"><h1>Login</h1></legend>
+                            <p class="topInfo__instruction">Login to your account here.</p>
+                        </div>
+                        <fieldset class="fieldset">
+                            <div class="contactForm">
+                                <div class="contactForm__input">
+                                    <label for="username" class="login-label">Username</label>
 
-                                <!-- checks if user has put in their login info correctly 
-                                and then prints a message if sh/e has filled in something wrong
-                                or simply do not have an account -->
-                                <?php if ($loginError): ?>
-                                    <span class="error-msg">Wrong username or password
-                                    </span>
-                                <?php endif; ?>
-                                <input type="text" name="username" value="" placeholder="Email or Username"/><br>
-                                <label for="username" class="login-label">Password</label>
-                                <input type="password" name="password" value="" placeholder="Password"/><br>
+                                    <!-- checks if user has put in their login info correctly 
+                                    and then prints a message if sh/e has filled in something wrong
+                                    or simply do not have an account -->
+                                    <?php if ($loginError): ?>
+                                        <span class="error-msg">Wrong username or password
+                                        </span>
+                                    <?php endif; ?>
+                                    <input type="text" name="username" value="" placeholder="Email or Username"/><br>
+                                    <label for="username" class="login-label">Password</label>
+                                    <input type="password" name="password" value="" placeholder="Password"/><br>
+                                </div>
                             </div>
-                        </div>
-                        <div class="submitButton">
-                            <input name="submit" type="submit" value="Log In"/><br>
-                        </div>
-                    </fieldset>
-                </form>
+                            <div class="submitButton">
+                                <input name="submit" type="submit" value="Log In"/><br>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
                 <!-- links the user to register page -->
                 <div class="newAccount">
                 Not a member yet? <a href="register.php">Create Account.</a>
