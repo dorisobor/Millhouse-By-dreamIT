@@ -22,10 +22,12 @@ $userID = $user['userID'];
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<?php require 'head.html'; ?>
 	<title>Profile Page</title>
 </head>
+
 <body>
 
 <?php 
@@ -35,7 +37,6 @@ require 'partials/navbar.php';
 
 <main>
 	<div class="profileBox"> 
-
 		<!-- userimage (deafault = user icon) -->
 		<div class="profileBox__content-1">
 			<div class="user-image__container">
@@ -90,8 +91,8 @@ require 'partials/navbar.php';
 	<div class="profilePosts">
 		
 		<!-- triggers message if post was deleted -->
-		<?php if($postIsDeleted): ?>
-		<?php require 'messages/messageDeletePostConfirm.php';?>
+		<?php if ($postIsDeleted): ?>
+			<?php require 'messages/messageDeletePostConfirm.html';?>
 		<?php endif; ?>
 		
 		<?php foreach (getAllBlogpostsByUserID($userID) as $i => $totalPost): ?>
@@ -155,11 +156,9 @@ require 'partials/navbar.php';
 			</article>
 	<?php endforeach; ?>	
 		
-	<!-- shows a message to user if sh/e doesn't have any posts -->
-	<?php require 'messages/messageEmptyProfileAllPosts.php'; ?>
+<!-- shows a message to user if sh/e doesn't have any posts -->
+<?php require 'messages/messageEmptyProfileAllPosts.php'; ?>
 
-</div>
-	
 <!-- popup window connected to delete button (ie delete confirmation) -->
 <?php require 'modals/modalDeletePost.php'; ?>
 

@@ -72,7 +72,7 @@ require_once 'partials/navbar.php';
     
     <!-- triggers message if post was deleted -->
     <?php if($postIsDeleted): ?>
-           <?php require 'messages/messageDeletePostConfirm.php';?>
+           <?php require 'messages/messageDeletePostConfirm.html';?>
 		<?php endif; ?>
     
       <h1>Latest Stories</h1>
