@@ -1,6 +1,6 @@
 .login_wrapper{
     margin: 0px auto;
-    max-width: 600px;  
+    max-width: 500px;  
 }
 
 .topInfo {
@@ -17,10 +17,30 @@
     margin-bottom: 10px;
 }
 
-.contactForm__input {
+.loginForm__input {
     margin: 0px auto;
     max-width: 600px;
     text-align: left;
+
+    label{
+        width: 100%; 
+    }
+
+    input{
+        width: 100%; 
+    }
+}
+
+.loginForm__newAccount-link{
+    padding: 5px; 
+    border-radius: 0.25rem; 
+    text-align: center; 
+    margin: 0px auto; 
+
+    a{
+        color: $interactiveHover; 
+        font-weight: 700; 
+    }
 }
 
 .error-msg {
@@ -30,5 +50,5 @@
 }
 
 .login-label {
-   margin: 0px;
+    max-width: 500px; 
 }

@@ -246,62 +246,98 @@ article button{
     }
 }
 
-/*--FORMS--*/
+/*--FORMS GENERAL--*/
 
 .form_wrapper {
     padding: 20px;
     background-color: $sectionBackground;
     max-width: 700px; 
     margin: 0px auto; 
+}
 
-    .topInfoCreate{
 
-        .help{
-            line-height: 30px; 
-        }
+/*--create post form--*/
 
-        p{
-            float: left;
-            margin-right: 5px; 
-        }
+.create_wrapper{
+    margin: 0px auto; 
+    max-width: 600px; 
+}
 
-        .fa-question-circle{
-            float: left; 
-            font-size: 1.7rem; 
-        }
+.createForm__label {
+    text-align: left;
+}
+
+.topInfoCreate{
+    
+    .help{
+        line-height: 30px; 
     }
 
-    .contactForm{
-        
-        input{
-            width: 90%; 
-        }
+    p{
+        float: left;
+        margin-right: 5px; 
     }
 
-    .createForm{
-
-        input{
-            width: 90%; 
-        }
-    }
-
-    .submitButton{
-        text-align: center; 
-        height: 40px; 
-        margin: 10px; 
+    .fa-question-circle{
+        float: left; 
+        font-size: 1.7rem; 
     }
 }
+    
+.createForm{
+
+    input{
+        width: 100%; 
+    }
+}
+
+.submitButton{
+    text-align: center; 
+    height: 40px; 
+    margin: 10px; 
+}
+
+/*--edit post form--*/
+
+.edit_wrapper{
+    margin: 0px auto; 
+    max-width: 600px;
+}
+
+/*--register form--*/
 
 .register_wrapper{
     margin: 0px auto; 
-    max-width: 600px;
+    max-width: 500px;
+
+    label{
+        width: 100%; 
+    }
+
+    input{
+        width: 100%; 
+    }
     
     textarea{
-        width: 300px; 
+        width: 100%; 
     }
 }
 
-.newAccount{
+.registerForm__input {
+    margin: 0px auto;
+    max-width: 600px;
+    text-align: left;
+
+    label{
+        width: 100%; 
+    }
+
+    input{
+        width: 100%; 
+    }
+}
+
+.registerForm__newAccount-link{
     padding: 5px; 
     border-radius: 0.25rem; 
     text-align: center; 
@@ -312,6 +348,7 @@ article button{
         font-weight: 700; 
     }
 }
+
 
 input { /*--input settings--*/
     margin-bottom: 20px; 
@@ -360,45 +397,6 @@ input { /*--input settings--*/
 
         }
     }
-
-    &[type="checkbox"] {
-        cursor: pointer;
-        margin: 0px; 
-        padding: 0px; 
-        width: 20px; 
-        height: 20px; 
-        text-align: left; 
-    }
-
-}
-
-.contactForm{
-    
-        .textarea { /*--change your profile description--*/
-            width: 90%;
-            height: 100px;
-            background-color: $defaultColor;    
-            margin-bottom: 15px; 
-        }
-    }
-
-.create_wrapper{
-    margin: 0px auto; 
-    max-width: 600px; 
-}
-
-.createForm{
-
-    .textarea { /*--change your profile description--*/
-        width: 90%;
-        height: 400px;
-        background-color: $defaultColor;    
-        margin-bottom: 15px; 
-    }
-
-    .cke_chrome{
-        width: 90%; 
-    }
 }
 
 .button{
@@ -434,10 +432,6 @@ input { /*--input settings--*/
             font-size: 1.2rem; 
         }
     }        
-}
-
-.createForm__label {
-    text-align: left;
 }
 
 /*------HÄR BÖRJAR MEDIA SCREEN----------*/

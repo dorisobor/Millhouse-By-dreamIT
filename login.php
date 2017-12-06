@@ -58,8 +58,8 @@ require 'partials/navbar.php';
                             <p class="topInfo__instruction">Login to your account here.</p>
                         </div>
                         <fieldset class="fieldset">
-                            <div class="contactForm">
-                                <div class="contactForm__input">
+                            <div class="loginForm">
+                                <div class="loginForm__input">
                                     <label for="username" class="login-label">Username</label>
 
                                     <!-- checks if user has put in their login info correctly 
@@ -81,7 +81,7 @@ require 'partials/navbar.php';
                     </form>
                 </div>
                 <!-- links the user to register page -->
-                <div class="newAccount">
+                <div class="loginForm__newAccount-link">
                 Not a member yet? <a href="register.php">Create Account.</a>
                 </div>
             </div>

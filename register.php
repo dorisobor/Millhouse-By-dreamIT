@@ -81,12 +81,12 @@ require 'partials/navbar.php';
                         </div>
 
                         <fieldset class="fieldset">
-                            <div class="createForm">
+                            <div class="registerForm">
                                 <?php if ($usernameNotUniqe): ?>
                                     <span class="error-msg">It allready exists a user with this username</span>
                                 <?php endif; ?> 
-                                <label for="username" class="createForm__label">Fill in a username *</label>
-                                <input type="text" name="username" placeholder="Username" id="headline" value="<?= $formData['username'] ?? '' ?>" required/>                            
+                                <label for="username" class="registerForm__label">Fill in a username *</label>
+                                <input type="text" name="username" placeholder="Username" id="headline" value="<?= $formData['username'] ?? '' ?>" required />
                                 <?php if($emailError):?>
                                     <span class="error-msg">Email doesn't match</span>
                                 <?php endif; ?>
@@ -116,7 +116,7 @@ require 'partials/navbar.php';
                             </fieldset>
                         </form>
                     </div>
-                    <div class="newAccount">
+                    <div class="registerForm__newAccount-link">
                         Already have an account? <a href="login.php">Log in.</a>
                   </div>
             </div>
