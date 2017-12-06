@@ -29,7 +29,7 @@ if(isset($_FILES['upload'])){
 <html lang="en">
 
 <head>
-    <?php require 'head.html'; ?>
+    <?php require 'partials/head.html'; ?>
     <script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
     <title>Create New Post</title>
 </head>
@@ -37,7 +37,7 @@ if(isset($_FILES['upload'])){
 <body>
 
 <?php 
-require 'logoheader.html';
+require 'partials/logoheader.html';
 require 'partials/navbar.php';
 ?>
  
@@ -106,7 +106,7 @@ CKEDITOR.config.width = '100%';
 
 <?php         
 require 'partials/footer.php';
-require 'bootstrapScripts.html'; 
+require 'partials/bootstrapScripts.html'; 
 ?>
 
 </body>
