@@ -7,7 +7,7 @@
 			<ul class="dropdown-menu">
 				<li><a href="https://www.facebook.com/"><i class="fa fa-facebook-square"></i> Facebook</a></li>
 				<li><a href="https://www.instagram.com/"><i class="fa fa-instagram"></i> Instagram</a></li>
-				<li><a href="https://accounts.google.com"><i class="fa fa-envelope"></i> Gmail</a></li>
+				<li class="gmail"><a href="https://accounts.google.com"><i class="fa fa-envelope"></i> Gmail</a></li>
 			</ul>
 		</li>
 	</ul>
