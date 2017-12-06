@@ -41,14 +41,14 @@ if(isset($_FILES['upload'])){
  
 <main>
     <div class="main">
-
-        <?php if(isset($_POST['publish'])): ?>
-           <?php require 'messages/messageCreatePostConfirm.php';?>
-        <?php endif; ?>
-        
         <div class="mainBody">
+
+            <!-- gives the user a confirmation message if post was published -->
+            <?php if(isset($_POST['publish'])): ?>
+                <?php require 'messages/messageCreatePostConfirm.php';?>
+            <?php endif; ?>
+
             <div class="form_wrapper">
-            
                     <form class="form"  method="post" enctype="multipart/form-data">
                         <div class="topInfoCreate">
                             <legend class="legend">
