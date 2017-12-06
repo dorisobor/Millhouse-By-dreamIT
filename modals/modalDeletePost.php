@@ -9,7 +9,7 @@
 				</div>
 				<div class="modal-body">
 					<p>Are your sure you want to delete this story?
-					   Once you've deleted it, the story cant be re-created.
+					   Once you've deleted it, the story can't be re-created.
 					</p>
 				</div>
 				<div class="modal-footer">
