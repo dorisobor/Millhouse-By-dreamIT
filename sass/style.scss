@@ -382,6 +382,11 @@ input { /*--input settings--*/
         }
     }
 
+.create_wrapper{
+    margin: 0px auto; 
+    max-width: 600px; 
+}
+
 .createForm{
 
     .textarea { /*--change your profile description--*/
@@ -471,47 +476,13 @@ input { /*--input settings--*/
         }   
     }
 
-.coverPhoto img{
-    display: block; 
-    width: 100%; 
-    height: 400px; 
-    object-fit: cover; 
-    background-position: center; 
-}
-
-.createForm{
-    
-    .cke_chrome{
-        width: 90%; 
-        margin: 0px auto; 
+    .coverPhoto img{
+        display: block; 
+        width: 100%; 
+        height: 400px; 
+        object-fit: cover; 
+        background-position: center; 
     }
-}
-
-fieldset{
-
-    label{
-        text-align: left; 
-    }
-}  
-
-.topInfoCreate{
-    margin-left: 30px; 
-}  
-
-.createButton{
-    text-align: left; 
-    margin-left: 30px; 
-}
-
-.checkboxWrapper{
-    text-align: left; 
-    margin-left: 30px; 
-}
-
-.form_heading{
-    margin-left: 30px; 
-}
-
 }
 
 
