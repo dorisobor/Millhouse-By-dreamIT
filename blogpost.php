@@ -75,7 +75,7 @@ foreach($blogposts as $blogpost) {
 			<!-- username and date -->
 			<div class="blogpost__content-username">
 				<p class="username">Author: <?= $blogpost['username'] ?></p>
-				<time><p>Date: <?= substr($blogpost['postDate'],0,16)?></p></time>
+				<time><p>Publish date: <?= substr($blogpost['postDate'],0,16)?></p></time>
 			</div>
 		</div>
 
