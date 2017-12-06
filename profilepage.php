@@ -3,6 +3,13 @@ session_start();
 require_once 'partials/db.php'; 
 require 'functions.php';
 
+//checks if delete button was pressed och post was deleted
+//if it was deleted variable is used to trigger a message
+//see row 91
+$postIsDeleted = isset($_SESSION['postDeleted']);
+//unsets session in order for message to disappear
+unset($_SESSION['postDeleted']);
+
 //if user is not logged in sh/e gets redirected to home
 if (!isLoggedIn()){
 	header('Location: login.php');
@@ -81,72 +88,80 @@ require 'partials/navbar.php';
 
 	<!-- blogposts -->
 	<div class="profilePosts">
-	<?php foreach (getAllBlogpostsByUserID($userID) as $i => $totalPost): ?>
-		<article class="blogpost">
+		
+		<!-- triggers message if post was deleted -->
+		<?php if($postIsDeleted): ?>
+		<?php require 'messages/messageDeletePostConfirm.php';?>
+		<?php endif; ?>
+		
+		<?php foreach (getAllBlogpostsByUserID($userID) as $i => $totalPost): ?>
+			<article class="blogpost">
 
-			<!-- clickable category label -->
-			<div class="blogpost__category-link">
-				<a class="blogpost__category-link" href="category<?= $totalPost['categoryName'] ?>.php"><?= $totalPost['categoryName']?></a>
-			</div>
+				<!-- clickable category label -->
+				<div class="blogpost__category-link">
+					<a class="blogpost__category-link" href="category<?= $totalPost['categoryName'] ?>.php">
+						<?= $totalPost['categoryName']?>
+					</a>
+				</div>
+					
+				<!-- blogtitle and publish date -->
+				<date>
+					<p class="blogpost__date">Publish date: <?= substr($totalPost['postDate'], 0, 16) ?></p>
+				</date>
+				<h2 class="blogpost__title"><?= $totalPost['postTitle'] ?></h2>
+
+				<!-- blogpost image -->
+				<figure>
+					<img src="images/<?= $totalPost['imageName'] ?>" alt="">
+				</figure>	
+
+				<div class="clear"></div> 
+
+				<!-- prints out the preview of the post, if it has more than 200
+				chars 3 dots appear to show the user that theres more to read -->
+				<div class= "blogpost__blog-description">
+				<?php if (strlen($totalPost['postText']) > 200 ):?>
+					<a href="blogpost.php?view_post=<?=$totalPost['postID'];?>">
+						<p><?=substr ($totalPost['postText'],0,200)?> ...</p>
+					</a>
+				<?php else: ?>
+					<a href="blogpost.php?view_post=<?=$totalPost['postID'];?>">
+						<p><?= $totalPost['postText'] ?></p>
+					</a>
+				<?php endif; ?>
 			
-			<!-- blogtitle and publish date -->
-			<date>
-				<p class="blogpost__date">Publish date: <?= substr($totalPost['postDate'], 0, 16) ?></p>
-			</date>
-			<h2 class="blogpost__title"><?= $totalPost['postTitle'] ?></h2>
+				<!-- link that leads to fullview of chosen post -->
+				<div class="blogpost__read-more">
+					<a href="blogpost.php?view_post=<?=$totalPost['postID'];?>">
+						Read More <i class="fa fa-chevron-right" aria-hidden="true"></i>
+					</a>
+				</div>
+				<br>
+				<div class="blogpost__share-button"> 
+					<a href="#">Share <i class="fa fa-share-alt" aria-hidden="true"></i></a>
+				</div>
 
-			<!-- blogpost image -->
-			<figure>
-				<img src="images/<?= $totalPost['imageName'] ?>" alt="">
-			</figure>	
-
-			<div class="clear"></div> 
-
-			<!-- prints out the preview of the post, if it has more than 200
-			chars 3 dots appear to show the user that theres more to read -->
-			<div class= "blogpost__blog-description">
-			<?php if (strlen($totalPost['postText']) > 200 ):?>
-				<a href="blogpost.php?view_post=<?=$totalPost['postID'];?>">
-					<p><?=substr ($totalPost['postText'],0,200)?> ...</p>
-				</a>
-      		<?php else: ?>
-				<a href="blogpost.php?view_post=<?=$totalPost['postID'];?>">
-					<p><?= $totalPost['postText'] ?></p>
-				</a>
-			<?php endif; ?>
+				<!-- buttons for delete and edit post -->
+				<div class="editButtons">
+					<button>
+						<a href="editPost.php"><i class="fa fa-pencil" aria-hidden="true"></i> Edit<a>
+					</button>
+					<button class="delete" type="button" data-toggle="modal" data-target=".delete-confirmation-modal" 
+					data-postid="<?= $totalPost['postID'] ?>" data-redirect-page="profilepage.php"> 
+							<i class="fa fa-trash" aria-hidden="true"></i> Delete
+					</button>
+				</div>
 			
-			<!-- link that leads to fullview of chosen post -->
-			<div class="blogpost__read-more">
-      			<a href="blogpost.php?view_post=<?=$totalPost['postID'];?>">
-      				Read More <i class="fa fa-chevron-right" aria-hidden="true"></i>
-				</a>
-     		</div>
-			<br>
-			<div class="blogpost__share-button"> 
-				<a href="#">Share <i class="fa fa-share-alt" aria-hidden="true"></i></a>
-			</div>
-
-			<!-- buttons for delete and edit post -->
-			<div class="editButtons">
-				<button>
-					<a href="editPost.php"><i class="fa fa-pencil" aria-hidden="true"></i> Edit<a>
-				</button>
-				<button class="delete" type="button" data-toggle="modal" data-target=".delete-confirmation-modal" 
-				data-postid="<?= $totalPost['postID'] ?>" data-redirect-page="profilepage.php"> 
-						<i class="fa fa-trash" aria-hidden="true"></i> Delete
-				</button>
-			</div>
-			
-		</article>
+			</article>
 	<?php endforeach; ?>	
 		
 	<!-- shows a message to user if sh/e doesn't have any posts -->
 	<?php require 'messages/messageEmptyProfileAllPosts.php'; ?>
 
-	</div>
+</div>
 	
-	<!-- popup window connected to delete button (ie delete confirmation) -->
-	<?php require 'modals/modalDeletePost.php'; ?>
+<!-- popup window connected to delete button (ie delete confirmation) -->
+<?php require 'modals/modalDeletePost.php'; ?>
 
 </main>
 
