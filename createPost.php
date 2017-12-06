@@ -48,11 +48,8 @@ if(isset($_FILES['upload'])){
         
         <div class="mainBody">
             <div class="form_wrapper">
-<<<<<<< HEAD
                 <div class="create_wrapper">
-=======
             
->>>>>>> origin
                     <form class="form"  method="post" enctype="multipart/form-data">
                         <div class="topInfoCreate">
                             <legend class="legend">
@@ -109,12 +106,9 @@ if(isset($_FILES['upload'])){
                         </fieldset>
                     </form>
                 </div>
-<<<<<<< HEAD
             </div>
 
-=======
 </main>
->>>>>>> origin
          
 <script>
     CKEDITOR.replace( 'postText' );
