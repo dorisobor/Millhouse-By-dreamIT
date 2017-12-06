@@ -36,18 +36,6 @@ if(isset($_FILES['upload'])){
 
 <body>
 
-<<<<<<< HEAD
-    <?php require 'logoheader.html'; ?>
-    <?php require 'partials/navbar.php';  ?>
-    <?php 
-    $userID = 1; /*should be taken from POST or GETT*/
-?>
-    <main>
-        <div class="main">
-            <div class="mainBody">
-                <div class="form_wrapper">    
-                    <form class="form" action="testFile.php" method="post" enctype="multipart/form-data">
-=======
 <?php require 'logoheader.html'; ?>
 <?php require 'partials/navbar.php';  ?>
  
@@ -56,7 +44,6 @@ if(isset($_FILES['upload'])){
         <div class="mainBody">
             <div class="form_wrapper">
                     <form class="form"  method="post" enctype="multipart/form-data">
->>>>>>> origin/master
                         <div class="topInfoCreate">
                             <legend class="legend">
                                 <h1>Create New Story</h1>
@@ -115,31 +102,6 @@ if(isset($_FILES['upload'])){
                         </fieldset>
                     </form>
                 </div>
-<<<<<<< HEAD
-            </div>
-        </div>
-    </main>
-		<script>
-			CKEDITOR.replace( 'postText' );
-		</script>
-   
-
-   <!--script>
-			ClassicEditor
-				.create( document.querySelector( '#postText' ) )
-				.then( editor => {
-					console.log( postText );
-				} )
-				.catch( error => {
-					console.error( error );
-				} );
-		</script-->
-
-    <?php require 'partials/footer.php'; ?>
-    <?php require 'bootstrapScripts.html'; ?>
-
-
-=======
 
          
 <script>
@@ -150,7 +112,6 @@ if(isset($_FILES['upload'])){
 require 'partials/footer.php';
 require 'bootstrapScripts.html'; 
 ?>
->>>>>>> origin/master
 
 </body>
 </html>
