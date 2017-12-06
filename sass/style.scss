@@ -193,7 +193,6 @@ img {
 }
 
 /* read more link*/
-
 .blogpost__read-more {
 	text-align: right;
 	margin-top: 10px;
@@ -256,124 +255,187 @@ img {
 	}
 }
 
+
 /*--FORMS--*/
 
+/*--create post form--*/
+.create_wrapper{
+    margin: 0px auto; 
+    max-width: 600px; 
+}
+
+.createForm__label {
+    text-align: left;
+}
+
+.topInfoCreate{
+    
+    .help{
+        line-height: 30px; 
+    }
+
+    p{
+        float: left;
+        margin-right: 5px; 
+    }
+
+    .fa-question-circle{
+        float: left; 
+        font-size: 1.7rem; 
+    }
+}
+    
+.createForm{
+
+    input{
+        width: 100%; 
+    }
+}
+
+.submitButton{
+    text-align: center; 
+    height: 40px; 
+    margin: 10px; 
+}
+
+/*--edit post form--*/
+.edit_wrapper{
+    margin: 0px auto; 
+    max-width: 600px;
+}
+
+
+/*--register form--*/
+.register_wrapper{
+    margin: 0px auto; 
+    max-width: 500px;
+
+    label{
+        width: 100%; 
+    }
+
+    input{
+        width: 100%; 
+    }
+    
+    textarea{
+        width: 100%; 
+    }
+}
+
+.registerForm__input {
+    margin: 0px auto;
+    max-width: 600px;
+    text-align: left;
+
+    label{
+        width: 100%; 
+    }
+
+    input{
+        width: 100%; 
+    }
+}
+
+.registerForm__newAccount-link{
+    padding: 5px; 
+    border-radius: 0.25rem; 
+    text-align: center; 
+    margin: 0px auto; 
+
+    a{
+        color: $interactiveHover; 
+        font-weight: 700; 
+    }
+}
+
+
+/*--general for forms--*/
+
 .form_wrapper {
-	padding: 20px;
-	background-color: $sectionBackground;
-	max-width: 700px;
-	margin: 0px auto;
-
-	.topInfoCreate {
-
-		.help {
-			line-height: 30px;
-		}
-
-		p {
-			float: left;
-			margin-right: 5px;
-		}
-
-		.fa-question-circle {
-			float: left;
-			font-size: 1.7rem;
-		}
-	}
-
-	.contactForm {
-
-		input {
-			width: 90%;
-		}
-	}
-
-	.createForm {
-
-		input {
-			width: 90%;
-		}
-	}
-
-	.submitButton {
-		text-align: center;
-		height: 40px;
-		margin: 10px;
-	}
+    padding: 20px;
+    background-color: $sectionBackground;
+    max-width: 700px; 
+    margin: 0px auto; 
 }
 
-.newAccount {
-	padding: 5px;
-	border-radius: 0.25rem;
-	text-align: center;
-	margin: 0px auto;
+input { /*--input settings--*/
+    margin-bottom: 20px; 
 
-	a {
-		color: $interactiveHover;
-		font-weight: 700;
-	}
+    &[type="text"] { /*--username / email / password etc.--*/
+        background-color: $defaultColor;
+    }
+
+    &[type="submit"] { /*--submit button--*/
+        width: 5.5rem;
+        height: 2.2rem; 
+        color: $defaultColor; 
+        background-color: $buttonColor;
+        -webkit-border-radius:0.25rem;
+        -moz-border-radius: 0.25rem;
+        border-radius: 0.25rem;
+
+        &:hover {
+            background-color: $interactiveHover;
+            cursor: pointer;
+        }
+    }
+
+    &[type="file"] {
+        background-color: $defaultColor;
+        color: $tabs; 
+
+        &:focus {
+            outline: none;
+            border: solid 1px $buttonColor;
+            cursor: pointer;
+        }
+
+    }
+
+    &[type="radio"] {
+        cursor: pointer;
+        margin: 0px; 
+        padding: 0px; 
+        width: 20px; 
+        height: 20px; 
+    }
 }
 
-input {
-	/*--input settings--*/
-	margin-bottom: 20px;
+.button{
+   width: 20%;
+    height: 2.5em;
+    font-size: 2em;
+    font-weight: 400;
+    cursor: pointer;
+}
 
-	&[type="text"] {
-		/*--username / email / password etc.--*/
-		background-color: $defaultColor;
-		-webkit-appearance: none;
-	}
+.button--delete{
+    color: $dangerColor;
+}
 
-	&[type="submit"] {
-		/*--submit button--*/
-		width: 5.5rem;
-		height: 2.2rem;
-		color: $defaultColor;
-		background-color: $buttonColor;
-		-webkit-border-radius: 0.25rem;
-		-moz-border-radius: 0.25rem;
-		border-radius: 0.25rem;
+.message--attention{
+    color: $dangerColor;
+}
 
-		&:hover {
-			background-color: $interactiveHover;
-			cursor: pointer;
-		}
-	}
+.editButtons{  
+    
+    a{
+        color: $defaultColor; 
+    }
+    .fa-pencil{
+        font-size: 1.2rem; 
+    }
 
-	&[type="file"] {
-		background-color: $defaultColor;
-		color: $tabs;
+    .delete{
+        background: $dangerColor; 
+        margin: 10px; 
 
-		&:focus {
-			outline: none;
-			border: solid 1px $buttonColor;
-			cursor: pointer;
-		}
-
-	}
-
-	&[type="radio"] {
-		cursor: pointer;
-		margin: 0px;
-		padding: 0px;
-		width: 20px;
-		height: 20px;
-
-		&:checked {
-			color: $interactiveHover;
-
-		}
-	}
-
-	&[type="checkbox"] {
-		cursor: pointer;
-		margin: 0px;
-		padding: 0px;
-		width: 20px;
-		height: 20px;
-		text-align: left;
-	}
-
+        .fa-trash{
+            font-size: 1.2rem; 
+        }
+    }        
+}
 }
 
 .contactForm {

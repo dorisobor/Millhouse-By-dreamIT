@@ -107,11 +107,9 @@ foreach ($blogposts as $blogpost) {
         <div class= "blogpost__blog-description">
 
         <!-- limits the text to show the first 200 characters -->
-        <?php
-    if (strlen($blogpost['postText']) > 200):
-?>
-          <a href="blogpost.php?view_post=<?= $totalPost['postID']; ?>">
-            <p><?= substr($blogpost['postText'], 0, 200) ?> ...</p>
+        <?php if (strlen($blogpost['postText']) > 200 ): ?>
+          <a href="blogpost.php?view_post=<?= $blogpost['postID']; ?>">
+            <p><?= substr($blogpost['postText'],0,200) ?> ...</p>
           </a>
         <?php
     else:
@@ -137,8 +135,9 @@ foreach ($blogposts as $blogpost) {
 
 
         <div class="commentLink">
-          <i class="fa fa-commenting-o" aria-hidden="true"></i>
-          <a href="blogpost.php?view_post=<?= $blogpost['postID'] . '#comment'; ?>"></a>
+          <a href="blogpost.php?view_post=<?= $blogpost['postID']; ?>">
+          <i class="fa fa-commenting-o" aria-hidden="true"></i> Comments
+          </a>
         </div>
 
         <div class="clear"></div>
