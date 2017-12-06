@@ -103,19 +103,24 @@ require_once 'partials/fetch_all_blogposts.php';
 	 <div class="blogpost__share-button"> <a href="#"> Share <i class="fa fa-share-alt" aria-hidden="true"></i></a>
 	 </div>
 
-	 <div class="editButtons">
-<!--
-        <button>
-          <a href="editPost.php"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
-        </button>
--->
-        <button>
-          <a href="editPost.php?postID=<?=$blogpost['postID'];?>"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
-        </button>
-        
-        <button class="delete">
-          <a href="deleteBlogpost.php?delete_post=<?=$blogpost['postID'];?>"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
-         </button>
+	 <div class="editButtons">	
+
+
+		<!-- ONLY renders if the inlogged user has written the post -->
+		<?php if(getLoggedInUserID() == $blogpost['userID']): ?>
+			<!-- edit button -->
+			<button>
+				<a href="editPost.php?postID=<?=$blogpost['postID'];?>">
+					<i class="fa fa-pencil" aria-hidden="true"></i> Edit
+				</a>
+			</button>
+			<!-- delete button -->
+			<button class="delete" type="button" data-toggle="modal" data-target=".delete-confirmation-modal" 
+			data-postid="<?= $blogpost['postID'] ?>" data-redirect-page="index.php"> 
+				<i class="fa fa-trash" aria-hidden="true"></i> Delete
+			</button>
+		<?php endif; ?>
+
         <form action="blogpost.php" method="post">
 			<div class="commentInput">
 				<div class="commentHr">
@@ -148,6 +153,10 @@ require_once 'partials/fetch_all_blogposts.php';
 //end of loop     
    }
   ?>
+
+<!-- modal that shows if user clicks delete button -->
+<?php require 'modals/modalDeletePost.php'; ?>
+
 </main>
 	
 <?php 
