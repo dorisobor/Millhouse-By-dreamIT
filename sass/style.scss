@@ -355,7 +355,6 @@ input { /*--input settings--*/
 
     &[type="text"] { /*--username / email / password etc.--*/
         background-color: $defaultColor;
-        -webkit-appearance: none;
     }
 
     &[type="submit"] { /*--submit button--*/
