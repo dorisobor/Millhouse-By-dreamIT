@@ -97,8 +97,8 @@ require_once 'partials/fetch_all_blogposts.php';
 	</figure>
 	<div class="blogpost__blog-description">
 	
-	   <p><?=$blogpost['postText'];?>
-		</p>
+	   <p><?=$blogpost['postText'];?></p>
+	   <br>
 
 	 <div class="blogpost__share-button"> <a href="#"> Share <i class="fa fa-share-alt" aria-hidden="true"></i></a>
 	 </div>

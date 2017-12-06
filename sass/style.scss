@@ -215,10 +215,11 @@ article button{
     float: left; 
     background: $headLineColor; 
     width: 150px; 
-    height: 30px;     
+    height: 35px;     
     text-align: center; 
     color: $defaultColor; 
     border-radius: 0.25rem; 
+    padding: 4px; 
 
     .fa-commenting-o{
         font-size: 1.5rem; 
@@ -402,24 +403,24 @@ input { /*--input settings--*/
     color: $dangerColor;
 }
 
-.editButtons{   
+.editButtons{  
     
-                a{
-                    color: $defaultColor; 
-                }
-                .fa-pencil{
-                    font-size: 1.2rem; 
-                }
-            
-                .delete{
-                    background: $dangerColor; 
-    
-                    .fa-trash{
-                        font-size: 1.2rem; 
-                    }
-            }
-             
+    a{
+        color: $defaultColor; 
     }
+    .fa-pencil{
+        font-size: 1.2rem; 
+    }
+
+    .delete{
+        background: $dangerColor; 
+        margin: 10px; 
+
+        .fa-trash{
+            font-size: 1.2rem; 
+        }
+    }        
+}
 
 .createForm__label {
     text-align: left;

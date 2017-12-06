@@ -105,7 +105,7 @@ require_once 'partials/navbar.php';
 
         <!-- limits the text to show the first 200 characters -->
         <?php if (strlen($blogpost['postText']) > 200 ): ?>
-          <a href="blogpost.php?view_post=<?= $totalPost['postID']; ?>">
+          <a href="blogpost.php?view_post=<?= $blogpost['postID']; ?>">
             <p><?= substr($blogpost['postText'],0,200) ?> ...</p>
           </a>
         <?php else: ?>
@@ -127,8 +127,9 @@ require_once 'partials/navbar.php';
         </div>
 
         <div class="commentLink">
-          <i class="fa fa-commenting-o" aria-hidden="true"></i>
-          <a href="blogpost.php?view_post=<?= $blogpost['postID'].'#comment'; ?>"></a>
+          <a href="blogpost.php?view_post=<?= $blogpost['postID']; ?>">
+          <i class="fa fa-commenting-o" aria-hidden="true"></i> Comments
+          </a>
         </div>
 
         <div class="clear"></div>
