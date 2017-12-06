@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
         $emailError = true;        
     }
     //checks if user has a vaild email i.e. if the input has a @ in it
-    if (strpbrk($_POST['user-bio'], '@')  == false){
+    if (!strpbrk($_POST['email'], '@')){
         $emailIsNotValid = true;
     }
     //checks if the user has filled in the passwords field with the same email
