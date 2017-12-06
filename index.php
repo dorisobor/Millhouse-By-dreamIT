@@ -16,9 +16,7 @@ unset($_SESSION['postDeleted']);
 <html lang="en">
 
 <head>
-    <?php
-require 'head.html';
-?>
+    <?php require 'head.html'; ?>
     <title>Millhouse blog</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
