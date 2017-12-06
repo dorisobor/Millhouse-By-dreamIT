@@ -1,23 +1,25 @@
-
-@import 'profilePage.scss'; 
+@import 'profilePage.scss';
 @import 'latestComments.scss';
 @import 'nav.scss';
 @import 'help-page.scss';
 @import 'logoheader.scss';
 @import 'jimmyFooter.scss';
-@import 'category.scss'; 
-@import 'login.scss'; 
+@import 'category.scss';
+@import 'login.scss';
 
 
 @font-face {
-    font-family: 'helveticaneueregular';
-    src: url('fonts/helveticaneue/helveticaneue-webfont.woff2') format('woff2'),
-    url('fonts/helveticaneue/helveticaneue-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'helveticaneueregular';
+	src: url('fonts/helveticaneue/helveticaneue-webfont.woff2') format('woff2'),
+	url('fonts/helveticaneue/helveticaneue-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
 }
 
-$millhouseFont: 'helveticaneueregular', Helvetica, Arial, sans-serif;
+$millhouseFont: 'helveticaneueregular',
+Helvetica,
+Arial,
+sans-serif;
 $sectionBackground:#f2f2f2;
 $defaultColor:#fff;
 $textColor:#262626;
@@ -28,270 +30,314 @@ $tabs:#6d6d6d;
 $dangerColor:#cc4750;
 
 .navbar {
-    border-top: 1px solid $sectionBackground;
+	border-top: 1px solid $sectionBackground;
 }
 
-.jumbotron_indexHeader{
-    display: block;
-    margin-bottom: 0px;
-    background-image: url("images/mh_jumbo.png"), url("../images/mh_jumbo.png");
-    background-color: #cccccc;
-    background-size: cover;
-    background-position: center; 
-    width: 100%;
-    height: 300px;
+.jumbotron_indexHeader {
+	display: block;
+	margin-bottom: 0px;
+	background-image: url("images/mh_jumbo.png"), url("../images/mh_jumbo.png");
+	background-color: #cccccc;
+	background-size: cover;
+	background-position: center;
+	width: 100%;
+	height: 300px;
 }
 
 body {
-    font-family: 'helveticaneueregular', Helvetica, Arial, sans-serif;
-    font-weight: normal;
-    font-style: normal;
-    padding: 0px;
-    margin: 0px;
-    background: $defaultColor;
-    font-size: 16px;
-    color: $textColor;
+	font-family: 'helveticaneueregular', Helvetica, Arial, sans-serif;
+	font-weight: normal;
+	font-style: normal;
+	padding: 0px;
+	margin: 0px;
+	background: $defaultColor;
+	font-size: 16px;
+	color: $textColor;
 }
 
 main {
-    margin:auto;
-    padding: 0px;
+	margin: auto;
+	padding: 0px;
 }
 
 .figures {
-    display: none;
- }
+	display: none;
+}
 
 hr {
-    display:block;
-    max-width: 900px; 
- }
-
-h1{
-    padding: 0px; 
-    margin: 0px; 
-    color: $interactiveHover; 
+	display: block;
+	max-width: 900px;
 }
 
-figure{
-    text-align: center;
+h1 {
+	padding: 0px;
+	margin: 0px;
+	color: $interactiveHover;
 }
 
-.clear{
-    clear: both; 
+figure {
+	text-align: center;
 }
 
-.paginations{
-    text-align: center;
-    padding: 10px;
-    
-    a{
-        color: $interactiveHover; 
-        margin: 20px; 
-    }
+.clear {
+	clear: both;
+}
+
+.paginations {
+	text-align: center;
+	padding: 10px;
+
+	a {
+		color: $interactiveHover;
+		margin: 20px;
+	}
 }
 
 /*---CATEGORY PAGES---*/
 
-p{
-    margin: 0px;
+p {
+	margin: 0px;
 }
 
-.mainBody{
-    margin: 0px auto; 
-    padding: 20px;    
+.mainBody {
+	margin: 0px auto;
+	padding: 20px;
 }
 
-article{
-    padding: 15px; 
+article {
+	padding: 15px;
 }
 
-article button{
-    background: $buttonColor; 
-    color: $defaultColor; 
-    border: none; 
-    width: 70px; 
-    padding: 5px; 
+article button {
+	background: $buttonColor;
+	color: $defaultColor;
+	border: none;
+	width: 70px;
+	padding: 5px;
 }
 
-.categoryPosts{
-    background-color: $sectionBackground; 
+.categoryPosts {
+	background-color: $sectionBackground;
 }
 
-.coverPhoto{
-    padding: 0px; 
-    margin: 0px;
+.coverPhoto {
+	padding: 0px;
+	margin: 0px;
 }
 
-.coverPhoto img{
-    display: block; 
-    width: 100%; 
-    max-height: 300px; 
-    object-fit: cover; 
+.coverPhoto img {
+	display: block;
+	width: 100%;
+	max-height: 300px;
+	object-fit: cover;
 }
 
 /*---BLOGPOST---*/
 
 .blogpost {
- background-color: $sectionBackground;
- padding:20px;
+	background-color: $sectionBackground;
+	padding: 20px;
 }
 
- /* category button */
+/* category button */
 
- .blogpost__category-button{
-    background-color: $buttonColor;
-    color: $defaultColor;
-    margin-bottom: 10px; 
+.blogpost__category-button {
+	background-color: $buttonColor;
+	color: $defaultColor;
+	margin-bottom: 10px;
 }
 
- /* user info */
+/* user info */
 
 .blogpost__user-info {
-    max-width: 350px; 
+	max-width: 350px;
 
-    .user-image__container{
-        font-size: 3em; 
-        float: left; 
-        width: 15%; 
-    }
+	.user-image__container {
+		font-size: 3em;
+		float: left;
+		width: 15%;
+	}
 
-    .user-image__image {
-        width: 50px;
-        vertical-align: text-top;
-    }
+	.user-image__image {
+		width: 50px;
+		vertical-align: text-top;
+	}
 
-    .blogpost__content-username{
-        float: left;
-        width: 80%; 
-        padding: 10px; 
-        margin-left: 10px; 
-    }
+	.blogpost__content-username {
+		float: left;
+		width: 80%;
+		padding: 10px;
+		margin-left: 10px;
+	}
 
-    p{
-        margin: 0px;
-        padding: 0px; 
-    }
+	p {
+		margin: 0px;
+		padding: 0px;
+	}
 }
 
-   /* blogpost heading */
+/* blogpost heading */
 
-   h2 {
-       color: $textColor;
-   }
- 
-   /* blogimage */
+h2 {
+	color: $textColor;
+}
 
- img {
- max-width: 100%;
- }
+/* blogimage */
+
+img {
+	max-width: 100%;
+}
 
 .blogpost__blog-description {
-    color: $textColor;
+	color: $textColor;
 }
 
 /* read more link*/
-
 .blogpost__read-more {
-    text-align: right; 
-    margin-top: 10px; 
-    font-style: italic; 
-}
-    
-    /* share icon */
-   
-.blogpost__share-button{
-    float: right;
-    max-width: 30%; 
-    
-    .fa-share-alt{
-        font-size: 2em;
-    }
+	text-align: right;
+	margin-top: 10px;
+	font-style: italic;
 }
 
-    /* comment link */
+/* share icon */
 
-.commentLink{
-    float: left; 
-    background: $headLineColor; 
-    width: 150px; 
-    height: 30px;     
-    text-align: center; 
-    color: $defaultColor; 
-    border-radius: 0.25rem; 
+.blogpost__share-button {
+	float: right;
+	max-width: 30%;
 
-    .fa-commenting-o{
-        font-size: 1.5rem; 
-    }
+	.fa-share-alt {
+		font-size: 2em;
+	}
+	.dropdown-menu {
+		text-align: center;
+		min-width: 8rem;
+		.gmail {
+			right: 0.9rem;
+			position: relative;
+		}
 
-    a{
-        color: $defaultColor; 
-    }
+	}
+}
 
-    .commentHr{
-        width: 100%; 
-    }
+/* comment link */
+
+.commentLink {
+	float: left;
+	background: $headLineColor;
+	width: 150px;
+	height: 30px;
+	text-align: center;
+	color: $defaultColor;
+	border-radius: 0.25rem;
+
+	.fa-commenting-o {
+		font-size: 1.5rem;
+	}
+
+	a {
+		color: $defaultColor;
+	}
+
+	.commentHr {
+		width: 100%;
+	}
 }
 
 
-.commentInput{
+.commentInput {
 
-    textarea{
-        width: 100%; 
-    }
+	textarea {
+		width: 100%;
+	}
 
-    .commentButton{
-        height: 2rem; 
-    }
+	.commentButton {
+		height: 2rem;
+	}
 }
+
 
 /*--FORMS--*/
 
-.form_wrapper {
-    padding: 20px;
-    background-color: $sectionBackground;
-    max-width: 700px; 
+/*--create post form--*/
+.create_wrapper{
     margin: 0px auto; 
+    max-width: 600px; 
+}
 
-    .topInfoCreate{
+.createForm__label {
+    text-align: left;
+}
 
-        .help{
-            line-height: 30px; 
-        }
-
-        p{
-            float: left;
-            margin-right: 5px; 
-        }
-
-        .fa-question-circle{
-            float: left; 
-            font-size: 1.7rem; 
-        }
+.topInfoCreate{
+    
+    .help{
+        line-height: 30px; 
     }
 
-    .contactForm{
-        
-        input{
-            width: 90%; 
-        }
+    p{
+        float: left;
+        margin-right: 5px; 
     }
 
-    .createForm{
-
-        input{
-            width: 90%; 
-        }
+    .fa-question-circle{
+        float: left; 
+        font-size: 1.7rem; 
     }
+}
+    
+.createForm{
 
-    .submitButton{
-        text-align: center; 
-        height: 40px; 
-        margin: 10px; 
+    input{
+        width: 100%; 
     }
 }
 
-.newAccount{
+.submitButton{
+    text-align: center; 
+    height: 40px; 
+    margin: 10px; 
+}
+
+/*--edit post form--*/
+.edit_wrapper{
+    margin: 0px auto; 
+    max-width: 600px;
+}
+
+
+/*--register form--*/
+.register_wrapper{
+    margin: 0px auto; 
+    max-width: 500px;
+
+    label{
+        width: 100%; 
+    }
+
+    input{
+        width: 100%; 
+    }
+    
+    textarea{
+        width: 100%; 
+    }
+}
+
+.registerForm__input {
+    margin: 0px auto;
+    max-width: 600px;
+    text-align: left;
+
+    label{
+        width: 100%; 
+    }
+
+    input{
+        width: 100%; 
+    }
+}
+
+.registerForm__newAccount-link{
     padding: 5px; 
     border-radius: 0.25rem; 
     text-align: center; 
@@ -303,12 +349,21 @@ article button{
     }
 }
 
+
+/*--general for forms--*/
+
+.form_wrapper {
+    padding: 20px;
+    background-color: $sectionBackground;
+    max-width: 700px; 
+    margin: 0px auto; 
+}
+
 input { /*--input settings--*/
     margin-bottom: 20px; 
 
     &[type="text"] { /*--username / email / password etc.--*/
         background-color: $defaultColor;
-        -webkit-appearance: none;
     }
 
     &[type="submit"] { /*--submit button--*/
@@ -344,45 +399,6 @@ input { /*--input settings--*/
         padding: 0px; 
         width: 20px; 
         height: 20px; 
-
-        &:checked {
-            color: $interactiveHover;
-
-        }
-    }
-
-    &[type="checkbox"] {
-        cursor: pointer;
-        margin: 0px; 
-        padding: 0px; 
-        width: 20px; 
-        height: 20px; 
-        text-align: left; 
-    }
-
-}
-
-.contactForm{
-    
-        .textarea { /*--change your profile description--*/
-            width: 90%;
-            height: 100px;
-            background-color: $defaultColor;    
-            margin-bottom: 15px; 
-        }
-    }
-
-.createForm{
-
-    .textarea { /*--change your profile description--*/
-        width: 90%;
-        height: 400px;
-        background-color: $defaultColor;    
-        margin-bottom: 15px; 
-    }
-
-    .cke_chrome{
-        width: 90%; 
     }
 }
 
@@ -402,112 +418,182 @@ input { /*--input settings--*/
     color: $dangerColor;
 }
 
-.editButtons{   
+.editButtons{  
     
-                a{
-                    color: $defaultColor; 
-                }
-                .fa-pencil{
-                    font-size: 1.2rem; 
-                }
-            
-                .delete{
-                    background: $dangerColor; 
-    
-                    .fa-trash{
-                        font-size: 1.2rem; 
-                    }
-            }
-             
+    a{
+        color: $defaultColor; 
+    }
+    .fa-pencil{
+        font-size: 1.2rem; 
     }
 
+    .delete{
+        background: $dangerColor; 
+        margin: 10px; 
+
+        .fa-trash{
+            font-size: 1.2rem; 
+        }
+    }        
+}
+}
+
+.contactForm {
+
+	.textarea {
+		/*--change your profile description--*/
+		width: 90%;
+		height: 100px;
+		background-color: $defaultColor;
+		margin-bottom: 15px;
+	}
+}
+
+.createForm {
+
+	.textarea {
+		/*--change your profile description--*/
+		width: 90%;
+		height: 400px;
+		background-color: $defaultColor;
+		margin-bottom: 15px;
+	}
+
+	.cke_chrome {
+		width: 90%;
+	}
+}
+
+.button {
+	width: 20%;
+	height: 2.5em;
+	font-size: 2em;
+	font-weight: 400;
+	cursor: pointer;
+}
+
+.button--delete {
+	color: $dangerColor;
+}
+
+.message--attention {
+	color: $dangerColor;
+}
+
+.editButtons {
+
+	a {
+		color: $defaultColor;
+	}
+	.fa-pencil {
+		font-size: 1.2rem;
+	}
+
+	.delete {
+		background: $dangerColor;
+
+		.fa-trash {
+			font-size: 1.2rem;
+		}
+	}
+
+}
+
 .createForm__label {
-    text-align: left;
+	text-align: left;
+}
+
+.alert-success {
+	text-align: center;
+	border-radius: 0px;
+}
+
+.alert__text {
+	font-weight: bold;
+	display: inline-block;
 }
 
 /*------HÄR BÖRJAR MEDIA SCREEN----------*/
 
 @media screen and (min-width: 992px) {
-    main {max-width: 900px;}
-    
-    .jumbotron_indexHeader{
-        margin-bottom: 0px;
-        background-image: url("images/mh_jumboBig.png"), url("../images/mh_jumboBig.png");
-        background-color: #cccccc;
-        background-size: cover;
-        background-position: center; 
-        width: 100%;
-        height: 300px;
-    }
-    
-    .figures {
-        display: flex;
-        flex-direction: row;
-        padding: 10px; 
-    
-        figure {
-            margin:  0 auto;
-        
-        .figures__category-image {
-            height:300px;
-            width:300px;
-            padding: 10px; 
-        }
+	main {
+		max-width: 900px;
+	}
 
-            figcaption{
-                text-align: center;
-                color: $headLineColor;
-            }
-        }   
-    }
+	.jumbotron_indexHeader {
+		margin-bottom: 0px;
+		background-image: url("images/mh_jumboBig.png"), url("../images/mh_jumboBig.png");
+		background-color: #cccccc;
+		background-size: cover;
+		background-position: center;
+		width: 100%;
+		height: 300px;
+	}
 
-.coverPhoto img{
-    display: block; 
-    width: 100%; 
-    height: 400px; 
-    object-fit: cover; 
-    background-position: center; 
+	.figures {
+		display: flex;
+		flex-direction: row;
+		padding: 10px;
+
+		figure {
+			margin: 0 auto;
+
+			.figures__category-image {
+				height: 300px;
+				width: 300px;
+				padding: 10px;
+			}
+
+			figcaption {
+				text-align: center;
+				color: $headLineColor;
+			}
+		}
+	}
+
+	.coverPhoto img {
+		display: block;
+		width: 100%;
+		height: 400px;
+		object-fit: cover;
+		background-position: center;
+	}
+
+	.createForm {
+
+		.cke_chrome {
+			width: 90%;
+			margin: 0px auto;
+		}
+	}
+
+	fieldset {
+
+		label {
+			text-align: left;
+		}
+	}
+
+	.topInfo {
+		margin: 0px 0px 30px 30px;
+	}
+
+	.topInfoCreate {
+		margin-left: 30px;
+	}
+
+	.createButton {
+		text-align: left;
+		margin-left: 30px;
+	}
+
+	.checkboxWrapper {
+		text-align: left;
+		margin-left: 30px;
+	}
+
+	.form_heading {
+		margin-left: 30px;
+	}
+
 }
-
-.createForm{
-    
-    .cke_chrome{
-        width: 90%; 
-        margin: 0px auto; 
-    }
-}
-
-fieldset{
-
-    label{
-        text-align: left; 
-    }
-}  
-
-.topInfo{
-    margin: 0px 0px 30px 30px;
-}
-
-.topInfoCreate{
-    margin-left: 30px; 
-}  
-
-.createButton{
-    text-align: left; 
-    margin-left: 30px; 
-}
-
-.checkboxWrapper{
-    text-align: left; 
-    margin-left: 30px; 
-}
-
-.form_heading{
-    margin-left: 30px; 
-}
-
-}
-
-
-
-   

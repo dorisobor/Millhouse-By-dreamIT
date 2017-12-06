@@ -9,7 +9,7 @@
                 </div>
                 <div class="modal-body">
                     <p>Are your sure you want to delete this comment?
-					   Once you've deleted it, the comment cant be re-created.
+					   Once you've deleted it, the comment can't be re-created.
 					</p>
                 </div>
                 <div class="modal-footer">

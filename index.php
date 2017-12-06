@@ -1,6 +1,6 @@
-<?php 
-session_start();         
-require_once 'partials/db.php'; 
+<?php
+session_start();
+require_once 'partials/db.php';
 require_once 'functions.php';
 require_once 'partials/fetch_all_blogposts.php';
 ?>
@@ -9,14 +9,17 @@ require_once 'partials/fetch_all_blogposts.php';
 <html lang="en">
 
 <head>
-    <?php require 'head.html'; ?>
+    <?php
+require 'head.html';
+?>
     <title>Millhouse blog</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
 <body>
 
 <!-- header with millhouselogo and navbar -->
-<?php 
+<?php
 require 'logoheader.html';
 require_once 'partials/navbar.php';
 ?>
@@ -64,17 +67,17 @@ require_once 'partials/navbar.php';
     
       <h1>Latest Stories</h1>
     
-      <?php 
-        //foreach to show all the blogposts and sort the 5 latest posts
-        foreach($blogposts as $blogpost) {
-      ?>
+      <?php
+//foreach to show all the blogposts and sort the 5 latest posts
+foreach ($blogposts as $blogpost) {
+?>
    
 	    <article class="blogpost">
       
         <!-- clickable categorylabel -->
         <div class="blogpost__category-tag">
           <a class="blogpost__category-link" href="category<?= $blogpost['categoryName'] ?>.php">
-            <?= $blogpost['categoryName']?>
+            <?= $blogpost['categoryName'] ?>
           </a>
         </div>
   
@@ -86,14 +89,14 @@ require_once 'partials/navbar.php';
             <!-- userinformation -->
             <div class="blogpost__content-username">
                 <p class="username">Author: <?= $blogpost['username'] ?></p>
-                <time><p>Date: <?= substr($blogpost['postDate'],0,16)?></p></time>
+                <time><p>Date: <?= substr($blogpost['postDate'], 0, 16) ?></p></time>
             </div>
         </div>
     
         <div class="clear"></div>
 
         <!-- blog title -->
-        <h2><?=$blogpost['postTitle'];?></h2>
+        <h2><?= $blogpost['postTitle']; ?></h2>
       
         <!-- blogpicture -->
         <figure>
@@ -105,14 +108,18 @@ require_once 'partials/navbar.php';
 
         <!-- limits the text to show the first 200 characters -->
         <?php if (strlen($blogpost['postText']) > 200 ): ?>
-          <a href="blogpost.php?view_post=<?= $totalPost['postID']; ?>">
+          <a href="blogpost.php?view_post=<?= $blogpost['postID']; ?>">
             <p><?= substr($blogpost['postText'],0,200) ?> ...</p>
           </a>
-        <?php else: ?>
+        <?php
+    else:
+?>
           <a href="blogpost.php?view_post=<?= $blogpost['postID']; ?>">
             <p><?= $blogpost['postText'] ?></p>
           </a>
-        <?php endif; ?>
+        <?php
+    endif;
+?>
 
         <!-- a read more link -->
         <div class="blogpost__read-more">
@@ -121,37 +128,43 @@ require_once 'partials/navbar.php';
           </a>
         </div>
         <br>
+       <!-- a share button link -->
+       <?php
+    require 'partials/shareButton.php';
+?>
 
-        <div class="blogpost__share-button"> 
-          <a href="#"> Share <i class="fa fa-share-alt" aria-hidden="true"></i></a>
-        </div>
 
         <div class="commentLink">
-          <i class="fa fa-commenting-o" aria-hidden="true"></i>
-          <a href="blogpost.php?view_post=<?= $blogpost['postID'].'#comment'; ?>"></a>
+          <a href="blogpost.php?view_post=<?= $blogpost['postID']; ?>">
+          <i class="fa fa-commenting-o" aria-hidden="true"></i> Comments
+          </a>
         </div>
 
         <div class="clear"></div>
 
 		</div>
 	</article>
-<?php 
-//end of loop     
+<?php
+    //end of loop     
 }
 ?>
 
 <!-- user gets a message if theres no posts published -->
-<?php require 'messages/messageEmptyHome.php';?>
+<?php
+require 'messages/messageEmptyHome.php';
+?>
 
 </div>
 
-<?php require 'pagination.php' ?>
+<?php
+require 'partials/pagination.php';
+?>
 
 </main>
 
-<?php 
+<?php
 require 'partials/footer.php';
-require_once 'bootstrapScripts.html'; 
+require_once 'bootstrapScripts.html';
 ?>
 
 </body>
