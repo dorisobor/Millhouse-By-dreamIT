@@ -24,7 +24,10 @@ if(isset($_POST['publish'])){
     $statement->bindParam(':userID', $userID);    
     $statement->bindParam(':categoryID', $categoryID);
     $statement->bindParam(':imageName', $_FILES['upload']['name']);
-    $statement->execute();     
+    $statement->execute();
+    $postID = $pdo->lastInsertId();    
+    return $postID; 
+    
 }
 
 

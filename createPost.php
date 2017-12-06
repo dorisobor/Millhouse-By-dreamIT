@@ -41,8 +41,14 @@ if(isset($_FILES['upload'])){
  
 <main>
     <div class="main">
+
+        <?php if(isset($_POST['publish'])): ?>
+           <?php require 'messages/messageCreatePostConfirm.php';?>
+        <?php endif; ?>
+        
         <div class="mainBody">
             <div class="form_wrapper">
+            
                     <form class="form"  method="post" enctype="multipart/form-data">
                         <div class="topInfoCreate">
                             <legend class="legend">
@@ -94,21 +100,21 @@ if(isset($_FILES['upload'])){
                             <div class="createButton">
                                 <input type="submit" value="Publish" name="publish">
                             </div>
-                            <button type="button">
-                                <a href="blogpost.php?view_post=<?= $last_id ?>">View post</a>
-                            </button>
                             
                             </div> 
                         </fieldset>
                     </form>
                 </div>
-
+</main>
          
 <script>
     CKEDITOR.replace( 'postText' );
 </script>
 
-<?php 
+
+
+<?php
+           
 require 'partials/footer.php';
 require 'bootstrapScripts.html'; 
 ?>
