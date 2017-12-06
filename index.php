@@ -1,6 +1,6 @@
-<?php 
-session_start();         
-require_once 'partials/db.php'; 
+<?php
+session_start();
+require_once 'partials/db.php';
 require_once 'functions.php';
 require_once 'partials/fetch_all_blogposts.php';
 
@@ -16,14 +16,17 @@ unset($_SESSION['postDeleted']);
 <html lang="en">
 
 <head>
-    <?php require 'head.html'; ?>
+    <?php
+require 'head.html';
+?>
     <title>Millhouse blog</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
 <body>
 
 <!-- header with millhouselogo and navbar -->
-<?php 
+<?php
 require 'logoheader.html';
 require_once 'partials/navbar.php';
 ?>
@@ -147,8 +150,8 @@ require_once 'partials/navbar.php';
 
 		  </div>
 	</article>
-<?php 
-//end of loop     
+<?php
+    //end of loop     
 }
 ?>
 
@@ -157,13 +160,15 @@ require_once 'partials/navbar.php';
 
 </div>
 
-<?php require 'pagination.php' ?>
+<?php
+require 'partials/pagination.php';
+?>
 
 </main>
 
-<?php 
+<?php
 require 'partials/footer.php';
-require_once 'bootstrapScripts.html'; 
+require_once 'bootstrapScripts.html';
 ?>
 
 </body>
