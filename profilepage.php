@@ -159,6 +159,8 @@ require 'partials/navbar.php';
 <!-- shows a message to user if sh/e doesn't have any posts -->
 <?php require 'messages/messageEmptyProfileAllPosts.php'; ?>
 
+</div>
+
 <!-- popup window connected to delete button (ie delete confirmation) -->
 <?php require 'modals/modalDeletePost.php'; ?>
 
