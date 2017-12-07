@@ -128,17 +128,11 @@ foreach($blogposts as $blogpost) {
 				</div>
 				<p id="comment">Comment on this Story</p>
 		        <input type="hidden" id="postID" name="postID" value="<?= $postID ?>">
-				<?php
-				//  foreach($comments as $commentRow) {
-				// 	 foreach($commentRow as $comment => $value){
-				// 		echo $comment['commentText'];
-				// 		echo "<br>";
-				// 	}
-				// }
-				?>
+
+
 				<textarea class="textarea" id="message" rows="6" cols="50" name="comment" placeholder="Write comment here..." required> </textarea>
 			</div>
-        		<form action="blogpost.php?view_post=<?= $blogpost['postID']; ?>" method="post">
+        		<form action="pages/blogpost.php?view_post=<?= $blogpost['postID']; ?>" method="post">
 			<div class="commentInput">
 				<div class="commentHr">
 					<hr>
