@@ -19,7 +19,7 @@ if(isset($_FILES['upload'])){
     $filename = $_FILES['upload']['name'];
         
     // Move the image file from $path to folder images
-    if(move_uploaded_file($path, 'images/' . $filename)){
+    if(move_uploaded_file($path, '../images/' . $filename)){
     // Insert file in database. 
         $statement  = $pdo->prepare("
             INSERT INTO images 

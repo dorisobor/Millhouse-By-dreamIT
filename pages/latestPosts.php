@@ -101,10 +101,16 @@ require DIRBASE . 'partials/navbar.php';
 			<date><p class="blogpost__date">Publish date: <?= substr($latestPost['postDate'], 0, 16) ?></p></date>
 			<h2 class="blogpost__title"><?= $latestPost['postTitle'] ?></h2>
 
-			<!-- blogpost image -->
-			<figure>
-				<img src="images/<?= $latestPost['imageName'] ?>" alt="image for the blogpost">
-			</figure>
+			 <!-- blogpicture, if there is no picture, no alt tag is set -->
+			 <?php if (empty($blogpost['imageName'])): ?>
+				<figure>
+					<img src="images/<?= $latestPost['imageName'] ?>" alt="">
+				</figure>
+          	<?php else: ?>
+				<figure>
+					<img src="images/<?= $latestPost['imageName'] ?>" alt="image for the blogpost">
+				</figure>
+          	<?php endif; ?>
 
 			<div class="clear"></div> 
 

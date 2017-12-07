@@ -56,10 +56,16 @@ require DIRBASE . 'partials/navbar.php';
 			<!-- blogpost title -->
 			<h2><?= $blogpost['postTitle'] ?></h2>
 
-			<!-- blogpost image -->
-			<figure>
-				<img src="images/<?= $blogpost['imageName'] ?>" alt="image for the blogpost">
-			</figure>
+			<!-- blogpicture, if there is no picture, no alt tag is set -->
+			<?php if (empty($blogpost['imageName'])): ?>
+				<figure>
+					<img src="images/<?= $blogpost['imageName'] ?>" alt="">
+				</figure>
+			<?php else: ?>
+				<figure>
+					<img src="images/<?= $blogpost['imageName'] ?>" alt="image for the blogpost">
+				</figure>
+			<?php endif; ?>
 
 			<!-- prints out the preview of the post, if it has more than 200
 			chars 3 dots appear to show the user that theres more to read -->

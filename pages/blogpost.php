@@ -90,9 +90,16 @@ foreach($blogposts as $blogpost) {
 		<!-- blogtitle -->
 		<h2><?=$blogpost['postTitle'];?></h2>
 
-		<!-- blogimage -->
-			<img src="images/<?= $blogpost['imageName'] ?>" alt="image for the blogpost">
-		</figure>
+		 <!-- blogpicture, if there is no picture, no alt tag is set -->
+		 <?php if (empty($blogpost['imageName'])): ?>
+            <figure>
+              <img src="images/<?= $blogpost['imageName'] ?>" alt="">
+            </figure>
+          <?php else: ?>
+            <figure>
+              <img src="images/<?= $blogpost['imageName'] ?>" alt="image for the blogpost">
+            </figure>
+          <?php endif; ?>
 
 		<div class="blogpost__blog-description">
 			<p>
