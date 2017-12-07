@@ -43,20 +43,13 @@ require DIRBASE . 'partials/navbar.php';
 			
 			<!-- userimage (deafault = user icon) -->
 			<div class="user-image__container">
-				<img class="user-image__image" src="<?= $user['userAvatar'] ?>"/>
+				<img class="user-image__image" src="<?= $user['userAvatar'] ?>" alt="user icon"/>
 			</div>
 
 			<!-- username and userdescription -->
 			<div class="profileBox__content-username">
 				<p class="username"><?= $user['username'] ?></p>
 				<p class="aboutMe"><?= $user['userBio'] ?></p>
-			</div>
-
-			<!-- icon for user settings -->
-			<div class="settingsIcon">
-				<button class="settings">
-					<a href="pages/settings.php"><i class="fa fa-cog" aria-hidden="true"></i></a>
-				</button>
 			</div>
         </div>
 				
@@ -130,7 +123,8 @@ require DIRBASE . 'partials/navbar.php';
 
 				<!-- link that leads to fullview of chosen post -->
 				<div class="blogpost__read-more">
-					<a href="pages/blogpost.php?view_post=<?=$latestPost['postID'];?>">
+					<a href="pages/blogpost.php?view_post=<?=$latestPost['postID'];?>"
+					aria-label="click here to read the entire post">
 						Read More <i class="fa fa-chevron-right" aria-hidden="true"></i>
 					</a>
 				</div>
@@ -141,7 +135,7 @@ require DIRBASE . 'partials/navbar.php';
 				<!-- buttons for delete and edit post -->
 				<div class="editButtons">
 					<button>
-          					<a href="pages/editPost.php?postID=<?=$latestPost['postID'];?>"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
+          				<a href="pages/editPost.php?postID=<?=$latestPost['postID'];?>"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
  					</button>
 					<button class="delete" type="button" data-toggle="modal" data-target=".delete-confirmation-modal"
 					data-postid="<?= $latestPost['postID'] ?>" data-redirect-page="pages/latestPosts.php">

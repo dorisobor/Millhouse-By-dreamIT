@@ -4,6 +4,12 @@ require_once '../config.php';
 require_once DIRBASE . 'database/actions/insert.php';
 require_once DIRBASE . 'database/functions.php';
 
+//if user is not logged in sh/e gets redirected to home
+if (!isLoggedIn()){
+	header('Location: pages/login.php');
+	return;
+}
+
 if(isset($_FILES['upload'])){
     require_once DIRBASE . 'database/db.php';
     $imageInfo = $_FILES['upload'];
@@ -59,7 +65,8 @@ require DIRBASE . 'partials/navbar.php';
                             </legend>
                             <div class="help">
                                 <p>Fields marked with * is mandatory. Need help? Press the icon </p>
-                                <p><a href="pages/help.php"><i class="fa fa-question-circle" aria-hidden="true"></i></a></p>
+                                <p><a href="pages/help.php" aria-label="click here if you want read FAQ">
+                                <i class="fa fa-question-circle" alt="questionmark" aria-hidden="true"></i></a></p>
                             </div>
                         </div>
                         <br><br>
