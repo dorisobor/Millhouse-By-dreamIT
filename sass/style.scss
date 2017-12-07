@@ -1,12 +1,6 @@
 @import 'profilePage.scss';
-@import 'latestComments.scss';
-@import 'nav.scss';
-@import 'help-page.scss';
-@import 'logoheader.scss';
 @import 'jimmyFooter.scss';
 @import 'category.scss';
-@import 'login.scss';
-
 
 @font-face {
 	font-family: 'helveticaneueregular';
@@ -20,6 +14,7 @@ $millhouseFont: 'helveticaneueregular',
 Helvetica,
 Arial,
 sans-serif;
+
 $sectionBackground:#f2f2f2;
 $defaultColor:#fff;
 $textColor:#262626;
@@ -29,8 +24,254 @@ $interactiveHover:#2E52A1;
 $tabs:#6d6d6d;
 $dangerColor:#cc4750;
 
+//navbar
+
 .navbar {
 	border-top: 1px solid $sectionBackground;
+}
+
+
+.navbar {
+    border: 1px solid rgba(0,0,0,.15);
+}
+
+.navbar-brand {
+    margin-right: 0px;
+}
+
+.bg-light {
+    background-color: $defaultColor !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: $textColor;
+    font-weight: bold;
+
+        &:hover {
+            color: $interactiveHover;
+            text-decoration: underline;
+        }
+}
+
+.logo {
+    width: 100px;
+}
+
+.dropdown {
+    margin: 0px;
+}
+
+.sign-up-btn {
+    margin-left: auto;
+    margin-right: 1rem;
+    padding: 8px 10px;
+    border-radius: .25rem;    
+    background-color: $buttonColor;
+    color: $defaultColor;
+    border: none;
+}
+
+.sign-up-btn__link {
+    color: $defaultColor;
+    
+        &:hover {
+            text-decoration: none;
+            color: $defaultColor;
+        }
+}
+
+@media screen and (min-width: 992px){
+    
+    .dropdown-menu-right {
+        right: 0;
+        left: auto;
+        }
+
+    .dropdown-item {
+        color: $textColor;
+
+        &:hover {
+            background-color: $interactiveHover;
+            color: $defaultColor;
+        }
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .user-actions {
+        margin-right: 20px;
+    }
+
+    .user-actions__sign-up-btn {
+        padding: 8px 10px;
+        background-color: $buttonColor;
+        border-radius: .25rem;
+        color: $defaultColor;
+        border: none;
+    }
+
+    .user-actions__link {
+        color: $defaultColor;
+            &:hover {
+                text-decoration: none;
+                color: $defaultColor;
+            }
+    }
+
+    .user-actions__link--black {
+        margin-right: 10px;
+        font-weight: bold;
+        color: $textColor;
+        &:hover {
+            color: $interactiveHover;
+        }
+    }
+
+ }    
+
+
+// help page
+
+
+.help-article-container {
+    padding: 4px;
+    margin: 0px 12px;
+}
+
+.article__wrapper {
+    margin: 0px auto;
+    max-width: 650px;
+    border-right: 1px solid $sectionBackground;
+    border-left: 1px solid $sectionBackground;
+}
+
+.contact {
+    margin: 30px 20px;
+    text-align: center;
+}
+
+.contact__text {
+    display: block;
+}
+
+.contact__link-container {
+    margin: 10px auto;
+    @extend .blogpost__category-tag;
+}
+
+.contact__link {
+    color: $defaultColor;
+
+    &:hover {
+        color: $defaultColor;
+    }
+}
+
+.article__content {
+    margin: 0px auto; 
+    margin: 12px;
+    padding: 12px;
+    background-color: $sectionBackground;
+}
+
+.article__top-header {
+    margin: 20px 0px 0px 10px;
+    color: $headLineColor;
+}
+
+.article__question {
+    margin-left: 0px;
+    padding: 0px;
+    color: $headLineColor;
+}
+
+.article__text {
+    line-height: 1.9;
+}
+
+//latest comments
+
+.dropdown-content{
+    text-align: center;
+}
+
+.container-wrapper{
+   margin: 0px auto;
+   padding: 20px;
+    .container-latestComments{
+        margin: 1em auto;      
+        background-color: $sectionBackground;
+            
+        .deleteButton{
+
+            .deleteComment{
+                background: $dangerColor; 
+                width: 5.5rem; 
+            }
+        }
+            
+            
+    
+    }
+}
+
+
+//login
+.login_wrapper{
+    margin: 0px auto;
+    max-width: 500px;  
+}
+
+.topInfo {
+    margin: 0px auto; 
+    margin-bottom: 30px;
+    
+}
+
+.topInfo__instruction {
+    margin-bottom: 10px;
+}
+
+.form {
+    margin-bottom: 10px;
+}
+
+.loginForm__input {
+    margin: 0px auto;
+    max-width: 600px;
+    text-align: left;
+
+    label{
+        width: 100%; 
+    }
+
+    input{
+        width: 100%; 
+    }
+}
+
+.loginForm__newAccount-link{
+    padding: 5px; 
+    border-radius: 0.25rem; 
+    text-align: center; 
+    margin: 0px auto; 
+
+    a{
+        color: $interactiveHover; 
+        font-weight: 700; 
+    }
+}
+
+.error-msg {
+    display: block;
+    text-align: left;
+    color: $dangerColor;
+}
+
+.login-label {
+    max-width: 500px; 
 }
 
 .jumbotron_indexHeader {
@@ -275,6 +516,7 @@ img {
     }
 
     p{
+		margin-bottom: 30px;
         float: left;
         margin-right: 5px; 
     }
@@ -519,6 +761,17 @@ input { /*--input settings--*/
 		max-width: 900px;
 	}
 
+	.logo-header {
+        width: 100%;
+        height: 70px;
+        text-align: center;
+    }
+
+    .logotype {
+        display: inline-block !important;
+        width: 120px;
+    }
+
 	.jumbotron_indexHeader {
 		margin-bottom: 0px;
 		background-image: url("images/mh_jumboBig.png"), url("../images/mh_jumboBig.png");
@@ -577,18 +830,17 @@ input { /*--input settings--*/
 		margin: 0px 0px 30px 30px;
 	}
 
-	.topInfoCreate {
-		margin-left: 30px;
-	}
+	// .topInfoCreate {
+	// 	margin-left: 30px;
+	// }
 
 	.createButton {
+		margin-top: 30px;
 		text-align: left;
-		margin-left: 30px;
 	}
 
 	.checkboxWrapper {
 		text-align: left;
-		margin-left: 30px;
 	}
 
 	.form_heading {

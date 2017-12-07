@@ -3,15 +3,20 @@ session_start();
 require_once 'partials/db.php';
 require_once 'functions.php';
 require_once 'partials/fetch_all_blogposts.php';
+
+//checks if delete button was pressed och post was deleted
+//if it was deleted variable is used to trigger a message
+//see row 91
+$postIsDeleted = isset($_SESSION['postDeleted']);
+//unsets session in order for message to disappear
+unset($_SESSION['postDeleted']);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <?php
-require 'head.html';
-?>
+    <?php require 'partials/head.html'; ?>
     <title>Millhouse blog</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
@@ -20,7 +25,7 @@ require 'head.html';
 
 <!-- header with millhouselogo and navbar -->
 <?php
-require 'logoheader.html';
+require 'partials/logoheader.html';
 require_once 'partials/navbar.php';
 ?>
 
@@ -65,84 +70,83 @@ require_once 'partials/navbar.php';
 
     <div class="mainBody">
     
+    <!-- triggers message if post was deleted -->
+    <?php if($postIsDeleted): ?>
+           <?php require 'messages/messageDeletePostConfirm.html';?>
+		<?php endif; ?>
+    
       <h1>Latest Stories</h1>
     
-      <?php
-//foreach to show all the blogposts and sort the 5 latest posts
-foreach ($blogposts as $blogpost) {
-?>
+      <?php 
+      //foreach to show all the blogposts and sort the 5 latest posts
+      foreach($blogposts as $blogpost) {
+      ?>
    
-	    <article class="blogpost">
+	      <article class="blogpost">
       
-        <!-- clickable categorylabel -->
-        <div class="blogpost__category-tag">
-          <a class="blogpost__category-link" href="category<?= $blogpost['categoryName'] ?>.php">
-            <?= $blogpost['categoryName'] ?>
-          </a>
-        </div>
+          <!-- clickable categorylabel -->
+          <div class="blogpost__category-tag">
+            <a class="blogpost__category-link" href="category<?= $blogpost['categoryName'] ?>.php">
+              <?= $blogpost['categoryName']?>
+            </a>
+          </div>
   
-        <div class="blogpost__user-info">
-            <div class="user-image__container">
-                <img class="user-image__image" src="<?= $blogpost['userAvatar'] ?>"/>
-            </div>
-            
-            <!-- userinformation -->
-            <div class="blogpost__content-username">
-                <p class="username">Author: <?= $blogpost['username'] ?></p>
-                <time><p>Publish date: <?= substr($blogpost['postDate'], 0, 16) ?></p></time>
-            </div>
-        </div>
+          <div class="blogpost__user-info">
+              <div class="user-image__container">
+                  <img class="user-image__image" src="<?= $blogpost['userAvatar'] ?>"/>
+              </div>
+              
+              <!-- userinformation -->
+              <div class="blogpost__content-username">
+                  <p class="username">Author: <?= $blogpost['username'] ?></p>
+                  <time><p>Publish date: <?= substr($blogpost['postDate'],0,16)?></p></time>
+              </div>
+          </div>
     
-        <div class="clear"></div>
+          <div class="clear"></div>
 
-        <!-- blog title -->
-        <h2><?= $blogpost['postTitle']; ?></h2>
-      
-        <!-- blogpicture -->
-        <figure>
-          <img src="images/<?= $blogpost['imageName'] ?>">
-        </figure>
+          <!-- blog title -->
+          <h2><?=$blogpost['postTitle'];?></h2>
+        
+          <!-- blogpicture -->
+          <figure>
+            <img src="images/<?= $blogpost['imageName'] ?>">
+          </figure>
 
-        <!-- blog text -->
-        <div class= "blogpost__blog-description">
+          <!-- blog text -->
+          <div class= "blogpost__blog-description">
 
-        <!-- limits the text to show the first 200 characters -->
-        <?php if (strlen($blogpost['postText']) > 200 ): ?>
-          <a href="blogpost.php?view_post=<?= $blogpost['postID']; ?>">
-            <p><?= substr($blogpost['postText'],0,200) ?> ...</p>
-          </a>
-        <?php
-    else:
-?>
-          <a href="blogpost.php?view_post=<?= $blogpost['postID']; ?>">
-            <p><?= $blogpost['postText'] ?></p>
-          </a>
-        <?php
-    endif;
-?>
+          <!-- limits the text to show the first 200 characters -->
+          <?php if (strlen($blogpost['postText']) > 200 ): ?>
+            <a href="blogpost.php?view_post=<?= $totalPost['postID']; ?>">
+              <p><?= substr($blogpost['postText'],0,200) ?> ...</p>
+            </a>
+          <?php else: ?>
+            <a href="blogpost.php?view_post=<?= $blogpost['postID']; ?>">
+              <p><?= $blogpost['postText'] ?></p>
+            </a>
+          <?php endif; ?>
 
-        <!-- a read more link -->
-        <div class="blogpost__read-more">
-          <a href="blogpost.php?view_post=<?= $blogpost['postID']; ?>">
-              Read More <i class="fa fa-chevron-right" aria-hidden="true"></i>
-          </a>
-        </div>
-        <br>
-       <!-- a share button link -->
-       <?php
-    require 'partials/shareButton.php';
-?>
+          <!-- a read more link -->
+          <div class="blogpost__read-more">
+            <a href="blogpost.php?view_post=<?= $blogpost['postID']; ?>">
+                Read More <i class="fa fa-chevron-right" aria-hidden="true"></i>
+            </a>
+          </div>
+          <br>
 
+          <div class="blogpost__share-button"> 
+            <a href="#"> Share <i class="fa fa-share-alt" aria-hidden="true"></i></a>
+          </div>
 
-        <div class="commentLink">
-          <a href="blogpost.php?view_post=<?= $blogpost['postID']; ?>">
-          <i class="fa fa-commenting-o" aria-hidden="true"></i> Comments
-          </a>
-        </div>
+          <div class="commentLink">
+            <i class="fa fa-commenting-o" aria-hidden="true"></i>
+            <a href="blogpost.php?view_post=<?= $blogpost['postID'].'#comment'; ?>"></a>
+          </div>
 
-        <div class="clear"></div>
+          <div class="clear"></div>
 
-		</div>
+		  </div>
 	</article>
 <?php
     //end of loop     
@@ -150,9 +154,7 @@ foreach ($blogposts as $blogpost) {
 ?>
 
 <!-- user gets a message if theres no posts published -->
-<?php
-require 'messages/messageEmptyHome.php';
-?>
+<?php require 'messages/messageEmptyHome.php'; ?>
 
 </div>
 
@@ -164,7 +166,7 @@ require 'partials/pagination.php';
 
 <?php
 require 'partials/footer.php';
-require_once 'bootstrapScripts.html';
+require_once 'partials/bootstrapScripts.html';
 ?>
 
 </body>

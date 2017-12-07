@@ -82,13 +82,13 @@ $blogposts = $statement->fetchAll(PDO::FETCH_ASSOC);
 <html lang="en">
 
 <head>
-    <?php require 'head.html'; ?>
+    <?php require 'partials/head.html'; ?>
     <title>Edit Story</title>
 </head>
 
 <body>
 
-    <?php require 'logoheader.html'; ?>
+    <?php require 'partials/logoheader.html'; ?>
     <?php require 'partials/navbar.php';  ?>
     <script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
     <main>
@@ -189,7 +189,7 @@ $blogposts = $statement->fetchAll(PDO::FETCH_ASSOC);
 
     </script>
     <?php require 'partials/footer.php'; ?>
-    <?php require 'bootstrapScripts.html'; ?>
+    <?php require 'partials/bootstrapScripts.html'; ?>
 
 </body>
 

@@ -14,7 +14,7 @@ require_once 'partials/fetch_all_blogposts.php';
 <html lang="en">
 
 <head>
-	<?php require 'head.html'; ?>
+	<?php require 'partials/head.html'; ?>
 	<title>Blogpost</title>
 </head>
 
@@ -22,7 +22,7 @@ require_once 'partials/fetch_all_blogposts.php';
 
 <?php 
 // renders header with millhouse logo and navbar
-require 'logoheader.html';
+require 'partials/logoheader.html';
 require 'partials/navbar.php'; 
 	  
 	if(isset($_GET['view_post']) ){ 
@@ -75,7 +75,7 @@ foreach($blogposts as $blogpost) {
 			<!-- username and date -->
 			<div class="blogpost__content-username">
 				<p class="username">Author: <?= $blogpost['username'] ?></p>
-				<time><p>Date: <?= substr($blogpost['postDate'],0,16)?></p></time>
+				<time><p>Publish date: <?= substr($blogpost['postDate'],0,16)?></p></time>
 			</div>
 		</div>
 
@@ -153,7 +153,7 @@ foreach($blogposts as $blogpost) {
 	
 <?php 
 require 'partials/footer.php';
-require 'bootstrapScripts.html';
+require 'partials/bootstrapScripts.html';
 ?>
 
 </body>

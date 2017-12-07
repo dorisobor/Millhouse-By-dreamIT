@@ -38,12 +38,12 @@ if (isset($_POST['submit'])) {
 <html lang="en">
 
 <head>
-    <?php require 'head.html'; ?>
+    <?php require 'partials/head.html'; ?>
 	<title>Login</title>
 <body>
 
 <?php 
-require 'logoheader.html';
+require 'partials/logoheader.html';
 require 'partials/navbar.php'; 
 ?>
 
@@ -91,7 +91,7 @@ require 'partials/navbar.php';
 
 <?php
 require 'partials/footer.php';
-require 'bootstrapScripts.html';
+require 'partials/bootstrapScripts.html';
 ?> 
 
 </body>

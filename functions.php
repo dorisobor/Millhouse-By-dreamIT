@@ -83,7 +83,7 @@ function deleteComment ($commentID) {
     global $pdo;            
     $stmt = $pdo->prepare("DELETE FROM comments WHERE commentID = :commentID");  
     $stmt->bindParam(":commentID", $commentID);    
-    $stmt->execute();
+    $stmt->execute();    
 }
 
 // fetches userinfo 
