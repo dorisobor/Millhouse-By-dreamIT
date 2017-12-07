@@ -36,7 +36,8 @@ $infos = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 <head>
     <?php require DIRBASE . 'partials/head.php'; ?>
-	<title>Latest comments</title>
+    <title>Latest comments</title>
+    <meta name="description" content="See the latest comments you've made.">
 </head>  
 
 <body>

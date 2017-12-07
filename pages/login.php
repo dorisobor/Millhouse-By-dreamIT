@@ -40,7 +40,8 @@ if (isset($_POST['submit'])) {
 
 <head>
     <?php require DIRBASE . 'partials/head.php'; ?>
-	<title>Login</title>
+    <title>Login</title>
+    <meta name="description" content="Login to Millhouse stories.">
 <body>
 
 <?php 

@@ -11,6 +11,7 @@ require_once DIRBASE . 'database/functions.php';
 <head>
 	<?php require DIRBASE . 'partials/head.php'; ?>
 	<title>Sunglasses</title>
+	<meta name="description" content="all stories about Millhouse sunglasses.">
 </head>
 
 <body>
@@ -57,7 +58,7 @@ require DIRBASE . 'partials/navbar.php';
 
 			<!-- blogpost image -->
 			<figure>
-				<img src="images/<?= $blogpost['imageName'] ?>" alt="">
+				<img src="images/<?= $blogpost['imageName'] ?>" alt="image for the blogpost">
 			</figure>
 
 			<!-- prints out the preview of the post, if it has more than 200

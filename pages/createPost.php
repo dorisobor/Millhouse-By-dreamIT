@@ -33,6 +33,7 @@ if(isset($_FILES['upload'])){
     <?php require DIRBASE . 'partials/head.php'; ?>
     <script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
     <title>Create New Post</title>
+    <meta name="description" content="create a new story!">
 </head>
 
 <body>
