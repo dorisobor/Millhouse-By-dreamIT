@@ -139,9 +139,7 @@ require DIRBASE . 'partials/navbar.php';
 					</a>
 				</div>
 				<br>
-				<div class="blogpost__share-button"> 
-					<a href="#">Share <i class="fa fa-share-alt" aria-hidden="true"></i></a>
-				</div>
+				<?php require DIRBASE .'partials/shareButton.php'; ?>
 
 				<!-- buttons for delete and edit post -->
 				<div class="editButtons">
