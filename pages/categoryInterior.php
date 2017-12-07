@@ -91,10 +91,11 @@ require DIRBASE . 'partials/navbar.php';
 
 				<!-- link to full post -->
 				<div class="commentLink">
-					<i class="fa fa-commenting-o" aria-hidden="true"></i>
-					<a href="pages/blogpost.php?view_post=<?=$blogpost['postID'];?>"
-					aria-label="click here if you want to comment"></a>
-				</div>	
+					<a href="pages/blogpost.php?view_post=<?= $blogpost['postID'].'#comment'; ?>"
+					aria-label="click here if you want to comment">
+					<i class="fa fa-commenting-o" aria-hidden="true"></i> Comments
+					</a>
+				</div>
 
 				<div class="clear"></div>
 				

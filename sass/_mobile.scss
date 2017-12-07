@@ -678,6 +678,13 @@ img {
     max-width: 600px; 
 }
 
+.createForm{
+    
+        input{
+            width: 100%; 
+        }
+    }
+    
 .createForm__label {
     text-align: left;
 }
@@ -698,17 +705,6 @@ img {
         float: left; 
         font-size: 1.7rem; 
     }
-}
-    
-.createForm{
-
-    input{
-        width: 100%; 
-    }
-}
-
-.createForm__label {
-	text-align: left;
 }
 
 .submitButton{
