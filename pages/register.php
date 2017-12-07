@@ -1,9 +1,10 @@
 <?php 
 session_start();   
+require_once '../config.php';
 //saves all input from the form in variable
 $formData = $_POST;
-require_once 'partials/db.php';  
-require_once 'functions.php';
+require_once DIRBASE . 'database/db.php';  
+require_once DIRBASE . 'database/functions.php';
 
 $emailError = false;
 $emailIsNotValid = false;
@@ -47,7 +48,7 @@ if (isset($_POST['submit'])) {
     //sign in with new userID
     $_SESSION['userID'] = $userID; 
     //redirects to index
-    header('Location: index.php');
+    header('Location: ../index.php');
 
     }   
 }
@@ -57,13 +58,13 @@ if (isset($_POST['submit'])) {
 <html lang="en">
 
 <head>
-    <?php require 'partials/head.html'; ?>
+    <?php require DIRBASE . 'partials/head.php'; ?>
 	<title>Register New Account</title>
 <body>
 
 <?php 
-require 'partials/logoheader.html';
-require 'partials/navbar.php';
+require DIRBASE . 'partials/logoheader.html';
+require DIRBASE . 'partials/navbar.php';
 ?>
 
 <main>
@@ -117,7 +118,7 @@ require 'partials/navbar.php';
                         </form>
                     </div>
                     <div class="registerForm__newAccount-link">
-                        Already have an account? <a href="login.php">Log in.</a>
+                        Already have an account? <a href="pages/login.php">Log in.</a>
                   </div>
             </div>
         </div>
@@ -125,8 +126,8 @@ require 'partials/navbar.php';
 </main>
 
 <?php 
-require 'partials/footer.php';
-require 'partials/bootstrapScripts.html';
+require DIRBASE . 'partials/footer.php';
+require DIRBASE . 'partials/bootstrapScripts.html';
 ?> 
 
 </body>

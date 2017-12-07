@@ -28,7 +28,7 @@ function createNewUser () {
 }
 
 //searches the database for matches on what the user has put in
-//the login form in login.php
+//the login form in pages/login.php
 function validateLoginInput () {
     global $pdo;            
     $stmt = $pdo->prepare("SELECT * FROM users

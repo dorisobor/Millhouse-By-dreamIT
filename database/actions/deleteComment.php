@@ -1,13 +1,13 @@
 <?php
 session_start();
-require_once 'partials/db.php';
-require 'functions.php';
+require_once DIRBASE . 'database/db.php';
+require_once DIRBASE . 'database/functions.php';
 
 //calls on function to delete comment
 deleteComment($_GET['commentID']);
 
 //sets varibale to true in order to be able to show 
-//confirmation in 'latestComments.php'
+//confirmation in 'pages/latestComments.php'
 $_SESSION['commentDeleted'] = true;
 
 //redirects to previous page

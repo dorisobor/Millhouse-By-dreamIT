@@ -1,22 +1,23 @@
 <?php 
-session_start();         
-require_once 'partials/db.php'; 
-require_once 'functions.php';
+session_start();     
+require_once '../config.php';
+require_once DIRBASE . 'database/db.php'; 
+require_once DIRBASE . 'database/functions.php';
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<?php require 'partials/head.html'; ?>
+	<?php require DIRBASE . 'partials/head.php'; ?>
 	<title>Interior</title>
 </head>
 
 <body>
 
 <?php 
-require 'partials/logoheader.html';
-require 'partials/navbar.php'; 
+require DIRBASE . 'partials/logoheader.html';
+require DIRBASE . 'partials/navbar.php'; 
 ?>
 
 <header>
@@ -65,32 +66,31 @@ require 'partials/navbar.php';
 			chars 3 dots appear to show the user that theres more to read -->
 			<div class= "blogpost__blog-description">
 				<?php if (strlen($blogpost['postText']) > 200 ):?>
-					<a href="blogpost.php?view_post=<?=$blogpost['postID'];?>">
+					<a href="pages/blogpost.php?view_post=<?=$blogpost['postID'];?>">
 						<p><?=substr ($blogpost['postText'],0,200)?> ...</p>
 					</a>
 				<?php else: ?>
-					<a href="blogpost.php?view_post=<?=$blogpost['postID'];?>">
+					<a href="pages/blogpost.php?view_post=<?=$blogpost['postID'];?>">
 						<p><?= $blogpost['postText'] ?></p>
 					</a>
 				<?php endif; ?>
 
 				<!-- link to full post -->
 				<div class="blogpost__read-more"> 
-					<a href="blogpost.php?view_post=<?=$blogpost['postID'];?>">
+					<a href="pages/blogpost.php?view_post=<?=$blogpost['postID'];?>">
 						Read More <i class="fa fa-chevron-right" aria-hidden="true"></i>
 					</a>
 				</div>
 
 				<br>
 
-				<div class="blogpost__share-button"> 
-					<a href="#">Share <i class="fa fa-share-alt" aria-hidden="true"></i></a>
-				</div>
+				<!-- Share button -->
+				<?php require 'partials/shareButton.php'; ?>
 
 				<!-- link to full post -->
 				<div class="commentLink">
 					<i class="fa fa-commenting-o" aria-hidden="true"></i>
-					<a href="blogpost.php?view_post=<?=$blogpost['postID'];?>"></a>
+					<a href="pages/blogpost.php?view_post=<?=$blogpost['postID'];?>"></a>
 				</div>	
 
 				<div class="clear"></div>
@@ -100,14 +100,14 @@ require 'partials/navbar.php';
 		<?php endforeach; ?>
 		
 		<!-- user gets a message if theres no posts published -->
-		<?php require 'messages/messageEmptyCategory.php'; ?>
+		<?php require DIRBASE . 'messages/messageEmptyCategory.php'; ?>
 
 	</div>
 </main>
 
 <?php 
-require 'partials/footer.php';
-require 'partials/bootstrapScripts.html';
+require DIRBASE . 'partials/footer.php';
+require DIRBASE . 'partials/bootstrapScripts.html';
 ?>
 
 </body>

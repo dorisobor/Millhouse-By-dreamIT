@@ -1,10 +1,11 @@
 <?php 
 session_start();
-require_once 'partials/insert.php';
-require_once 'functions.php';
+require_once '../config.php';
+require_once DIRBASE . 'database/actions/insert.php';
+require_once DIRBASE . 'database/functions.php';
 
 if(isset($_FILES['upload'])){
-    require 'partials/db.php';
+    require_once DIRBASE . 'database/db.php';
     $imageInfo = $_FILES['upload'];
  
     //$path is the pemporery place where the image stores befoor it moves to database
@@ -29,7 +30,7 @@ if(isset($_FILES['upload'])){
 <html lang="en">
 
 <head>
-    <?php require 'partials/head.html'; ?>
+    <?php require DIRBASE . 'partials/head.php'; ?>
     <script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
     <title>Create New Post</title>
 </head>
@@ -37,8 +38,8 @@ if(isset($_FILES['upload'])){
 <body>
 
 <?php 
-require 'partials/logoheader.html';
-require 'partials/navbar.php';
+require DIRBASE . 'partials/logoheader.html';
+require DIRBASE . 'partials/navbar.php';
 ?>
  
 <main>
@@ -46,7 +47,7 @@ require 'partials/navbar.php';
         <div class="mainBody">
             <!-- if users has published a post sh/e gets a message -->
             <?php if(isset($_POST['publish'])): ?>
-                <?php require 'messages/messageCreatePostConfirm.php';?>
+                <?php require DIRBASE . 'messages/messageCreatePostConfirm.php';?>
             <?php endif; ?>
             <div class="form_wrapper">
                 <div class="create_wrapper">
@@ -57,7 +58,7 @@ require 'partials/navbar.php';
                             </legend>
                             <div class="help">
                                 <p>Fields marked with * is mandatory. Need help? Press the icon </p>
-                                <p><a href="help.php"><i class="fa fa-question-circle" aria-hidden="true"></i></a></p>
+                                <p><a href="pages/help.php"><i class="fa fa-question-circle" aria-hidden="true"></i></a></p>
                             </div>
                         </div>
                         <br><br>
@@ -105,8 +106,8 @@ CKEDITOR.config.width = '100%';
 </script>
 
 <?php         
-require 'partials/footer.php';
-require 'partials/bootstrapScripts.html'; 
+require DIRBASE . 'partials/footer.php';
+require DIRBASE . 'partials/bootstrapScripts.html'; 
 ?>
 
 </body>
