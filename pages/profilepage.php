@@ -49,14 +49,7 @@ require DIRBASE . 'partials/navbar.php';
 			<div class="profileBox__content-username">
 				<p class="username"><?= $user['username'] ?></p>
 				<p class="aboutMe"><?= $user['userBio'] ?></p>
-			</div>
-			
-			<!-- icon for user settings -->
-			<div class="settingsIcon">
-				<button class="settings">
-					<a href="pages/settings.php"><i class="fa fa-cog" aria-hidden="true"></i></a>
-				</button>
-			</div>
+			</div>			
 		</div>
 
 		<div class="clear"></div>
