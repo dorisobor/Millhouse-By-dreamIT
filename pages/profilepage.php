@@ -140,7 +140,7 @@ require DIRBASE . 'partials/navbar.php';
 				<div class="editButtons">
 							
 					<button>
-          					<a href="editPost.php?postID=<?=$blogpost['postID'];?>"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
+          					<a href="pages/editPost.php?postID=<?=$blogpost['postID'];?>"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
  					</button>		
 							
 					<button class="delete" type="button" data-toggle="modal" data-target=".delete-confirmation-modal" 
