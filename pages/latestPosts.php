@@ -141,7 +141,7 @@ require DIRBASE . 'partials/navbar.php';
 				<!-- buttons for delete and edit post -->
 				<div class="editButtons">
 					<button>
-          					<a href="editPost.php?postID=<?=$latestPost['postID'];?>"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
+          					<a href="pages/editPost.php?postID=<?=$latestPost['postID'];?>"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
  					</button>
 					<button class="delete" type="button" data-toggle="modal" data-target=".delete-confirmation-modal"
 					data-postid="<?= $latestPost['postID'] ?>" data-redirect-page="pages/latestPosts.php">
