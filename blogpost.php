@@ -46,7 +46,21 @@ require 'partials/navbar.php';
 	}
 	  
 }
+
+
 ?>
+
+	<?php
+		//jimmys code start
+	$statement2 = $pdo->prepare("SELECT users.*, blogPosts.*, comments.* FROM comments
+	    LEFT JOIN blogPosts ON blogPosts.postID = comments.postID
+	    LEFT JOIN users ON users.userID = comments.userID
+	    WHERE blogPosts.postID = '$postID';
+	");
+	$statement2->execute();
+	$allComments = $statement2->fetchAll(PDO::FETCH_ASSOC); 
+	//jimmys code end
+	?>
 
 <main>
 
@@ -145,6 +159,28 @@ foreach($blogposts as $blogpost) {
 //end of loop     
 }
 ?>
+<?php
+foreach($allComments as $allComment) { 
+?>
+<div class="mydiv">
+
+<p><?=print_r($allComment); ?></p>
+</div>
+<?php
+} 
+?>
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- modal that shows if user clicks delete button -->
 <?php require 'modals/modalDeletePost.php'; ?>
