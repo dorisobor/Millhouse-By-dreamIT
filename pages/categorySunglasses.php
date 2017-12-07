@@ -83,7 +83,7 @@ require DIRBASE . 'partials/navbar.php';
 				<br>
 				
 				<!-- Share button -->
-				<?php require 'partials/shareButton.php'; ?>
+				<?php require DIRBASE . 'partials/shareButton.php'; ?>
 
 				<!-- link to full post -->
 				<div class="commentLink">
