@@ -506,21 +506,19 @@ img {
 
     /* username & picture */
     .user-image__container{
-        font-size: 3rem; 
         float: left; 
-        width: 10%; 
     }
 
     .user-image__image {
         width: 50px;
         vertical-align: text-top;
+        margin-top: 5px; 
     }
 
     .profileBox__content-username{
         float: left;
         width: 50%; 
         padding: 10px; 
-        margin-left: 10px; 
     }
 }
 
