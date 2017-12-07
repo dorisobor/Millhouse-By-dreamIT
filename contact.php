@@ -1,4 +1,5 @@
 <?php 
+session_start();         
 require_once 'partials/insert.php';
 require_once 'partials/fetch_all_blogposts.php';
 ?>
@@ -7,11 +8,11 @@ require_once 'partials/fetch_all_blogposts.php';
 <html lang="en">
 
 <head>
-    <?php require 'head.html'; ?>
+    <?php require 'partials/head.html'; ?>
 	<title>Contact</title>
 <body>
 
-    <?php require 'logoheader.html'; ?>
+    <?php require 'partials/logoheader.html'; ?>
     <?php require 'partials/navbar.php';  ?>
 
     <main>
@@ -43,7 +44,7 @@ require_once 'partials/fetch_all_blogposts.php';
     </main>
 
     <?php require 'partials/footer.php'; ?>
-    <?php require 'bootstrapScripts.html'; ?> 
+    <?php require 'partials/bootstrapScripts.html'; ?> 
 
 </body>
 </html>

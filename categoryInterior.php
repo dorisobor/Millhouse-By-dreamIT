@@ -1,24 +1,23 @@
 <?php 
-
+session_start();         
 require_once 'partials/db.php'; 
-require 'functions.php';
-
-$user = getUserInfo($GLOBALS['userID']);
-
+require_once 'functions.php';
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<?php require 'head.html'; ?>
+	<?php require 'partials/head.html'; ?>
 	<title>Interior</title>
 </head>
 
 <body>
 
-<?php require 'logoheader.html'; ?>
-<?php require 'partials/navbar.php'; ?>
+<?php 
+require 'partials/logoheader.html';
+require 'partials/navbar.php'; 
+?>
 
 <header>
 	<div class="jumbotron_interiorHeader"></div>    
@@ -30,44 +29,52 @@ $user = getUserInfo($GLOBALS['userID']);
 			<h1>Interior</h1>
 		</div>
 		<p>Here you can read all about Millhouse exclusive interior details!</p>
-		<!-- article = blogpost -->	
-		<?php foreach(getAllBlogpostsOnInterior(3) as $i => $blogpost): ?>
+
+		<?php foreach(getAllBlogpostsOnInterior() as $i => $blogpost): ?>
 		<article class="blogpost">
-		<!--CATEGORIE TAG-->
+
+			<!-- category label -->
 			<div class="blogpost__category-tag">
 				<span><?= $blogpost['categoryName'] ?></span>
 			</div>
+
+			<!-- useravatar -->
 			<div class="blogpost__user-info">
 				<div class="user-image__container">
-					<img class="user-image__image" src="<?= $user['userAvatar'] ?>"/>
+					<img class="user-image__image" src="<?= $blogpost['userAvatar'] ?>"/>
 				</div>
-			
+
+				<!-- username and publish date -->
 				<div class="blogpost__content-username">
-					<p class="username"><?= $blogpost['username'] ?></p>
-					<time><p><?= substr($blogpost['postDate'], 0, 16) ?></p></time>
+					<p class="username">Author: <?= $blogpost['username'] ?></p>
+					<time><p>Publish date: <?= substr($blogpost['postDate'], 0, 16) ?></p></time>
 				</div>
 			</div>
-		
 	
-		<div class="clear"></div>
-
+			<div class="clear"></div>
 			
+			<!-- blogtitle -->
 			<h2><?= $blogpost['postTitle'] ?></h2>
-			<figure>
-			<!--BLOG PICTURE-->
-				<img src="<?= $blogpost['postImage'] ?>" alt="">
-			</figure>
-			<div class= "blogpost__blog-description">
-			<?php if (strlen($blogpost['postText']) > 200 ):?>
-				<a href="blogpost.php?view_post=<?=$blogpost['postID'];?>">
-					<p><?=substr ($blogpost['postText'],0,200)?> ...</p>
-				</a>
-      		<?php else: ?>
-       		 	<a href="blogpost.php?view_post=<?=$blogpost['postID'];?>">
-         	 		<p><?= $blogpost['postText'] ?></p>
-       		 	</a>
-      		<?php endif; ?>
 
+			<!-- blogimage -->
+			<figure>
+				<img src="images/<?= $blogpost['imageName'] ?>" alt="">
+			</figure>
+
+			<!-- prints out the preview of the post, if it has more than 200
+			chars 3 dots appear to show the user that theres more to read -->
+			<div class= "blogpost__blog-description">
+				<?php if (strlen($blogpost['postText']) > 200 ):?>
+					<a href="blogpost.php?view_post=<?=$blogpost['postID'];?>">
+						<p><?=substr ($blogpost['postText'],0,200)?> ...</p>
+					</a>
+				<?php else: ?>
+					<a href="blogpost.php?view_post=<?=$blogpost['postID'];?>">
+						<p><?= $blogpost['postText'] ?></p>
+					</a>
+				<?php endif; ?>
+
+				<!-- link to full post -->
 				<div class="blogpost__read-more"> 
 					<a href="blogpost.php?view_post=<?=$blogpost['postID'];?>">
 						Read More <i class="fa fa-chevron-right" aria-hidden="true"></i>
@@ -79,25 +86,29 @@ $user = getUserInfo($GLOBALS['userID']);
 				<div class="blogpost__share-button"> 
 					<a href="#">Share <i class="fa fa-share-alt" aria-hidden="true"></i></a>
 				</div>
+
+				<!-- link to full post -->
 				<div class="commentLink">
 					<i class="fa fa-commenting-o" aria-hidden="true"></i>
-					<a href="blogpost.php?view_post=<?=$blogpost['postID'];?>">
-					<span><?= getUserStatisticsComments($GLOBALS['userID']) ?>  comment(s)</span></a>
+					<a href="blogpost.php?view_post=<?=$blogpost['postID'];?>"></a>
 				</div>	
 
-     			<div class="clear"></div>
+				<div class="clear"></div>
 				
 			</div>
 		</article>
 		<?php endforeach; ?>
-
+		
+		<!-- user gets a message if theres no posts published -->
 		<?php require 'messages/messageEmptyCategory.php'; ?>
 
 	</div>
 </main>
 
-<?php require 'partials/footer.php'; ?>
-<?php require 'bootstrapScripts.html'; ?>
+<?php 
+require 'partials/footer.php';
+require 'partials/bootstrapScripts.html';
+?>
 
 </body>
 </html>

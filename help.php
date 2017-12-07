@@ -1,13 +1,19 @@
+<?php
+session_start();         
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<?php require 'head.html'; ?>
+	<?php require 'partials/head.html'; ?>
 	<title>Help</title>
 </head>
 <body>
 	
-<?php require 'logoheader.html'; ?>
-<?php require 'partials/navbar.php' ?>
+<?php 
+require 'partials/logoheader.html';
+require 'partials/navbar.php';
+?>
 
 <main>
 	<article class="help-article-container">
@@ -71,8 +77,10 @@
 	</article>	
 </main>
 
-<?php require 'partials/footer.php'; ?>
-<?php require 'bootstrapScripts.html'; ?>
+<?php 
+require 'partials/footer.php';
+require 'partials/bootstrapScripts.html';
+?>
 
 </body>
 </html>

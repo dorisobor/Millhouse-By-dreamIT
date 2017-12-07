@@ -1,45 +1,21 @@
-<?php
-
-
-
+<?php  
+require_once 'partials/db.php';
+require_once 'functions.php';
 
 if(isset($_POST['publish'])){
-    require_once 'partials/db.php';
- 
- 
- 
-    
-    $sql = "
-    INSERT INTO `blogposts`(`postDate`, `postTitle`, `postText`,`userID`, `categoryName`, `image`) VALUES (NOW(),:headline,:postText,$userID, :categoryName,:image)
-    ";
-    
-    $statement = $pdo -> prepare($sql);
-    
-    $statement->bindValue(':headline', $_POST['headline']);
-    $statement->bindValue(':postText', $_POST['postText']);
-    $statement->bindValue(':categoryName', $_POST['categoryName']);
-    $statement->bindValue(':image', $_FILES['upload']['name']);
-    
-    $statement->execute();
-    
-//    $sql = "
-//    INSERT INTO `categories`(`categoryName`) VALUES (:category)
-//    ";
-//
-//    
-//    $statement = $pdo -> prepare($sql);
-//    
-//
-//    $statement->bindValue(':category', $_POST['category']);
-//    $statement->execute(); 
-    
-    
-    if($statement){
-        $success = true;
-    }
-    $pdo = null;
+    $userID =  getLoggedInUserID();
 
-   
+    global $pdo;                
+    $statement = $pdo->prepare("INSERT INTO blogPosts (postDate, postTitle, postText, userID, categoryID, imageName) 
+    VALUES (NOW(), :postTitle, :postText, :userID, :categoryID, :imageName)");
+    $statement->bindParam(':postTitle', $_POST['headline']);
+    $statement->bindParam(':postText', $_POST['postText']);
+    $statement->bindParam(':userID', $userID);    
+    $statement->bindParam(':categoryID', $_POST['category']);
+    $statement->bindParam(':imageName', $_FILES['upload']['name']);
+    $statement->execute();
+    $postID = $pdo->lastInsertId();    
+    return $postID; 
 }
 
 
