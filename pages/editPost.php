@@ -125,7 +125,7 @@ $blogposts = $statement->fetchAll(PDO::FETCH_ASSOC);
                                     <textarea class="textarea" id="postText" name="postText" rows="6" cols="50" placeholder="Write your text here" required>
                                     <?php echo $postText; 
                                     if(isset($image)){
-                                        echo '<img src="images/' . $image . '" alt="image for the blogpost'. $postTitle . '">';
+                                        echo '<img src="images/' . $image . '" alt="image for the blogpost"'. $postTitle . '">';
                                     }
                                         ?></textarea>
                                     <br>
