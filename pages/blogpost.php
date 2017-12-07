@@ -96,7 +96,7 @@ foreach($blogposts as $blogpost) {
 			</p>
 	        
 			<!-- Share button -->
-            <?php require 'partials/shareButton.php'; ?>
+            <?php require DIRBASE . 'partials/shareButton.php'; ?>
 
 
 	 		<div class="editButtons">	
