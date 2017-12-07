@@ -81,9 +81,8 @@ require 'partials/navbar.php';
 
 				<br>
 				
-				<div class="blogpost__share-button"> 
-					<a href="#">Share <i class="fa fa-share-alt" aria-hidden="true"></i></a>
-				</div>
+				<!-- Share button -->
+				<?php require 'partials/shareButton.php'; ?>
 
 				<!-- link to full post -->
 				<div class="commentLink">
