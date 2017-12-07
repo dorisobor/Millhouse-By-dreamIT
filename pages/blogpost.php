@@ -75,7 +75,7 @@ foreach($blogposts as $blogpost) {
 
 		<div class="blogpost__user-info">
 			<div class="user-image__container">
-				<img class="user-image__image" src="<?= $blogpost['userAvatar'] ?>"/>
+				<img class="user-image__image" src="<?= $blogpost['userAvatar'] ?>" alt="user icon"/>
 			</div>
 
 			<!-- username and date -->
@@ -144,10 +144,9 @@ foreach($blogposts as $blogpost) {
 					<hr>
                    
 				</div>
-				<p id="comment">Comment on this Story</p>
 				<input type="hidden" id="postID" name="postID" value="<?= $postID ?>">
 				<input type="hidden" id="commentID" name="commentID" value="<?= $commentID ?>">
-				
+				<label for="comment" id="comment">Comment on this Story</label>
 				<textarea class="textarea" id="message" rows="6" cols="50" name="comment" placeholder="Write comment here..." required><?= $commentText; ?> </textarea>
 			</div>
 
