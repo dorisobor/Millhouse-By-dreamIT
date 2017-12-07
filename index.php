@@ -52,6 +52,7 @@ require_once 'partials/navbar.php';
             <h3>
               <a href="categorySunglasses.php">Sunglasses</a>
             </h3>
+
           </figcaption>
         </figure>
 
