@@ -8,14 +8,14 @@ if(isset ($_GET['delete_post'])){
       
       $deletePost = $_GET['delete_post'];
 
-      // make sure that comments linked to the post gets deleted
+      //deletes comments linked to the post
       $statement = $pdo->prepare("DELETE FROM comments
       WHERE postID = :postID AND userID = :userID");
       $statement->execute(array(
             ":postID" =>  $deletePost, 
             ':userID' => getLoggedInUserID()));
 
-      //deletes IMAGE
+      //deletes image
       $statement = $pdo->prepare("DELETE images FROM images
       JOIN blogposts ON blogposts.postID = images.postID
       WHERE images.postID = :postID AND userID = :userID");
@@ -23,12 +23,16 @@ if(isset ($_GET['delete_post'])){
             ":postID" =>  $deletePost, 
             ':userID' => getLoggedInUserID()));
 
-      // delete post (ONLY TEXT ELEMENTS)
+      //delete the posts text elements
       $statement = $pdo->prepare("DELETE blogPosts FROM blogPosts
       WHERE postID = :postID AND userID = :userID");
        $statement->execute(array(
             ":postID" =>  $deletePost, 
             ':userID' => getLoggedInUserID()));
+      
+      //saves variable in session in order to trigger a confirmaton
+      //after deletion
+      $_SESSION['postDeleted'] = true;
 }
 
 $redirect = 'index.php';

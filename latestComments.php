@@ -9,6 +9,12 @@ if (!isLoggedIn()){
 	return;
 }
 
+//checks if delete button was pressed och post was deleted
+//if it was deleted variable is used to trigger a message
+$commentIsDeleted = isset($_SESSION['commentDeleted']);
+//unsets session in order for message to disappear
+unset($_SESSION['commentDeleted']);
+
 $user = getUserInfo($_SESSION['userID']);
 $userID = $user['userID'];
 
@@ -28,14 +34,14 @@ $infos = $statement->fetchAll(PDO::FETCH_ASSOC);
 <html lang="en">
 
 <head>
-    <?php require 'head.html'; ?>
+    <?php require 'partials/head.html'; ?>
 	<title>Latest comments</title>
 </head>  
 
 <body>
 
 <?php 
-require 'logoheader.html';
+require 'partials/logoheader.html';
 require 'partials/navbar.php'; 
 ?>
 
@@ -91,43 +97,47 @@ require 'partials/navbar.php';
 
 	<!--latest comments-->
 	<div class="container-wrapper">
+
+        <?php if ($commentIsDeleted): ?>
+            <?php require 'messages/messageDeleteCommentConfirm.html'; ?>
+        <?php endif; ?>
+
         <?php foreach($infos as $info){?>  
-        <div class= "container-latestComments">
-            <article>  
-                <p class="post-information__text">On</p> 
-                <!-- prints the title of the post that has been commented on -->
-                <p class="post-information__text post-information__text--title">
-                    <?= $info["postTitle"]; ?>
-                </p>
+            <div class= "container-latestComments">
+                <article>  
+                    <p class="post-information__text">On</p> 
+                    <!-- prints the title of the post that has been commented on -->
+                    <p class="post-information__text post-information__text--title">
+                        <?= $info["postTitle"]; ?>
+                    </p>
 
-                <p class="post-information__text">written by</p>
-                <!-- prints the auhtor of the commented post -->
-                <p class="post-information__text post-information__text--author">
-                    <?= $info["username"]; ?>
-                </p></br>
+                    <p class="post-information__text">written by</p>
+                    <!-- prints the auhtor of the commented post -->
+                    <p class="post-information__text post-information__text--author">
+                        <?= $info["username"]; ?>
+                    </p></br>
 
-                <!-- prints the date the post was commented on -->
-                <p class="post-information__text">
-                    the <time> 
-                    <?= substr($info["commentDate"], 0, 16) ?></time> 
-                    you wrote:
-                </p>
+                    <!-- prints the date the post was commented on -->
+                    <p class="post-information__text">
+                        the <time> 
+                        <?= substr($info["commentDate"], 0, 16) ?></time> 
+                        you wrote:
+                    </p>
 
-                <!-- prints the comment -->
-                <p class="post-information__comment"> <?= $info["commentText"]; ?></p>
+                    <!-- prints the comment -->
+                    <p class="post-information__comment"> <?= $info["commentText"]; ?></p>
 
-                <br>
+                    <br>
 
-                <!-- delete button -->
-                <div class="deleteButton">
-                    <button class="deleteComment" type="button" data-toggle="modal" data-target=".delete-confirmation-comment-modal"
-                    data-comment-id="<?= $info['commentID']?>" data-redirect-page="latestComments.php">
-							<i class="fa fa-trash" aria-hidden="true"></i> Delete
-					</button>
-                </div>
-                
-            </article>	
-        </div>
+                    <!-- delete button -->
+                    <div class="deleteButton">
+                        <button class="deleteComment" type="button" data-toggle="modal" data-target=".delete-confirmation-comment-modal"
+                        data-comment-id="<?= $info['commentID']?>" data-redirect-page="latestComments.php">
+                                <i class="fa fa-trash" aria-hidden="true"></i> Delete
+                        </button>
+                    </div>
+                </article>	
+            </div>
         <?php }?>
 
         <?php require 'messages/messageEmptyProfileComments.php'; ?>
@@ -141,7 +151,7 @@ require 'partials/navbar.php';
 
 <?php 
 require 'partials/footer.php';
-require 'bootstrapScripts.html'; 
+require 'partials/bootstrapScripts.html'; 
 ?>
 
 </body>
