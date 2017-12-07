@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once '../../config.php';
 require_once DIRBASE . 'database/db.php';
 require_once DIRBASE . 'database/functions.php';
 
@@ -14,7 +15,7 @@ $_SESSION['commentDeleted'] = true;
 $redirect = 'index.php';
 
 if (isset($_GET['redirectto'])){
-    $redirect = $_GET['redirectto'];
+    $redirect = SITEBASE . $_GET['redirectto'];
 }
 
 header("Location: $redirect");

@@ -95,7 +95,7 @@ require_once 'partials/navbar.php';
   
           <div class="blogpost__user-info">
               <div class="user-image__container">
-                  <img class="user-image__image" src="<?= $blogpost['userAvatar'] ?>"/>
+                  <img class="user-image__image" src="<?= $blogpost['userAvatar'] ?>" alt="user icon"/>
               </div>
               
               <!-- userinformation -->
@@ -120,11 +120,7 @@ require_once 'partials/navbar.php';
 
           <!-- limits the text to show the first 200 characters -->
           <?php if (strlen($blogpost['postText']) > 200 ): ?>
-<<<<<<< HEAD
-            <a href="pages/blogpost.php?view_post=<?= $totalPost['postID']; ?>">
-=======
-            <a href="blogpost.php?view_post=<?= $blogpost['postID']; ?>">
->>>>>>> origin/master
+            <a href="pages/blogpost.php?view_post=<?= $blogpost['postID']; ?>">
               <p><?= substr($blogpost['postText'],0,200) ?> ...</p>
           </a>
           <?php else: ?>
@@ -135,24 +131,21 @@ require_once 'partials/navbar.php';
 
           <!-- a read more link -->
           <div class="blogpost__read-more">
-            <a href="pages/blogpost.php?view_post=<?= $blogpost['postID']; ?>">
+            <a href="pages/blogpost.php?view_post=<?= $blogpost['postID']; ?>"
+            aria-label="click here to read the entire post">
                 Read More <i class="fa fa-chevron-right" aria-hidden="true"></i>
             </a>
           </div>
           <br>
 
-          <?php require 'partials/shareButton.php'; ?>
+          <?php require DIRBASE .'partials/shareButton.php'; ?>
 
 
           <div class="commentLink">
-<<<<<<< HEAD
-            <i class="fa fa-commenting-o" aria-hidden="true"></i>
-            <a href="pages/blogpost.php?view_post=<?= $blogpost['postID'].'#comment'; ?>"></a>
-=======
-          <a href="blogpost.php?view_post=<?= $blogpost['postID'].'#comment'; ?>">
+          <a href="pages/blogpost.php?view_post=<?= $blogpost['postID'].'#comment'; ?>"
+          aria-label="click here if you want to comment">
             <i class="fa fa-commenting-o" aria-hidden="true"></i> Comments
             </a>
->>>>>>> origin/master
           </div>
 
           <div class="clear"></div>

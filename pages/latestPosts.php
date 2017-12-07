@@ -27,6 +27,7 @@ $userID = $user['userID'];
 <head>
 	<?php require DIRBASE . 'partials/head.php'; ?>
 	<title>Latest posts</title>
+	<meta name="description" content="See the latest stories you've written.">
 </head>
 
 <body>
@@ -42,20 +43,13 @@ require DIRBASE . 'partials/navbar.php';
 			
 			<!-- userimage (deafault = user icon) -->
 			<div class="user-image__container">
-				<img class="user-image__image" src="<?= $user['userAvatar'] ?>"/>
+				<img class="user-image__image" src="<?= $user['userAvatar'] ?>" alt="user icon"/>
 			</div>
 
 			<!-- username and userdescription -->
 			<div class="profileBox__content-username">
 				<p class="username"><?= $user['username'] ?></p>
 				<p class="aboutMe"><?= $user['userBio'] ?></p>
-			</div>
-
-			<!-- icon for user settings -->
-			<div class="settingsIcon">
-				<button class="settings">
-					<a href="pages/settings.php"><i class="fa fa-cog" aria-hidden="true"></i></a>
-				</button>
 			</div>
         </div>
 				
@@ -109,7 +103,7 @@ require DIRBASE . 'partials/navbar.php';
 
 			<!-- blogpost image -->
 			<figure>
-				<img src="images/<?= $latestPost['imageName'] ?>" alt="">
+				<img src="images/<?= $latestPost['imageName'] ?>" alt="image for the blogpost">
 			</figure>
 
 			<div class="clear"></div> 
@@ -129,20 +123,20 @@ require DIRBASE . 'partials/navbar.php';
 
 				<!-- link that leads to fullview of chosen post -->
 				<div class="blogpost__read-more">
-					<a href="pages/blogpost.php?view_post=<?=$latestPost['postID'];?>">
+					<a href="pages/blogpost.php?view_post=<?=$latestPost['postID'];?>"
+					aria-label="click here to read the entire post">
 						Read More <i class="fa fa-chevron-right" aria-hidden="true"></i>
 					</a>
 				</div>
 				<br>
-				<div class="blogpost__share-button"> 
-					<a href="#">Share <i class="fa fa-share-alt" aria-hidden="true"></i></a>
-				</div>
+				<?php require DIRBASE .'partials/shareButton.php'; ?>
+
 			
 				<!-- buttons for delete and edit post -->
 				<div class="editButtons">
 					<button>
-						<a href="pages/editPost.php"><i class="fa fa-pencil" aria-hidden="true"></i> Edit<a>
-					</button>
+          				<a href="pages/editPost.php?postID=<?=$latestPost['postID'];?>"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
+ 					</button>
 					<button class="delete" type="button" data-toggle="modal" data-target=".delete-confirmation-modal"
 					data-postid="<?= $latestPost['postID'] ?>" data-redirect-page="pages/latestPosts.php">
 						<i class="fa fa-trash" aria-hidden="true"></i> Delete

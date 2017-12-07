@@ -11,6 +11,7 @@ require_once DIRBASE . 'database/functions.php';
 <head>
 	<?php require DIRBASE . 'partials/head.php'; ?>
 	<title>Sunglasses</title>
+	<meta name="description" content="all stories about Millhouse sunglasses.">
 </head>
 
 <body>
@@ -40,7 +41,7 @@ require DIRBASE . 'partials/navbar.php';
 			<!-- useravatar -->
 			<div class="blogpost__user-info">
 				<div class="user-image__container">
-					<img class="user-image__image" src="<?= $blogpost['userAvatar'] ?>"/>
+					<img class="user-image__image" src="<?= $blogpost['userAvatar'] ?>" alt="user icon"/>
 				</div>
 
 				<!-- prints username and publish date -->
@@ -57,7 +58,7 @@ require DIRBASE . 'partials/navbar.php';
 
 			<!-- blogpost image -->
 			<figure>
-				<img src="images/<?= $blogpost['imageName'] ?>" alt="">
+				<img src="images/<?= $blogpost['imageName'] ?>" alt="image for the blogpost">
 			</figure>
 
 			<!-- prints out the preview of the post, if it has more than 200
@@ -75,7 +76,8 @@ require DIRBASE . 'partials/navbar.php';
 
 				<!-- link to full post -->
 				<div class="blogpost__read-more"> 
-					<a href="pages/blogpost.php?view_post=<?=$blogpost['postID'];?>">
+					<a href="pages/blogpost.php?view_post=<?=$blogpost['postID'];?>"
+					aria-label="click here to read the entire post">
 						Read More <i class="fa fa-chevron-right" aria-hidden="true"></i>
 					</a>
 				</div>
@@ -83,12 +85,13 @@ require DIRBASE . 'partials/navbar.php';
 				<br>
 				
 				<!-- Share button -->
-				<?php require 'partials/shareButton.php'; ?>
+				<?php require DIRBASE . 'partials/shareButton.php'; ?>
 
 				<!-- link to full post -->
 				<div class="commentLink">
 					<i class="fa fa-commenting-o" aria-hidden="true"></i>
-					<a href="pages/blogpost.php?view_post=<?=$blogpost['postID'];?>"></a>
+					<a href="pages/blogpost.php?view_post=<?=$blogpost['postID'];?>"
+					aria-label="click here if you want to comment"></a>
 				</div>	
 
      			<div class="clear"></div>

@@ -36,7 +36,8 @@ $infos = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 <head>
     <?php require DIRBASE . 'partials/head.php'; ?>
-	<title>Latest comments</title>
+    <title>Latest comments</title>
+    <meta name="description" content="See the latest comments you've made.">
 </head>  
 
 <body>
@@ -51,20 +52,13 @@ require DIRBASE . 'partials/navbar.php';
         <div class="profileBox__content-1">
             <!--  userimage (deafault = user icon) -->
             <div class="user-image__container">
-                <img class="user-image__image" src="<?= $user['userAvatar'] ?>"/>
+                <img class="user-image__image" src="<?= $user['userAvatar'] ?>" alt="user icon"/>
             </div>
         
             <!-- username and userdescription -->
             <div class="profileBox__content-username">
                 <p class="username"><?= $user['username'] ?></p>
                 <p class="aboutMe"><?= $user['userBio'] ?></p>
-            </div>
-    
-            <!-- icon for user settings -->
-            <div class="settingsIcon">
-                <button class="settings">
-                    <a href="pages/settings.php"><i class="fa fa-cog" aria-hidden="true"></i></a>
-                </button>
             </div>
         </div>
 
@@ -126,7 +120,7 @@ require DIRBASE . 'partials/navbar.php';
                     </p>
 
                     <!-- prints the comment -->
-                    <p class="post-information__comment"> <?= $info["commentText"]; ?></p>
+		    <p class="post-information__comment"><a href="pages/blogpost.php?$infos['postID']"><?= $info["commentText"]; ?></a></p>
 
                     <br>
 

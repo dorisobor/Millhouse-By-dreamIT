@@ -1,5 +1,9 @@
 <?php 
 session_start();
+$publishComment = "publish";
+$updateComment = "updateComment";
+$commentButton = $publishComment;
+$commentButtonValue = "Publish!";
 require_once '../config.php';
 require_once DIRBASE . 'database/db.php'; 
 require_once DIRBASE . 'database/functions.php';
@@ -17,6 +21,7 @@ require_once DIRBASE . 'database/actions/fetch_all_blogposts.php';
 <head>
 	<?php require DIRBASE . 'partials/head.php'; ?>
 	<title>Blogpost</title>
+	<meta name="description" content="Another amazing from Millhouse Stories!">
 </head>
 
 <body>
@@ -85,7 +90,7 @@ foreach($blogposts as $blogpost) {
 
 		<div class="blogpost__user-info">
 			<div class="user-image__container">
-				<img class="user-image__image" src="<?= $blogpost['userAvatar'] ?>"/>
+				<img class="user-image__image" src="<?= $blogpost['userAvatar'] ?>" alt="user icon"/>
 			</div>
 
 			<!-- username and date -->
@@ -101,8 +106,7 @@ foreach($blogposts as $blogpost) {
 		<h2><?=$blogpost['postTitle'];?></h2>
 
 		<!-- blogimage -->
-		<figure>
-			<img src="images/<?= $blogpost['imageName'] ?>" alt="<?php $blogpost['postTitle'];?>">
+			<img src="images/<?= $blogpost['imageName'] ?>" alt="image for the blogpost">
 		</figure>
 
 		<div class="blogpost__blog-description">
@@ -111,7 +115,7 @@ foreach($blogposts as $blogpost) {
 			</p>
 	        
 			<!-- Share button -->
-            <?php require '../partials/shareButton.php'; ?>
+            <?php require DIRBASE . 'partials/shareButton.php'; ?>
 
 
 	 		<div class="editButtons">	
@@ -139,19 +143,24 @@ foreach($blogposts as $blogpost) {
 				</div>
 				<p id="comment">Comment on this Story</p>
 		        <input type="hidden" id="postID" name="postID" value="<?= $postID ?>">
-				<?php
-				//  foreach($comments as $commentRow) {
-				// 	 foreach($commentRow as $comment => $value){
-				// 		echo $comment['commentText'];
-				// 		echo "<br>";
-				// 	}
-				// }
-				?>
+
+
 				<textarea class="textarea" id="message" rows="6" cols="50" name="comment" placeholder="Write comment here..." required> </textarea>
 			</div>
-			<div class="commentButton">
-				<input type="submit" name="publish" value="Publish" />
+        		<form action="pages/blogpost.php?view_post=<?= $blogpost['postID']; ?>" method="post">
+			<div class="commentInput">
+				<div class="commentHr">
+					<hr>
+                   
+				</div>
+				<input type="hidden" id="postID" name="postID" value="<?= $postID ?>">
+				<input type="hidden" id="commentID" name="commentID" value="<?= $commentID ?>">
+				<label for="comment" id="comment">Comment on this Story</label>
+				<textarea class="textarea" id="message" rows="6" cols="50" name="comment" placeholder="Write comment here..." required><?= $commentText; ?> </textarea>
 			</div>
+
+
+		</form>
 		</form>
 		<div class="allComments">
 			<h3>All Comments</h3>
