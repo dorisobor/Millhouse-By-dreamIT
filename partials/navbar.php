@@ -28,13 +28,13 @@ require_once DIRBASE . 'database/functions.php';
             <a class="nav-item nav-link" href="pages/categoryWatches.php">Watches</a>
             <a class="nav-item nav-link" href="pages/categorySunglasses.php">Sunglasses</a>
             <a class="nav-item nav-link" href="pages/categoryInterior.php">Interior</a>
-            <a class="nav-item nav-link" href="pages/contact.php">Contact</a><br>
+            
 
             <?php if (isLoggedIn()): ?>
                 <a class="nav-item nav-link d-lg-none d-xl-none" href="pages/createPost.php">Create New Story</a>
                 <a class="nav-item nav-link d-lg-none d-xl-none" href="pages/profilePage.php">Profile</a>
                 <a class="nav-item nav-link d-lg-none d-xl-none" href="pages/help.php">Help</a>
-                <a class="nav-item nav-link d-lg-none d-xl-none" href="pages/settings.php">Settings</a>
+
             <?php else:  ?>
                 <a class="nav-item nav-link d-md-none d-lg-none d-xl-none" href="pages/login.php">
                     <i class="fa fa-sign-in" aria-hidden="true"></i> Log In
@@ -71,7 +71,6 @@ require_once DIRBASE . 'database/functions.php';
                     <a class="dropdown-item" href="pages/createPost.php">Create New Story</a>
                     <a class="dropdown-item" href="pages/profilePage.php">Profile</a>
                     <a class="dropdown-item" href="pages/help.php">Help</a>
-                    <a class="dropdown-item" href="pages/settings.php">Settings</a>
                 </div>
             </div>
         <?php endif; ?>    
