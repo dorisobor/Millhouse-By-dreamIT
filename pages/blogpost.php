@@ -33,11 +33,12 @@ require DIRBASE . 'partials/navbar.php';
 	$postID = $_GET ['view_post'];
 	
 	//Prepare statement that will help showing the specific task with the id
-	$statement = $pdo->prepare("SELECT blogPosts.* , users.* ,categories.*  FROM blogPosts 
+	$statement = $pdo->prepare("SELECT blogPosts.* , users.* ,categories.* ,comments.*  
+	FROM blogPosts 
 	JOIN users ON users.userID = blogPosts.userID
 	JOIN categories ON categories.categoryID = blogPosts.categoryID
-	WHERE postID ='$postID'");
-	
+	LEFT JOIN comments ON comments.postID = blogPosts.postID
+	WHERE blogPosts.postID = '$postID'");
 	//execute it
 	$statement->execute();
 	  
@@ -45,13 +46,13 @@ require DIRBASE . 'partials/navbar.php';
 	$blogposts =  $statement ->fetchAll(PDO::FETCH_ASSOC); 
 		
 	}
-	  
+	
 }
 
 
 ?>
 
-	<?php
+	<!--?php
 		//jimmys code start
 	$statement2 = $pdo->prepare("SELECT users.*, blogPosts.*, comments.* FROM comments
 	    LEFT JOIN blogPosts ON blogPosts.postID = comments.postID
@@ -61,7 +62,7 @@ require DIRBASE . 'partials/navbar.php';
 	$statement2->execute();
 	$allComments = $statement2->fetchAll(PDO::FETCH_ASSOC); 
 	//jimmys code end
-	?>
+	?-->
 
 <main>
 
@@ -110,7 +111,7 @@ foreach($blogposts as $blogpost) {
 			</p>
 	        
 			<!-- Share button -->
-            <?php require 'partials/shareButton.php'; ?>
+            <?php require '../partials/shareButton.php'; ?>
 
 
 	 		<div class="editButtons">	
@@ -152,6 +153,10 @@ foreach($blogposts as $blogpost) {
 				<input type="submit" name="publish" value="Publish" />
 			</div>
 		</form>
+		<div class="allComments">
+			<h3>All Comments</h3>
+			<?=$blogpost['commentText'];?>
+		</div>
     </div> 
 	</div>
 </article>
@@ -161,16 +166,7 @@ foreach($blogposts as $blogpost) {
 //end of loop     
 }
 ?>
-<?php
-foreach($allComments as $allComment) { 
-?>
-<div class="mydiv">
 
-<p><?=print_r($allComment); ?></p>
-</div>
-<?php
-} 
-?>
 
 
 
