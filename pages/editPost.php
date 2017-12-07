@@ -84,7 +84,7 @@ $blogposts = $statement->fetchAll(PDO::FETCH_ASSOC);
 <html lang="en">
 
 <head>
-    <?php require DIRBASE . 'partials/head.php'; ?>
+    <?php require_once DIRBASE . 'partials/head.php'; ?>
     <title>Edit Story</title>
     <meta name="description" content="edit a story you've written.">
 </head>

@@ -25,7 +25,7 @@ $userID = $user['userID'];
 <html lang="en">
 
 <head>
-	<?php require DIRBASE . 'partials/head.php'; ?>
+	<?php require_once DIRBASE . 'partials/head.php'; ?>
 	<title>Profile Page</title>
 	<meta name="description" content="Your personal profilepage at Millhouse Stories.">
 </head>

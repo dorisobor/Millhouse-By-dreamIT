@@ -8,7 +8,7 @@ require_once DIRBASE . 'database/functions.php';
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<?php require DIRBASE . 'partials/head.php'; ?>
+	<?php require_once DIRBASE . 'partials/head.php'; ?>
 	<title>Watches</title>
 	<meta name="description" content="all stories about Millhouse watches.">
 </head>

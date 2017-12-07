@@ -58,7 +58,7 @@ if (isset($_POST['submit'])) {
 <html lang="en">
 
 <head>
-    <?php require DIRBASE . 'partials/head.php'; ?>
+    <?php require_once DIRBASE . 'partials/head.php'; ?>
     <title>Register New Account</title>
     <meta name="description" content="Sign up to become a member of the Millhouse family!">
 <body>

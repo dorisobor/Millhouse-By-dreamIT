@@ -19,7 +19,7 @@ require_once DIRBASE . 'database/actions/fetch_all_blogposts.php';
 <html lang="en">
 
 <head>
-	<?php require DIRBASE . 'partials/head.php'; ?>
+	<?php require_once DIRBASE . 'partials/head.php'; ?>
 	<title>Blogpost</title>
 	<meta name="description" content="Another amazing from Millhouse Stories!">
 </head>

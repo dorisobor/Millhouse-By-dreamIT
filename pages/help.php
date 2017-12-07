@@ -6,7 +6,7 @@ require_once '../config.php';
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<?php require DIRBASE . 'partials/head.php'; ?>
+	<?php require_once DIRBASE . 'partials/head.php'; ?>
 	<title>Help</title>
 	<meta name="description" content="see FAQ about Millhouse Stories blog.">
 </head>
