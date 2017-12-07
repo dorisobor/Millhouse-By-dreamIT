@@ -28,6 +28,7 @@ require_once DIRBASE . 'database/functions.php';
             <a class="nav-item nav-link" href="pages/categoryWatches.php">Watches</a>
             <a class="nav-item nav-link" href="pages/categorySunglasses.php">Sunglasses</a>
             <a class="nav-item nav-link" href="pages/categoryInterior.php">Interior</a>
+            <br>
             
 
             <?php if (isLoggedIn()): ?>
