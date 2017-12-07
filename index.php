@@ -131,7 +131,8 @@ require_once 'partials/navbar.php';
 
           <!-- a read more link -->
           <div class="blogpost__read-more">
-            <a href="pages/blogpost.php?view_post=<?= $blogpost['postID']; ?>">
+            <a href="pages/blogpost.php?view_post=<?= $blogpost['postID']; ?>"
+            aria-label="click here to read the entire post">
                 Read More <i class="fa fa-chevron-right" aria-hidden="true"></i>
             </a>
           </div>
@@ -141,7 +142,8 @@ require_once 'partials/navbar.php';
 
 
           <div class="commentLink">
-          <a href="pages/blogpost.php?view_post=<?= $blogpost['postID'].'#comment'; ?>">
+          <a href="pages/blogpost.php?view_post=<?= $blogpost['postID'].'#comment'; ?>"
+          aria-label="click here if you want to comment">
             <i class="fa fa-commenting-o" aria-hidden="true"></i> Comments
             </a>
           </div>
