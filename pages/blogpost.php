@@ -1,20 +1,21 @@
 <?php 
 session_start();
-require_once 'partials/db.php'; 
-require_once 'functions.php';
+require_once '../config.php';
+require_once DIRBASE . 'database/db.php'; 
+require_once DIRBASE . 'database/functions.php';
 
 //commented out since they dont exist in this version
 // require_once 'partials/writeComment.php';
 // require_once 'partials/readComments.php';
 
-require_once 'partials/fetch_all_blogposts.php';
+require_once DIRBASE . 'database/actions/fetch_all_blogposts.php';
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<?php require 'partials/head.html'; ?>
+	<?php require DIRBASE . 'partials/head.php'; ?>
 	<title>Blogpost</title>
 </head>
 
@@ -22,8 +23,8 @@ require_once 'partials/fetch_all_blogposts.php';
 
 <?php 
 // renders header with millhouse logo and navbar
-require 'partials/logoheader.html';
-require 'partials/navbar.php'; 
+require DIRBASE . 'partials/logoheader.html';
+require DIRBASE . 'partials/navbar.php'; 
 	  
 	if(isset($_GET['view_post']) ){ 
 	$postID = $_GET ['view_post'];
@@ -62,7 +63,7 @@ foreach($blogposts as $blogpost) {
 	<article class="blogpost">
 		<!-- clickable category label -->
 		<div class="blogpost__category-tag">
-			<a class="blogpost__category-link" href="category<?= $blogpost['categoryName'] ?>.php">
+			<a class="blogpost__category-link" href="pages/category<?= $blogpost['categoryName'] ?>.php">
 				<?= $blogpost['categoryName']?>
 			</a>
 		</div>
@@ -102,7 +103,7 @@ foreach($blogposts as $blogpost) {
 			<?php if(getLoggedInUserID() == $blogpost['userID']): ?>
 				<!-- edit button -->
 				<button>
-					<a href="editPost.php?postID=<?=$blogpost['postID'];?>">
+					<a href="pages/editPost.php?postID=<?=$blogpost['postID'];?>">
 						<i class="fa fa-pencil" aria-hidden="true"></i> Edit
 					</a>
 				</button>
@@ -115,7 +116,7 @@ foreach($blogposts as $blogpost) {
 
 			<div class="clear"></div>
 
-        <form action="blogpost.php" method="post">
+        <form action="pages/blogpost.php" method="post">
 			<div class="commentInput">
 				<div class="commentHr">
 					<hr>
@@ -147,13 +148,13 @@ foreach($blogposts as $blogpost) {
 ?>
 
 <!-- modal that shows if user clicks delete button -->
-<?php require 'modals/modalDeletePost.php'; ?>
+<?php require DIRBASE . 'modals/modalDeletePost.php'; ?>
 
 </main>
 	
 <?php 
-require 'partials/footer.php';
-require 'partials/bootstrapScripts.html';
+require DIRBASE . 'partials/footer.php';
+require DIRBASE . 'partials/bootstrapScripts.html';
 ?>
 
 </body>

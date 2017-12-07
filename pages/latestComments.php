@@ -1,11 +1,12 @@
 <?php
-session_start();         
-require_once 'partials/db.php'; 
-require 'functions.php';
+session_start();   
+require_once '../config.php';
+require_once DIRBASE . 'database/db.php'; 
+require_once DIRBASE . 'database/functions.php';
 
 //if user is not logged in sh/e gets redirected to home
 if (!isLoggedIn()){
-	header('Location: login.php');
+	header('Location: pages/login.php');
 	return;
 }
 
@@ -34,15 +35,15 @@ $infos = $statement->fetchAll(PDO::FETCH_ASSOC);
 <html lang="en">
 
 <head>
-    <?php require 'partials/head.html'; ?>
+    <?php require DIRBASE . 'partials/head.php'; ?>
 	<title>Latest comments</title>
 </head>  
 
 <body>
 
 <?php 
-require 'partials/logoheader.html';
-require 'partials/navbar.php'; 
+require DIRBASE . 'partials/logoheader.html';
+require DIRBASE . 'partials/navbar.php'; 
 ?>
 
 <main>
@@ -62,7 +63,7 @@ require 'partials/navbar.php';
             <!-- icon for user settings -->
             <div class="settingsIcon">
                 <button class="settings">
-                    <a href="settings.php"><i class="fa fa-cog" aria-hidden="true"></i></a>
+                    <a href="pages/settings.php"><i class="fa fa-cog" aria-hidden="true"></i></a>
                 </button>
             </div>
         </div>
@@ -72,7 +73,7 @@ require 'partials/navbar.php';
         <div class="profileBox__content-2">
             <div class="createNewPost">
                 <button class="create">
-                    <a href="createPost.php">Create New Story</a>
+                    <a href="pages/createPost.php">Create New Story</a>
                 </button>
             </div>
 
@@ -90,16 +91,16 @@ require 'partials/navbar.php';
 
     <!-- inner user nav -->
     <nav class="nav nav-pills nav-justified">
-        <a class="nav-item nav-link" href="profilePage.php">All Stories</a>
-        <a class="nav-item nav-link" href="latestPosts.php">Latest Stories</a>
-        <a class="nav-item nav-link active" href="latestComments.php">Latest Comments</a>
+        <a class="nav-item nav-link" href="pages/profilePage.php">All Stories</a>
+        <a class="nav-item nav-link" href="pages/latestPosts.php">Latest Stories</a>
+        <a class="nav-item nav-link active" href="pages/latestComments.php">Latest Comments</a>
     </nav>
 
 	<!--latest comments-->
 	<div class="container-wrapper">
 
         <?php if ($commentIsDeleted): ?>
-            <?php require 'messages/messageDeleteCommentConfirm.html'; ?>
+            <?php require DIRBASE . 'messages/messageDeleteCommentConfirm.html'; ?>
         <?php endif; ?>
 
         <?php foreach($infos as $info){?>  
@@ -132,7 +133,7 @@ require 'partials/navbar.php';
                     <!-- delete button -->
                     <div class="deleteButton">
                         <button class="deleteComment" type="button" data-toggle="modal" data-target=".delete-confirmation-comment-modal"
-                        data-comment-id="<?= $info['commentID']?>" data-redirect-page="latestComments.php">
+                        data-comment-id="<?= $info['commentID']?>" data-redirect-page="pages/latestComments.php">
                                 <i class="fa fa-trash" aria-hidden="true"></i> Delete
                         </button>
                     </div>
@@ -140,18 +141,18 @@ require 'partials/navbar.php';
             </div>
         <?php }?>
 
-        <?php require 'messages/messageEmptyProfileComments.php'; ?>
+        <?php require DIRBASE . 'messages/messageEmptyProfileComments.php'; ?>
         
     </div>  
 
     <!-- popup window connected to delete button (ie delete confirmation) -->
-    <?php require 'modals/modalDeleteComment.php'; ?>
+    <?php require DIRBASE . 'modals/modalDeleteComment.php'; ?>
 
 </main>
 
 <?php 
-require 'partials/footer.php';
-require 'partials/bootstrapScripts.html'; 
+require DIRBASE . 'partials/footer.php';
+require DIRBASE . 'partials/bootstrapScripts.html'; 
 ?>
 
 </body>

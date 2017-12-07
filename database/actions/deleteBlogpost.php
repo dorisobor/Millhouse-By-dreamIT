@@ -1,7 +1,8 @@
 <?php
 session_start();
-require_once 'partials/db.php';
-require_once 'functions.php';
+require_once '../../config.php';
+require_once DIRBASE . 'database/db.php';
+require_once DIRBASE . 'database/functions.php';
 
 // function to delete the blogpost
 if(isset ($_GET['delete_post'])){
@@ -39,7 +40,7 @@ $redirect = 'index.php';
 
 //if user should be directed to somewhere other than index
 if (isset($_GET['redirectto'])){
-    $redirect = $_GET['redirectto'];
+    $redirect = SITEBASE . $_GET['redirectto'];
 }
 
 header("Location: $redirect");

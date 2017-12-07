@@ -1,9 +1,11 @@
 <?php 
+require_once '../config.php';
+
 $postID = $_REQUEST['postID'];
 //$_GET ['edit_postID'] = 15;take it from blogpost postID where it is published $postID = $_REQUEST['postID'];  
 //$postID = $_GET ['edit_postID'];
 //var_dump($_REQUEST);
-require_once 'partials/db.php';
+require_once DIRBASE . 'database/db.php';
 
 
 
@@ -44,7 +46,7 @@ $blogposts = $statement->fetchAll(PDO::FETCH_ASSOC);
 // else{
 //    $checked_2 = 'checked';
 //}
-//	    require_once 'partials/fetch_all_blogposts.php';
+//	    require_once 'partials/require_once 'database/actions/fetch_all_blogposts.php';.php';
 //    echo "yes!";
 //    echo $postDate . "yes!";
 //    echo $postID . "yes!";
@@ -76,34 +78,34 @@ $blogposts = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 
 
-<?php require_once 'partials/update.php'; ?>
+<?php require_once DIRBASE . 'database/actions/update.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <?php require 'partials/head.html'; ?>
+    <?php require DIRBASE . 'partials/head.php'; ?>
     <title>Edit Story</title>
 </head>
 
 <body>
 
-    <?php require 'partials/logoheader.html'; ?>
-    <?php require 'partials/navbar.php';  ?>
+    <?php require DIRBASE . 'partials/logoheader.html'; ?>
+    <?php require DIRBASE . 'partials/navbar.php';  ?>
     <script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
     <main>
         <div class="main">
             <div class="mainBody">
                 <div class="form_wrapper">
                     <div class="edit_wrapper">
-                        <form class="form" action="editPost.php" method="POST" enctype="multipart/form-data">
+                        <form class="form" action="pages/editPost.php" method="POST" enctype="multipart/form-data">
                             <div class="topInfoCreate">
                                 <legend class="legend">
                                     <h1>Edit Your Story</h1>
                                 </legend>
                                 <div class="help">
                                     <p>For help press the icon</p>
-                                    <p><a href="help.php"><i class="fa fa-question-circle" aria-hidden="true"></i></a></p>
+                                    <p><a href="pages/help.php"><i class="fa fa-question-circle" aria-hidden="true"></i></a></p>
                                 </div>
                             </div>
 
@@ -155,7 +157,7 @@ $blogposts = $statement->fetchAll(PDO::FETCH_ASSOC);
                                 </div>
                                 <div class="createButton">
                                     <button type="button">
-                                    <a href="blogpost.php?view_post=<?= $postID ?>">View post</a>
+                                    <a href="pages/blogpost.php?view_post=<?= $postID ?>">View post</a>
                                     </button>
                                 </div> 
                             </fieldset>
@@ -173,11 +175,11 @@ $blogposts = $statement->fetchAll(PDO::FETCH_ASSOC);
 //        echo  $imgCopyName . "<br>";
 //        echo  $image;
 //        echo  $imgSize . " Kb";
-            require_once 'partials/update.php';  
+            require_once DIRBASE . 'database/actions/update.php';  
         echo '<br> <br> Published!<br> <script type="text/javascript">alert("Published!");</script>'; 
         
         //           sleep(5);
-        //         header("Location: blogpost.php", true, 303);
+        //         header("Location: pages/blogpost.php", true, 303);
             //then should redirect to page with full blogpost
         }
 ?>
@@ -188,8 +190,8 @@ $blogposts = $statement->fetchAll(PDO::FETCH_ASSOC);
         CKEDITOR.replace('postText');
 
     </script>
-    <?php require 'partials/footer.php'; ?>
-    <?php require 'partials/bootstrapScripts.html'; ?>
+    <?php require DIRBASE . 'partials/footer.php'; ?>
+    <?php require DIRBASE . 'partials/bootstrapScripts.html'; ?>
 
 </body>
 

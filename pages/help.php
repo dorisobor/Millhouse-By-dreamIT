@@ -1,18 +1,19 @@
 <?php
-session_start();         
+session_start();
+require_once '../config.php';
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<?php require 'partials/head.html'; ?>
+	<?php require DIRBASE . 'partials/head.php'; ?>
 	<title>Help</title>
 </head>
 <body>
 	
 <?php 
-require 'partials/logoheader.html';
-require 'partials/navbar.php';
+require DIRBASE . 'partials/logoheader.html';
+require DIRBASE . 'partials/navbar.php';
 ?>
 
 <main>
@@ -69,7 +70,7 @@ require 'partials/navbar.php';
 				<div class="contact">
 					<span class="contact__text">Still wondering something?</span>
 					<div class="contact__link-container">
-						<a class="contact__link" href="contact.php">Contact us!</a>
+						<a class="contact__link" href="pages/contact.php">Contact us!</a>
 					</div>
 				</div>
 			</div>
@@ -78,8 +79,8 @@ require 'partials/navbar.php';
 </main>
 
 <?php 
-require 'partials/footer.php';
-require 'partials/bootstrapScripts.html';
+require DIRBASE . 'partials/footer.php';
+require DIRBASE . 'partials/bootstrapScripts.html';
 ?>
 
 </body>
