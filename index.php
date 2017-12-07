@@ -120,7 +120,7 @@ require_once 'partials/navbar.php';
           <?php if (strlen($blogpost['postText']) > 200 ): ?>
             <a href="blogpost.php?view_post=<?= $totalPost['postID']; ?>">
               <p><?= substr($blogpost['postText'],0,200) ?> ...</p>
-            </a>
+          </a>
           <?php else: ?>
             <a href="blogpost.php?view_post=<?= $blogpost['postID']; ?>">
               <p><?= $blogpost['postText'] ?></p>
@@ -140,8 +140,9 @@ require_once 'partials/navbar.php';
           </div>
 
           <div class="commentLink">
-            <i class="fa fa-commenting-o" aria-hidden="true"></i>
-            <a href="blogpost.php?view_post=<?= $blogpost['postID'].'#comment'; ?>"></a>
+          <a href="blogpost.php?view_post=<?= $blogpost['postID'].'#comment'; ?>">
+            <i class="fa fa-commenting-o" aria-hidden="true"></i> Comments
+            </a>
           </div>
 
           <div class="clear"></div>

@@ -466,10 +466,11 @@ img {
 	float: left;
 	background: $headLineColor;
 	width: 150px;
-	height: 30px;
+	height: 35px;
 	text-align: center;
 	color: $defaultColor;
-	border-radius: 0.25rem;
+    border-radius: 0.25rem;
+    padding: 5px; 
 
 	.fa-commenting-o {
 		font-size: 1.5rem;
