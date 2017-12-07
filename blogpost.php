@@ -47,14 +47,31 @@ require 'partials/navbar.php';
 	  
 }
 ?>
+	<?php
+	$statement = $pdo->prepare("SELECT users.*, blogPosts.*, comments.*  FROM comments
+	LEFT JOIN blogPosts ON blogPosts.postID = comments.postID
+	LEFT JOIN users ON users.userID = comments.userID
+	WHERE blogPosts.postID = $postID;
+    ");
 
+    $statement->execute();
+
+    $allComments = $statement->fetchAll(PDO::FETCH_ASSOC); 
+	?>
+
+<?php foreach($allComments as $allComment) { 
+	
+	
+	}
+?>
 <main>
 
 <div class="mainBody">
 
 <?php     
  //foreach to show the blogposts
-foreach($blogposts as $blogpost) {      
+foreach($blogposts as $blogpost) {  
+	print_r ($blogpost);   
 ?>
 
 	<h1>Story</h1>
@@ -134,6 +151,13 @@ foreach($blogposts as $blogpost) {
 				<input type="submit" name="publish" value="Publish" />
 			</div>
 		</form>
+		
+		<div class="allComments">
+			<p>All Comments For This Story</p>
+			
+		
+			
+		</div>
     </div> 
 	</div>
 </article>
