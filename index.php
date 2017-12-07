@@ -118,7 +118,7 @@ require_once 'partials/navbar.php';
 
           <!-- limits the text to show the first 200 characters -->
           <?php if (strlen($blogpost['postText']) > 200 ): ?>
-            <a href="blogpost.php?view_post=<?= $totalPost['postID']; ?>">
+            <a href="blogpost.php?view_post=<?= $blogpost['postID']; ?>">
               <p><?= substr($blogpost['postText'],0,200) ?> ...</p>
           </a>
           <?php else: ?>
