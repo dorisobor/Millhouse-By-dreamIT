@@ -3,6 +3,13 @@ session_start();
 require_once 'partials/db.php'; 
 require 'functions.php';
 
+//checks if delete button was pressed och post was deleted
+//if it was deleted variable is used to trigger a message
+//see row 91
+$postIsDeleted = isset($_SESSION['postDeleted']);
+//unsets session in order for message to disappear
+unset($_SESSION['postDeleted']);
+
 //if user is not logged in sh/e gets redirected to home
 if (!isLoggedIn()){
 	header('Location: login.php');
@@ -17,14 +24,14 @@ $userID = $user['userID'];
 <html lang="en">
 
 <head>
-	<?php require 'head.html'; ?>
+	<?php require 'partials/head.html'; ?>
 	<title>Latest posts</title>
 </head>
 
 <body>
 
 <?php 
-require 'logoheader.html';
+require 'partials/logoheader.html';
 require 'partials/navbar.php';
 ?>
 
@@ -69,7 +76,6 @@ require 'partials/navbar.php';
 					<span>Comments: <?= getUserStatisticsComments($userID) ?></span>
 				</div>
 			</div>
-			
 		</div>      
 	</div>
 	
@@ -81,8 +87,13 @@ require 'partials/navbar.php';
 	</nav>
 			
 	<div class="profilePosts">
-	<?php foreach (getLatestBlogpostByUserID($userID) as $i => $latestPost): ?>
-		<article class="blogpost">
+		<!-- triggers message if post was deleted -->
+		<?php if ($postIsDeleted): ?>
+			<?php require 'messages/messageDeletePostConfirm.html';?>
+		<?php endif; ?>
+
+		<?php foreach (getLatestBlogpostByUserID($userID) as $i => $latestPost): ?>
+			<article class="blogpost">
 
 			<!-- clickable category label -->
 			<div class="blogpost__category-link">
@@ -105,53 +116,53 @@ require 'partials/navbar.php';
 			<!-- prints out the preview of the post, if it has more than 200
 			chars 3 dots appear to show the user that theres more to read -->
 			<div class= "blogpost__blog-description">
-			<?php if (strlen($latestPost['postText']) > 200 ):?>
-				<a href="blogpost.php?view_post=<?=$latestPost['postID'];?>">
-					<p><?=substr ($latestPost['postText'],0,200)?> ...</p>
-				</a>
-			<?php else: ?>
-				<a href="blogpost.php?view_post=<?=$latestPost['postID'];?>">
-					<p><?= $latestPost['postText'] ?></p>
-				</a>
-			<?php endif; ?>
+				<?php if (strlen($latestPost['postText']) > 200 ):?>
+					<a href="blogpost.php?view_post=<?=$latestPost['postID'];?>">
+						<p><?=substr ($latestPost['postText'],0,200)?> ...</p>
+					</a>
+				<?php else: ?>
+					<a href="blogpost.php?view_post=<?=$latestPost['postID'];?>">
+						<p><?= $latestPost['postText'] ?></p>
+					</a>
+				<?php endif; ?>
 
-			<!-- link that leads to fullview of chosen post -->
-			<div class="blogpost__read-more">
-				<a href="blogpost.php?view_post=<?=$latestPost['postID'];?>">
-					Read More <i class="fa fa-chevron-right" aria-hidden="true"></i>
-				</a>
-			</div>
-			<br>
-			<div class="blogpost__share-button"> 
-				<a href="#">Share <i class="fa fa-share-alt" aria-hidden="true"></i></a>
-			</div>
+				<!-- link that leads to fullview of chosen post -->
+				<div class="blogpost__read-more">
+					<a href="blogpost.php?view_post=<?=$latestPost['postID'];?>">
+						Read More <i class="fa fa-chevron-right" aria-hidden="true"></i>
+					</a>
+				</div>
+				<br>
+				<div class="blogpost__share-button"> 
+					<a href="#">Share <i class="fa fa-share-alt" aria-hidden="true"></i></a>
+				</div>
 			
-			<!-- buttons for delete and edit post -->
-			<div class="editButtons">
-				<button>
-					<a href="editPost.php"><i class="fa fa-pencil" aria-hidden="true"></i> Edit<a>
-				</button>
-				<button class="delete" type="button" data-toggle="modal" data-target=".delete-confirmation-modal"
-				data-postid="<?= $latestPost['postID'] ?>" data-redirect-page="latestPosts.php">
-					<i class="fa fa-trash" aria-hidden="true"></i> Delete
-				</button>
-			</div> 
+				<!-- buttons for delete and edit post -->
+				<div class="editButtons">
+					<button>
+						<a href="editPost.php"><i class="fa fa-pencil" aria-hidden="true"></i> Edit<a>
+					</button>
+					<button class="delete" type="button" data-toggle="modal" data-target=".delete-confirmation-modal"
+					data-postid="<?= $latestPost['postID'] ?>" data-redirect-page="latestPosts.php">
+						<i class="fa fa-trash" aria-hidden="true"></i> Delete
+					</button>
+				</div> 
 		</article>
 	<?php endforeach; ?>
 
-	<!-- shows a message to user if sh/e doesn't have any posts -->
-	<?php require 'messages/messageEmptyProfileLatestPosts.php'; ?>
+<!-- shows a message to user if sh/e doesn't have any posts -->
+<?php require 'messages/messageEmptyProfileLatestPosts.php'; ?>
 
-	</div>
+</div>
 
-	<!-- popup window connected to delete button (ie delete confirmation) -->
-	<?php require 'modals/modalDeletePost.php'; ?>
+<!-- popup window connected to delete button (ie delete confirmation) -->
+<?php require 'modals/modalDeletePost.php'; ?>
 
 </main>
 
 <?php 
 require 'partials/footer.php';
-require 'bootstrapScripts.html'; 
+require 'partials/bootstrapScripts.html'; 
 ?>
 
 </body>
