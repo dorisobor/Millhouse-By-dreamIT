@@ -1,6 +1,6 @@
 <?php  
-require_once 'partials/db.php';
-require_once 'functions.php';
+require_once DIRBASE . 'database/db.php';
+require_once DIRBASE . 'database/functions.php';
 
 if(isset($_POST['publish'])){
     $userID =  getLoggedInUserID();

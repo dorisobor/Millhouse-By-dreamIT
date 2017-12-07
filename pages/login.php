@@ -1,8 +1,9 @@
 <?php
 //starts sesson, get pdo connection and fetches validateLoginInput function 
-session_start();         
-require_once 'partials/db.php';
-require_once 'functions.php';
+session_start();    
+require_once '../config.php';
+require_once DIRBASE . 'database/db.php';
+require_once DIRBASE . 'database/functions.php';
 
 //variable used to print out message if there is no user found or if
 //user writes the wrong username or password
@@ -25,7 +26,7 @@ if (isset($_POST['submit'])) {
                 //the userID in the browser 
                 setcookie("userHash", $user['password'], time() + 3600, "/"); 
                 //redirects to index
-                header('Location: index.php');   
+                header('Location: ../index.php');   
             }       
         } else {
             $loginError = true;
@@ -38,13 +39,13 @@ if (isset($_POST['submit'])) {
 <html lang="en">
 
 <head>
-    <?php require 'partials/head.html'; ?>
+    <?php require DIRBASE . 'partials/head.php'; ?>
 	<title>Login</title>
 <body>
 
 <?php 
-require 'partials/logoheader.html';
-require 'partials/navbar.php'; 
+require DIRBASE . 'partials/logoheader.html';
+require DIRBASE . 'partials/navbar.php'; 
 ?>
 
 <main>
@@ -82,7 +83,7 @@ require 'partials/navbar.php';
                 </div>
                 <!-- links the user to register page -->
                 <div class="loginForm__newAccount-link">
-                Not a member yet? <a href="register.php">Create Account.</a>
+                Not a member yet? <a href="pages/register.php">Create Account.</a>
                 </div>
             </div>
         </div>
@@ -90,8 +91,8 @@ require 'partials/navbar.php';
 </main>
 
 <?php
-require 'partials/footer.php';
-require 'partials/bootstrapScripts.html';
+require DIRBASE . 'partials/footer.php';
+require DIRBASE . 'partials/bootstrapScripts.html';
 ?> 
 
 </body>

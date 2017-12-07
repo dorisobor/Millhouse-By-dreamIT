@@ -1,8 +1,9 @@
 <?php
 session_start();
-require_once 'partials/db.php';
-require_once 'functions.php';
-require_once 'partials/fetch_all_blogposts.php';
+require_once 'config.php';
+require_once 'database/db.php';
+require_once 'database/functions.php';
+require_once 'database/actions/fetch_all_blogposts.php';
 
 //checks if delete button was pressed och post was deleted
 //if it was deleted variable is used to trigger a message
@@ -16,7 +17,7 @@ unset($_SESSION['postDeleted']);
 <html lang="en">
 
 <head>
-    <?php require 'partials/head.html'; ?>
+    <?php require 'partials/head.php'; ?>
     <title>Millhouse blog</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
@@ -36,32 +37,32 @@ require_once 'partials/navbar.php';
 <main>
     <div class="figures">
         <figure>
-          <a href="categoryWatches.php"> 
+          <a href="pages/categoryWatches.php"> 
           <img class ="figures__category-image" src="images/square_watch.png" alt="watches">
           </a><figcaption>
               <h3>
-                <a href="categoryWatches.php">Watches</a>
+                <a href="pages/categoryWatches.php">Watches</a>
               </h3>
             </figcaption>
         </figure>
 
         <figure>
-          <a href="categorySunglasses.php"> 
+          <a href="pages/categorySunglasses.php"> 
           <img class ="figures__category-image" src="images/square_glasses.png" alt="sunglasses">
           </a><figcaption>
             <h3>
-              <a href="categorySunglasses.php">Sunglasses</a>
+              <a href="pages/categorySunglasses.php">Sunglasses</a>
             </h3>
 
           </figcaption>
         </figure>
 
         <figure>
-          <a href="categoryInterior.php"> 
+          <a href="pages/categoryInterior.php"> 
           <img class ="figures__category-image" src="images/square_interior.png" alt="interior">
           </a><figcaption>
               <h3>
-                <a href="categoryInterior.php">Interior</a>
+                <a href="pages/categoryInterior.php">Interior</a>
               </h3>
           </figcaption>
         </figure>
@@ -87,7 +88,7 @@ require_once 'partials/navbar.php';
       
           <!-- clickable categorylabel -->
           <div class="blogpost__category-tag">
-            <a class="blogpost__category-link" href="category<?= $blogpost['categoryName'] ?>.php">
+            <a class="blogpost__category-link" href="pages/category<?= $blogpost['categoryName'] ?>.php">
               <?= $blogpost['categoryName']?>
             </a>
           </div>
@@ -119,18 +120,22 @@ require_once 'partials/navbar.php';
 
           <!-- limits the text to show the first 200 characters -->
           <?php if (strlen($blogpost['postText']) > 200 ): ?>
+<<<<<<< HEAD
+            <a href="pages/blogpost.php?view_post=<?= $totalPost['postID']; ?>">
+=======
             <a href="blogpost.php?view_post=<?= $blogpost['postID']; ?>">
+>>>>>>> origin/master
               <p><?= substr($blogpost['postText'],0,200) ?> ...</p>
           </a>
           <?php else: ?>
-            <a href="blogpost.php?view_post=<?= $blogpost['postID']; ?>">
+            <a href="pages/blogpost.php?view_post=<?= $blogpost['postID']; ?>">
               <p><?= $blogpost['postText'] ?></p>
             </a>
           <?php endif; ?>
 
           <!-- a read more link -->
           <div class="blogpost__read-more">
-            <a href="blogpost.php?view_post=<?= $blogpost['postID']; ?>">
+            <a href="pages/blogpost.php?view_post=<?= $blogpost['postID']; ?>">
                 Read More <i class="fa fa-chevron-right" aria-hidden="true"></i>
             </a>
           </div>
@@ -140,9 +145,14 @@ require_once 'partials/navbar.php';
 
 
           <div class="commentLink">
+<<<<<<< HEAD
+            <i class="fa fa-commenting-o" aria-hidden="true"></i>
+            <a href="pages/blogpost.php?view_post=<?= $blogpost['postID'].'#comment'; ?>"></a>
+=======
           <a href="blogpost.php?view_post=<?= $blogpost['postID'].'#comment'; ?>">
             <i class="fa fa-commenting-o" aria-hidden="true"></i> Comments
             </a>
+>>>>>>> origin/master
           </div>
 
           <div class="clear"></div>

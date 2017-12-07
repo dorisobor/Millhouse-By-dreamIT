@@ -1,17 +1,19 @@
-<?php require_once 'functions.php'; ?>
+<?php 
+require_once DIRBASE . 'database/functions.php';
+?>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
 	<a class="navbar-brand hidden-md-up" href="index.php"><img class="logo" src="images/logo.png"></a>
         
     <?php if (isLoggedIn()): ?>
     <button class="sign-up-btn d-md-none d-lg-none d-xl-none">
-        <a class="sign-up-btn__link" href="signOut.php">
+        <a class="sign-up-btn__link" href="database/actions/signOut.php">
             <i class="fa fa-sign-out" aria-hidden="true"></i> Log out
         </a>
     </button>
     <?php else: ?>
     <button class="sign-up-btn d-lg-none d-xl-none">
-        <a class="sign-up-btn__link" href="register.php">Register</a>
+        <a class="sign-up-btn__link" href="pages/register.php">Register</a>
     </button>
     <?php endif; ?>
 
@@ -23,18 +25,18 @@
       
     	<div class="navbar-nav">
             <a class="nav-item nav-link" href="index.php">Home</a>
-            <a class="nav-item nav-link" href="categoryWatches.php">Watches</a>
-            <a class="nav-item nav-link" href="categorySunglasses.php">Sunglasses</a>
-            <a class="nav-item nav-link" href="categoryInterior.php">Interior</a>
-            <a class="nav-item nav-link" href="contact.php">Contact</a><br>
+            <a class="nav-item nav-link" href="pages/categoryWatches.php">Watches</a>
+            <a class="nav-item nav-link" href="pages/categorySunglasses.php">Sunglasses</a>
+            <a class="nav-item nav-link" href="pages/categoryInterior.php">Interior</a>
+            <a class="nav-item nav-link" href="pages/contact.php">Contact</a><br>
 
             <?php if (isLoggedIn()): ?>
-                <a class="nav-item nav-link d-lg-none d-xl-none" href="createPost.php">Create New Story</a>
-                <a class="nav-item nav-link d-lg-none d-xl-none" href="profilepage.php">Profile</a>
-                <a class="nav-item nav-link d-lg-none d-xl-none" href="help.php">Help</a>
-                <a class="nav-item nav-link d-lg-none d-xl-none" href="settings.php">Settings</a>
+                <a class="nav-item nav-link d-lg-none d-xl-none" href="pages/createPost.php">Create New Story</a>
+                <a class="nav-item nav-link d-lg-none d-xl-none" href="pages/profilePage.php">Profile</a>
+                <a class="nav-item nav-link d-lg-none d-xl-none" href="pages/help.php">Help</a>
+                <a class="nav-item nav-link d-lg-none d-xl-none" href="pages/settings.php">Settings</a>
             <?php else:  ?>
-                <a class="nav-item nav-link d-md-none d-lg-none d-xl-none" href="login.php">
+                <a class="nav-item nav-link d-md-none d-lg-none d-xl-none" href="pages/login.php">
                     <i class="fa fa-sign-in" aria-hidden="true"></i> Log In
                 </a>
             <?php endif; ?>
@@ -43,7 +45,7 @@
 
         <?php if (isLoggedIn()): ?>
         <div class="user-actions d-none d-lg-block d-xl-block ml-auto">
-            <a class="user-actions__link" href="signOut.php"> 
+            <a class="user-actions__link" href="database/actions/signout.php"> 
                 <button class="user-actions__sign-up-btn">
                     <i class="fa fa-sign-out" aria-hidden="true"></i> Log Out
                 </button>
@@ -51,10 +53,10 @@
         </div>
         <?php else: ?>
             <div class="user-actions d-none d-lg-block d-xl-block ml-auto">
-                <a class="user-actions__link--black" href="login.php">
+                <a class="user-actions__link--black" href="pages/login.php">
                     <i class="fa fa-sign-in" aria-hidden="true"></i> Log In
                 </a>
-                <a class="user-actions__link" href="register.php"> 
+                <a class="user-actions__link" href="pages/register.php"> 
                     <button class="user-actions__sign-up-btn">Register</button>
                 </a>
             </div>
@@ -66,10 +68,10 @@
                     <i class="fa fa-user-circle-o" aria-hidden="true"></i> User menu
                 </button>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="createPost.php">Create New Story</a>
-                    <a class="dropdown-item" href="profilepage.php">Profile</a>
-                    <a class="dropdown-item" href="help.php">Help</a>
-                    <a class="dropdown-item" href="settings.php">Settings</a>
+                    <a class="dropdown-item" href="pages/createPost.php">Create New Story</a>
+                    <a class="dropdown-item" href="pages/profilePage.php">Profile</a>
+                    <a class="dropdown-item" href="pages/help.php">Help</a>
+                    <a class="dropdown-item" href="pages/settings.php">Settings</a>
                 </div>
             </div>
         <?php endif; ?>    

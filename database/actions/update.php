@@ -3,15 +3,15 @@
 // $postID = 15;
 
 if(isset($_POST['publish'])){
-    require_once 'partials/db.php';
+    require_once DIRBASE . 'database/db.php';
 
-    if (isset($_POST['categoryWatches'])){
+    if (isset($_POST['pages/categoryWatches.php'])){
         $categoryID = 1;
     }
-    if (isset($_POST['categorySunglasses'])){
+    if (isset($_POST['pages/categorySunglasses.php'])){
         $categoryID = 2;
     }
-    if (isset($_POST['categoryInterior'])){
+    if (isset($_POST['pages/categoryInterior.php'])){
         $categoryID = 3;
     }
     

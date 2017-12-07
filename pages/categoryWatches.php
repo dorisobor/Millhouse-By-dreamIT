@@ -1,39 +1,36 @@
 <?php 
-session_start();         
-require_once 'partials/db.php'; 
-require_once 'functions.php';
+session_start();   
+require_once '../config.php';
+require_once DIRBASE . 'database/db.php'; 
+require_once DIRBASE . 'database/functions.php';
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<?php require 'partials/head.html'; ?>
-	<title>Interior</title>
+	<?php require DIRBASE . 'partials/head.php'; ?>
+	<title>Watches</title>
 </head>
-
 <body>
 
 <?php 
-require 'partials/logoheader.html';
-require 'partials/navbar.php'; 
+require DIRBASE . 'partials/logoheader.html';
+require DIRBASE . 'partials/navbar.php'; 
 ?>
 
 <header>
-	<div class="jumbotron_interiorHeader"></div>    
+	<div class="jumbotron_watchesHeader"></div>    
 </header>
 
-<main>
+<main> 
+	<!-- picture representing the category -->
 	<div class="mainBody">
-		<div class="mainTitle">
-			<h1>Interior</h1>
-		</div>
-		<p>Here you can read all about Millhouse exclusive interior details!</p>
+		<h1>Watches</h1>
+		<p>Here you can read all about Millhouse exclusive watches!</p>
 
-		<?php foreach(getAllBlogpostsOnInterior() as $i => $blogpost): ?>
+		<?php foreach (getAllBlogpostsOnWatches() as $i => $blogpost): ?>
 		<article class="blogpost">
-
-			<!-- category label -->
+		<!-- category label -->
 			<div class="blogpost__category-tag">
 				<span><?= $blogpost['categoryName'] ?></span>
 			</div>
@@ -43,20 +40,20 @@ require 'partials/navbar.php';
 				<div class="user-image__container">
 					<img class="user-image__image" src="<?= $blogpost['userAvatar'] ?>"/>
 				</div>
-
+				
 				<!-- username and publish date -->
 				<div class="blogpost__content-username">
 					<p class="username">Author: <?= $blogpost['username'] ?></p>
-					<time><p>Publish date: <?= substr($blogpost['postDate'], 0, 16) ?></p></time>
+					<time><p>Publish date: <?= substr($blogpost['postDate'], 0, 16)?></p></time>
 				</div>
 			</div>
 	
 			<div class="clear"></div>
 			
-			<!-- blogtitle -->
+			<!-- blopost title -->
 			<h2><?= $blogpost['postTitle'] ?></h2>
 
-			<!-- blogimage -->
+			<!-- blogpost image -->
 			<figure>
 				<img src="images/<?= $blogpost['imageName'] ?>" alt="">
 			</figure>
@@ -65,18 +62,18 @@ require 'partials/navbar.php';
 			chars 3 dots appear to show the user that theres more to read -->
 			<div class= "blogpost__blog-description">
 				<?php if (strlen($blogpost['postText']) > 200 ):?>
-					<a href="blogpost.php?view_post=<?=$blogpost['postID'];?>">
+					<a href="pages/blogpost.php?view_post=<?=$blogpost['postID'];?>">
 						<p><?=substr ($blogpost['postText'],0,200)?> ...</p>
 					</a>
 				<?php else: ?>
-					<a href="blogpost.php?view_post=<?=$blogpost['postID'];?>">
+					<a href="pages/blogpost.php?view_post=<?=$blogpost['postID'];?>">
 						<p><?= $blogpost['postText'] ?></p>
 					</a>
 				<?php endif; ?>
-
+				
 				<!-- link to full post -->
 				<div class="blogpost__read-more"> 
-					<a href="blogpost.php?view_post=<?=$blogpost['postID'];?>">
+					<a href="pages/blogpost.php?view_post=<?=$blogpost['postID'];?>">
 						Read More <i class="fa fa-chevron-right" aria-hidden="true"></i>
 					</a>
 				</div>
@@ -89,24 +86,24 @@ require 'partials/navbar.php';
 				<!-- link to full post -->
 				<div class="commentLink">
 					<i class="fa fa-commenting-o" aria-hidden="true"></i>
-					<a href="blogpost.php?view_post=<?=$blogpost['postID'];?>"></a>
+					<a href="pages/blogpost.php?view_post=<?=$blogpost['postID'];?>"></a>
 				</div>	
 
-				<div class="clear"></div>
-				
+     			<div class="clear"></div>
+
 			</div>
 		</article>
 		<?php endforeach; ?>
-		
-		<!-- user gets a message if theres no posts published -->
-		<?php require 'messages/messageEmptyCategory.php'; ?>
 
+	  	<!-- user gets a message if theres no posts published -->
+		<?php require DIRBASE . 'messages/messageEmptyCategory.php'; ?>
+	
 	</div>
 </main>
 
 <?php 
-require 'partials/footer.php';
-require 'partials/bootstrapScripts.html';
+require DIRBASE . 'partials/footer.php';
+require DIRBASE . 'partials/bootstrapScripts.html';
 ?>
 
 </body>

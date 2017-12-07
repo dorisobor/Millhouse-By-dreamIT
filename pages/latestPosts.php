@@ -1,7 +1,8 @@
 <?php 
-session_start();         
-require_once 'partials/db.php'; 
-require 'functions.php';
+session_start();   
+require_once '../config.php';
+require_once DIRBASE . 'database/db.php'; 
+require_once DIRBASE . 'database/functions.php';
 
 //checks if delete button was pressed och post was deleted
 //if it was deleted variable is used to trigger a message
@@ -12,7 +13,7 @@ unset($_SESSION['postDeleted']);
 
 //if user is not logged in sh/e gets redirected to home
 if (!isLoggedIn()){
-	header('Location: login.php');
+	header('Location: pages/login.php');
 	return;
 }
 
@@ -24,15 +25,15 @@ $userID = $user['userID'];
 <html lang="en">
 
 <head>
-	<?php require 'partials/head.html'; ?>
+	<?php require DIRBASE . 'partials/head.php'; ?>
 	<title>Latest posts</title>
 </head>
 
 <body>
 
 <?php 
-require 'partials/logoheader.html';
-require 'partials/navbar.php';
+require DIRBASE . 'partials/logoheader.html';
+require DIRBASE . 'partials/navbar.php';
 ?>
 
 <main>
@@ -53,7 +54,7 @@ require 'partials/navbar.php';
 			<!-- icon for user settings -->
 			<div class="settingsIcon">
 				<button class="settings">
-					<a href="settings.php"><i class="fa fa-cog" aria-hidden="true"></i></a>
+					<a href="pages/settings.php"><i class="fa fa-cog" aria-hidden="true"></i></a>
 				</button>
 			</div>
         </div>
@@ -63,7 +64,7 @@ require 'partials/navbar.php';
         <div class="profileBox__content-2">
 			<div class="createNewPost">
 				<button class="create">
-					<a href="createPost.php">Create New Story</a>
+					<a href="pages/createPost.php">Create New Story</a>
 				</button>
 			</div>
 
@@ -81,15 +82,15 @@ require 'partials/navbar.php';
 	
 	<!-- inner user nav -->
 	<nav class="nav nav-pills nav-justified">
-		<a class="nav-item nav-link" href="profilePage.php">All Stories</a>
-		<a class="nav-item nav-link active" href="latestPosts.php">Latest Stories</a>
-		<a class="nav-item nav-link" href="latestComments.php">Latest Comments</a>
+		<a class="nav-item nav-link" href="pages/profilePage.php">All Stories</a>
+		<a class="nav-item nav-link active" href="pages/latestPosts.php">Latest Stories</a>
+		<a class="nav-item nav-link" href="pages/latestComments.php">Latest Comments</a>
 	</nav>
 			
 	<div class="profilePosts">
 		<!-- triggers message if post was deleted -->
 		<?php if ($postIsDeleted): ?>
-			<?php require 'messages/messageDeletePostConfirm.html';?>
+			<?php require DIRBASE . 'messages/messageDeletePostConfirm.html';?>
 		<?php endif; ?>
 
 		<?php foreach (getLatestBlogpostByUserID($userID) as $i => $latestPost): ?>
@@ -97,7 +98,7 @@ require 'partials/navbar.php';
 
 			<!-- clickable category label -->
 			<div class="blogpost__category-link">
-				<a class="blogpost__category-link" href="category<?= $latestPost['categoryName'] ?>.php">
+				<a class="blogpost__category-link" href="pages/category<?= $latestPost['categoryName'] ?>.php">
 					<?= $latestPost['categoryName']?>
 				</a>
 			</div>
@@ -117,18 +118,18 @@ require 'partials/navbar.php';
 			chars 3 dots appear to show the user that theres more to read -->
 			<div class= "blogpost__blog-description">
 				<?php if (strlen($latestPost['postText']) > 200 ):?>
-					<a href="blogpost.php?view_post=<?=$latestPost['postID'];?>">
+					<a href="pages/blogpost.php?view_post=<?=$latestPost['postID'];?>">
 						<p><?=substr ($latestPost['postText'],0,200)?> ...</p>
 					</a>
 				<?php else: ?>
-					<a href="blogpost.php?view_post=<?=$latestPost['postID'];?>">
+					<a href="pages/blogpost.php?view_post=<?=$latestPost['postID'];?>">
 						<p><?= $latestPost['postText'] ?></p>
 					</a>
 				<?php endif; ?>
 
 				<!-- link that leads to fullview of chosen post -->
 				<div class="blogpost__read-more">
-					<a href="blogpost.php?view_post=<?=$latestPost['postID'];?>">
+					<a href="pages/blogpost.php?view_post=<?=$latestPost['postID'];?>">
 						Read More <i class="fa fa-chevron-right" aria-hidden="true"></i>
 					</a>
 				</div>
@@ -140,10 +141,10 @@ require 'partials/navbar.php';
 				<!-- buttons for delete and edit post -->
 				<div class="editButtons">
 					<button>
-						<a href="editPost.php"><i class="fa fa-pencil" aria-hidden="true"></i> Edit<a>
+						<a href="pages/editPost.php"><i class="fa fa-pencil" aria-hidden="true"></i> Edit<a>
 					</button>
 					<button class="delete" type="button" data-toggle="modal" data-target=".delete-confirmation-modal"
-					data-postid="<?= $latestPost['postID'] ?>" data-redirect-page="latestPosts.php">
+					data-postid="<?= $latestPost['postID'] ?>" data-redirect-page="pages/latestPosts.php">
 						<i class="fa fa-trash" aria-hidden="true"></i> Delete
 					</button>
 				</div> 
@@ -151,18 +152,18 @@ require 'partials/navbar.php';
 	<?php endforeach; ?>
 
 <!-- shows a message to user if sh/e doesn't have any posts -->
-<?php require 'messages/messageEmptyProfileLatestPosts.php'; ?>
+<?php require DIRBASE . 'messages/messageEmptyProfileLatestPosts.php'; ?>
 
 </div>
 
 <!-- popup window connected to delete button (ie delete confirmation) -->
-<?php require 'modals/modalDeletePost.php'; ?>
+<?php require DIRBASE . 'modals/modalDeletePost.php'; ?>
 
 </main>
 
 <?php 
-require 'partials/footer.php';
-require 'partials/bootstrapScripts.html'; 
+require DIRBASE . 'partials/footer.php';
+require DIRBASE . 'partials/bootstrapScripts.html'; 
 ?>
 
 </body>

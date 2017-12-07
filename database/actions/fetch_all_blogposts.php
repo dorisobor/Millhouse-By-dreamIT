@@ -1,5 +1,5 @@
 <?php 
-  require_once 'partials/db.php';
+  require_once DIRBASE . 'database/db.php';
  //creates a link that will check which page the user is in
  //it also checks the amount posts it is per page which will be 5
     $page = isset ($_GET['page']) ? (int)$_GET['page']: 1;
