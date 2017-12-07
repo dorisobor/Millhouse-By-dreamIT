@@ -127,7 +127,7 @@ require DIRBASE . 'partials/navbar.php';
                     </p>
 
                     <!-- prints the comment -->
-                    <p class="post-information__comment"> <?= $info["commentText"]; ?></p>
+		    <p class="post-information__comment"><a href="pages/blogpost.php?$infos['postID']"><?= $info["commentText"]; ?></a></p>
 
                     <br>
 
