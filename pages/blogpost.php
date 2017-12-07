@@ -1,5 +1,9 @@
 <?php 
 session_start();
+$publishComment = "publish";
+$updateComment = "updateComment";
+$commentButton = $publishComment;
+$commentButtonValue = "Publish!";
 require_once '../config.php';
 require_once DIRBASE . 'database/db.php'; 
 require_once DIRBASE . 'database/functions.php';
@@ -134,9 +138,21 @@ foreach($blogposts as $blogpost) {
 				?>
 				<textarea class="textarea" id="message" rows="6" cols="50" name="comment" placeholder="Write comment here..." required> </textarea>
 			</div>
-			<div class="commentButton">
-				<input type="submit" name="publish" value="Publish" />
+        		<form action="blogpost.php?view_post=<?= $blogpost['postID']; ?>" method="post">
+			<div class="commentInput">
+				<div class="commentHr">
+					<hr>
+                   
+				</div>
+				<p id="comment">Comment on this Story</p>
+				<input type="hidden" id="postID" name="postID" value="<?= $postID ?>">
+				<input type="hidden" id="commentID" name="commentID" value="<?= $commentID ?>">
+				
+				<textarea class="textarea" id="message" rows="6" cols="50" name="comment" placeholder="Write comment here..." required><?= $commentText; ?> </textarea>
 			</div>
+
+
+		</form>
 		</form>
     </div> 
 	</div>

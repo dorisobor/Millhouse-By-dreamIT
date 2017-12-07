@@ -3,7 +3,7 @@
 
 //echo $_GET['commentID'];
 $commentID = $_GET['commentID'];
-echo " comment " . $commentID;	
+//echo " comment " . $commentID;	
 
 if(isset($_GET['commentID']) && is_numeric($_GET['commentID'])){
     

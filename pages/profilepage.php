@@ -140,15 +140,15 @@ require DIRBASE . 'partials/navbar.php';
 					</a>
 				</div>
 				<br>
-				<div class="blogpost__share-button"> 
-					<a href="#">Share <i class="fa fa-share-alt" aria-hidden="true"></i></a>
-				</div>
+				<?php require DIRBASE .'partials/shareButton.php'; ?>
 
 				<!-- buttons for delete and edit post -->
 				<div class="editButtons">
+							
 					<button>
-						<a href="pages/editPost.php"><i class="fa fa-pencil" aria-hidden="true"></i> Edit<a>
-					</button>
+          					<a href="editPost.php?postID=<?=$blogpost['postID'];?>"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
+ 					</button>		
+							
 					<button class="delete" type="button" data-toggle="modal" data-target=".delete-confirmation-modal" 
 					data-postid="<?= $totalPost['postID'] ?>" data-redirect-page="pages/profilepage.php"> 
 							<i class="fa fa-trash" aria-hidden="true"></i> Delete
