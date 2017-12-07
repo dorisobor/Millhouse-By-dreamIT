@@ -136,9 +136,8 @@ require_once 'partials/navbar.php';
           </div>
           <br>
 
-          <div class="blogpost__share-button"> 
-            <a href="#"> Share <i class="fa fa-share-alt" aria-hidden="true"></i></a>
-          </div>
+          <?php require 'partials/shareButton.php'; ?>
+
 
           <div class="commentLink">
           <a href="blogpost.php?view_post=<?= $blogpost['postID'].'#comment'; ?>">
