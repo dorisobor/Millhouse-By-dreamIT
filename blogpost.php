@@ -113,6 +113,8 @@ foreach($blogposts as $blogpost) {
 				</button>
 			<?php endif; ?>
 
+			<div class="clear"></div>
+
         <form action="blogpost.php" method="post">
 			<div class="commentInput">
 				<div class="commentHr">
