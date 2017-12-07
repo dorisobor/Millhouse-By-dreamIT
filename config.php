@@ -7,4 +7,4 @@
 define('DIRBASE', dirname(__FILE__).'/');
 
 //defines the currents site's url so that redirects work properly
-define('SITEBASE', '/');
+define('SITEBASE', '/Millhouse-By-dreamIT/');

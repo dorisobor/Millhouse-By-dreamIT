@@ -39,7 +39,7 @@ require DIRBASE . 'partials/navbar.php';
 			<!-- useravatar -->
 			<div class="blogpost__user-info">
 				<div class="user-image__container">
-					<img class="user-image__image" src="<?= $blogpost['userAvatar'] ?>"/>
+					<img class="user-image__image" src="<?= $blogpost['userAvatar'] ?>" alt="user icon"/>
 				</div>
 				
 				<!-- username and publish date -->
@@ -74,7 +74,8 @@ require DIRBASE . 'partials/navbar.php';
 				
 				<!-- link to full post -->
 				<div class="blogpost__read-more"> 
-					<a href="pages/blogpost.php?view_post=<?=$blogpost['postID'];?>">
+					<a href="pages/blogpost.php?view_post=<?=$blogpost['postID'];?>"
+					aria-label="click here to read the entire post">
 						Read More <i class="fa fa-chevron-right" aria-hidden="true"></i>
 					</a>
 				</div>
@@ -87,7 +88,8 @@ require DIRBASE . 'partials/navbar.php';
 				<!-- link to full post -->
 				<div class="commentLink">
 					<i class="fa fa-commenting-o" aria-hidden="true"></i>
-					<a href="pages/blogpost.php?view_post=<?=$blogpost['postID'];?>"></a>
+					<a href="pages/blogpost.php?view_post=<?=$blogpost['postID'];?>"
+					aria-label="click here if you want to comment"></a>
 				</div>	
 
      			<div class="clear"></div>

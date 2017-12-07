@@ -95,7 +95,7 @@ require_once 'partials/navbar.php';
   
           <div class="blogpost__user-info">
               <div class="user-image__container">
-                  <img class="user-image__image" src="<?= $blogpost['userAvatar'] ?>"/>
+                  <img class="user-image__image" src="<?= $blogpost['userAvatar'] ?>" alt="user icon"/>
               </div>
               
               <!-- userinformation -->
