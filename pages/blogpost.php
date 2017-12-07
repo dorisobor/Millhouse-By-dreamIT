@@ -94,9 +94,10 @@ foreach($blogposts as $blogpost) {
 			<p>
 				<?=$blogpost['postText'];?>
 			</p>
-			<div class="blogpost__share-button">
-				<a href="#"> Share <i class="fa fa-share-alt" aria-hidden="true"></i></a>
-			</div>
+	        
+			<!-- Share button -->
+            <?php require 'partials/shareButton.php'; ?>
+
 
 	 		<div class="editButtons">	
 			<!-- ONLY renders if the inlogged user has written the post -->

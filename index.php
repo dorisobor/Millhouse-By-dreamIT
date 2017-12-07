@@ -53,6 +53,7 @@ require_once 'partials/navbar.php';
             <h3>
               <a href="pages/categorySunglasses.php">Sunglasses</a>
             </h3>
+
           </figcaption>
         </figure>
 
@@ -119,9 +120,13 @@ require_once 'partials/navbar.php';
 
           <!-- limits the text to show the first 200 characters -->
           <?php if (strlen($blogpost['postText']) > 200 ): ?>
+<<<<<<< HEAD
             <a href="pages/blogpost.php?view_post=<?= $totalPost['postID']; ?>">
+=======
+            <a href="blogpost.php?view_post=<?= $blogpost['postID']; ?>">
+>>>>>>> origin/master
               <p><?= substr($blogpost['postText'],0,200) ?> ...</p>
-            </a>
+          </a>
           <?php else: ?>
             <a href="pages/blogpost.php?view_post=<?= $blogpost['postID']; ?>">
               <p><?= $blogpost['postText'] ?></p>
@@ -136,13 +141,18 @@ require_once 'partials/navbar.php';
           </div>
           <br>
 
-          <div class="blogpost__share-button"> 
-            <a href="#"> Share <i class="fa fa-share-alt" aria-hidden="true"></i></a>
-          </div>
+          <?php require 'partials/shareButton.php'; ?>
+
 
           <div class="commentLink">
+<<<<<<< HEAD
             <i class="fa fa-commenting-o" aria-hidden="true"></i>
             <a href="pages/blogpost.php?view_post=<?= $blogpost['postID'].'#comment'; ?>"></a>
+=======
+          <a href="blogpost.php?view_post=<?= $blogpost['postID'].'#comment'; ?>">
+            <i class="fa fa-commenting-o" aria-hidden="true"></i> Comments
+            </a>
+>>>>>>> origin/master
           </div>
 
           <div class="clear"></div>
