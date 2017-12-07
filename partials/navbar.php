@@ -6,7 +6,7 @@ require_once DIRBASE . 'database/functions.php';
 	<a class="navbar-brand hidden-md-up" href="index.php"><img class="logo" src="images/logo.png" alt="Logo for Millhouse"></a>
         
     <?php if (isLoggedIn()): ?>
-    <button class="sign-up-btn d-md-none d-lg-none d-xl-none">
+    <button class="sign-up-btn d-md-block d-lg-none d-xl-none">
         <a class="sign-up-btn__link" href="database/actions/signOut.php">
             <i class="fa fa-sign-out" aria-hidden="true"></i> Log out
         </a>
@@ -36,7 +36,7 @@ require_once DIRBASE . 'database/functions.php';
                 <a class="nav-item nav-link d-lg-none d-xl-none" href="pages/help.php">Help</a>
 
             <?php else:  ?>
-                <a class="nav-item nav-link d-md-none d-lg-none d-xl-none" href="pages/login.php">
+                <a class="nav-item nav-link d-md-block d-lg-none d-xl-none" href="pages/login.php">
                     <i class="fa fa-sign-in" aria-hidden="true"></i> Log In
                 </a>
             <?php endif; ?>
