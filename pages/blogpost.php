@@ -17,6 +17,7 @@ require_once DIRBASE . 'database/actions/fetch_all_blogposts.php';
 <head>
 	<?php require DIRBASE . 'partials/head.php'; ?>
 	<title>Blogpost</title>
+	<meta name="description" content="Another amazing from Millhouse Stories!">
 </head>
 
 <body>
@@ -86,8 +87,7 @@ foreach($blogposts as $blogpost) {
 		<h2><?=$blogpost['postTitle'];?></h2>
 
 		<!-- blogimage -->
-		<figure>
-			<img src="images/<?= $blogpost['imageName'] ?>" alt="<?php $blogpost['postTitle'];?>">
+			<img src="images/<?= $blogpost['imageName'] ?>" alt="image for the blogpost">
 		</figure>
 
 		<div class="blogpost__blog-description">

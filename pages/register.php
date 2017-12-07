@@ -59,7 +59,8 @@ if (isset($_POST['submit'])) {
 
 <head>
     <?php require DIRBASE . 'partials/head.php'; ?>
-	<title>Register New Account</title>
+    <title>Register New Account</title>
+    <meta name="description" content="Sign up to become a member of the Millhouse family!">
 <body>
 
 <?php 

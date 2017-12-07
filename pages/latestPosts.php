@@ -27,6 +27,7 @@ $userID = $user['userID'];
 <head>
 	<?php require DIRBASE . 'partials/head.php'; ?>
 	<title>Latest posts</title>
+	<meta name="description" content="See the latest stories you've written.">
 </head>
 
 <body>
@@ -109,7 +110,7 @@ require DIRBASE . 'partials/navbar.php';
 
 			<!-- blogpost image -->
 			<figure>
-				<img src="images/<?= $latestPost['imageName'] ?>" alt="">
+				<img src="images/<?= $latestPost['imageName'] ?>" alt="image for the blogpost">
 			</figure>
 
 			<div class="clear"></div> 

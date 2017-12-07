@@ -8,6 +8,7 @@ require_once '../config.php';
 <head>
 	<?php require DIRBASE . 'partials/head.php'; ?>
 	<title>Help</title>
+	<meta name="description" content="see FAQ about Millhouse Stories blog.">
 </head>
 <body>
 	

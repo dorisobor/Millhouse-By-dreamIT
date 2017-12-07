@@ -27,6 +27,7 @@ $userID = $user['userID'];
 <head>
 	<?php require DIRBASE . 'partials/head.php'; ?>
 	<title>Profile Page</title>
+	<meta name="description" content="Your personal profilepage at Millhouse Stories.">
 </head>
 
 <body>
@@ -114,7 +115,7 @@ require DIRBASE . 'partials/navbar.php';
 
 				<!-- blogpost image -->
 				<figure>
-					<img src="images/<?= $totalPost['imageName'] ?>" alt="">
+					<img src="images/<?= $totalPost['imageName'] ?>" alt="image for the blogpost">
 				</figure>	
 
 				<div class="clear"></div> 
