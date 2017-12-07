@@ -1,30 +1,876 @@
-$sectionBackground:#f2f2f2;
-$defaultColor:#fff;
-$textColor:#262626;
-$headLineColor:#1c3045;
-$buttonColor:#1C4D45;
-$interactiveHover:#2E52A1;
-$tabs:#6d6d6d;
-$dangerColor:#cc4750;
+@import 'theme.scss'; 
 
-body{
-    padding:0px;
-    margin: 0px;
-    background: black;
-    color: $textColor;
+/*--GENERAL--*/
+body {
+	font-family: 'helveticaneueregular', Helvetica, Arial, sans-serif;
+	font-weight: normal;
+	font-style: normal;
+	padding: 0px;
+	margin: 0px;
+	background: $defaultColor;
+	font-size: 16px;
+	color: $textColor;
 }
 
 main {
-    margin: 0px auto;
+	margin: 0px auto;
+    padding: 0px;
+    max-width: 600px;
+    border-left: 1px solid $sectionBackground;
+    border-right: 1px solid $sectionBackground;
 }
 
-.dropdown {
-    margin-left: 600px;
+.mainBody {
+	margin: 0px auto;
+	padding: 20px;
 }
 
-.logo{
+.figures {
+	display: none;
+}
+
+hr {
+	display: block;
+	max-width: 900px;
+}
+
+h1 {
+	padding: 0px;
+	margin: 0px;
+	color: $interactiveHover;
+}
+
+a{
+    color: $textColor; 
+}
+
+p {
+	margin: 0px;
+}
+
+figure {
+	text-align: center;
+}
+
+.clear {
+	clear: both;
+}
+
+button{
+    border-radius: 0.25em; 
+    color: $defaultColor; 
+}
+
+.jumbotron_indexHeader {
+	display: block;
+	margin-bottom: 0px;
+	background-image: url("images/mh_jumbo.png"), url("../images/mh_jumbo.png");
+	background-color: #cccccc;
+	background-size: cover;
+	background-position: center;
+	width: 100%;
+	height: 300px;
+}
+
+article {
+	padding: 15px;
+}
+
+article button {
+	background: $buttonColor;
+	color: $defaultColor;
+	border: none;
+	width: 70px;
+	padding: 5px;
+}
+
+.paginations {
+	text-align: center;
+	padding: 10px;
+
+	a {
+		color: $interactiveHover;
+		margin: 20px;
+	}
+}
+
+//navbar
+.navbar {
+	border-top: 1px solid $sectionBackground;
+}
+
+
+.navbar {
+    border: 1px solid rgba(0,0,0,.15);
+}
+
+.navbar-brand {
+    margin-right: 0px;
+}
+
+.bg-light {
+    background-color: $defaultColor !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: $textColor;
+    font-weight: bold;
+
+    &:hover {
+        color: $interactiveHover;
+        text-decoration: underline;
+    }
+}
+
+.logo {
     width: 100px;
 }
 
-//mediascreens for mobile
+.dropdown {
+    margin: 0px;
+}
 
+footer {
+    border-top: 1px solid rgba(0,0,0,.15);
+    text-align: center;
+
+    .footer__container {
+        display: flex;  
+        justify-content: space-around;
+        margin: 10px auto; 
+        padding: 10px;
+        text-align: center;
+        max-width: 750px;
+
+        .footer__link {
+            padding: 10px 15px;
+            border-radius: 0.25em;
+
+            &:hover {
+                background-color: $interactiveHover;
+                color: $defaultColor;
+            }
+    
+            .fa {
+                font-size: 2em;
+            }      
+        }
+    }   
+}
+
+.footer__credit {
+    text-align: center;
+    margin: 10px;
+}
+
+/*--SING UP BUTTON--*/
+
+.sign-up-btn {
+    margin-left: auto;
+    margin-right: 1rem;
+    padding: 8px 10px;
+    border-radius: .25rem;    
+    background-color: $buttonColor;
+    color: $defaultColor;
+    border: none;
+}
+
+.sign-up-btn__link {
+    color: $defaultColor;
+    
+    &:hover {
+        text-decoration: none;
+        color: $defaultColor;
+    }
+}
+
+/*--HELP PAGE--*/ 
+
+.help-article-container {
+    padding: 4px;
+    margin: 0px 12px;
+}
+
+.article__wrapper {
+    margin: 0px auto;
+    max-width: 650px;
+    border-right: 1px solid $sectionBackground;
+    border-left: 1px solid $sectionBackground;
+}
+
+.contact {
+    margin: 30px 20px;
+    text-align: center;
+}
+
+.contact__text {
+    display: block;
+}
+
+.contact__link-container {
+    margin: 10px auto;
+    @extend .blogpost__category-tag;
+}
+
+.contact__link {
+    color: $defaultColor;
+
+    &:hover {
+        color: $defaultColor;
+    }
+}
+
+.article__content {
+    margin: 0px auto; 
+    margin: 12px;
+    padding: 12px;
+    background-color: $sectionBackground;
+}
+
+.article__top-header {
+    margin: 20px 0px 0px 10px;
+    color: $headLineColor;
+}
+
+.article__question {
+    margin-left: 0px;
+    padding: 0px;
+    color: $headLineColor;
+}
+
+.article__text {
+    line-height: 1.9;
+}
+
+/*--LATEST COMMENTS--*/
+
+.dropdown-content{
+    text-align: center;
+}
+
+.container-wrapper{
+   margin: 0px auto;
+   padding: 20px;
+
+    .container-latestComments{
+        margin: 1em auto;      
+        background-color: $sectionBackground;
+            
+        .deleteButton{
+
+            .deleteComment{
+                background: $dangerColor; 
+                width: 5.5rem; 
+            }
+        }
+    }
+}
+
+/*---BLOGPOST---*/
+
+.blogpost {
+	background-color: $sectionBackground;
+	padding: 20px;
+}
+
+/* category button */
+.blogpost__category-tag {
+    max-width: 100px;
+    padding: 5px;   
+    margin-bottom: 10px; 
+    color: $defaultColor; 
+    background-color: $buttonColor;
+    -webkit-border-radius:0.25rem;
+    -moz-border-radius: 0.25rem;
+    border-radius: 0.25rem;
+    text-align: center;
+}
+
+.blogpost__category-link {
+    @extend .blogpost__category-tag;
+    color: $defaultColor; 
+
+    &:hover {
+        text-decoration: underline;
+        color: $defaultColor; 
+    }
+}
+
+/* user info */
+
+.blogpost__user-info {
+	max-width: 350px;
+
+	.user-image__container {
+		font-size: 3em;
+		float: left;
+		width: 15%;
+	}
+
+	.user-image__image {
+		width: 50px;
+		vertical-align: text-top;
+	}
+
+	.blogpost__content-username {
+		float: left;
+		width: 80%;
+		padding: 10px;
+		margin-left: 10px;
+	}
+
+	p {
+		margin: 0px;
+		padding: 0px;
+	}
+}
+
+/* blogpost heading */
+h2 {
+	color: $textColor;
+}
+/* blogimage */
+
+img {
+	max-width: 100%;
+}
+
+.blogpost__blog-description {
+	color: $textColor;
+}
+
+/* read more link*/
+.blogpost__read-more {
+	text-align: right;
+	margin-top: 10px;
+	font-style: italic;
+}
+
+/* edit and delete buttons */
+.button{
+    width: 20%;
+    height: 2.5em;
+    font-size: 2em;
+    font-weight: 400;
+    cursor: pointer;
+ }
+ 
+ .button--delete{
+     color: $dangerColor;
+ }
+ 
+ .message--attention{
+     color: $dangerColor;
+ }
+ 
+ .editButtons{  
+     
+    a{
+        color: $defaultColor; 
+    }
+    .fa-pencil{
+    font-size: 1.2rem; 
+    }
+
+    .delete{
+        background: $dangerColor; 
+        margin: 10px; 
+
+        .fa-trash{
+            font-size: 1.2rem; 
+        }
+    }        
+ }
+ 
+ /* alert messages */
+ .alert-success {
+    text-align: center;
+    border-radius: 0px;
+}
+ 
+ .alert__text {
+    font-weight: bold;
+    display: inline-block;
+}
+
+/* share icon */
+.blogpost__share-button {
+	float: right;
+	max-width: 30%;
+
+	.fa-share-alt {
+		font-size: 2em;
+	}
+	.dropdown-menu {
+		text-align: center;
+        min-width: 8rem;
+        
+		.gmail {
+			right: 0.9rem;
+			position: relative;
+		}
+	}
+}
+
+/* comment link */
+.commentLink {
+	float: left;
+	background: $headLineColor;
+	width: 150px;
+	height: 35px;
+	text-align: center;
+	color: $defaultColor;
+    border-radius: 0.25rem;
+    padding: 5px; 
+
+	.fa-commenting-o {
+		font-size: 1.5rem;
+	}
+
+	a {
+		color: $defaultColor;
+	}
+
+	.commentHr {
+		width: 100%;
+	}
+}
+
+.commentInput {
+
+	textarea {
+		width: 100%;
+	}
+
+	.commentButton {
+		height: 2rem;
+	}
+}
+
+/*--CATEGORY PAGES--*/
+
+.categoryPosts {
+	background-color: $sectionBackground;
+}
+
+.jumbotron_watchesHeader{
+    margin-bottom: 0px;
+    background-image: url("../images/mh_watch2.png");
+    background-color: #cccccc;
+    background-size: cover;
+    background-position: center; 
+    width: 100%;
+    height: 300px;
+}
+
+.jumbotron_sunglassesHeader{
+    margin-bottom: 0px;
+    background-image: url("../images/mh_sunglasses_2.png");
+    background-color: #cccccc;
+    background-size: cover;
+    background-position: center; 
+    width: 100%;
+    height: 300px;
+}
+
+.jumbotron_interiorHeader{
+    margin-bottom: 0px;
+    background-image: url("../images/mh_interior.jpeg");
+    background-color: #cccccc;
+    background-size: cover;
+    background-position: center; 
+    width: 100%;
+    height: 300px;
+}
+
+.categoryButton{
+    color: $defaultColor; 
+    margin: 15px;
+    margin-left:5px;
+    a{
+        color: $defaultColor;
+    }
+}
+
+/*--PROFILE PAGE--*/
+
+.profileBox{
+    background:$defaultColor; 
+    max-width: 600px; 
+    margin: 0px auto; 
+    padding: 20px; 
+
+    .profileBox__content-1{
+        height: 100px; 
+    
+
+    /* username & picture */
+    .user-image__container{
+        float: left; 
+    }
+
+    .user-image__image {
+        width: 50px;
+        vertical-align: text-top;
+        margin-top: 5px; 
+    }
+
+    .profileBox__content-username{
+        float: left;
+        width: 50%; 
+        padding: 10px; 
+    }
+}
+
+    .profileBox__content-commentsPosts{
+        display: inline-flex; 
+        font-size: 0.9em; 
+        width: 60%; 
+        float: left; 
+    }
+
+    .totalPosts{
+        margin: 5px; 
+    }
+
+    .totalComments{
+        margin: 5px; 
+    }
+}
+
+/* create new story */
+
+.profileBox__content-2{
+    height: 30px; 
+}
+
+.createNewPost{
+    width: 40%; 
+    float: right; 
+
+    .create{
+        background-color: $buttonColor; 
+        border: none; 
+        color: $defaultColor; 
+        float: right; 
+    }
+
+    a{
+        color: $defaultColor; 
+        font-size: 0.9em; 
+    }
+}
+
+/* profile navbar */
+.nav-justified{
+    width: 100%; 
+    font-size: 0.8em;
+    max-width: 900px; 
+    margin: 0px auto; 
+    border-top: 1px solid $sectionBackground; 
+    border-bottom: 1px solid $sectionBackground; 
+
+    .nav-link.active,.show > .nav-link{ /*--active navlink--*/
+        background: $interactiveHover; 
+        border-radius: 0px; 
+    }
+}
+
+/* profile blogposts */
+
+.profile__blogpost {
+    margin-top: 15px;
+    margin-bottom: 15px;  
+}
+
+.profile__blogpost_date {
+    margin-top: 20px;
+}
+
+.profilePosts{
+    padding: 20px; 
+
+    button{
+        font-size: 0.9em; 
+        width: 5.5rem; 
+    }
+
+    .categoryButton{
+        display: block;
+        
+        a{
+            color: $defaultColor;
+        }
+    }
+    
+    .editButtons{   
+
+        a{
+            color: $defaultColor; 
+        }
+        .fa-pencil{
+            font-size: 1.2rem; 
+        }
+    
+        .delete{
+            background: $dangerColor; 
+
+            .fa-trash{
+                font-size: 1.2rem; 
+            }
+        }
+    }
+}
+
+.modal-footer__link {
+    margin-right: 10px !important;
+    padding: 7px 10px;
+    border-radius: 0.25em;
+    color: $defaultColor;
+    background-color: #cc4750;
+
+    &:hover {
+        color: $defaultColor;
+        text-decoration: underline;
+    }
+}
+
+.btn-secondary {
+    border: none;
+    &:hover {
+        text-decoration: underline;
+        background-color: #868e96;
+        border: none;
+    }
+}
+
+.message {
+    margin: 0px;
+    height: 200px;
+}
+
+.message__link {
+    font-weight: bold;
+}
+
+.post-information__text {
+    display: inline-block;
+    font-size: 1.2rem;
+}
+
+.post-information__text--author,
+.post-information__text--title {
+    font-weight: bold;
+    display: inline-block;
+    font-size: 1.2rem;
+}
+
+.post-information__comment {
+    margin-top: 10px;
+}
+
+/*--FORMS--*/
+
+/*--CREATE POST FORM--*/
+.create_wrapper{
+    margin: 0px auto; 
+    max-width: 600px; 
+}
+
+.createForm__label {
+    text-align: left;
+}
+
+.topInfoCreate{
+    
+    .help{
+        line-height: 30px; 
+    }
+
+    p{
+		margin-bottom: 30px;
+        float: left;
+        margin-right: 5px; 
+    }
+
+    .fa-question-circle{
+        float: left; 
+        font-size: 1.7rem; 
+    }
+}
+    
+.createForm{
+
+    input{
+        width: 100%; 
+    }
+}
+
+.createForm__label {
+	text-align: left;
+}
+
+.submitButton{
+    text-align: center; 
+    height: 40px; 
+    margin: 10px; 
+}
+
+/*--EDIT POST FORM--*/
+.edit_wrapper{
+    margin: 0px auto; 
+    max-width: 600px;
+}
+
+
+/*--REGISTER FORM--*/
+.register_wrapper{
+    margin: 0px auto; 
+    max-width: 500px;
+
+    label{
+        width: 100%; 
+    }
+
+    input{
+        width: 100%; 
+    }
+    
+    textarea{
+        width: 100%; 
+    }
+}
+
+.registerForm__input {
+    margin: 0px auto;
+    max-width: 600px;
+    text-align: left;
+
+    label{
+        width: 100%; 
+    }
+
+    input{
+        width: 100%; 
+    }
+}
+
+.registerForm__newAccount-link{
+    padding: 5px; 
+    border-radius: 0.25rem; 
+    text-align: center; 
+    margin: 0px auto; 
+
+    a{
+        color: $interactiveHover; 
+        font-weight: 700; 
+    }
+}
+
+/*--LOGIN PAGE FORM--*/ 
+
+.login_wrapper{
+    margin: 0px auto;
+    max-width: 500px;  
+}
+
+.topInfo {
+    margin: 0px auto; 
+    margin-bottom: 30px;
+    
+}
+
+.topInfo__instruction {
+    margin-bottom: 10px;
+}
+
+.form {
+    margin-bottom: 10px;
+}
+
+.loginForm__input {
+    margin: 0px auto;
+    max-width: 600px;
+    text-align: left;
+
+    label{
+        width: 100%; 
+    }
+
+    input{
+        width: 100%; 
+    }
+}
+
+.loginForm__newAccount-link{
+    padding: 5px; 
+    border-radius: 0.25rem; 
+    text-align: center; 
+    margin: 0px auto; 
+
+    a{
+        color: $interactiveHover; 
+        font-weight: 700; 
+    }
+}
+
+.error-msg {
+    display: block;
+    text-align: left;
+    color: $dangerColor;
+}
+
+.login-label {
+    max-width: 500px; 
+}
+
+/*--general FOR FORMS--*/
+
+.form_wrapper {
+    padding: 20px;
+    background-color: $sectionBackground;
+    max-width: 700px; 
+    margin: 0px auto; 
+}
+
+input { /*--input settings--*/
+    margin-bottom: 20px; 
+
+    &[type="text"] { /*--username / email / password etc.--*/
+        background-color: $defaultColor;
+    }
+
+    &[type="submit"] { /*--submit button--*/
+        width: 5.5rem;
+        height: 2.2rem; 
+        color: $defaultColor; 
+        background-color: $buttonColor;
+        -webkit-border-radius:0.25rem;
+        -moz-border-radius: 0.25rem;
+        border-radius: 0.25rem;
+
+        &:hover {
+            background-color: $interactiveHover;
+            cursor: pointer;
+        }
+    }
+
+    &[type="file"] {
+        background-color: $defaultColor;
+        color: $tabs; 
+
+        &:focus {
+            outline: none;
+            border: solid 1px $buttonColor;
+            cursor: pointer;
+        }
+    }
+
+    &[type="radio"] {
+        cursor: pointer;
+        margin: 0px; 
+        padding: 0px; 
+        width: 20px; 
+        height: 20px; 
+    }
+}
