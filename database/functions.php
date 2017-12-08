@@ -116,6 +116,17 @@ function getUserStatisticsComments ($userID){
     return $userComments['count'];
 }
 
+//counts all the comments a post have
+function getTotalCommentsOnPost ($postID) {
+    global $pdo;                    
+    $stmt = $pdo->prepare("SELECT COUNT(commentID) as count FROM comments WHERE postID = :postID");
+    $stmt->bindParam(":postID", $postID);
+    $stmt->execute();
+    $totalComments =  $stmt->fetch(PDO::FETCH_ASSOC);
+    return $totalComments['count'];
+}
+
+
 // fetches the 5 latest posts the user has made
 function getLatestBlogpostByUserID ($userID) {
     global $pdo;   
