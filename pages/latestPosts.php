@@ -90,75 +90,75 @@ require DIRBASE . 'partials/navbar.php';
 		<?php foreach (getLatestBlogpostByUserID($userID) as $i => $latestPost): ?>
 			<article class="blogpost">
 
-			<!-- clickable category label -->
-			<div class="blogpost__category-link">
-				<a class="blogpost__category-link" href="pages/category<?= $latestPost['categoryName'] ?>.php">
-					<?= $latestPost['categoryName']?>
-				</a>
-			</div>
 
-			<!-- blogtitle and publish date  -->
-			<date><p class="blogpost__date">Publish date: <?= substr($latestPost['postDate'], 0, 16) ?></p></date>
-			<h2 class="blogpost__title"><?= $latestPost['postTitle'] ?></h2>
-
-			 <!-- blogpicture, if there is no picture, no alt tag is set -->
-			<?php if (empty($blogpost['imageName'])): ?>
-				<figure>
-					<img src="images/<?= $latestPost['imageName'] ?>" alt="">
-				</figure>
-          	<?php else: ?>
-				<figure>
-					<img src="images/<?= $latestPost['imageName'] ?>" alt="image for the blogpost">
-				</figure>
-          	<?php endif; ?>
-
-			<div class="clear"></div> 
-
-			<!-- prints out the preview of the post, if it has more than 200
-			chars 3 dots appear to show the user that theres more to read -->
-			<div class= "blogpost__blog-description">
-				<?php if (strlen($latestPost['postText']) > 200 ):?>
-					<a href="pages/blogpost.php?view_post=<?=$latestPost['postID'];?>">
-						<p><?=substr ($latestPost['postText'],0,200)?> ...</p>
+				<!-- clickable category label -->
+				<div class="blogpost__category-link">
+					<a class="blogpost__category-link" href="pages/category<?= $latestPost['categoryName'] ?>.php">
+						<?= $latestPost['categoryName']?>
 					</a>
+				</div>
+
+				<!-- blogtitle and publish date  -->
+				<date><p class="blogpost__date">Publish date: <?= substr($latestPost['postDate'], 0, 16) ?></p></date>
+				<h2 class="blogpost__title"><?= $latestPost['postTitle'] ?></h2>
+
+
+				<!-- blogpicture, if there is no picture, no alt tag is set -->
+				<?php if (empty($blogpost['imageName'])): ?>
+					<figure>
+						<img src="images/<?= $latestPost['imageName'] ?>" alt="">
+					</figure>
 				<?php else: ?>
-					<a href="pages/blogpost.php?view_post=<?=$latestPost['postID'];?>">
-						<p><?= $latestPost['postText'] ?></p>
-					</a>
+					<figure>
+						<img src="images/<?= $latestPost['imageName'] ?>" alt="image for the blogpost">
+					</figure>
 				<?php endif; ?>
 
-			<!-- link that leads to fullview of chosen post -->
-			<div class="blogpost__read-more">
-				<a href="pages/blogpost.php?view_post=<?=$latestPost['postID'];?>"
-				aria-label="click here to read the entire post">
-					Read More <i class="fa fa-chevron-right" aria-hidden="true"></i>
-				</a>
-			</div>
-			<br>
+				<div class="clear"></div> 
 
-			<?php require DIRBASE .'partials/shareButton.php'; ?>
+				<!-- prints out the preview of the post, if it has more than 200
+				chars 3 dots appear to show the user that theres more to read -->
+				<div class= "blogpost__blog-description">
+					<?php if (strlen($latestPost['postText']) > 200 ):?>
+						<a href="pages/blogpost.php?view_post=<?=$latestPost['postID'];?>">
+							<p><?=substr ($latestPost['postText'],0,200)?> ...</p>
+						</a>
+					<?php else: ?>
+						<a href="pages/blogpost.php?view_post=<?=$latestPost['postID'];?>">
+							<p><?= $latestPost['postText'] ?></p>
+						</a>
+					<?php endif; ?>
 
-			<!-- buttons for delete and edit post -->
-			<div class="editButtons">
-				<button>
-					<a href="pages/editPost.php?postID=<?=$latestPost['postID'];?>"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
-				</button>
-				<button class="delete" type="button" data-toggle="modal" data-target=".delete-confirmation-modal"
-				data-postid="<?= $latestPost['postID'] ?>" data-redirect-page="pages/latestPosts.php">
-					<i class="fa fa-trash" aria-hidden="true"></i> Delete
-				</button>
-			</div> 
-		</article>
-	<?php endforeach; ?>
+				<!-- link that leads to fullview of chosen post -->
+					<div class="blogpost__read-more">
+						<a href="pages/blogpost.php?view_post=<?=$latestPost['postID'];?>"
+						aria-label="click here to read the entire post">
+							Read More <i class="fa fa-chevron-right" aria-hidden="true"></i>
+						</a>
+					</div>
+					
+					<br>
 
-<!-- shows a message to user if sh/e doesn't have any posts -->
-<?php require DIRBASE . 'messages/messageEmptyProfileLatestPosts.php'; ?>
+					<?php require DIRBASE .'partials/shareButton.php'; ?>
 
-</div>
-
-<!-- popup window connected to delete button (ie delete confirmation) -->
-<?php require DIRBASE . 'modals/modalDeletePost.php'; ?>
-
+					<!-- buttons for delete and edit post -->
+					<div class="editButtons">
+						<button>
+							<a href="pages/editPost.php?postID=<?=$latestPost['postID'];?>"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
+						</button>
+						<button class="delete" type="button" data-toggle="modal" data-target=".delete-confirmation-modal"
+						data-postid="<?= $latestPost['postID'] ?>" data-redirect-page="pages/latestPosts.php">
+							<i class="fa fa-trash" aria-hidden="true"></i> Delete
+						</button>
+					</div>
+				</div> 
+			</article>
+		<?php endforeach; ?>
+		<!-- shows a message to user if sh/e doesn't have any posts -->
+		<?php require DIRBASE . 'messages/messageEmptyProfileLatestPosts.php'; ?>
+	</div>
+	<!-- popup window connected to delete button (ie delete confirmation) -->
+	<?php require DIRBASE . 'modals/modalDeletePost.php'; ?>
 </main>
 
 <?php 

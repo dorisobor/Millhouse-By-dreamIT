@@ -139,9 +139,7 @@ require DIRBASE . 'partials/navbar.php';
                 </article>	
             </div>
         <?php }?>
-
         <?php require DIRBASE . 'messages/messageEmptyProfileComments.php'; ?>
-        
     </div>  
 
     <!-- popup window connected to delete button (ie delete confirmation) -->

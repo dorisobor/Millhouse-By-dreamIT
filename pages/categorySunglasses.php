@@ -109,7 +109,6 @@ require DIRBASE . 'partials/navbar.php';
 
 		<!-- user gets a message if theres no posts published -->
 		<?php require DIRBASE . 'messages/messageEmptyCategory.php'; ?>
-
 	</div>
 </main>
 
