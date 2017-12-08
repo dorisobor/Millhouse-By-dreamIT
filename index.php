@@ -38,7 +38,7 @@ require_once 'partials/navbar.php';
     <div class="figures">
         <figure>
           <a href="pages/categoryWatches.php"> 
-          <img class ="figures__category-image" src="images/square_watch.png" alt="watches">
+          <img class ="figures__category-image" src="images/square_watch_2.png" alt="watches">
           </a><figcaption>
               <h3>
                 <a href="pages/categoryWatches.php">Watches</a>
@@ -48,7 +48,7 @@ require_once 'partials/navbar.php';
 
         <figure>
           <a href="pages/categorySunglasses.php"> 
-          <img class ="figures__category-image" src="images/square_glasses.png" alt="sunglasses">
+          <img class ="figures__category-image" src="images/square_sunglasses_2.png" alt="sunglasses">
           </a><figcaption>
             <h3>
               <a href="pages/categorySunglasses.php">Sunglasses</a>
