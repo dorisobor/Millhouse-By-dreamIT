@@ -67,6 +67,7 @@ function isLoggedIn () {
     }
 }
 
+//checks if user has put in correct login info
 function isUserIDAndPasswordMatch ($userID, $userHash) {
     global $pdo;                
     $stmt = $pdo->prepare("SELECT username FROM users
@@ -78,7 +79,7 @@ function isUserIDAndPasswordMatch ($userID, $userHash) {
     return $existingUsername != null;
 }
 
-// deletes comments from userprofile
+// deletes comments 
 function deleteComment ($commentID) {
     global $pdo;            
     $stmt = $pdo->prepare("DELETE FROM comments WHERE commentID = :commentID");  

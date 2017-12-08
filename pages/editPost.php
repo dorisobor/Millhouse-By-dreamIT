@@ -82,7 +82,8 @@ if(isset($_GET['postID']) && is_numeric($_GET ['postID']) && empty($_POST)){
                         <br><br>
 
                         <div class="clear"></div>
-                    <fieldset class="fieldset">
+                        
+                        <fieldset class="fieldset">
                             <div class="createForm">
                                <input type="hidden" name="postID" value="<?= $postID ?>">
                                 <input type="text" name="headline" placeholder="<?= $postTitle ?>" value="<?= $postTitle ?>" id="headline" aria-required="true" required />
@@ -91,10 +92,12 @@ if(isset($_GET['postID']) && is_numeric($_GET ['postID']) && empty($_POST)){
                                 <textarea class="textarea" id="postText" name="postText" rows="6" cols="50" placeholder="Write your text here" required>
                                    <?php 
                                    if(isset($imageName)){
-                                    echo '<img src="' . DIRBASE . 'images/' . $imageName . '">';
-                                    echo $postText; 
-                                   }
-                                    ?></textarea>
+                                        echo '<img src="../images/' . $imageName . '">';
+                                        echo $postText; 
+                                    }
+                                    ?>
+                                </textarea>
+
                                 <br>
 
                                 <input type="file" name="upload" id="image" value="image.jpg">

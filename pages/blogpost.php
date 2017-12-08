@@ -4,10 +4,6 @@ require_once '../config.php';
 require_once DIRBASE . 'database/db.php'; 
 require_once DIRBASE . 'database/functions.php';
 require_once DIRBASE . 'partials/writeComment.php';
-
-//commented out since they dont exist in this version
-// require_once 'partials/readComments.php';
-
 require_once DIRBASE . 'database/actions/fetch_all_blogposts.php';
 
 //checks if delete button was pressed och post was deleted
@@ -16,12 +12,16 @@ $commentIsDeleted = isset($_SESSION['commentDeleted']);
 //unsets session in order for message to disappear
 unset($_SESSION['commentDeleted']);
 
+//values for comment form
 $publishComment = "publish";
 $updateComment = "updateComment";
+//commenttext
+$commentText = '';
 $commentButton = $publishComment;
 $commentButtonValue = "Publish!";
 
-if(isset($_GET['view_post']) ){ 
+//if read more linked is clicked the following is fetched from the database
+if(isset($_GET['view_post'])){ 
 
 	$postID = $_GET ['view_post'];
 
@@ -55,7 +55,7 @@ if(isset($_GET['view_post']) ){
 <head>
 	<?php require_once DIRBASE . 'partials/head.php'; ?>
 	<title>Blogpost</title>
-	<meta name="description" content="Another amazing from Millhouse Stories!">
+	<meta name="description" content="Another amazing story from Millhouse Stories!">
 </head>
 
 <body>
@@ -68,7 +68,7 @@ require DIRBASE . 'partials/navbar.php';
 
 <main>
 	<div class="mainBody">
-	<?php if ($commentIsDeleted): ?>
+		<?php if ($commentIsDeleted): ?>
             <?php require DIRBASE . 'messages/messageDeleteCommentConfirm.html'; ?>
         <?php endif; ?>
 		<?php     
@@ -105,11 +105,11 @@ require DIRBASE . 'partials/navbar.php';
 				<!-- blogpicture, if there is no picture, no alt tag is set -->
 				<?php if (empty($blogpost['imageName'])): ?>
 					<figure>
-						<img src="images/<?= $blogpost['imageName'] ?>" alt="">
+						<img src="../images/<?= $blogpost['imageName'] ?>" alt="">
 					</figure>
 				<?php else: ?>
 					<figure>
-						<img src="images/<?= $blogpost['imageName'] ?>" alt="image for the blogpost">
+						<img src="../images/<?= $blogpost['imageName'] ?>" alt="image for the blogpost">
 					</figure>
 				<?php endif; ?>
 
@@ -127,13 +127,13 @@ require DIRBASE . 'partials/navbar.php';
 					<?php if(getLoggedInUserID() == $blogpost['userID']): ?>
 						<!-- edit button -->
 						<!-- buttons for delete and edit post -->
-							<button>
-								<a href="pages/editPost.php?postID=<?=$blogpost['postID'];?>"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
-							</button>		
-							<button class="delete" type="button" data-toggle="modal" data-target=".delete-confirmation-modal" 
-								data-postid="<?= $totalPost['postID'] ?>" data-redirect-page="pages/profilepage.php"> 
-								<i class="fa fa-trash" aria-hidden="true"></i> Delete
-							</button>
+						<button>
+							<a href="pages/editPost.php?postID=<?=$blogpost['postID'];?>"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
+						</button>		
+						<button class="delete" type="button" data-toggle="modal" data-target=".delete-confirmation-modal" 
+							data-postid="<?= $totalPost['postID'] ?>" data-redirect-page="pages/profilepage.php"> 
+							<i class="fa fa-trash" aria-hidden="true"></i> Delete
+						</button>
 					<?php endif; ?>
 
 				<div class="clear"></div>

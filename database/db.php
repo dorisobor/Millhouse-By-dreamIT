@@ -1,11 +1,14 @@
 <?php
 
+    //tries to connect to database
     try {
     $pdo = new PDO(
       "mysql:host=localhost;dbname=millhouse;charset=utf8",
       "root",
       "root"
-    );    
+    ); 
+
+    //in casse connection fails, shows error message
     }
        catch (PDOException $e) {
         print "Error!: " . $e->getMessage() . "<br/>";
