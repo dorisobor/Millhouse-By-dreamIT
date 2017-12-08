@@ -259,8 +259,7 @@ footer {
         .deleteButton{
 
             .deleteComment{
-                background: $dangerColor; 
-                width: 5.5rem; 
+               width: 5.5rem; 
             }
         }
     }
@@ -278,6 +277,7 @@ footer {
     margin: 10px 0px;
     padding: 10px;
     border: 1px solid #ddd;
+	background-color:$defaultColor; 
 }
 
 .comment-field__username {
