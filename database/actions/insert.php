@@ -6,7 +6,6 @@ require_once DIRBASE . 'database/functions.php';
 //in database, ie a new post is created
 if(isset($_POST['publish'])){
     $userID =  getLoggedInUserID();
-
     global $pdo;                
     $statement = $pdo->prepare("INSERT INTO blogPosts (postDate, postTitle, postText, userID, categoryID, imageName) 
     VALUES (NOW(), :postTitle, :postText, :userID, :categoryID, :imageName)");
