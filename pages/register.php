@@ -1,6 +1,7 @@
 <?php 
 session_start();   
 require_once '../config.php';
+
 //saves all input from the form in variable
 $formData = $_POST;
 require_once DIRBASE . 'database/db.php';  
@@ -112,7 +113,7 @@ require DIRBASE . 'partials/navbar.php';
                                 <label for="textarea">Describe yourself, this will display in your profile (maximum 32 characters)</label>
                                 <textarea name="user-bio" rows="1" cols="71" placeholder="For example: I love sunglasses!" ><?= $formData['user-bio'] ?? '' ?></textarea>
                             </div> 
-                        <div class="submitButton">
+                                <div class="submitButton">
                                     <input type="submit" name="submit" value="Register"/>
                                 </div>
                             </fieldset>

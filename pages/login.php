@@ -63,7 +63,6 @@ require DIRBASE . 'partials/navbar.php';
                             <div class="loginForm">
                                 <div class="loginForm__input">
                                     <label for="username" class="login-label">Username</label>
-
                                     <!-- checks if user has put in their login info correctly 
                                     and then prints a message if sh/e has filled in something wrong
                                     or simply do not have an account -->

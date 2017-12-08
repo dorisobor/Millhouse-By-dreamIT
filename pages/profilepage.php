@@ -143,18 +143,15 @@ require DIRBASE . 'partials/navbar.php';
 				<?php require DIRBASE .'partials/shareButton.php'; ?>
 
 				<!-- buttons for delete and edit post -->
-				<div class="editButtons">
-							
+				<div class="editButtons">	
 					<button>
           				<a href="pages/editPost.php?postID=<?=$totalPost['postID'];?>"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
  					</button>		
-							
 					<button class="delete" type="button" data-toggle="modal" data-target=".delete-confirmation-modal" 
 					data-postid="<?= $totalPost['postID'] ?>" data-redirect-page="pages/profilepage.php"> 
 							<i class="fa fa-trash" aria-hidden="true"></i> Delete
 					</button>
 				</div>
-			
 			</article>
 	<?php endforeach; ?>	
 		

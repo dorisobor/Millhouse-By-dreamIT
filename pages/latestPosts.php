@@ -102,7 +102,7 @@ require DIRBASE . 'partials/navbar.php';
 			<h2 class="blogpost__title"><?= $latestPost['postTitle'] ?></h2>
 
 			 <!-- blogpicture, if there is no picture, no alt tag is set -->
-			 <?php if (empty($blogpost['imageName'])): ?>
+			<?php if (empty($blogpost['imageName'])): ?>
 				<figure>
 					<img src="images/<?= $latestPost['imageName'] ?>" alt="">
 				</figure>
@@ -127,27 +127,27 @@ require DIRBASE . 'partials/navbar.php';
 					</a>
 				<?php endif; ?>
 
-				<!-- link that leads to fullview of chosen post -->
-				<div class="blogpost__read-more">
-					<a href="pages/blogpost.php?view_post=<?=$latestPost['postID'];?>"
-					aria-label="click here to read the entire post">
-						Read More <i class="fa fa-chevron-right" aria-hidden="true"></i>
-					</a>
-				</div>
-				<br>
-				<?php require DIRBASE .'partials/shareButton.php'; ?>
+			<!-- link that leads to fullview of chosen post -->
+			<div class="blogpost__read-more">
+				<a href="pages/blogpost.php?view_post=<?=$latestPost['postID'];?>"
+				aria-label="click here to read the entire post">
+					Read More <i class="fa fa-chevron-right" aria-hidden="true"></i>
+				</a>
+			</div>
+			<br>
 
-			
-				<!-- buttons for delete and edit post -->
-				<div class="editButtons">
-					<button>
-          				<a href="pages/editPost.php?postID=<?=$latestPost['postID'];?>"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
- 					</button>
-					<button class="delete" type="button" data-toggle="modal" data-target=".delete-confirmation-modal"
-					data-postid="<?= $latestPost['postID'] ?>" data-redirect-page="pages/latestPosts.php">
-						<i class="fa fa-trash" aria-hidden="true"></i> Delete
-					</button>
-				</div> 
+			<?php require DIRBASE .'partials/shareButton.php'; ?>
+
+			<!-- buttons for delete and edit post -->
+			<div class="editButtons">
+				<button>
+					<a href="pages/editPost.php?postID=<?=$latestPost['postID'];?>"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
+				</button>
+				<button class="delete" type="button" data-toggle="modal" data-target=".delete-confirmation-modal"
+				data-postid="<?= $latestPost['postID'] ?>" data-redirect-page="pages/latestPosts.php">
+					<i class="fa fa-trash" aria-hidden="true"></i> Delete
+				</button>
+			</div> 
 		</article>
 	<?php endforeach; ?>
 
