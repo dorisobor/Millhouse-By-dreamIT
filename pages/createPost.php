@@ -10,11 +10,12 @@ if (!isLoggedIn()){
 	return;
 }
 
+//moves input image to image folder
 if(isset($_FILES['upload'])){
     require_once DIRBASE . 'database/db.php';
     $imageInfo = $_FILES['upload'];
  
-    //$path is the pemporery place where the image stores befoor it moves to database
+    //$path is the temporary place where the image stores before it moves to database
     $path = $_FILES['upload']['tmp_name'];
     $filename = $_FILES['upload']['name'];
         
