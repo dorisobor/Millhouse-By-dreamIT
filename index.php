@@ -17,7 +17,7 @@ unset($_SESSION['postDeleted']);
 <html lang="en">
 
 <head>
-    <?php require 'partials/head.php'; ?>
+    <?php require_once 'partials/head.php'; ?>
     <title>Millhouse blog</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
@@ -110,10 +110,16 @@ require_once 'partials/navbar.php';
           <!-- blog title -->
           <h2><?=$blogpost['postTitle'];?></h2>
         
-          <!-- blogpicture -->
-          <figure>
-            <img src="images/<?= $blogpost['imageName'] ?>">
-          </figure>
+          <!-- blogpicture, if there is no picture, no alt tag is set -->
+          <?php if (empty($blogpost['imageName'])): ?>
+            <figure>
+              <img src="images/<?= $blogpost['imageName'] ?>" alt="">
+            </figure>
+          <?php else: ?>
+            <figure>
+              <img src="images/<?= $blogpost['imageName'] ?>" alt="image for the blogpost">
+            </figure>
+          <?php endif; ?>
 
           <!-- blog text -->
           <div class= "blogpost__blog-description">

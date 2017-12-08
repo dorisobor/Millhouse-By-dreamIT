@@ -8,7 +8,7 @@ require_once DIRBASE . 'database/functions.php';
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<?php require DIRBASE . 'partials/head.php'; ?>
+	<?php require_once DIRBASE . 'partials/head.php'; ?>
 	<title>Watches</title>
 	<meta name="description" content="all stories about Millhouse watches.">
 </head>
@@ -54,10 +54,16 @@ require DIRBASE . 'partials/navbar.php';
 			<!-- blopost title -->
 			<h2><?= $blogpost['postTitle'] ?></h2>
 
-			<!-- blogpost image -->
-			<figure>
-				<img src="images/<?= $blogpost['imageName'] ?>" alt="image for the blogpost">
-			</figure>
+			 <!-- blogpicture, if there is no picture, no alt tag is set -->
+			<?php if (empty($blogpost['imageName'])): ?>
+				<figure>
+					<img src="images/<?= $blogpost['imageName'] ?>" alt="">
+				</figure>
+          	<?php else: ?>
+				<figure>
+					<img src="images/<?= $blogpost['imageName'] ?>" alt="image for the blogpost">
+				</figure>
+          	<?php endif; ?>
 
 			<!-- prints out the preview of the post, if it has more than 200
 			chars 3 dots appear to show the user that theres more to read -->
@@ -87,9 +93,10 @@ require DIRBASE . 'partials/navbar.php';
 
 				<!-- link to full post -->
 				<div class="commentLink">
-					<i class="fa fa-commenting-o" aria-hidden="true"></i>
-					<a href="pages/blogpost.php?view_post=<?=$blogpost['postID'];?>"
-					aria-label="click here if you want to comment"></a>
+					<a href="pages/blogpost.php?view_post=<?= $blogpost['postID'].'#comment'; ?>"
+					aria-label="click here if you want to comment">
+					<i class="fa fa-commenting-o" aria-hidden="true"></i> Comments
+					</a>
 				</div>	
 
      			<div class="clear"></div>

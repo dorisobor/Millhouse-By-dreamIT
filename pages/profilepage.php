@@ -25,7 +25,7 @@ $userID = $user['userID'];
 <html lang="en">
 
 <head>
-	<?php require DIRBASE . 'partials/head.php'; ?>
+	<?php require_once DIRBASE . 'partials/head.php'; ?>
 	<title>Profile Page</title>
 	<meta name="description" content="Your personal profilepage at Millhouse Stories.">
 </head>
@@ -106,10 +106,16 @@ require DIRBASE . 'partials/navbar.php';
 				</date>
 				<h2 class="blogpost__title"><?= $totalPost['postTitle'] ?></h2>
 
-				<!-- blogpost image -->
-				<figure>
-					<img src="images/<?= $totalPost['imageName'] ?>" alt="image for the blogpost">
-				</figure>	
+				<!-- blogpicture, if there is no picture, no alt tag is set -->
+				<?php if (empty($blogpost['imageName'])): ?>
+					<figure>
+						<img src="images/<?= $totalPost['imageName'] ?>" alt="">
+					</figure>
+         		 <?php else: ?>
+					<figure>
+						<img src="images/<?= $totalPost['imageName'] ?>" alt="image for the blogpost">
+					</figure>
+          		<?php endif; ?>
 
 				<div class="clear"></div> 
 

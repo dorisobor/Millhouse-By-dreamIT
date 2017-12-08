@@ -19,7 +19,7 @@ if(isset($_FILES['upload'])){
     $filename = $_FILES['upload']['name'];
         
     // Move the image file from $path to folder images
-    if(move_uploaded_file($path, 'images/' . $filename)){
+    if(move_uploaded_file($path, '../images/' . $filename)){
     // Insert file in database. 
         $statement  = $pdo->prepare("
             INSERT INTO images 
@@ -36,7 +36,7 @@ if(isset($_FILES['upload'])){
 <html lang="en">
 
 <head>
-    <?php require DIRBASE . 'partials/head.php'; ?>
+    <?php require_once DIRBASE . 'partials/head.php'; ?>
     <script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
     <title>Create New Post</title>
     <meta name="description" content="create a new story!">

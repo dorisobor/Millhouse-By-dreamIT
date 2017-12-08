@@ -39,7 +39,7 @@ if (isset($_POST['submit'])) {
 <html lang="en">
 
 <head>
-    <?php require DIRBASE . 'partials/head.php'; ?>
+    <?php require_once DIRBASE . 'partials/head.php'; ?>
     <title>Login</title>
     <meta name="description" content="Login to Millhouse stories.">
 <body>

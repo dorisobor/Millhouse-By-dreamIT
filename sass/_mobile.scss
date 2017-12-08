@@ -274,6 +274,22 @@ footer {
     margin-top: 15px; 
 }
 
+.comment-field {
+    margin: 10px 0px;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.comment-field__username {
+    font-weight: bold;
+}
+
+.comment-field__username,
+.comment-field__date,
+.comment-field__text {
+    display: inline-block;
+}
+
 /* category button */
 .blogpost__category-tag {
     max-width: 100px;
@@ -678,6 +694,13 @@ img {
     max-width: 600px; 
 }
 
+.createForm{
+    
+        input{
+            width: 100%; 
+        }
+    }
+    
 .createForm__label {
     text-align: left;
 }
@@ -698,17 +721,6 @@ img {
         float: left; 
         font-size: 1.7rem; 
     }
-}
-    
-.createForm{
-
-    input{
-        width: 100%; 
-    }
-}
-
-.createForm__label {
-	text-align: left;
 }
 
 .submitButton{

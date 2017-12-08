@@ -3,7 +3,7 @@ require_once DIRBASE . 'database/functions.php';
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-	<a class="navbar-brand hidden-md-up" href="index.php"><img class="logo" src="images/logo.png" alt="Logo for Millhouse"></a>
+	<a class="navbar-brand hidden-md-up" href="index.php"><img class="logo" src="images/mh_logo.png" alt="Logo for Millhouse"></a>
         
     <?php if (isLoggedIn()): ?>
     <button class="sign-up-btn d-md-block d-lg-none d-xl-none">
