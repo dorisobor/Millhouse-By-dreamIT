@@ -71,7 +71,9 @@ require DIRBASE . 'partials/navbar.php';
 				<div class="contact">
 					<span class="contact__text">Still wondering something?</span>
 					<div class="contact__link-container">
-						<a class="contact__link" href="pages/contact.php">Contact us!</a>
+						<a href="mailto:info@millhouse.com" target="_blank" rel="noopener" aria-role="click to send email">
+							Kontakt
+						</a>
 					</div>
 				</div>
 			</div>
