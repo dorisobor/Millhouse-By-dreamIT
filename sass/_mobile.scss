@@ -273,23 +273,6 @@ footer {
     margin-top: 15px; 
 }
 
-.comment-field {
-    margin: 10px 0px;
-    padding: 10px;
-    border: 1px solid #ddd;
-	background-color:$defaultColor; 
-}
-
-.comment-field__username {
-    font-weight: bold;
-}
-
-.comment-field__username,
-.comment-field__date,
-.comment-field__text {
-    display: inline-block;
-}
-
 /* category button */
 .blogpost__category-tag {
     max-width: 100px;
@@ -403,6 +386,28 @@ img {
         }
     }        
  }
+
+ .comment-field {
+    margin: 10px 0px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    background-color:$defaultColor; 
+    
+    .delete{
+        margin: 0px; 
+        margin-top: 15px; 
+    }
+}
+
+.comment-field__username {
+    font-weight: bold;
+}
+
+.comment-field__username,
+.comment-field__date,
+.comment-field__text {
+    display: inline-block;
+}
  
  /* alert messages */
  .alert-success {
