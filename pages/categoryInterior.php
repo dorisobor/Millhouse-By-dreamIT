@@ -22,6 +22,7 @@ require DIRBASE . 'partials/navbar.php';
 ?>
 
 <header>
+	<!-- picture representing the category -->
 	<div class="jumbotron_interiorHeader"></div>    
 </header>
 
@@ -30,11 +31,11 @@ require DIRBASE . 'partials/navbar.php';
 		<div class="mainTitle">
 			<h1>Interior</h1>
 		</div>
+
 		<p>Here you can read all about Millhouse exclusive interior details!</p>
 
 		<?php foreach(getAllBlogpostsOnInterior() as $i => $blogpost): ?>
 		<article class="blogpost">
-
 			<!-- category label -->
 			<div class="blogpost__category-tag">
 				<span><?= $blogpost['categoryName'] ?></span>
@@ -45,7 +46,6 @@ require DIRBASE . 'partials/navbar.php';
 				<div class="user-image__container">
 					<img class="user-image__image" src="<?= $blogpost['userAvatar'] ?>" alt="user icon"/>
 				</div>
-
 				<!-- username and publish date -->
 				<div class="blogpost__content-username">
 					<p class="username">Author: <?= $blogpost['username'] ?></p>
@@ -104,16 +104,13 @@ require DIRBASE . 'partials/navbar.php';
 					<?= getTotalCommentsOnPost($blogpost['postID']); ?>
 					</a>
 				</div>
-				  
+
 				<div class="clear"></div>
-				
 			</div>
 		</article>
 		<?php endforeach; ?>
-		
 		<!-- user gets a message if theres no posts published -->
 		<?php require DIRBASE . 'messages/messageEmptyCategory.php'; ?>
-
 	</div>
 </main>
 

@@ -20,11 +20,11 @@ require DIRBASE . 'partials/navbar.php';
 ?>
 
 <header>
+	<!-- picture representing the category -->
 	<div class="jumbotron_watchesHeader"></div>    
 </header>
 
 <main> 
-	<!-- picture representing the category -->
 	<div class="mainBody">
 		<h1>Watches</h1>
 		<p>Here you can read all about Millhouse exclusive watches!</p>
@@ -104,7 +104,7 @@ require DIRBASE . 'partials/navbar.php';
 			</div>
 		</article>
 		<?php endforeach; ?>
-		
+
 	  	<!-- user gets a message if theres no posts published -->
 		<?php require DIRBASE . 'messages/messageEmptyCategory.php'; ?>
 	</div>
