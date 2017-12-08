@@ -25,6 +25,7 @@
 
 // fetches the total pages,FOUND_ROWS() helps us give the total rows
     $total = $pdo ->query("SELECT FOUND_ROWS() as total") ->fetch()['total'];
-//ceiling means rounding up the pages
+//ceiling means rounding up the pages, divides the total blog posts with perpages 
+// so it knows how many pages it will show
     $pages = ceil($total/$perPage);
 ?>
