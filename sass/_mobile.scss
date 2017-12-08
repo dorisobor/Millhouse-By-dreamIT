@@ -256,11 +256,8 @@ footer {
         margin: 1em auto;      
         background-color: $sectionBackground;
             
-        .deleteButton{
-
-            .deleteComment{
-               width: 5.5rem; 
-            }
+        .delete{
+            margin: 0px; 
         }
     }
 }

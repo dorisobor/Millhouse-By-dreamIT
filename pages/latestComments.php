@@ -125,8 +125,8 @@ require DIRBASE . 'partials/navbar.php';
                     <br>
 
                     <!-- delete button -->
-                    <div class="deleteButton">
-                        <button class="deleteComment" type="button" data-toggle="modal" data-target=".delete-confirmation-comment-modal"
+                    <div class="editButtons">
+                        <button class="delete" type="button" data-toggle="modal" data-target=".delete-confirmation-comment-modal"
                         data-comment-id="<?= $info['commentID']?>" data-redirect-page="pages/latestComments.php">
                                 <i class="fa fa-trash" aria-hidden="true"></i> Delete
                         </button>
