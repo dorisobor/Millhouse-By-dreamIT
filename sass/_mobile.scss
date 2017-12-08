@@ -382,6 +382,11 @@ img {
  
  .editButtons{  
      
+    button{
+        font-size: 0.9em; 
+        width: 5.5rem; 
+    }
+     
     a{
         color: $defaultColor; 
     }
@@ -607,34 +612,11 @@ img {
 .profilePosts{
     padding: 20px; 
 
-    button{
-        font-size: 0.9em; 
-        width: 5.5rem; 
-    }
-
     .categoryButton{
         display: block;
         
         a{
             color: $defaultColor;
-        }
-    }
-    
-    .editButtons{   
-
-        a{
-            color: $defaultColor; 
-        }
-        .fa-pencil{
-            font-size: 1.2rem; 
-        }
-    
-        .delete{
-            background: $dangerColor; 
-
-            .fa-trash{
-                font-size: 1.2rem; 
-            }
         }
     }
 }
