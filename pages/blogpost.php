@@ -153,7 +153,7 @@ require DIRBASE . 'partials/navbar.php';
 						<input type="submit" name="<?= $commentButton ?>" value="<?= $commentButtonValue ?>"  />
 					</div>
 				</form>
-
+                <h3>All comments</h3>
 				<!-- loops all the comments on the post -->
 				<?php foreach($comments as $comment): ?>
 						<div class="comment-field">
@@ -182,7 +182,7 @@ require DIRBASE . 'partials/navbar.php';
 				<?php endforeach; ?>
 				<!-- if there is no comments the user gets a message -->
 				<?php if(empty($comment)): ?>
-					<p>Theres no comments yet!</p>
+					<p>There are no comments yet!</p>
 				<?php endif; ?>
     		</div> 
 		</div>
