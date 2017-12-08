@@ -107,11 +107,14 @@ require DIRBASE . 'partials/navbar.php';
 				<!-- blogpicture, if there is no picture, no alt tag is set -->
 				<?php if (empty($blogpost['imageName'])): ?>
 					<figure>
-						<img src="/images/<?= $blogpost['imageName'] ?>" alt="">
+					<?php  $image = $blogpost['imageName']; 
+                             $folder = 'images/';
+                        ?>
+						<img src="<?= $folder . $image ?>" alt="">
 					</figure>
 				<?php else: ?>
 					<figure>
-						<img src="/images/<?= $blogpost['imageName'] ?>" alt="image for the blogpost">
+						<img src=" <?= $folder . $image ?>" alt="image for the blogpost">
 					</figure>
 				<?php endif; ?>
 
