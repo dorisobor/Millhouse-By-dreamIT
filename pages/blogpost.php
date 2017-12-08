@@ -10,6 +10,12 @@ require_once DIRBASE . 'partials/writeComment.php';
 
 require_once DIRBASE . 'database/actions/fetch_all_blogposts.php';
 
+//checks if delete button was pressed och post was deleted
+//if it was deleted variable is used to trigger a message
+$commentIsDeleted = isset($_SESSION['commentDeleted']);
+//unsets session in order for message to disappear
+unset($_SESSION['commentDeleted']);
+
 $publishComment = "publish";
 $updateComment = "updateComment";
 $commentButton = $publishComment;
@@ -61,6 +67,9 @@ require DIRBASE . 'partials/navbar.php';
 
 <main>
 	<div class="mainBody">
+	<?php if ($commentIsDeleted): ?>
+            <?php require DIRBASE . 'messages/messageDeleteCommentConfirm.html'; ?>
+        <?php endif; ?>
 		<?php     
 		//foreach to show the blogposts
 		foreach($blogposts as $blogpost) {      
@@ -160,6 +169,15 @@ require DIRBASE . 'partials/navbar.php';
 							<p>
 								<?= $comment['commentText'] ?>
 							</p>
+							<!-- checks if the inlogged user wrote the comment, only then sh/e can delete -->
+							<?php if(getLoggedInUserID() == $comment['userID']): ?>
+								<div class="deleteButton">
+									<button class="deleteComment" type="button" data-toggle="modal" data-target=".delete-confirmation-comment-modal"
+									data-comment-id="<?= $comment['commentID']?>" data-redirect-page="pages/blogpost.php?view_post=<?= $blogpost['postID'];?>"
+											<i class="fa fa-trash" aria-hidden="true"></i> Delete
+									</button>
+								</div>
+							<?php endif; ?>
 						</div>
 				<?php endforeach; ?>
 				<!-- if there is no comments the user gets a message -->
@@ -178,6 +196,9 @@ require DIRBASE . 'partials/navbar.php';
 
 <!-- modal that shows if user clicks delete button -->
 <?php require DIRBASE . 'modals/modalDeletePost.php'; ?>
+
+ <!-- popup window connected to delete button (ie delete confirmation) -->
+ <?php require DIRBASE . 'modals/modalDeleteComment.php'; ?>
 
 </main>
 	
