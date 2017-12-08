@@ -256,12 +256,8 @@ footer {
         margin: 1em auto;      
         background-color: $sectionBackground;
             
-        .deleteButton{
-
-            .deleteComment{
-                background: $dangerColor; 
-                width: 5.5rem; 
-            }
+        .delete{
+            margin: 0px; 
         }
     }
 }
@@ -272,22 +268,6 @@ footer {
 	background-color: $sectionBackground;
     padding: 20px;
     margin-top: 15px; 
-}
-
-.comment-field {
-    margin: 10px 0px;
-    padding: 10px;
-    border: 1px solid #ddd;
-}
-
-.comment-field__username {
-    font-weight: bold;
-}
-
-.comment-field__username,
-.comment-field__date,
-.comment-field__text {
-    display: inline-block;
 }
 
 /* category button */
@@ -381,6 +361,11 @@ img {
  }
  
  .editButtons{  
+
+    button{
+        font-size: 0.9em; 
+        width: 5.5rem; 
+    }
      
     a{
         color: $defaultColor; 
@@ -398,6 +383,28 @@ img {
         }
     }        
  }
+
+ .comment-field {
+    margin: 10px 0px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    background-color:$defaultColor; 
+    
+    .delete{
+        margin: 0px; 
+        margin-top: 15px; 
+    }
+}
+
+.comment-field__username {
+    font-weight: bold;
+}
+
+.comment-field__username,
+.comment-field__date,
+.comment-field__text {
+    display: inline-block;
+}
  
  /* alert messages */
  .alert-success {
@@ -607,34 +614,11 @@ img {
 .profilePosts{
     padding: 20px; 
 
-    button{
-        font-size: 0.9em; 
-        width: 5.5rem; 
-    }
-
     .categoryButton{
         display: block;
         
         a{
             color: $defaultColor;
-        }
-    }
-    
-    .editButtons{   
-
-        a{
-            color: $defaultColor; 
-        }
-        .fa-pencil{
-            font-size: 1.2rem; 
-        }
-    
-        .delete{
-            background: $dangerColor; 
-
-            .fa-trash{
-                font-size: 1.2rem; 
-            }
         }
     }
 }

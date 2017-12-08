@@ -9,11 +9,19 @@ require_once DIRBASE . 'partials/writeComment.php';
 // require_once 'partials/readComments.php';
 
 require_once DIRBASE . 'database/actions/fetch_all_blogposts.php';
-$commentText = " ";
+
+
+//checks if delete button was pressed och post was deleted
+//if it was deleted variable is used to trigger a message
+$commentIsDeleted = isset($_SESSION['commentDeleted']);
+//unsets session in order for message to disappear
+unset($_SESSION['commentDeleted']);
+
 $publishComment = "publish";
 $updateComment = "updateComment";
 $commentButton = $publishComment;
 $commentButtonValue = "Publish!";
+$commentText = " ";
 
 if(isset($_GET['view_post']) ){ 
 
@@ -36,7 +44,8 @@ if(isset($_GET['view_post']) ){
 	$statement = $pdo->prepare("SELECT comments.*, users.*  
 	FROM comments
 	JOIN users ON users.userID = comments.userID
-	WHERE comments.postID = $postID");
+	WHERE comments.postID = $postID
+	ORDER BY comments.commentDate DESC");
 	$statement->execute();
 	$comments =  $statement ->fetchAll(PDO::FETCH_ASSOC);
 
@@ -62,6 +71,9 @@ require DIRBASE . 'partials/navbar.php';
 
 <main>
 	<div class="mainBody">
+	<?php if ($commentIsDeleted): ?>
+            <?php require DIRBASE . 'messages/messageDeleteCommentConfirm.html'; ?>
+        <?php endif; ?>
 		<?php     
 		//foreach to show the blogposts
 		foreach($blogposts as $blogpost) {      
@@ -117,16 +129,14 @@ require DIRBASE . 'partials/navbar.php';
 					<!-- ONLY renders if the inlogged user has written the post -->
 					<?php if(getLoggedInUserID() == $blogpost['userID']): ?>
 						<!-- edit button -->
-						<button>
-							<a href="pages/editPost.php?postID=<?=$blogpost['postID'];?>">
-								<i class="fa fa-pencil" aria-hidden="true"></i> Edit
-							</a>
-						</button>
-						<!-- delete button -->
-						<button class="delete" type="button" data-toggle="modal" data-target=".delete-confirmation-modal" 
-						data-postid="<?= $blogpost['postID'] ?>" data-redirect-page="index.php"> 
-							<i class="fa fa-trash" aria-hidden="true"></i> Delete
-						</button>
+						<!-- buttons for delete and edit post -->
+							<button>
+								<a href="pages/editPost.php?postID=<?=$blogpost['postID'];?>"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
+							</button>		
+							<button class="delete" type="button" data-toggle="modal" data-target=".delete-confirmation-modal" 
+								data-postid="<?= $totalPost['postID'] ?>" data-redirect-page="pages/profilepage.php"> 
+								<i class="fa fa-trash" aria-hidden="true"></i> Delete
+							</button>
 					<?php endif; ?>
 
 				<div class="clear"></div>
@@ -145,7 +155,7 @@ require DIRBASE . 'partials/navbar.php';
 						<input type="submit" name="<?= $commentButton ?>" value="<?= $commentButtonValue ?>"  />
 					</div>
 				</form>
-
+                <h3>All comments (<?= getTotalCommentsOnPost($blogpost['postID']) ?>)</h3>
 				<!-- loops all the comments on the post -->
 				<?php foreach($comments as $comment): ?>
 						<div class="comment-field">
@@ -161,11 +171,20 @@ require DIRBASE . 'partials/navbar.php';
 							<p>
 								<?= $comment['commentText'] ?>
 							</p>
+							<!-- checks if the inlogged user wrote the comment, only then sh/e can delete -->
+							<?php if(getLoggedInUserID() == $comment['userID']): ?>
+								<div class="editButtons">
+									<button class="delete" type="button" data-toggle="modal" data-target=".delete-confirmation-comment-modal"
+										data-comment-id="<?= $comment['commentID']?>" data-redirect-page="pages/blogpost.php?view_post=<?= $blogpost['postID'];?>">
+										<i class="fa fa-trash" aria-hidden="true"></i> Delete
+									</button>
+								</div>
+							<?php endif; ?>
 						</div>
 				<?php endforeach; ?>
 				<!-- if there is no comments the user gets a message -->
 				<?php if(empty($comment)): ?>
-					<p>Theres no comments yet!</p>
+					<p>There are no comments yet!</p>
 				<?php endif; ?>
     		</div> 
 		</div>
@@ -182,6 +201,9 @@ require DIRBASE . 'partials/navbar.php';
 
 <!-- modal that shows if user clicks delete button -->
 <?php require DIRBASE . 'modals/modalDeletePost.php'; ?>
+
+ <!-- popup window connected to delete button (ie delete confirmation) -->
+ <?php require DIRBASE . 'modals/modalDeleteComment.php'; ?>
 
 </main>
 	
