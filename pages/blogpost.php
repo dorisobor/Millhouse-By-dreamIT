@@ -180,16 +180,6 @@ require DIRBASE . 'partials/navbar.php';
 
 
 
-
-
-
-
-
-
-
-
-
-
 <!-- modal that shows if user clicks delete button -->
 <?php require DIRBASE . 'modals/modalDeletePost.php'; ?>
 
