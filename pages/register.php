@@ -62,6 +62,7 @@ if (isset($_POST['submit'])) {
     <?php require_once DIRBASE . 'partials/head.php'; ?>
     <title>Register New Account</title>
     <meta name="description" content="Sign up to become a member of the Millhouse family!">
+</head>
 <body>
 
 <?php 
@@ -113,15 +114,15 @@ require DIRBASE . 'partials/navbar.php';
                                 <label for="textarea">Describe yourself, this will display in your profile (maximum 32 characters)</label>
                                 <textarea name="user-bio" rows="1" cols="71" placeholder="For example: I love sunglasses!" ><?= $formData['user-bio'] ?? '' ?></textarea>
                             </div> 
-                                <div class="submitButton">
-                                    <input type="submit" name="submit" value="Register"/>
-                                </div>
-                            </fieldset>
-                        </form>
-                    </div>
-                    <div class="registerForm__newAccount-link">
-                        Already have an account? <a href="pages/login.php">Log in.</a>
-                  </div>
+                            <div class="submitButton">
+                                <input type="submit" name="submit" value="Register"/>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="registerForm__newAccount-link">
+                    Already have an account? <a href="pages/login.php">Log in.</a>
+                </div>
             </div>
         </div>
     </div>
