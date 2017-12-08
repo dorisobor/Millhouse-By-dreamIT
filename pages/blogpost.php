@@ -126,9 +126,7 @@ require DIRBASE . 'partials/navbar.php';
 					<!-- ONLY renders if the inlogged user has written the post -->
 					<?php if(getLoggedInUserID() == $blogpost['userID']): ?>
 						<!-- edit button -->
-<<<<<<< HEAD
 						<!-- buttons for delete and edit post -->
-						<div class="editButtons">
 							<button>
 								<a href="pages/editPost.php?postID=<?=$blogpost['postID'];?>"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
 							</button>		
@@ -136,19 +134,6 @@ require DIRBASE . 'partials/navbar.php';
 								data-postid="<?= $totalPost['postID'] ?>" data-redirect-page="pages/profilepage.php"> 
 								<i class="fa fa-trash" aria-hidden="true"></i> Delete
 							</button>
-						</div>
-=======
-						<!-- buttons for delete and edit post -->				
-					<button>
-							<a href="pages/editPost.php?postID=<?=$blogpost['postID'];?>"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
-					</button>		
-							
-					<button class="delete" type="button" data-toggle="modal" data-target=".delete-confirmation-modal" 
-						data-postid="<?= $totalPost['postID'] ?>" data-redirect-page="pages/profilepage.php"> 
-						<i class="fa fa-trash" aria-hidden="true"></i> Delete
-					</button>
-				</div>
->>>>>>> origin/master
 					<?php endif; ?>
 
 				<div class="clear"></div>
