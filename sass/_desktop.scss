@@ -1,7 +1,13 @@
 @import 'theme.scss'; 
 
+/*--GENERAL--*/
+
 main {
     max-width: 900px;
+}
+
+.footer__container {
+    flex-direction: row !important;
 }
 
 .dropdown-menu-right {
@@ -47,10 +53,11 @@ main {
 
 .user-actions__link {
     color: $defaultColor;
-        &:hover {
-            text-decoration: none;
-            color: $defaultColor;
-        }
+
+    &:hover {
+        text-decoration: none;
+        color: $defaultColor;
+    }
 }
 
 .user-actions__link--black {
@@ -94,6 +101,8 @@ main {
     }
 }
 
+/*--CATEGORY PAGES--*/
+
 .jumbotron_watchesHeader{
     margin-bottom: 0px;
     background-image: url("../images/mh_watchBig_2.png");
@@ -124,26 +133,24 @@ main {
     height: 300px;
 }
 
-fieldset {
+/*--FORMS--*/
 
-    label {
-        text-align: left;
-    }
+.form_heading {
+    margin-left: 30px;
 }
 
-.createButton {
-    margin-top: 30px;
+fieldset {
+    
+    label {
     text-align: left;
+    }
 }
 
 .checkboxWrapper {
     text-align: left;
 }
 
-.form_heading {
-    margin-left: 30px;
-}
-
-.footer__container {
-    flex-direction: row !important;
+.createButton {
+    margin-top: 30px;
+    text-align: left;
 }
