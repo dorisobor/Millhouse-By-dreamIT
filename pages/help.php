@@ -72,7 +72,7 @@ require DIRBASE . 'partials/navbar.php';
 					<span class="contact__text">Still wondering something?</span>
 					<div class="contact__link-container">
 						<a href="mailto:info@millhouse.com" target="_blank" rel="noopener" aria-role="click to send email">
-							Kontakt
+							Contact Us!
 						</a>
 					</div>
 				</div>
