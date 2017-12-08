@@ -41,7 +41,8 @@ if(isset($_GET['view_post']) ){
 	$statement = $pdo->prepare("SELECT comments.*, users.*  
 	FROM comments
 	JOIN users ON users.userID = comments.userID
-	WHERE comments.postID = $postID");
+	WHERE comments.postID = $postID
+	ORDER BY comments.commentDate DESC");
 	$statement->execute();
 	$comments =  $statement ->fetchAll(PDO::FETCH_ASSOC);
 
@@ -125,6 +126,18 @@ require DIRBASE . 'partials/navbar.php';
 					<!-- ONLY renders if the inlogged user has written the post -->
 					<?php if(getLoggedInUserID() == $blogpost['userID']): ?>
 						<!-- edit button -->
+<<<<<<< HEAD
+						<!-- buttons for delete and edit post -->
+						<div class="editButtons">
+							<button>
+								<a href="pages/editPost.php?postID=<?=$blogpost['postID'];?>"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
+							</button>		
+							<button class="delete" type="button" data-toggle="modal" data-target=".delete-confirmation-modal" 
+								data-postid="<?= $totalPost['postID'] ?>" data-redirect-page="pages/profilepage.php"> 
+								<i class="fa fa-trash" aria-hidden="true"></i> Delete
+							</button>
+						</div>
+=======
 						<!-- buttons for delete and edit post -->				
 					<button>
 							<a href="pages/editPost.php?postID=<?=$blogpost['postID'];?>"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
@@ -135,6 +148,7 @@ require DIRBASE . 'partials/navbar.php';
 						<i class="fa fa-trash" aria-hidden="true"></i> Delete
 					</button>
 				</div>
+>>>>>>> origin/master
 					<?php endif; ?>
 
 				<div class="clear"></div>
@@ -153,7 +167,7 @@ require DIRBASE . 'partials/navbar.php';
 						<input type="submit" name="<?= $commentButton ?>" value="<?= $commentButtonValue ?>"  />
 					</div>
 				</form>
-                <h3>All comments</h3>
+                <h3>All comments (<?= getTotalCommentsOnPost($blogpost['postID']) ?>)</h3>
 				<!-- loops all the comments on the post -->
 				<?php foreach($comments as $comment): ?>
 						<div class="comment-field">
