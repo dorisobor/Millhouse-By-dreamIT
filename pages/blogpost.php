@@ -9,7 +9,7 @@ require_once DIRBASE . 'partials/writeComment.php';
 // require_once 'partials/readComments.php';
 
 require_once DIRBASE . 'database/actions/fetch_all_blogposts.php';
-
+$commentText = " ";
 $publishComment = "publish";
 $updateComment = "updateComment";
 $commentButton = $publishComment;
@@ -31,31 +31,6 @@ if(isset($_GET['view_post']) ){
 	  
 	// Fetch all rows
 	$blogposts =  $statement ->fetchAll(PDO::FETCH_ASSOC); 
-<<<<<<< HEAD
-		
-	}
-	
-}
-
-
-?>
-
-	<!--?php
-		//jimmys code start
-	$statement2 = $pdo->prepare("SELECT users.*, blogPosts.*, comments.* FROM comments
-	    LEFT JOIN blogPosts ON blogPosts.postID = comments.postID
-	    LEFT JOIN users ON users.userID = comments.userID
-	    WHERE blogPosts.postID = '$postID';
-	");
-	$statement2->execute();
-	$allComments = $statement2->fetchAll(PDO::FETCH_ASSOC); 
-	//jimmys code end
-	?-->
-
-<main>
-
-<div class="mainBody">
-=======
 	
 	//fetches all the comments connected to the post
 	$statement = $pdo->prepare("SELECT comments.*, users.*  
@@ -64,7 +39,6 @@ if(isset($_GET['view_post']) ){
 	WHERE comments.postID = $postID");
 	$statement->execute();
 	$comments =  $statement ->fetchAll(PDO::FETCH_ASSOC);
->>>>>>> b58d17c63ad9b9f80f2ca968bb50c8d5c257446c
 
 }
 ?>
@@ -135,24 +109,6 @@ require DIRBASE . 'partials/navbar.php';
 						<?=$blogpost['postText'];?>
 					</p>
 				</div>
-<<<<<<< HEAD
-				<input type="hidden" id="postID" name="postID" value="<?= $postID ?>">
-				<input type="hidden" id="commentID" name="commentID" value="<?= $commentID ?>">
-				<label for="comment" id="comment">Comment on this Story</label>
-				<textarea class="textarea" id="message" rows="6" cols="50" name="comment" placeholder="Write comment here..." required><?= $commentText; ?> </textarea>
-			</div>
-
-
-		</form>
-		</form>
-		<div class="allComments">
-			<h3>All Comments</h3>
-			<?=$blogpost['commentText'];?>
-		</div>
-    </div> 
-	</div>
-</article>
-=======
 
 				<!-- Share button -->
 				<?php require DIRBASE . 'partials/shareButton.php'; ?>
@@ -214,7 +170,6 @@ require DIRBASE . 'partials/navbar.php';
     		</div> 
 		</div>
 	</article>
->>>>>>> b58d17c63ad9b9f80f2ca968bb50c8d5c257446c
 </div>
 
 <?php 
