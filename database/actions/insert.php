@@ -2,6 +2,8 @@
 require_once DIRBASE . 'database/db.php';
 require_once DIRBASE . 'database/functions.php';
 
+//if publish buttons is pressed all input information is stored
+//in database, ie a new post is created
 if(isset($_POST['publish'])){
     $userID =  getLoggedInUserID();
 
