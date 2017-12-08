@@ -81,6 +81,7 @@ if(isset($_GET['postID']) && is_numeric($_GET ['postID']) && empty($_POST)){
 
                     <br><br>
 
+
                     <div class="clear"></div>
                     
                     <fieldset class="fieldset">

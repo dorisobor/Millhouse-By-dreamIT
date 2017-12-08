@@ -146,6 +146,44 @@ require DIRBASE . 'partials/navbar.php';
 					<input type="hidden" id="commentID" name="commentID" value="<?= $commentID ?>">
 					<textarea class="textarea" id="message" rows="6" cols="50" name="comment" placeholder="Write comment here..." required><?= $commentText; ?> </textarea>
 				</div>
+
+				<div class="clear"></div>
+
+				<!-- blogtitle -->
+				<h2><?=$blogpost['postTitle'];?></h2>
+
+				<!-- blogpicture, if there is no picture, no alt tag is set -->
+				<?php if (empty($blogpost['imageName'])): ?>
+					<figure>
+						<img src="../images/<?= $blogpost['imageName'] ?>" alt="">
+					</figure>
+				<?php else: ?>
+					<figure>
+						<img src="../images/<?= $blogpost['imageName'] ?>" alt="image for the blogpost">
+					</figure>
+				<?php endif; ?>
+
+				<div class="blogpost__blog-description">
+					<p>
+						<?=$blogpost['postText'];?>
+					</p>
+				</div>
+
+				<!-- Share button -->
+				<?php require DIRBASE . 'partials/shareButton.php'; ?>
+
+				<div class="editButtons">	
+					<!-- ONLY renders if the inlogged user has written the post -->
+					<?php if(getLoggedInUserID() == $blogpost['userID']): ?>
+						<!-- edit button -->
+						<!-- buttons for delete and edit post -->
+						<button>
+							<a href="pages/editPost.php?postID=<?=$blogpost['postID'];?>"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
+						</button>		
+						<button class="delete" type="button" data-toggle="modal" data-target=".delete-confirmation-modal" 
+							data-postid="<?= $totalPost['postID'] ?>" data-redirect-page="pages/profilepage.php"> 
+							<i class="fa fa-trash" aria-hidden="true"></i> Delete
+						</button>
 				<div class="commentButton">
 					<input type="submit" name="<?= $commentButton ?>" value="<?= $commentButtonValue ?>"  />
 				</div>
@@ -173,6 +211,7 @@ require DIRBASE . 'partials/navbar.php';
 							<i class="fa fa-trash" aria-hidden="true"></i> Delete
 						</button>
 					</div>
+
 					<?php endif; ?>
 				</div>
 

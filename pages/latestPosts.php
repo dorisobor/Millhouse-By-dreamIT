@@ -90,6 +90,7 @@ require DIRBASE . 'partials/navbar.php';
 		<?php foreach (getLatestBlogpostByUserID($userID) as $i => $latestPost): ?>
 			<article class="blogpost">
 
+
 				<!-- clickable category label -->
 				<div class="blogpost__category-link">
 					<a class="blogpost__category-link" href="pages/category<?= $latestPost['categoryName'] ?>.php">
@@ -100,6 +101,7 @@ require DIRBASE . 'partials/navbar.php';
 				<!-- blogtitle and publish date  -->
 				<date><p class="blogpost__date">Publish date: <?= substr($latestPost['postDate'], 0, 16) ?></p></date>
 				<h2 class="blogpost__title"><?= $latestPost['postTitle'] ?></h2>
+
 
 				<!-- blogpicture, if there is no picture, no alt tag is set -->
 				<?php if (empty($blogpost['imageName'])): ?>

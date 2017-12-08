@@ -104,6 +104,7 @@ require DIRBASE . 'partials/navbar.php';
 					<?= getTotalCommentsOnPost($blogpost['postID']); ?>
 					</a>
 				</div>
+
 				<div class="clear"></div>
 			</div>
 		</article>
