@@ -6,11 +6,17 @@ require_once DIRBASE . 'database/functions.php';
 require_once DIRBASE . 'partials/writeComment.php';
 require_once DIRBASE . 'database/actions/fetch_all_blogposts.php';
 
-//checks if delete button was pressed och post was deleted
+//checks if DELETE button was pressed och post was deleted
 //if it was deleted variable is used to trigger a message
 $commentIsDeleted = isset($_SESSION['commentDeleted']);
 //unsets session in order for message to disappear
 unset($_SESSION['commentDeleted']);
+
+//checks if PUBLISH button was pressed och comment was published
+//and if yes, variable is used to trigger a message
+$commentIsPublished = isset($_SESSION['commentPublished']);
+//unsets session in order for message to disappear
+unset($_SESSION['commentPublished']);
 
 //values for comment form
 $publishComment = "publish";
@@ -45,7 +51,6 @@ if(isset($_GET['view_post'])){
 	ORDER BY comments.commentDate DESC");
 	$statement->execute();
 	$comments =  $statement ->fetchAll(PDO::FETCH_ASSOC);
-
 }
 ?>
 
@@ -69,6 +74,9 @@ require DIRBASE . 'partials/navbar.php';
 	<div class="mainBody">
 		<?php if ($commentIsDeleted): ?>
             <?php require DIRBASE . 'messages/messageDeleteCommentConfirm.html'; ?>
+		<?php endif; ?>
+		<?php if ($commentIsPublished): ?>
+            <?php require DIRBASE . 'messages/messageWriteCommentConfirm.html'; ?>
         <?php endif; ?>
 		<?php     
 		//foreach to show the blogposts
@@ -215,6 +223,49 @@ require DIRBASE . 'partials/navbar.php';
 					<?php endif; ?>
 				</div>
 
+				<?php if(isLoggedIn()): ?>
+					<form method="post">
+						<div class="commentInput">
+							<div class="commentHr">
+								<hr>
+							</div>
+							<p id="comment">Comment on this Story</p>
+							<input type="hidden" id="postID" name="postID" value="<?= $postID ?>">
+							<input type="hidden" id="commentID" name="commentID" value="<?= $commentID ?>">
+							<textarea class="textarea" id="message" rows="6" cols="50" name="comment" placeholder="Write comment here..." required><?= $commentText; ?> </textarea>
+						</div>
+						<div class="commentButton">
+							<input type="submit" name="<?= $commentButton ?>" value="<?= $commentButtonValue ?>"  />
+						</div>
+					</form>
+				<? endif; ?>
+
+                <h3>All comments (<?= getTotalCommentsOnPost($blogpost['postID']) ?>)</h3>
+				<!-- loops all the comments on the post -->
+				<?php foreach($comments as $comment): ?>
+						<div class="comment-field">
+							<p class="comment-field__username">
+								<?= $comment['username'] ?>
+							</p>
+							<p class="comment-field__text">
+								commented on
+							</p>
+							<p class="comment-field__date">
+								<?= substr($comment['commentDate'], 0,16 ) ?>
+							</p>
+							<p>
+								<?= $comment['commentText'] ?>
+							</p>
+							<!-- checks if the inlogged user wrote the comment, only then sh/e can delete -->
+							<?php if(getLoggedInUserID() == $comment['userID']): ?>
+								<div class="editButtons">
+									<button class="delete" type="button" data-toggle="modal" data-target=".delete-confirmation-comment-modal"
+										data-comment-id="<?= $comment['commentID']?>" data-redirect-page="pages/blogpost.php?view_post=<?= $blogpost['postID'];?>">
+										<i class="fa fa-trash" aria-hidden="true"></i> Delete
+									</button>
+								</div>
+							<?php endif; ?>
+						</div>
 				<?php endforeach; ?>
 				<!-- if there is no comments the user gets a message -->
 				<?php if(empty($comment)): ?>
@@ -234,8 +285,8 @@ require DIRBASE . 'partials/navbar.php';
 <!-- modal that shows if user clicks delete button -->
 <?php require DIRBASE . 'modals/modalDeletePost.php'; ?>
 
- <!-- popup window connected to delete button (ie delete confirmation) -->
- <?php require DIRBASE . 'modals/modalDeleteComment.php'; ?>
+<!-- popup window connected to delete button (ie delete confirmation) -->
+<?php require DIRBASE . 'modals/modalDeleteComment.php'; ?>
 
 </main>
 	
