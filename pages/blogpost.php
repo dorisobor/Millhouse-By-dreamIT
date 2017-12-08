@@ -173,7 +173,7 @@ require DIRBASE . 'partials/navbar.php';
 							<?php if(getLoggedInUserID() == $comment['userID']): ?>
 								<div class="editButtons">
 									<button class="delete" type="button" data-toggle="modal" data-target=".delete-confirmation-comment-modal"
-										data-comment-id="<?= $comment['commentID']?>" data-redirect-page="pages/blogpost.php?view_post=<?= $blogpost['postID'];?>"
+										data-comment-id="<?= $comment['commentID']?>" data-redirect-page="pages/blogpost.php?view_post=<?= $blogpost['postID'];?>">
 										<i class="fa fa-trash" aria-hidden="true"></i> Delete
 									</button>
 								</div>
