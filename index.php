@@ -150,7 +150,9 @@ require_once 'partials/navbar.php';
           <div class="commentLink">
           <a href="pages/blogpost.php?view_post=<?= $blogpost['postID'].'#comment'; ?>"
           aria-label="click here if you want to comment">
-            <i class="fa fa-commenting-o" aria-hidden="true"></i> Comments
+            <i class="fa fa-commenting-o" aria-hidden="true"></i>
+            <span>Comments:</span>
+            <?= getTotalCommentsOnPost($blogpost['postID']); ?>
             </a>
           </div>
 
