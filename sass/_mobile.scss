@@ -210,6 +210,10 @@ footer {
 .contact__link-container {
     margin: 10px auto;
     @extend .blogpost__category-tag;
+
+    a{
+        color: $defaultColor; 
+    }
 }
 
 .contact__link {

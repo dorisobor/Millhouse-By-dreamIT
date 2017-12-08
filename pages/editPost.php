@@ -75,7 +75,7 @@ if(isset($_GET['postID']) && is_numeric($_GET ['postID']) && empty($_POST)){
                             </legend>
                             <div class="help">
                                 <p>For help press the icon</p>
-                                <p><a href="help.php"><i class="fa fa-question-circle" aria-hidden="true"></i></a></p>
+                                <p><a href="pages/help.php"><i class="fa fa-question-circle" aria-hidden="true"></i></a></p>
                             </div>
                         </div>
 
