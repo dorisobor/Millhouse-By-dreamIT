@@ -37,7 +37,8 @@ hr {
 h1 {
 	padding: 0px;
 	margin: 0px;
-	color: $interactiveHover;
+    color: $interactiveHover;
+    
 }
 
 a{
@@ -49,7 +50,7 @@ p {
 }
 
 figure {
-	text-align: center;
+    text-align: center;
 }
 
 .clear {
@@ -328,7 +329,7 @@ footer {
 
 /* blogpost heading */
 h2 {
-	color: $textColor;
+    color: $textColor;
 }
 /* blogimage */
 

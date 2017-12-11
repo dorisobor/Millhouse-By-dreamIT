@@ -141,7 +141,7 @@ if(isset($_GET['postID']) && is_numeric($_GET ['postID']) && empty($_POST)){
 </main>
 
 <script>
-    CKEDITOR.replace('postText');
+CKEDITOR.replace('postText');
 </script>
 
 <?php require DIRBASE .  'partials/footer.php'; ?>

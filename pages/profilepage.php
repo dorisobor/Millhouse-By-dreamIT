@@ -153,16 +153,12 @@ require DIRBASE . 'partials/navbar.php';
 					</button>
 				</div>
 			</article>
-	<?php endforeach; ?>	
-		
-<!-- shows a message to user if sh/e doesn't have any posts -->
-<?php require DIRBASE . 'messages/messageEmptyProfileAllPosts.php'; ?>
-
-</div>
-
-<!-- popup window connected to delete button (ie delete confirmation) -->
-<?php require DIRBASE . 'modals/modalDeletePost.php'; ?>
-
+			<?php endforeach; ?>	
+			<!-- shows a message to user if sh/e doesn't have any posts -->
+			<?php require DIRBASE . 'messages/messageEmptyProfileAllPosts.php'; ?>
+	</div>
+	<!-- popup window connected to delete button (ie delete confirmation) -->
+	<?php require DIRBASE . 'modals/modalDeletePost.php'; ?>
 </main>
 
 <?php 

@@ -124,7 +124,6 @@ require DIRBASE . 'partials/navbar.php';
                 <div class="registerForm__newAccount-link">
                     Already have an account? <a href="pages/login.php">Log in.</a>
                 </div>
-
             </div>
         </div>
     </div>
